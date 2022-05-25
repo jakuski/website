@@ -36,7 +36,7 @@ export default function Home() {
 						Welcome to my website, it is still a WIP as I have not had much time to work on it during the current academic year. So be warned, You may see a few loose nuts and bolts but I hope to get it finished Summer 2022.
 						<br/><br/> In the mean time, I am looking for new oppurtunities.
 						<NextLink href="/contact">
-							<a className="ml-1 font-bold underline">Let's chat.</a>
+							<a className="ml-1 font-bold underline">Let&apos;s chat.</a>
 						</NextLink>
 					</div>
 				</div>
