@@ -1,7 +1,9 @@
 export default function NotFound({ children }) {
 	return (
 		<>
-			Sod Off
+			404 mate.
 		</>
 	);
 }
+
+NotFound.layout = "none";

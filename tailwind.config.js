@@ -9,7 +9,7 @@ module.exports = {
     
 		colors: {
 			"citrine": "#d48724",
-			"black": "0D0D0D"
+			"black": "#0D0D0D"
 		},
 		fontFamily:{
 			serif: ["quincy-cf", ...defaultTheme.fontFamily.serif],

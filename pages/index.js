@@ -5,7 +5,7 @@ import Footer from "../components/footer";
 
 const Link = props => {
 	return <NextLink href={props.href}>
-		<a className="text-2xl font-bold min-h-44 flex items-center">{props.children}</a>
+		<a className="text-2xl font-bold min-h-44 flex items-center hover:underline">{props.children}</a>
 	</NextLink>;
 };
 
@@ -26,7 +26,7 @@ export default function Home() {
 					Jakub Staniszewski
 					</h1>
 					<div className="flex justify-between">
-						<Link href="/">works</Link>
+						<Link href="/go/portfolio">works</Link>
 						<Link href="/go/cv">cv</Link>
 						<Link href="/about">about</Link>
 						<Link href="/contact">contact</Link>
@@ -34,6 +34,10 @@ export default function Home() {
 					<div className="font-sans max-w-sm">
 						Hey friend!<br/>
 						Welcome to my website, it is still a WIP as I have not had much time to work on it during the current academic year. So be warned, You may see a few loose nuts and bolts but I hope to get it finished Summer 2022.
+						<br/><br/> In the mean time, I am looking for new oppurtunities.
+						<NextLink href="/contact">
+							<a className="ml-1 font-bold underline">Let's chat.</a>
+						</NextLink>
 					</div>
 				</div>
 			</main>

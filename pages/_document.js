@@ -2,7 +2,7 @@ import { Html, Head, Main, NextScript } from "next/document";
 
 export default function Document() {
 	return (
-		<Html lang="en" className="bg-citrine">
+		<Html lang="en" className="bg-citrine text-black">
 			<Head>
 				<link
 					rel="stylesheet"
