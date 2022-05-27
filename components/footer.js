@@ -19,7 +19,7 @@ export default function Footer({ children }) {
 				<SocialLink href="/go/vimeo">Vimeo</SocialLink>
 			</div>
 			{/* <div>Powered by <a href="https://vercel.com/">Vercel</a> and available on <a href={pkg.repository.url}>GitHub</a>.</div> */}
-			<div><span className="italic">Slava Ukraini.</span>Copyright © {new Date().getFullYear()} Jakub Staniszewski</div>
+			<div><span className="italic mr-2">Slava Ukraini.</span>Copyright © {new Date().getFullYear()} Jakub Staniszewski</div>
 		</footer>
 	);
 }
