@@ -19,6 +19,7 @@ function MyApp({ Component, pageProps }) {
 			strategy="lazyOnload"
 		/>
 		<Script
+			defer
 			src="https://static.cloudflareinsights.com/beacon.min.js"
 			data-cf-beacon='{"token": "d43da5b3e6f048098e1b3b72912373bf"}'
 		/>
