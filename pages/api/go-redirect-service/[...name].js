@@ -8,7 +8,7 @@ export default function handler(req, res) {
 
 	if (!redirectUrl) return res.status(404).end("Not Found");
 
-	try {
+/* 	try {
 		if (req.query.s) {
 			const publicToken = "80012d85736117b337fbb36f2ff51d68",
 				sources = {
@@ -41,7 +41,7 @@ export default function handler(req, res) {
 				console.log(resp);
 			}).catch(console.error);
 		}
-	} catch (e) { console.error(e); }
+	} catch (e) { console.error(e); } */
 
 	res.redirect(302, redirectUrl);
 }
