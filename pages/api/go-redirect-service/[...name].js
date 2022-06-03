@@ -36,6 +36,9 @@ export default function handler(req, res) {
 					description: "Original Parameter: " + sourceParam + "\nDate: " + new Date().toUTCString(),
 					icon: "✈",
 				}
+			}).then(resp => {
+				console.log("tracking request response:");
+				console.log(resp);
 			}).catch(console.error);
 		}
 	} catch (e) { console.error(e); }
