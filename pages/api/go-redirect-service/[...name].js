@@ -6,7 +6,7 @@ export default function handler(req, res) {
 
 	const redirectUrl = Data[name];
 
-	if (!redirectUrl) return res.status(404).end("Not Found");
+	if (!redirectUrl) return res.status(404).end();
 
 	/* 	try {
 		if (req.query.s) {
