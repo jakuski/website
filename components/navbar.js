@@ -18,7 +18,7 @@ export default function Navbar() {
 			
 			
 			<div className="font-serif flex gap-4">
-				<NavbarLink href="/go/portfolio">works</NavbarLink>
+				<NavbarLink href="/works">works</NavbarLink>
 				<NavbarLink href="/about">about</NavbarLink>
 				<NavbarLink href="/contact">contact</NavbarLink>
 			</div>
