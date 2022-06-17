@@ -4,9 +4,9 @@ import axios from "axios";
 export default function handler(req, res) {
 	const name = req.query.name.join("/").replace(".html", ""); // < legacy website would accept .html redirects
 
-	const redirectUrl = Data[name];
+	const redirectUrl = Data.links[name];
 
-	if (!redirectUrl) return res.status(404).end();
+	if (!redirectUrl || (Data.tempDisable[name])) return res.status(404).end();
 
 	/* 	try {
 		if (req.query.s) {
