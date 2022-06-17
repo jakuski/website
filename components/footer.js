@@ -10,7 +10,7 @@ const SocialLink = props => {
 
 export default function Footer({ children }) {
 	return (
-		<footer className="font-sans text-sm flex flex-col items-center mt-4 gap-3 pb-3">
+		<footer className="font-sans text-sm flex flex-col items-center mt-8 gap-3 pb-6">
 			
 			<div className="flex gap-2">
 				<SocialLink href="/go/instagram">Instagram</SocialLink>
