@@ -8,7 +8,7 @@ module.exports = {
 	theme: {
     
 		colors: {
-			"citrine": "#d48724",
+			"brand": "#d48724",
 			"black": "#0D0D0D"
 		},
 		fontFamily:{
