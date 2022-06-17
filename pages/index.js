@@ -27,7 +27,6 @@ export default function Home() {
 					</h1>
 					<div className="flex justify-between">
 						<Link href="/go/portfolio">works</Link>
-						<Link href="/go/cv">cv</Link>
 						<Link href="/about">about</Link>
 						<Link href="/contact">contact</Link>
 					</div>
