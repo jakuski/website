@@ -20,6 +20,7 @@
 		"portfolio": "/_assets/JakubStaniszewskiPortfolio.pdf"
 	},
 	"tempDisable": {
-		"cv": "Removing CV from website."
+		"cv": "Removing CV from website.",
+		"portfolio": "Removing portfolio from website."
 	}
 }
