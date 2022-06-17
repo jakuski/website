@@ -6,5 +6,8 @@ export default function About () {
 	I aim of starting my own studio later down the line, delivering beautifully crafted bespoke websites and applications to clients who want to be ahead of the game. After all, we take our first bite with our eyes.
 		<br/><br/>
 	Thanks for stopping by,
-	Jakub.</Post>;
+	Jakub.
+		<br/><br/>
+		<i>Portfolio and CV are available on request.</i>
+	</Post>;
 }
