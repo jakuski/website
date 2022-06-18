@@ -1,0 +1,15 @@
+{
+	"project-homepage-order": {
+		"order": [
+			"the-spectrum-clock"
+		]
+	},
+	"project-defs": {
+		"the-spectrum-clock": {
+			"title": "The Spectrum Clock",
+			"category": "ui/ux",
+			"date": [1,2022],
+			"software": ["figma","adobe.cc.dimension", "adobe.cc.after-effects", "maxon.cinema4d", "maxon.redshift"]
+		}
+	}
+}
