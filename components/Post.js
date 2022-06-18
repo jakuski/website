@@ -14,7 +14,6 @@ export default function Post(props) {
 					</h1>}
 					{props.children}
 				</div>
-			
 			</div>
 		</>
 	);
