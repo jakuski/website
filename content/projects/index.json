@@ -1,12 +1,13 @@
 {
-	"project-homepage-order": {
+	"projectHomepageOrder": {
 		"order": [
 			"the-spectrum-clock"
 		]
 	},
-	"project-defs": {
+	"projectDefs": {
 		"the-spectrum-clock": {
 			"title": "The Spectrum Clock",
+			"subtitle": "Communicating time through colour.",
 			"category": "ui/ux",
 			"date": [1,2022],
 			"software": ["figma","adobe.cc.dimension", "adobe.cc.after-effects", "maxon.cinema4d", "maxon.redshift"]
