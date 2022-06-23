@@ -1,3 +1,10 @@
+/*
+
+_document is rendered server side
+https://nextjs.org/docs/advanced-features/custom-document
+
+*/
+
 import Head from "next/head";
 import DefaultLayout from "../components/layout";
 import "../styles/globals.css";
