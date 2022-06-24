@@ -1,7 +1,7 @@
 {
   "private": true,
   "repository": {
-    "url": "https://github.com/jakuski/website-neue"
+    "url": "https://github.com/jakuski/website"
   },
   "scripts": {
     "dev": "next dev",

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { navbar, Home } from "@/routes";
 
 const NavbarLink = props => {
 	return <Link href={props.href}>
@@ -10,17 +11,21 @@ const NavbarLink = props => {
 export default function Navbar() {
 	return (
 		<div className="p-4 md:p-6 fixed w-full flex justify-between items-center">
-			<Link href="/">
+			<Link href={Home.href}>
 				<a>
 					<Image src="/logo.svg" alt="Logo" height={80} width={80} />
 				</a>
 			</Link>
 			
-			
 			<div className="font-serif flex gap-4">
-				<NavbarLink href="/works">works</NavbarLink>
-				<NavbarLink href="/about">about</NavbarLink>
-				<NavbarLink href="/contact">contact</NavbarLink>
+				{navbar.map(route => (
+					<NavbarLink
+						href={route.href}
+						key={route.href}
+					>
+						{route.displayName}
+					</NavbarLink>
+				))}
 			</div>
 		</div>
 	);
