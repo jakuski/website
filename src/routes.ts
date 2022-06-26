@@ -29,4 +29,4 @@ export const LinkedIn = Redirect.extend("/linkedin", "LinkedIn");
 export const Vimeo = Redirect.extend("/vimeo", "Vimeo");
 export const GithubAccount = Redirect.extend("/github", "GitHub");
 
-export const navbar = [WorksHome, Blog, About, Contact];
+export const navbar = [WorksHome, About, Contact];
