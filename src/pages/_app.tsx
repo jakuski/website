@@ -1,10 +1,3 @@
-/*
-
-_document is rendered server side
-https://nextjs.org/docs/advanced-features/custom-document
-
-*/
-
 /* Global CSS */
 import "@/styles/globals.css";
 import "@/styles/variables.css";
