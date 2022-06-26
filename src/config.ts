@@ -7,3 +7,5 @@ export const socialHandles = {
 	linkedin: "jakub-staniszewski",
 	vimeo: "jakubstudio"
 };
+
+export const githubRepo = "jakuski/website";

@@ -11,6 +11,9 @@ export class Route {
 		route.parent = this;
 		return route;
 	}
+	hrefWithSource (source: string): string {
+		return this.href + "?" + new URLSearchParams([["s", source]]).toString();
+	}
 }
 
 export const Home = new Route("/", "Home");
@@ -24,5 +27,6 @@ export const Instagram = Redirect.extend("/instagram", "Instagram");
 export const Twitter = Redirect.extend("/twitter", "Twitter");
 export const LinkedIn = Redirect.extend("/linkedin", "LinkedIn");
 export const Vimeo = Redirect.extend("/vimeo", "Vimeo");
+export const GithubAccount = Redirect.extend("/github", "GitHub");
 
 export const navbar = [WorksHome, Blog, About, Contact];
