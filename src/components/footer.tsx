@@ -10,11 +10,11 @@ import {
 	Route
 } from "@/routes";
 
-import InstagramIcon from "@/modules/icons/Instagram";
-import LinkedInIcon from "@/modules/icons/LinkedIn";
-import TwitterIcon from "@/modules/icons/Twitter";
-import GitHubIcon from "@/modules/icons/GitHub";
-import VimeoIcon from "@/modules/icons/Vimeo";
+import InstagramIcon from "@/components/icons/Instagram";
+import LinkedInIcon from "@/components/icons/LinkedIn";
+import TwitterIcon from "@/components/icons/Twitter";
+import GitHubIcon from "@/components/icons/GitHub";
+import VimeoIcon from "@/components/icons/Vimeo";
 
 interface SocialIconProps extends React.PropsWithChildren {
 	href: string;
