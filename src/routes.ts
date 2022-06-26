@@ -1,3 +1,5 @@
+import { domain } from "./config";
+
 export class Route {
 	href: string;
 	displayName: string;
@@ -13,6 +15,12 @@ export class Route {
 	}
 	hrefWithSource (source: string): string {
 		return this.href + "?" + new URLSearchParams([["s", source]]).toString();
+	}
+	get hrefWithDomain () {
+		return domain + this.href;
+	}
+	get hrefWithHttpsDomain () {
+		return "https://" + this.hrefWithDomain;
 	}
 }
 

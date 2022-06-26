@@ -1,4 +1,7 @@
 export const websiteName = "Jakub Staniszewski";
+export const domain = "jakub.studio";
+export const githubRepo = "jakuski/website";
+export const defaultThemeColour = "#d48724";
 
 // Used in footer and <head/> elements.
 export const socialHandles = {
@@ -7,5 +10,3 @@ export const socialHandles = {
 	linkedin: "jakub-staniszewski",
 	vimeo: "jakubstudio"
 };
-
-export const githubRepo = "jakuski/website";

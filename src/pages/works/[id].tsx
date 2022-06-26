@@ -1,13 +1,20 @@
 import Post from "../../components/Post";
 import { GetStaticPaths, GetStaticProps } from "next";
 import ProjectData from "../../content/projects/index.json";
+import Head from "next/head";
+import { WorksHome } from "@/routes";
 
 interface ProjectPageProps {
 
 }
 
 export default function ProjectPage() {
-	return <Post title="Works">Hello</Post>;
+	return <Post title="Works">
+		<Head>
+			<link rel="index" href={WorksHome.hrefWithHttpsDomain}/>
+		</Head>
+		Hello
+	</Post>;
 }
 
 export const getStaticPaths: GetStaticPaths = () => {

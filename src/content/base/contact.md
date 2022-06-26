@@ -1,3 +1,9 @@
+---
+title: Ay-up.
+titleClean: Contact
+shortDesc: Hire me, send me a funny meme or just discuss business.
+---
+
 **Next available:** September 2022
 
 If you would like to get in touch with me, please send me an email at ayup(at)jakub.studio.
