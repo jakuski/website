@@ -5,11 +5,13 @@ https://nextjs.org/docs/advanced-features/custom-document
 
 */
 
-import Head from "next/head";
-import DefaultLayout from "../components/layout";
-import "../styles/globals.css";
-import Script from "next/script";
+/* Global CSS */
+import "@/styles/globals.css";
+import "@/styles/variables.css";
 
+/* App imports */
+import DefaultLayout from "../components/layout";
+import Script from "next/script";
 
 function MyApp({ Component, pageProps }) {
 	let Layout = Component.layout || DefaultLayout;

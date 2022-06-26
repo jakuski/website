@@ -17,6 +17,7 @@ export const Home = new Route("/", "Home");
 export const About = Home.extend("about", "About");
 export const WorksHome = Home.extend("works", "Works");
 export const Contact = Home.extend("contact", "Contact");
+export const Blog = Home.extend("blog", "Blog");
 
 export const Redirect = Home.extend("go", "Redirect Service");
 export const Instagram = Redirect.extend("/instagram", "Instagram");
@@ -24,4 +25,4 @@ export const Twitter = Redirect.extend("/twitter", "Twitter");
 export const LinkedIn = Redirect.extend("/linkedin", "LinkedIn");
 export const Vimeo = Redirect.extend("/vimeo", "Vimeo");
 
-export const navbar = [WorksHome, About, Contact];
+export const navbar = [WorksHome, Blog, About, Contact];

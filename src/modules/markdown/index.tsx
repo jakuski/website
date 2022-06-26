@@ -14,7 +14,3 @@ export const renderMarkdoc = (renderableNodes: RenderableTreeNode): React.ReactN
 export const render = (src: string): React.ReactNode => {
 	return renderMarkdoc(transformMarkdoc(parseMarkdoc(src)));
 };
-
-export const Markdown: React.FC = () => {
-	return <div/>;
-};

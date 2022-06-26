@@ -1,5 +1,7 @@
 const defaultTheme = require("tailwindcss/defaultTheme");
 
+const v = varName => `var(--${varName})`;
+
 module.exports = {
 	content: [
 		"./src/**/*.{js,ts,jsx,tsx}",
@@ -7,8 +9,8 @@ module.exports = {
 	theme: {
     
 		colors: {
-			"brand": "#d48724",
-			"black": "#0D0D0D"
+			"brand": v("color-brand"),
+			"black": v("color-foreground")
 		},
 		fontFamily:{
 			serif: ["quincy-cf", ...defaultTheme.fontFamily.serif],

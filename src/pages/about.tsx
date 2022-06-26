@@ -1,26 +1,15 @@
-import { GetStaticProps, GetStaticPropsContext } from "next";
+import MarkdocRenderer from "@/modules/markdown/client";
+import { getStaticMarkdoc,MarkdocLoaderProps } from "@/modules/markdown/server";
 import Post from "../components/Post";
-import { render } from "@/modules/markdown";
-import { readContentFile } from "@/modules/content";
 
-interface ContentProps {
-	content: string;
-}
-
-const About: React.FC<ContentProps> = props => {
+const About: React.FC<MarkdocLoaderProps> = props => {
 	return (
-		<Post title="About">
-			{render(props.content)}
+		<Post title="About me.">
+			<MarkdocRenderer markdocContent={props.markdocContent} />
 		</Post>
 	);
 };
 
-export const getStaticProps: GetStaticProps<ContentProps> = async context => {
-	return {
-		props: {
-			content: await readContentFile("base", "about.md")
-		}
-	};
-};
+export const getStaticProps = getStaticMarkdoc(["base", "about.md"]);
 
 export default About;

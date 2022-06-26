@@ -21,7 +21,7 @@ export const readContentFile = (path: string[]): Promise<string> => {
 	});
 };
 
-const convertToPrimitive = (val: any) => {
+const convertToPrimitive = (val: unknown): unknown => {
 	if (["number","string","boolean"].includes(typeof val)) {
 		return val;
 	}
@@ -37,7 +37,7 @@ const convertToPrimitive = (val: any) => {
 	return final;
 };
 
-const serialiseRenderableTreeNode = (node: RenderableTreeNode) => {
+const serialiseRenderableTreeNode = (node: RenderableTreeNode): unknown => {
 	if (node == null) return "";
 	if (typeof node === "string") return node;
 
@@ -46,8 +46,9 @@ const serialiseRenderableTreeNode = (node: RenderableTreeNode) => {
 
 export const getStaticMarkdoc: (path: string[]) => GetStaticProps = (path: string[]) => {
 	return async () => {
-		const content = transformMarkdoc(parseMarkdoc(await readContentFile(path)));
+		const content = transformMarkdoc(parseMarkdoc(await readContentFile(path), path.join("/")));
 		const s = serialiseRenderableTreeNode(content);
+
 		return {
 			props: {
 				markdocContent: s
