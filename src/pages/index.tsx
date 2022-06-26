@@ -2,7 +2,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import NextLink from "next/link";
-import Footer from "../components/footer";
+import Footer from "../components/Footer";
 import { websiteName } from "../config";
 
 const Link = props => {

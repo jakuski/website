@@ -10,7 +10,7 @@ import "@/styles/globals.css";
 import "@/styles/variables.css";
 
 /* App imports */
-import DefaultLayout from "../components/layout";
+import DefaultLayout from "../components/Layout";
 import Script from "next/script";
 
 function MyApp({ Component, pageProps }) {
