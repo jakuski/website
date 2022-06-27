@@ -11,7 +11,7 @@
 		};
 
 	// Respects DoNotTrack requests.
-	if (dnt == "1" && dnt == "yes") return;
+	if (dnt == "1" || dnt == "yes") return;
 
 	const sourceParam = new URL(location.href).searchParams.get("s");
 	if (!sourceParam) return;
