@@ -1,4 +1,5 @@
 
+import Metadata from "@/components/Meta";
 import Head from "next/head";
 import Image from "next/image";
 import NextLink from "next/link";
@@ -14,9 +15,7 @@ const Link = props => {
 export default function Home() {
 	return (
 		<>
-			<Head>
-				<title>{websiteName}</title>
-			</Head>
+			<Metadata title={websiteName} omitTitleSuffix description="Jakub is a multidisciplinary graphic designer and developer specialising in UI/UX design. " />
 			<main className="flex items-center justify-center h-full gap-12 flex-col sm:flex-row mx-8 font-serif">
 				<div>
 					<Image src="/logo.svg" alt="Logo" height={128} width={128} />

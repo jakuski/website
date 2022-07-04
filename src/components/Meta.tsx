@@ -4,7 +4,7 @@ import { websiteName, defaultThemeColour } from "@/config";
 interface MetaProps {
 	/* Basic Meta Stuff */
 	title: string;
-	description?: string;
+	description: string;
 
 	/* Misc stuff */
 	themeColour?: string;
@@ -15,7 +15,7 @@ interface MetaProps {
 
 const Metadata: React.FC<MetaProps> = props => {
 	return <Head>
-		<title key={MetaKeys.title}>{createTitleString(props.title)}</title>
+		<title key={MetaKeys.title}>{createTitleString(props.title, props.omitTitleSuffix)}</title>
 		<meta name="og:title" key={MetaKeys.openGraphTitle} content={props.title} />
 		<meta name="twitter:title" key={MetaKeys.twitterTitle} content={props.title} />
 	
