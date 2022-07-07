@@ -1,7 +1,7 @@
-import { githubRepo, isDev, socialHandles, websiteName } from "@/config";
+import { githubRepo, isPreview, socialHandles, websiteName } from "@/config";
 import Document, { Html, Head, Main, NextScript } from "next/document";
 
-const robotsMeta = isDev ? "noindex,nofollow" : "index,follow";
+const robotsMeta = isPreview ? "noindex,nofollow" : "index,follow";
 
 class SiteDocument extends Document {
 	render(): JSX.Element {
