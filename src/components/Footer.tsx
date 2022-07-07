@@ -15,6 +15,7 @@ import LinkedInIcon from "@/components/icons/LinkedIn";
 import TwitterIcon from "@/components/icons/Twitter";
 import GitHubIcon from "@/components/icons/GitHub";
 import VimeoIcon from "@/components/icons/Vimeo";
+import { isDev } from "@/config";
 
 interface SocialIconProps extends React.PropsWithChildren {
 	href: string;
@@ -60,6 +61,9 @@ const Footer: React.FC = () => {
 				<span className="italic mr-2">Slava Ukraini.</span>
 				Copyright © {new Date().getFullYear()} Jakub Staniszewski
 			</div>
+			{isDev && <div className="opacity-70 font-bold italic text-center">
+				This is a development preview of my website which is not intended for public viewing. <br/>If you believe you are here by mistake, click <a className="underline min-h-44 min-w-44" href="https://jakub.studio">here</a> to go to my public website.
+			</div>}
 		</footer>
 	);
 };

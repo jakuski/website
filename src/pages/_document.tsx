@@ -1,5 +1,7 @@
-import { githubRepo, socialHandles, websiteName } from "@/config";
+import { githubRepo, isDev, socialHandles, websiteName } from "@/config";
 import Document, { Html, Head, Main, NextScript } from "next/document";
+
+const robotsMeta = isDev ? "noindex,nofollow" : "index,follow";
 
 class SiteDocument extends Document {
 	render(): JSX.Element {
@@ -17,14 +19,18 @@ class SiteDocument extends Document {
 					/>
 					<meta name="format-detection" content="telephone=no" />
 					<link rel="author" href="/about" />
-					<meta name="robots" content="index,follow" />
-					<meta name="googlebot" content="index,follow" />
+					<meta name="robots" content={robotsMeta} />
 					<meta name="rating" content="General" />
 					<meta name="renderer" content="webkit" />
 					<meta name="twitter:site" content={"@" + socialHandles.twitter} />
 					<meta name="twitter:creator" content={"@" + socialHandles.twitter} />
 				</Head>
 				<body>
+					<noscript>
+						For full functionality of this site it is necessary to enable JavaScript.
+						Here are the
+						<a href="https://www.enable-javascript.com/">instructions how to enable JavaScript in your web browser</a>.
+					</noscript>
 					<Main />
 					<NextScript />
 				</body>

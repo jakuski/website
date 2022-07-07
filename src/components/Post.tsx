@@ -21,4 +21,13 @@ const Post: React.FC<PostProps> = props => (
 	</>
 );
 
+/* const BasicMarkdownPost: React.FC<MarkdocData<BasicFrontmatter>> = props => {
+	return (
+		<Post title={props.frontmatter.title}>
+			<Metadata title={props.frontmatter.titleClean || props.frontmatter.title} description={props.frontmatter.shortDesc as string} />
+			<MarkdocRenderer content={props.content} />
+		</Post>
+	);
+}; */
+
 export default Post;

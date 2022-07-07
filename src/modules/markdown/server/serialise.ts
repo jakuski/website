@@ -1,11 +1,19 @@
 import { RenderableTreeNode } from "@markdoc/markdoc";
 
-const convertToPrimitive = (val: unknown): unknown => {
+type ObjectWithToJSON = object & {
+	toJSON(): string;
+}
+
+export const convertToPrimitive = (val: unknown): unknown => {
 	if (["number","string","boolean"].includes(typeof val)) {
 		return val;
 	}
 
-	if (typeof val !== "object") return null;
+	if ((typeof val !== "object") || (val == null)) return null;
+
+	if ("toJSON" in val && (typeof (val as ObjectWithToJSON).toJSON === "function" )) {
+		return (val as ObjectWithToJSON).toJSON();
+	}
 
 	if (Array.isArray(val)) return val.map(convertToPrimitive);
 
@@ -20,7 +28,9 @@ const serialiseRenderableTreeNode = (node: RenderableTreeNode): unknown => {
 	if (node == null) return "";
 	if (typeof node === "string") return node;
 
-	return convertToPrimitive(node);
+	const converted = convertToPrimitive(node);
+
+	return converted;
 };
 
 export default serialiseRenderableTreeNode;

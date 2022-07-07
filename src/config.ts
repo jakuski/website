@@ -10,3 +10,5 @@ export const socialHandles = {
 	linkedin: "jakub-staniszewski",
 	vimeo: "jakubstudio"
 };
+
+export const isDev = process.env.NODE_ENV === "development";

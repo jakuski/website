@@ -6,10 +6,10 @@ is only responsible for rendering ready-to-go data.
 */
 
 import { GetStaticProps } from "next";
-import { parse, RenderableTreeNode, transform } from "@markdoc/markdoc";
+import { Config, parse, RenderableTreeNode, transform } from "@markdoc/markdoc";
 import readContent, { getContentPath } from "./fs";
-import serialise from "./serialise";
-import { load, YAMLException } from "js-yaml";
+import serialise, { convertToPrimitive } from "./serialise";
+import { load as parseYaml, YAMLException } from "js-yaml";
 import { MarkdocData } from "../types";
 import { transformConfig } from "@/components/markdown/sets/basic";
 
@@ -21,10 +21,10 @@ const onYamlWarning = (e: YAMLException): void => {
 	console.warn(`⚠ YAML Warning\n${e}`);
 };
 
-const processFrontmatter = (frontmatterAttribute: string, filename?: string): Record<string, unknown> => {
-	if (!frontmatterAttribute) return {};
+const processFrontmatter = (rawFrontmatter: string, filename?: string): Record<string, unknown> => {
+	if (!rawFrontmatter) return {};
 
-	const parsed = load(frontmatterAttribute, {
+	const parsed = parseYaml(rawFrontmatter, {
 		onWarning: onYamlWarning,
 		filename
 	});
@@ -41,14 +41,19 @@ export const getStaticMarkdoc: (path: string[]) => GetStaticProps<MarkdocData> =
 		const ast = parse(document, filePath);
 		const frontmatter = processFrontmatter(ast.attributes.frontmatter, [...path, "frontmatter"].join("/"));
 
-		const renderable = transform(ast, transformConfig);
+		const renderable = transform(ast, Object.assign<Config, Config>({
+			variables: {
+				frontmatter: frontmatter.vars || {}
+			}
+		}, transformConfig));
 
 		const serialised = serialise(renderable);
 
 		return {
 			props: {
 				content: serialised,
-				frontmatter
+				/* frontmatter needs to be serialised as any dates in YAML will fail Next.js validation for some reason. */
+				frontmatter: convertToPrimitive(frontmatter) as MarkdocData["frontmatter"]
 			}
 		};
 	};
