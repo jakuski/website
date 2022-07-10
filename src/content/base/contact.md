@@ -11,7 +11,7 @@ meta:
     edited: 2022-07-05
 
 vars:
-    availability: ~
+    availability: September 2022
 ---
 
 {% if $frontmatter.availability %}
@@ -27,6 +27,8 @@ vars:
 If you would like to get in touch with me, please send me an email at [ayup@jakub.studio](mailto:ayup@jakub.studio).
 
 I aim to reply within two working days however if I don't get back to you within then, please be patient as your email may have landed in my spam/junk folder which I check less frequently.
+
+Please note that any requests for unpaid work will be ignored, I do not and will not work for free.
 
 Alternatively, you can reach me on any of my socials linked below at the bottom of the page.
 

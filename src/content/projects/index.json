@@ -7,6 +7,7 @@
 	"projectDefs": {
 		"the-spectrum-clock": {
 			"title": "The Spectrum Clock",
+			"shortName": "clock",
 			"subtitle": "Communicating time through colour.",
 			"category": "ui/ux",
 			"date": [1,2022],

@@ -24,11 +24,12 @@ class SiteDocument extends Document {
 					<meta name="renderer" content="webkit" />
 					<meta name="twitter:site" content={"@" + socialHandles.twitter} />
 					<meta name="twitter:creator" content={"@" + socialHandles.twitter} />
+					<link rel="index" href="/" />
 				</Head>
 				<body>
 					<noscript>
-						For full functionality of this site it is necessary to enable JavaScript.
-						Here are the <a href="https://www.enable-javascript.com/">instructions how to enable JavaScript in your web browser</a>.
+						For full functionality of this site, it is necessary to enable JavaScript.
+						Here are the <a href="https://www.enable-javascript.com/">instructions on how to enable JavaScript in your web browser</a>.
 					</noscript>
 					<Main />
 					<NextScript />

@@ -10,9 +10,6 @@ interface ProjectPageProps {
 
 export default function ProjectPage() {
 	return <Post title="Works">
-		<Head>
-			<link rel="index" href={WorksHome.hrefWithHttpsDomain}/>
-		</Head>
 		Hello
 	</Post>;
 }
