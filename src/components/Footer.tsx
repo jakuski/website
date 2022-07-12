@@ -61,6 +61,17 @@ const Footer: React.FC = () => {
 				<span className="italic mr-2">Slava Ukraini.</span>
 				Copyright © {new Date().getFullYear()} Jakub Staniszewski
 			</div>
+			<div className="opacity-70 flex gap-2">
+				<div className="min-h-44 min-w-44 flex items-center">
+					Colophon
+				</div>
+				<div className="min-h-44 min-w-44 flex items-center">
+					Privacy
+				</div>
+				<div className="min-h-44 min-w-44 flex items-center">
+					Legal
+				</div>
+			</div>
 			{isPreview && <div className="opacity-70 font-bold italic text-center">
 				This is a development preview of my website which is not intended for public viewing. <br/>If you believe you are here by mistake, click <a className="underline min-h-44 min-w-44" href="https://jakub.studio">here</a> to go to my public website.
 			</div>}
