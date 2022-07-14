@@ -7,7 +7,7 @@ is only responsible for rendering ready-to-go data.
 
 import { GetStaticProps } from "next";
 import { Config, parse, RenderableTreeNode, transform } from "@markdoc/markdoc";
-import readContent, { getContentPath } from "./fs";
+import readContent, { getContentPath, pathSeperator } from "./fs";
 import serialise, { convertToPrimitive } from "./serialise";
 import { load as parseYaml, YAMLException } from "js-yaml";
 import { MarkdocData } from "../types";
@@ -21,25 +21,50 @@ const onYamlWarning = (e: YAMLException): void => {
 	console.warn(`⚠ YAML Warning\n${e}`);
 };
 
-const processFrontmatter = (rawFrontmatter: string, filename?: string): Record<string, unknown> => {
-	if (!rawFrontmatter) return {};
+interface Frontmatter {
+	[x: string]: unknown;
+	
+};
+
+const processFrontmatter = (rawFrontmatter: string, filename?: string): Frontmatter => {
+	if (!rawFrontmatter) return;
 
 	const parsed = parseYaml(rawFrontmatter, {
 		onWarning: onYamlWarning,
 		filename
 	});
 
-	if ((parsed !== null) && (typeof parsed === "object")) return parsed as Record<string, unknown>;
+	if ((parsed !== null) && (typeof parsed === "object")) return parsed as Frontmatter;
 	else return {};
+};
+
+const getVariables = (frontmatter: Frontmatter) => {
+
+
+
+	return {
+		utils: {
+			currentYear: new Date().getFullYear()
+		}
+	};
 };
 
 export const getStaticMarkdoc: (path: string[]) => GetStaticProps<MarkdocData> = (path: string[]) => {
 	return async () => {
+		// File system operations.
 		const filePath = getContentPath(path);
 		const document = await readContent(filePath);
 
+		// Parsing
 		const ast = parse(document, filePath);
-		const frontmatter = processFrontmatter(ast.attributes.frontmatter, [...path, "frontmatter"].join("/"));
+
+		// Transformations
+		const frontmatter = processFrontmatter(
+			ast.attributes.frontmatter,
+			[...path, "frontmatter"].join(pathSeperator)
+			// the arg above appends "frontmatter" to the filename (such as "/Site/Content/hello-world.md/frontmatter")
+			// to improve readability of any YAML parser errors that could be thrown.
+		);
 
 		const renderable = transform(ast, Object.assign<Config, Config>({
 			variables: {
@@ -47,8 +72,8 @@ export const getStaticMarkdoc: (path: string[]) => GetStaticProps<MarkdocData> =
 			}
 		}, transformConfig));
 
+		// Prepare for Next.js serialisation.
 		const serialised = serialise(renderable);
-
 		return {
 			props: {
 				content: serialised,

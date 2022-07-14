@@ -18,8 +18,8 @@ export interface BasicFrontmatter {
 
 export interface Metadata {
 	title: string;
-	displayTitle?: string;
+	displayTitle: string;
 	description: string;
-	published?: Date;
-	edited?: Date;
+	published: Date;
+	edited: Date;
 }

@@ -1,3 +1,17 @@
+---
+meta:
+    title: Colophon
+    displayTitle: Colophon.
+    description: A brief insight into the history, design and development of my website.
+    published: 2022-07-04
+    edited: 2022-07-05
+
+docProps:
+    showLastEdited: true
+
+vars:
+    availability: September 2022
+---
 This website is designed and developed by Jakub Staniszewski in London, England.
 
 ### History
@@ -10,7 +24,7 @@ It is designed in [Figma](https://www.figma.com/). The website uses two typeface
 
 ### Development
 
-The website was developed in [Visual Studio Code](https://code.visualstudio.com/), with [Next.js](https://nextjs.org/), [React](https://reactjs.org/) and [TypeScript](https://www.typescriptlang.org/). The source code is available on GitHub.
+The website was developed in [Visual Studio Code](https://code.visualstudio.com/), with [Next.js](https://nextjs.org/), [React](https://reactjs.org/) and [TypeScript](https://www.typescriptlang.org/). The written content is authored in Markdoc with frontmatter (metadata) being stored in YAML. The source code is available on GitHub.
 
 ### Hosting
 
