@@ -20,7 +20,7 @@ vars:
 
 {% else /%}
 
-**Not currently available for hire or comissions.**
+**Not currently available for hire or commissions.**
 
 {% /if %}
 

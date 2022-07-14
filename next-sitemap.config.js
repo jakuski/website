@@ -1,8 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
-const config = {
+module.exports = {
 	siteUrl: "https://www.jakub.studio",
 	generateRobotsTxt: true,
 	generateIndexSitemap: false
 };
-
-module.exports = config;
