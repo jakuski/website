@@ -1,4 +1,4 @@
-# *
+# All robots
 User-agent: *
 Allow: /
 

@@ -4,9 +4,9 @@ import Article from "./Article";
 import Anchor from "./Anchor";
 
 enum BasicSetKeys  {
-	ARTICLE = "B-A",
+	ARTICLE = "B-DOC",
 	PARAGRAPH = "B-P",
-	ANCHOR = "B-AN"
+	ANCHOR = "B-A"
 }
 
 export const transformConfig: Config = {

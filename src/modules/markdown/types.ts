@@ -1,5 +1,3 @@
-import { RenderableTreeNode } from "@markdoc/markdoc";
-
 export enum MarkdownComponentSets {
 	BASIC = "BASIC"
 }

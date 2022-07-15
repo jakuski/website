@@ -1,10 +1,19 @@
 import Head from "next/head";
 import { websiteName, defaultThemeColour } from "@/config";
+import { About } from "@/routes";
+import If from "./If";
 
 interface MetaProps {
 	/* Basic Meta Stuff */
 	title: string;
 	description: string;
+
+	/* Extd. Meta */
+	author?: string;
+
+	/* Dates */
+	published?: Date;
+	modified?: Date;
 
 	/* Misc stuff */
 	themeColour?: string;
@@ -15,33 +24,53 @@ interface MetaProps {
 
 const Metadata: React.FC<MetaProps> = props => {
 	return <Head>
-		<title key={MetaKeys.title}>{createTitleString(props.title, props.omitTitleSuffix)}</title>
-		<meta name="og:title" key={MetaKeys.openGraphTitle} content={props.title} />
-		<meta name="twitter:title" key={MetaKeys.twitterTitle} content={props.title} />
+		<title key={MetaKeys.htmlTitle}>{createHtmlTitleString(props.title, props.omitTitleSuffix)}</title>
+
+		<meta name={MetaKeys.openGraphTitle} key={MetaKeys.openGraphTitle} content={props.title} />
+		<meta name={MetaKeys.twitterTitle} key={MetaKeys.twitterTitle} content={props.title} />
+
+		<meta name={MetaKeys.description} key={MetaKeys.description} content={props.description} />
+		<meta name={MetaKeys.openGraphDescription} key={MetaKeys.openGraphDescription} content={props.description} />
+		<meta name={MetaKeys.twitterDescription} key={MetaKeys.twitterDescription} content={props.description} />
+
+		{props.author && <>
+			<meta name={MetaKeys.author} key={MetaKeys.author} content={props.author} />
+			<meta property={MetaKeys.articleAuthor} key={MetaKeys.articleAuthor} content={About.hrefWithHttpsDomain} />
+		</>}
+
+		{props.published && <>
+			<meta property={MetaKeys.articlePublishedTime} key={MetaKeys.articlePublishedTime} content={props.published.toJSON()} />
+		</>}
+
+		{props.modified && <>
+			<meta property={MetaKeys.articleModifiedTime} key={MetaKeys.articleModifiedTime} content={props.modified.toJSON()} />
+		</>}
 	
-		<meta name="description" key={MetaKeys.description} content={props.description} />
-		<meta name="og:description" key={MetaKeys.openGraphDescription} content={props.description} />
-		<meta name="twitter:description" key={MetaKeys.twitterDescription} content={props.description} />
-	
-		<meta name="theme-color" key={MetaKeys.themeColour} content={props.themeColour || defaultThemeColour} />
+		<meta name={MetaKeys.themeColour} key={MetaKeys.themeColour} content={props.themeColour || defaultThemeColour} />
 	</Head>;
 };
 
-export const createTitleString = (pageTitle: string, omitSuffix?: boolean): string => {
+export const createHtmlTitleString = (pageTitle: string, omitSuffix?: boolean): string => {
 	return pageTitle + (omitSuffix ? "" : ` - ${websiteName}`);
 };
 
 // @TODO Change to enum?
 export const MetaKeys = {
-	title: "base-title",
+	htmlTitle: "title",
 	description: "description",
-	themeColour: "themeColour",
+	themeColour: "theme-colour",
 
 	openGraphTitle: "og:title",
 	openGraphDescription: "og:description",
 
 	twitterTitle: "twitter:title",
 	twitterDescription: "twitter:description",
+
+	author: "author",
+	articleAuthor: "article:author",
+
+	articlePublishedTime: "article:published_time",
+	articleModifiedTime: "article:modified_time"
 };
 
 export default Metadata;

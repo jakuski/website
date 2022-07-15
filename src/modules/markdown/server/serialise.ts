@@ -26,7 +26,7 @@ export const convertToPrimitive = (val: unknown): unknown => {
 
 	// The very last scenario, a plain object.
 	// This clones the object and converts it's values to primitives recursively.
-	const final = {};
+	const final: Record<string, unknown> = {};
 	for (const [key, value] of Object.entries(val)) {
 		final[key] = convertToPrimitive(value);
 	}

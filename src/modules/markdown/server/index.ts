@@ -21,21 +21,38 @@ const onYamlWarning = (e: YAMLException): void => {
 	console.warn(`⚠ YAML Warning\n${e}`);
 };
 
+const onDefaultFrontmatterWarning = (): void => {
+	console.warn("⚠ Markdoc Warning\nDefault frontmatter has been returned.");
+};
+
 interface Frontmatter {
 	[x: string]: unknown;
 	
 };
 
-const processFrontmatter = (rawFrontmatter: string, filename?: string): Frontmatter => {
-	if (!rawFrontmatter) return;
+const defaultFrontmatter: Frontmatter = {
 
+};
+
+const processFrontmatter = (rawFrontmatter: string, filename?: string): Frontmatter => {
+	if (!rawFrontmatter) {
+		onDefaultFrontmatterWarning();
+		return defaultFrontmatter;
+	}
+	
 	const parsed = parseYaml(rawFrontmatter, {
 		onWarning: onYamlWarning,
 		filename
 	});
 
-	if ((parsed !== null) && (typeof parsed === "object")) return parsed as Frontmatter;
-	else return {};
+	if ((parsed !== null) && (typeof parsed === "object")) {
+		return Object.assign({}, defaultFrontmatter, parsed);
+	}
+
+	else {
+		onDefaultFrontmatterWarning();
+		return defaultFrontmatter;
+	}
 };
 
 const getVariables = (frontmatter: Frontmatter) => {
