@@ -47,9 +47,7 @@ const processFrontmatter = (rawFrontmatter: string, filename?: string): Frontmat
 
 	if ((parsed !== null) && (typeof parsed === "object")) {
 		return Object.assign({}, defaultFrontmatter, parsed);
-	}
-
-	else {
+	} else {
 		onDefaultFrontmatterWarning();
 		return defaultFrontmatter;
 	}
