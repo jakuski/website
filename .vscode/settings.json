@@ -1,7 +1,22 @@
 {
+	// Built in VSC stuff
 	"files.eol": "\n",
 	"typescript.tsdk": "./node_modules/typescript/lib",
+	
+	// Markdoc extension (See extensions.json -> mohitsingh.markdoc)
 	"[markdoc]": {
         "editor.autoClosingBrackets": "always"
-    }
+	},
+
+	// Code Spell checker (streetsidesoftware.code-spell-checker) dictionary 
+	"cSpell.words": [
+		"Frontmatter",
+		"Jakub",
+		"Markdoc",
+		"postbuild",
+		"renderable",
+		"Staniszewski",
+		"tailwindcss"
+	],
+	"cSpell.language": "en-GB"
 }

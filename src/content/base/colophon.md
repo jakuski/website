@@ -7,7 +7,7 @@ meta:
     edited: 2022-07-05
 
 docProps:
-    showLastEdited: true
+   timestamps: "*"
 
 vars:
     availability: September 2022

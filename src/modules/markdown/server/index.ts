@@ -9,7 +9,7 @@ import { GetStaticProps } from "next";
 import { Config, parse, RenderableTreeNode, transform } from "@markdoc/markdoc";
 import readContent, { getContentPath, pathSeperator } from "./fs";
 import serialise, { convertToPrimitive } from "./serialise";
-import { load as parseYaml, YAMLException } from "js-yaml";
+import { JSON_SCHEMA, load as parseYaml, YAMLException } from "js-yaml";
 import { MarkdocData } from "../types";
 import { transformConfig } from "@/components/markdown/sets/basic";
 
@@ -26,12 +26,28 @@ const onDefaultFrontmatterWarning = (): void => {
 };
 
 interface Frontmatter {
-	[x: string]: unknown;
-	
+	meta: {
+		title: string;
+		displayTitle?: string;
+		description: string;
+		published?: Date;
+		edited?: Date;
+	},
+	docProps: {
+
+	}
+	local: {
+		[x: string]: unknown
+	}
 };
 
 const defaultFrontmatter: Frontmatter = {
-
+	meta: {
+		title: "Unnamed document",
+		description: "Document description missing"
+	},
+	docProps: {},
+	local: {}
 };
 
 const processFrontmatter = (rawFrontmatter: string, filename?: string): Frontmatter => {
@@ -42,10 +58,14 @@ const processFrontmatter = (rawFrontmatter: string, filename?: string): Frontmat
 	
 	const parsed = parseYaml(rawFrontmatter, {
 		onWarning: onYamlWarning,
-		filename
-	});
+		filename,
+		schema: JSON_SCHEMA // This prevents non JSON compatible types being accepted.
+	}) as Frontmatter;
 
 	if ((parsed !== null) && (typeof parsed === "object")) {
+		if (!parsed.meta.displayTitle) {
+			parsed.meta.displayTitle = parsed.meta.title;
+		}
 		return Object.assign({}, defaultFrontmatter, parsed);
 	} else {
 		onDefaultFrontmatterWarning();
@@ -83,7 +103,7 @@ export const getStaticMarkdoc: (path: string[]) => GetStaticProps<MarkdocData> =
 
 		const renderable = transform(ast, Object.assign<Config, Config>({
 			variables: {
-				frontmatter: frontmatter.vars || {}
+				frontmatter: frontmatter
 			}
 		}, transformConfig));
 

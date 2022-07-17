@@ -8,7 +8,7 @@ interface MetaProps {
 	title: string;
 	description: string;
 
-	/* Extd. Meta */
+	/* Extra Meta */
 	author?: string;
 
 	/* Dates */

@@ -10,7 +10,7 @@ meta:
     published: 2022-07-04
     edited: 2022-07-05
 
-vars:
+local:
     availability: September 2022
 ---
 
