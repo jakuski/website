@@ -16,7 +16,11 @@
 		"postbuild",
 		"renderable",
 		"Staniszewski",
-		"tailwindcss"
+		"tailwindcss",
+		"vars",
+
+		// node.js path
+		"seperator"
 	],
 	"cSpell.language": "en-GB"
 }

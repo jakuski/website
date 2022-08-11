@@ -33,10 +33,10 @@ interface Frontmatter {
 		published?: Date;
 		edited?: Date;
 	},
-	docProps: {
+	pageProps: {
 
 	}
-	local: {
+	variables: {
 		[x: string]: unknown
 	}
 };
@@ -46,8 +46,8 @@ const defaultFrontmatter: Frontmatter = {
 		title: "Unnamed document",
 		description: "Document description missing"
 	},
-	docProps: {},
-	local: {}
+	pageProps: {},
+	variables: {}
 };
 
 const processFrontmatter = (rawFrontmatter: string, filename?: string): Frontmatter => {
@@ -64,6 +64,7 @@ const processFrontmatter = (rawFrontmatter: string, filename?: string): Frontmat
 
 	if ((parsed !== null) && (typeof parsed === "object")) {
 		if (!parsed.meta.displayTitle) {
+			// Use the base #title if #displayTitle is not provided.
 			parsed.meta.displayTitle = parsed.meta.title;
 		}
 		return Object.assign({}, defaultFrontmatter, parsed);
@@ -77,11 +78,11 @@ const getVariables = (frontmatter: Frontmatter) => {
 
 
 
-	return {
+	return Object.assign({}, {
 		utils: {
 			currentYear: new Date().getFullYear()
 		}
-	};
+	});
 };
 
 export const getStaticMarkdoc: (path: string[]) => GetStaticProps<MarkdocData> = (path: string[]) => {

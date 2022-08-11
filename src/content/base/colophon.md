@@ -6,10 +6,10 @@ meta:
     published: 2022-07-04
     edited: 2022-07-05
 
-docProps:
+pageProps:
    timestamps: "*"
 
-vars:
+variables:
     availability: September 2022
 ---
 This website is designed and developed by Jakub Staniszewski in London, England.

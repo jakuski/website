@@ -10,19 +10,9 @@ meta:
     published: 2022-07-04
     edited: 2022-07-05
 
-local:
+scope:
     availability: September 2022
 ---
-
-{% if $frontmatter.availability %}
-
-**Next available:** {% $frontmatter.availability %}
-
-{% else /%}
-
-**Not currently available for hire or commissions.**
-
-{% /if %}
 
 If you would like to get in touch with me, please send me an email at [ayup@jakub.studio](mailto:ayup@jakub.studio).
 

@@ -36,5 +36,6 @@ export const Twitter = Redirect.extend("/twitter", "Twitter");
 export const LinkedIn = Redirect.extend("/linkedin", "LinkedIn");
 export const Vimeo = Redirect.extend("/vimeo", "Vimeo");
 export const GithubAccount = Redirect.extend("/github", "GitHub");
+export const FigmaCommunityAccount = Redirect.extend("/figma-community", "Figma Community");
 
 export const navbar = [WorksHome, About, Contact];

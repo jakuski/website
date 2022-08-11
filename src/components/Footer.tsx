@@ -7,7 +7,8 @@ import {
 	Twitter as TwitterRoute,
 	GithubAccount as GitHubRoute,
 	Vimeo as VimeoRoute,
-	Route
+	Route,
+	FigmaCommunityAccount
 } from "@/routes";
 
 import InstagramIcon from "@/components/icons/Instagram";
@@ -24,7 +25,10 @@ interface SocialIconProps extends React.PropsWithChildren {
 
 const SocialIcon: React.FC<SocialIconProps> = props => {
 	return <Link href={props.href}>
-		<a className="hover:underline min-h-44 min-w-44 flex items-center justify-center opacity-50 hover:opacity-100 ease transition-opacity duration-150">
+		<a
+			title={props.srLabel}
+			className="min-h-44 min-w-44 flex items-center justify-center opacity-50 hover:opacity-100 ease transition-opacity duration-150"
+		>
 			<span className="sr-only">{props.srLabel}</span>
 			{props.children}
 		</a>
@@ -42,6 +46,7 @@ const socialLinks: SocialLink[] = [
 	{ icon: LinkedInIcon, href: LinkedInRoute, label: "LinkedIn" },
 	{ icon: TwitterIcon, href: TwitterRoute, label: "Twitter" },
 	{ icon: GitHubIcon, href: GitHubRoute, label: "GitHub" },
+	{ icon: () => <>CHANGE ME</>, href: FigmaCommunityAccount, label: "Figma Community" },
 	{ icon: VimeoIcon, href: VimeoRoute, label: "Vimeo" }
 ];
 

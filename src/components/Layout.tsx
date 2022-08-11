@@ -7,7 +7,7 @@ const StandardLayout: React.FC<React.PropsWithChildren> = props => {
 		<>
 			<Navbar />
 			<div className="flex h-full flex-col">
-				<main>
+				<main id="main-content">
 					{props.children}
 				</main>
 

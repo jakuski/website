@@ -22,6 +22,10 @@ interface MetaProps {
 	omitTitleSuffix?: true;
 }
 
+export const createHtmlTitleString = (pageTitle: string, omitSuffix?: boolean): string => {
+	return pageTitle + (omitSuffix ? "" : ` - ${websiteName}`);
+};
+
 const Metadata: React.FC<MetaProps> = props => {
 	return <Head>
 		<title key={MetaKeys.htmlTitle}>{createHtmlTitleString(props.title, props.omitTitleSuffix)}</title>
@@ -48,10 +52,6 @@ const Metadata: React.FC<MetaProps> = props => {
 	
 		<meta name={MetaKeys.themeColour} key={MetaKeys.themeColour} content={props.themeColour || defaultThemeColour} />
 	</Head>;
-};
-
-export const createHtmlTitleString = (pageTitle: string, omitSuffix?: boolean): string => {
-	return pageTitle + (omitSuffix ? "" : ` - ${websiteName}`);
 };
 
 // @TODO Change to enum?
