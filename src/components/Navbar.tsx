@@ -1,8 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
-import { navbar, Home } from "@/routes";
+import { navbar as navbarRoutes, Home } from "@/routes";
 
-const NavbarLink = props => {
+const NavbarLink: React.FC<React.PropsWithChildren<{
+	href: string;
+}>> = props => {
 	return <Link href={props.href}>
 		<a className="text-md font-semibold flex items-center px-2 min-h-44 lowercase">{props.children}</a>
 	</Link>;
@@ -15,7 +17,7 @@ export default function Navbar() {
 				Skip to main content
 			</a>
 
-			<header className="p-4 md:p-6 fixed w-full flex justify-between items-center">
+			<header className="p-4 md:p-6 fixed w-full flex justify-between items-center select-none">
 				<Link href={Home.href}>
 					<a>
 						<Image src="/logo.svg" alt="Logo" height={80} width={80} />
@@ -23,7 +25,7 @@ export default function Navbar() {
 				</Link>
 
 				<nav className="font-serif flex gap-4">
-					{navbar.map(route => (
+					{navbarRoutes.map(route => (
 						<NavbarLink
 							href={route.href}
 							key={route.href}

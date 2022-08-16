@@ -26,10 +26,13 @@ export class Route {
 
 export const Home = new Route("/", "Home");
 export const About = Home.extend("about", "About");
-export const WorksHome = Home.extend("works", "Works");
+export const WorksIndex = Home.extend("works", "Works");
 export const Contact = Home.extend("contact", "Contact");
-export const Blog = Home.extend("blog", "Blog");
 
+// unused
+// export const Blog = Home.extend("blog", "Blog");
+
+// Redirects
 export const Redirect = Home.extend("go", "Redirect Service");
 export const Instagram = Redirect.extend("/instagram", "Instagram");
 export const Twitter = Redirect.extend("/twitter", "Twitter");
@@ -38,4 +41,4 @@ export const Vimeo = Redirect.extend("/vimeo", "Vimeo");
 export const GithubAccount = Redirect.extend("/github", "GitHub");
 export const FigmaCommunityAccount = Redirect.extend("/figma-community", "Figma Community");
 
-export const navbar = [WorksHome, About, Contact];
+export const navbar = [WorksIndex, About, Contact];

@@ -67,6 +67,13 @@ const processFrontmatter = (rawFrontmatter: string, filename?: string): Frontmat
 			// Use the base #title if #displayTitle is not provided.
 			parsed.meta.displayTitle = parsed.meta.title;
 		}
+
+		if (parsed.meta.edited) {
+			parsed.meta.edited = new Date(parsed.meta.edited);
+		}
+		if (parsed.meta.published) {
+			parsed.meta.published = new Date(parsed.meta.published);
+		}
 		return Object.assign({}, defaultFrontmatter, parsed);
 	} else {
 		onDefaultFrontmatterWarning();

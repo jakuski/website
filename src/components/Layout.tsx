@@ -7,7 +7,7 @@ const StandardLayout: React.FC<React.PropsWithChildren> = props => {
 		<>
 			<Navbar />
 			<div className="flex h-full flex-col">
-				<main id="main-content">
+				<main id="main-content" className="select-all">
 					{props.children}
 				</main>
 

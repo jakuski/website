@@ -16,7 +16,7 @@ import LinkedInIcon from "@/components/icons/LinkedIn";
 import TwitterIcon from "@/components/icons/Twitter";
 import GitHubIcon from "@/components/icons/GitHub";
 import VimeoIcon from "@/components/icons/Vimeo";
-import { isPreview } from "@/config";
+import { isPreview, isProd } from "@/config";
 
 interface SocialIconProps extends React.PropsWithChildren {
 	href: string;
@@ -26,10 +26,11 @@ interface SocialIconProps extends React.PropsWithChildren {
 const SocialIcon: React.FC<SocialIconProps> = props => {
 	return <Link href={props.href}>
 		<a
-			title={props.srLabel}
+			title={`View ${props.srLabel} profile`}
+			target="_blank"
 			className="min-h-44 min-w-44 flex items-center justify-center opacity-50 hover:opacity-100 ease transition-opacity duration-150"
 		>
-			<span className="sr-only">{props.srLabel}</span>
+			<span className="sr-only">{props.srLabel} icon</span>
 			{props.children}
 		</a>
 	</Link>;
@@ -52,7 +53,7 @@ const socialLinks: SocialLink[] = [
 
 const Footer: React.FC = () => {
 	return (
-		<footer className="font-sans text-sm flex flex-col items-center mt-8 gap-3 pb-6">
+		<footer className="font-sans text-sm flex flex-col items-center mt-8 gap-3 pb-6 select-none">
 			<div className="flex flex-row">
 				{socialLinks.map(link => {
 					const href = link.href.hrefWithSource("footer");
@@ -77,8 +78,8 @@ const Footer: React.FC = () => {
 					Legal
 				</div>
 			</div>
-			{isPreview && <div className="opacity-70 font-bold italic text-center">
-				This is a development preview of my website which is not intended for public viewing. <br/>If you believe you are here by mistake, click <a className="underline min-h-44 min-w-44" href="https://jakub.studio">here</a> to go to my public website.
+			{(!isProd) && <div className="opacity-70 font-bold italic text-center">
+				This is a development version of my website which is not intended for public viewing. <br/>If you believe you are here by mistake, click <a className="underline min-h-44 min-w-44" href="https://jakub.studio">here</a> to go to my public website.
 			</div>}
 		</footer>
 	);

@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { websiteName, defaultThemeColour } from "@/config";
-import { About } from "@/routes";
+import { About as AboutRoute } from "@/routes";
 import If from "./If";
 
 interface MetaProps {
@@ -27,6 +27,7 @@ export const createHtmlTitleString = (pageTitle: string, omitSuffix?: boolean): 
 };
 
 const Metadata: React.FC<MetaProps> = props => {
+	console.log(props);
 	return <Head>
 		<title key={MetaKeys.htmlTitle}>{createHtmlTitleString(props.title, props.omitTitleSuffix)}</title>
 
@@ -39,14 +40,14 @@ const Metadata: React.FC<MetaProps> = props => {
 
 		{props.author && <>
 			<meta name={MetaKeys.author} key={MetaKeys.author} content={props.author} />
-			<meta property={MetaKeys.articleAuthor} key={MetaKeys.articleAuthor} content={About.hrefWithHttpsDomain} />
+			<meta property={MetaKeys.articleAuthor} key={MetaKeys.articleAuthor} content={AboutRoute.hrefWithHttpsDomain} />
 		</>}
 
-		{props.published && <>
+		{props.published && props.published instanceof Date && <>
 			<meta property={MetaKeys.articlePublishedTime} key={MetaKeys.articlePublishedTime} content={props.published.toJSON()} />
 		</>}
 
-		{props.modified && <>
+		{props.modified && props.modified instanceof Date && <>
 			<meta property={MetaKeys.articleModifiedTime} key={MetaKeys.articleModifiedTime} content={props.modified.toJSON()} />
 		</>}
 	

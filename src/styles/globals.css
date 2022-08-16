@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Enable MacOS font anti-aliasing */
 html {
   -webkit-font-smoothing: antialiased;
   -moz-osxfont-smoothing: grayscale
@@ -14,6 +15,7 @@ body,
   margin: 0;
   width: 100%;
   height: 100%;
+  user-select: none;
 }
 
 a {

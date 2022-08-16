@@ -14,10 +14,16 @@ export interface BasicFrontmatter {
 	shortDesc: string | void; 
 }
 
-export interface Metadata {
+export interface DocumentMetadata {
 	title: string;
 	displayTitle: string;
 	description: string;
 	published: Date;
 	edited: Date;
+}
+
+export interface Frontmatter {
+	meta: DocumentMetadata;
+	pageProps: Record<string, unknown>;
+	variables: Record<string, unknown>;
 }

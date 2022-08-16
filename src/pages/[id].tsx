@@ -1,10 +1,9 @@
-import Post from "../../components/Post";
+import Post from "@/components/Post";
 import { GetStaticPaths, GetStaticProps } from "next";
-import ProjectData from "../../content/projects/index.json";
 import Head from "next/head";
 import { WorksIndex } from "@/routes";
 
-interface ProjectPageProps {
+interface BasicPageProps {
 
 }
 
@@ -16,7 +15,7 @@ export default function ProjectPage() {
 
 export const getStaticPaths: GetStaticPaths = () => {
 	return {
-		paths: Object.keys(ProjectData.projectDefs).map(projectName => ({
+		paths: [].map(projectName => ({
 			params: { id: projectName }
 		})),
 		fallback: false

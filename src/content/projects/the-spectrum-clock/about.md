@@ -1,13 +1,19 @@
 ---
 meta:
-    title: About Me
-    displayTitle: About me.
-    description: Some words about myself, the work I do and my future aspirations.
+    title: The Spectrum Clock
+    description: Communicating time through colour.
     published: 2022-07-04
     edited: 2022-07-05
 
 pageProps:
-    timestamps: "*"
+    showMetadata: true
+    colours:
+        foreground: "#323232"
+        background: "#323232"
+
+project:
+    category: "ui/ux"
+    softwareUsed: ["adobe.cc.lightroom", "maxon.cinema4d"]
 ---
 **Bio**
 

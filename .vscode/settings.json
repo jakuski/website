@@ -19,7 +19,7 @@
 		"tailwindcss",
 		"vars",
 
-		// node.js path
+		// node.js path module
 		"seperator"
 	],
 	"cSpell.language": "en-GB"

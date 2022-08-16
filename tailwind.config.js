@@ -7,10 +7,9 @@ module.exports = {
 		"./src/**/*.{js,ts,jsx,tsx}",
 	],
 	theme: {
-    
 		colors: {
 			"brand": v("color-brand"),
-			"black": v("color-foreground")
+			"black": v("color-foreground"),
 		},
 		fontFamily:{
 			serif: ["quincy-cf", ...defaultTheme.fontFamily.serif],

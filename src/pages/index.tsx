@@ -1,6 +1,5 @@
 
 import Metadata from "@/components/Meta";
-import Head from "next/head";
 import Image from "next/image";
 import NextLink from "next/link";
 import { PropsWithChildren } from "react";
@@ -33,7 +32,9 @@ export default function Home() {
 					<div className="font-sans max-w-sm">
 						Hey friend!<br/>
 						Welcome to my website, it is still a WIP as I have not had much time to work on it during the current academic year. So be warned, You may see a few loose nuts and bolts but I hope to get it finished Summer 2022.
-						<br/><br/> In the mean time, I am looking for new opportunities.
+						<br/>
+						<br/>
+						In the mean time, I am looking for new opportunities.
 						<NextLink href="/contact">
 							<a className="ml-1 font-bold underline">Let&apos;s chat.</a>
 						</NextLink>

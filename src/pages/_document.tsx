@@ -1,7 +1,8 @@
-import { githubRepo, isPreview, socialHandles, websiteName } from "@/config";
+import { githubRepo, isProd, socialHandles, websiteName } from "@/config";
 import Document, { Html, Head, Main, NextScript } from "next/document";
 
-const robotsMeta = isPreview ? "noindex,nofollow" : "index,follow";
+// Disable search engine indexing of development and Vercel Preview variants of the website.
+const robotsMetaContent = isProd ? "index,follow" : "noindex,nofollow";
 
 class SiteDocument extends Document {
 	render(): JSX.Element {
@@ -9,7 +10,6 @@ class SiteDocument extends Document {
 			<Html
 				lang="en"
 				className="bg-brand text-black"
-				data-like-what-you-see="I'm available for hire, check out /contact for further details."
 				data-github-repo={githubRepo}
 			>
 				<Head>
@@ -19,7 +19,7 @@ class SiteDocument extends Document {
 					/>
 					<meta name="format-detection" content="telephone=no" />
 					<link rel="author" href="/about" />
-					<meta name="robots" content={robotsMeta} />
+					<meta name="robots" content={robotsMetaContent} />
 					<meta name="rating" content="General" />
 					<meta name="renderer" content="webkit" />
 					<meta name="twitter:site" content={"@" + socialHandles.twitter} />
