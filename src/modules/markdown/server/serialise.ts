@@ -4,7 +4,7 @@ type ObjectWithToJSON = object & {
 	toJSON(): unknown;
 }
 
-export const convertToPrimitive = (val: unknown): unknown => {
+export const serialise = (val: unknown): unknown => {
 	// If val is a number, string, or boolean, return it as is.
 	if (["number","string","boolean"].includes(typeof val)) {
 		return val;
@@ -22,24 +22,25 @@ export const convertToPrimitive = (val: unknown): unknown => {
 	}
 
 	// If val is an array, recursively convert it's content to primitives.
-	if (Array.isArray(val)) return val.map(convertToPrimitive);
+	if (Array.isArray(val)) return val.map(serialise);
 
 	// The very last scenario, a plain object.
 	// This clones the object and converts it's values to primitives recursively.
 	const final: Record<string, unknown> = {};
 	for (const [key, value] of Object.entries(val)) {
-		final[key] = convertToPrimitive(value);
+		final[key] = serialise(value);
 	}
 	return final;
 };
 
-const serialiseRenderableTreeNode = (node: RenderableTreeNode): unknown => {
+// This 
+const serialiseTopLevel = (node: RenderableTreeNode): unknown => {
 	if (node == null) return "";
 	if (typeof node === "string") return node;
 
-	const converted = convertToPrimitive(node);
+	const converted = serialise(node);
 
 	return converted;
 };
 
-export default serialiseRenderableTreeNode;
+export default serialiseTopLevel;

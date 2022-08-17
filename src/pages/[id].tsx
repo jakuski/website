@@ -1,29 +1,39 @@
-import Post from "@/components/Post";
+import Post, { BasicMarkdownPost, PostProps } from "@/components/Post";
 import { GetStaticPaths, GetStaticProps } from "next";
-import Head from "next/head";
-import { WorksIndex } from "@/routes";
+
+interface Params {
+	[param: string]: string;
+	id: string;
+}
 
 interface BasicPageProps {
-
+	xyz: boolean
 }
 
-export default function ProjectPage() {
-	return <Post title="Works">
-		Hello
-	</Post>;
-}
+export default BasicMarkdownPost;
 
 export const getStaticPaths: GetStaticPaths = () => {
 	return {
-		paths: [].map(projectName => ({
-			params: { id: projectName }
+		paths: ["test-xyz"].map(pageName => ({
+			params: { id: pageName }
 		})),
 		fallback: false
 	};
 };
 
-export const getStaticProps: GetStaticProps = () => {
+export const getStaticProps: GetStaticProps<PostProps, Params> = (context) => {
+	// This will never be thrown but it's here to satisfy TypeScript.
+	if (!context.params) throw "Error: root(id)/getStaticProps context#params is falsy";
+
+	const { id } = context.params;
+
+	//
+	// INSERT CONTENT LOADING LOGIC
+	//
+
 	return {
-		props: {}
+		props: {
+			xyz: true
+		}
 	};
 };

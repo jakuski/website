@@ -7,7 +7,7 @@ import DefaultLayout from "../components/Layout";
 import Script from "next/script";
 import { DeveloperOnly } from "@/components/Developer";
 import If from "@/components/If";
-import { isDev } from "@/config";
+import { isDev } from "@/utils";
 import React from "react";
 
 const App: React.FC<{

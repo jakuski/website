@@ -8,18 +8,14 @@ is only responsible for rendering ready-to-go data.
 import { GetStaticProps } from "next";
 import { Config, parse, RenderableTreeNode, transform } from "@markdoc/markdoc";
 import readContent, { getContentPath, pathSeperator } from "./fs";
-import serialise, { convertToPrimitive } from "./serialise";
-import { JSON_SCHEMA, load as parseYaml, YAMLException } from "js-yaml";
+import serialiseTopLevel, { serialise } from "./serialise";
+import parseYaml from "./yaml";
 import { MarkdocData } from "../types";
-import { transformConfig } from "@/components/markdown/sets/basic";
+import { transformConfig as basicMarkdownComponentsConfig } from "@/components/markdown/sets/basic";
 
 export interface MarkdocLoaderProps {
 	markdocContent: RenderableTreeNode
 }
-
-const onYamlWarning = (e: YAMLException): void => {
-	console.warn(`⚠ YAML Warning\n${e}`);
-};
 
 const onDefaultFrontmatterWarning = (): void => {
 	console.warn("⚠ Markdoc Warning\nDefault frontmatter has been returned.");
@@ -55,12 +51,8 @@ const processFrontmatter = (rawFrontmatter: string, filename?: string): Frontmat
 		onDefaultFrontmatterWarning();
 		return defaultFrontmatter;
 	}
-	
-	const parsed = parseYaml(rawFrontmatter, {
-		onWarning: onYamlWarning,
-		filename,
-		schema: JSON_SCHEMA // This prevents non JSON compatible types being accepted.
-	}) as Frontmatter;
+
+	const parsed = parseYaml(rawFrontmatter, filename) as Frontmatter;
 
 	if ((parsed !== null) && (typeof parsed === "object")) {
 		if (!parsed.meta.displayTitle) {
@@ -81,15 +73,15 @@ const processFrontmatter = (rawFrontmatter: string, filename?: string): Frontmat
 	}
 };
 
-const getVariables = (frontmatter: Frontmatter) => {
-
-
-
+const createTransformConfig = (frontmatter: Frontmatter) => {
 	return Object.assign({}, {
-		utils: {
-			currentYear: new Date().getFullYear()
-		}
-	});
+		variables: {
+			frontmatter,
+			utils: {
+				currentYear: new Date().getFullYear()
+			}
+		},
+	}, basicMarkdownComponentsConfig);
 };
 
 export const getStaticMarkdoc: (path: string[]) => GetStaticProps<MarkdocData> = (path: string[]) => {
@@ -99,29 +91,23 @@ export const getStaticMarkdoc: (path: string[]) => GetStaticProps<MarkdocData> =
 		const document = await readContent(filePath);
 
 		// Parsing
-		const ast = parse(document, filePath);
+		const documentAST = parse(document, filePath);
 
 		// Transformations
 		const frontmatter = processFrontmatter(
-			ast.attributes.frontmatter,
-			[...path, "frontmatter"].join(pathSeperator)
-			// the arg above appends "frontmatter" to the filename (such as "/Site/Content/hello-world.md/frontmatter")
+			documentAST.attributes.frontmatter,
+			path + "::frontmatter",
+			// the arg above appends "frontmatter" to the filename (such as "/Site/Content/hello-world.md::frontmatter")
 			// to improve readability of any YAML parser errors that could be thrown.
 		);
 
-		const renderable = transform(ast, Object.assign<Config, Config>({
-			variables: {
-				frontmatter: frontmatter
-			}
-		}, transformConfig));
+		const renderable = transform(documentAST, createTransformConfig(frontmatter));
 
-		// Prepare for Next.js serialisation.
-		const serialised = serialise(renderable);
 		return {
 			props: {
-				content: serialised,
+				content: serialiseTopLevel(renderable),
 				/* frontmatter needs to be serialised as any dates in YAML will fail Next.js validation for some reason. */
-				frontmatter: convertToPrimitive(frontmatter) as MarkdocData["frontmatter"]
+				frontmatter: serialise(frontmatter) as MarkdocData["frontmatter"]
 			}
 		};
 	};

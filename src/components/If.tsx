@@ -1,6 +1,6 @@
 import React from "react";
 
-interface IfProps extends React.PropsWithChildren {
+export interface IfProps extends React.PropsWithChildren {
 	condition: unknown
 }
 

@@ -14,7 +14,7 @@ export class Route {
 		return route;
 	}
 	hrefWithSource (source: string): string {
-		return this.href + "?" + new URLSearchParams([["s", source]]).toString();
+		return this.href + "?" + new URLSearchParams({s: source}).toString();
 	}
 	get hrefWithDomain () {
 		return domain + this.href;

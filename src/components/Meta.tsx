@@ -1,7 +1,6 @@
 import Head from "next/head";
 import { websiteName, defaultThemeColour } from "@/config";
 import { About as AboutRoute } from "@/routes";
-import If from "./If";
 
 interface MetaProps {
 	/* Basic Meta Stuff */
@@ -27,7 +26,6 @@ export const createHtmlTitleString = (pageTitle: string, omitSuffix?: boolean): 
 };
 
 const Metadata: React.FC<MetaProps> = props => {
-	console.log(props);
 	return <Head>
 		<title key={MetaKeys.htmlTitle}>{createHtmlTitleString(props.title, props.omitTitleSuffix)}</title>
 

@@ -16,7 +16,7 @@ import LinkedInIcon from "@/components/icons/LinkedIn";
 import TwitterIcon from "@/components/icons/Twitter";
 import GitHubIcon from "@/components/icons/GitHub";
 import VimeoIcon from "@/components/icons/Vimeo";
-import { isPreview, isProd } from "@/config";
+import { isProd } from "@/utils";
 
 interface SocialIconProps extends React.PropsWithChildren {
 	href: string;

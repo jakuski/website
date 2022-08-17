@@ -1,4 +1,5 @@
-import { githubRepo, isProd, socialHandles, websiteName } from "@/config";
+import { githubRepo, socialHandles, websiteName } from "@/config";
+import { isProd } from "@/utils";
 import Document, { Html, Head, Main, NextScript } from "next/document";
 
 // Disable search engine indexing of development and Vercel Preview variants of the website.

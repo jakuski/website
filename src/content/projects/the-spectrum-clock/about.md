@@ -11,6 +11,10 @@ pageProps:
         foreground: "#323232"
         background: "#323232"
 
+variables:
+    links:
+        figmaPrototype: "https://jakub.studio/go/xyz";
+
 project:
     category: "ui/ux"
     softwareUsed: ["adobe.cc.lightroom", "maxon.cinema4d"]
