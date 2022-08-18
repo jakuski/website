@@ -19,8 +19,11 @@
 		"tailwindcss",
 		"vars",
 
-		// node.js path module
-		"seperator"
+		// Software vendors and names
+		"maxon",
+		"indesign",
+		"lightroom",
+		"figjam"
 	],
 	"cSpell.language": "en-GB"
 }

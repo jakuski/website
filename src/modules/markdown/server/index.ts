@@ -7,7 +7,7 @@ is only responsible for rendering ready-to-go data.
 
 import { GetStaticProps } from "next";
 import { Config, parse, RenderableTreeNode, transform } from "@markdoc/markdoc";
-import readContent, { getContentPath, pathSeperator } from "./fs";
+import readContent, { getContentPath } from "./fs";
 import serialiseTopLevel, { serialise } from "./serialise";
 import parseYaml from "./yaml";
 import { MarkdocData } from "../types";
@@ -19,22 +19,6 @@ export interface MarkdocLoaderProps {
 
 const onDefaultFrontmatterWarning = (): void => {
 	console.warn("⚠ Markdoc Warning\nDefault frontmatter has been returned.");
-};
-
-interface Frontmatter {
-	meta: {
-		title: string;
-		displayTitle?: string;
-		description: string;
-		published?: Date;
-		edited?: Date;
-	},
-	pageProps: {
-
-	}
-	variables: {
-		[x: string]: unknown
-	}
 };
 
 const defaultFrontmatter: Frontmatter = {

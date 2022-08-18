@@ -1,26 +1,33 @@
+import { AllApps } from "@/modules/software-links/types";
+
 export enum MarkdownComponentSets {
 	BASIC = "BASIC"
 }
 
 export interface MarkdocData <F = Record<string, unknown>> {
 	content: unknown;
-	// metadata: Metadata;
 	frontmatter: F
 }
 
-export interface DocumentMetadata {
-	title: string;
-	displayTitle: string;
-	description: string;
-	published: Date;
-	edited: Date;
+export type Frontmatter = {
+	meta: {
+		title: string;
+		displayTitle?: string;
+		description?: string;
+		published?: Date;
+		edited?: Date;
+	};
+	pageProps?: {
+		showMetadata?: boolean;
+		colours?: {
+			foreground?: string;
+			background?: string;
+		}
+	};
+	project?: {
+		category?: string;
+		softwareUsed?: AllApps[];
+		credits?: string;
+	};
+	variables?: Record<string, unknown>;
 }
-
-export interface Frontmatter {
-	meta: DocumentMetadata;
-	pageProps: Record<string, unknown>;
-	project: null;
-	variables: Record<string, unknown>;
-}
-
-export type PartialFrontmatter = Partial<Frontmatter>;

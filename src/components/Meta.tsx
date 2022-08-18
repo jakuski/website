@@ -5,7 +5,7 @@ import { About as AboutRoute } from "@/routes";
 interface MetaProps {
 	/* Basic Meta Stuff */
 	title: string;
-	description: string;
+	description?: string;
 
 	/* Extra Meta */
 	author?: string;
@@ -32,9 +32,11 @@ const Metadata: React.FC<MetaProps> = props => {
 		<meta name={MetaKeys.openGraphTitle} key={MetaKeys.openGraphTitle} content={props.title} />
 		<meta name={MetaKeys.twitterTitle} key={MetaKeys.twitterTitle} content={props.title} />
 
-		<meta name={MetaKeys.description} key={MetaKeys.description} content={props.description} />
-		<meta name={MetaKeys.openGraphDescription} key={MetaKeys.openGraphDescription} content={props.description} />
-		<meta name={MetaKeys.twitterDescription} key={MetaKeys.twitterDescription} content={props.description} />
+		{props.description && <>
+			<meta name={MetaKeys.description} key={MetaKeys.description} content={props.description} />
+			<meta name={MetaKeys.openGraphDescription} key={MetaKeys.openGraphDescription} content={props.description} />
+			<meta name={MetaKeys.twitterDescription} key={MetaKeys.twitterDescription} content={props.description} />
+		</>}
 
 		{props.author && <>
 			<meta name={MetaKeys.author} key={MetaKeys.author} content={props.author} />
