@@ -1,6 +1,6 @@
 import MarkdocRenderer from "@/modules/markdown/client";
 import { getStaticMarkdoc } from "@/modules/markdown/server";
-import { BasicFrontmatter, Frontmatter, MarkdocData } from "@/modules/markdown/types";
+import { Frontmatter, MarkdocData } from "@/modules/markdown/types";
 import Post from "../components/Post";
 
 const NotFoundPage: React.FC<MarkdocData<Frontmatter>> = props => {
@@ -11,6 +11,6 @@ const NotFoundPage: React.FC<MarkdocData<Frontmatter>> = props => {
 	);
 };
 
-export const getStaticProps = getStaticMarkdoc(["base", "404.md"]);
+export const getStaticProps = getStaticMarkdoc(["base", "_404.md"]);
 
 export default NotFoundPage;

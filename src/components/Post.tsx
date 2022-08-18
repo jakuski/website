@@ -109,7 +109,7 @@ const Footnotes: React.FC<FootnotesProps> = (props) => {
 
 		{props.credits && (
 			<FootnoteSection label="Credits & Attributions">
-				<p>{props.credits}</p>
+				<pre className="whitespace-pre-wrap font-sans">{props.credits}</pre>
 			</FootnoteSection>
 		)}
 	</>;
