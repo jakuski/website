@@ -2,13 +2,16 @@ import Link from "next/link";
 import React from "react";
 
 import {
-	Instagram as InstagramRoute,
-	LinkedIn as LinkedInRoute,
-	Twitter as TwitterRoute,
-	GithubAccount as GitHubRoute,
-	Vimeo as VimeoRoute,
+	Instagram as InstagramRedirectRoute,
+	LinkedIn as LinkedInRedirectRoute,
+	Twitter as TwitterRedirectRoute,
+	GithubAccount as GitHubRedirectRoute,
+	Vimeo as VimeoRedirectRoute,
 	Route,
-	FigmaCommunityAccount
+	FigmaCommunityAccount as FigmaCommunityAccountRedirectRoute,
+	Colophon,
+	Privacy,
+	Legal
 } from "@/routes";
 
 import InstagramIcon from "@/components/icons/Instagram";
@@ -43,17 +46,25 @@ interface SocialLink {
 }
 
 const socialLinks: SocialLink[] = [
-	{ icon: InstagramIcon, href: InstagramRoute, label: "Instagram" },
-	{ icon: LinkedInIcon, href: LinkedInRoute, label: "LinkedIn" },
-	{ icon: TwitterIcon, href: TwitterRoute, label: "Twitter" },
-	{ icon: GitHubIcon, href: GitHubRoute, label: "GitHub" },
-	{ icon: () => <>CHANGE ME</>, href: FigmaCommunityAccount, label: "Figma Community" },
-	{ icon: VimeoIcon, href: VimeoRoute, label: "Vimeo" }
+	{ icon: InstagramIcon, href: InstagramRedirectRoute, label: "Instagram" },
+	{ icon: LinkedInIcon, href: LinkedInRedirectRoute, label: "LinkedIn" },
+	{ icon: TwitterIcon, href: TwitterRedirectRoute, label: "Twitter" },
+	{ icon: GitHubIcon, href: GitHubRedirectRoute, label: "GitHub" },
+	{ icon: () => <>CHANGE ME</>, href: FigmaCommunityAccountRedirectRoute, label: "Figma Community" },
+	{ icon: VimeoIcon, href: VimeoRedirectRoute, label: "Vimeo" }
 ];
+
+const TextLink: React.FC<{ route: Route }> = props => {
+	return <Link href={props.route.href}>
+		<a className="min-h-44 min-w-44 flex items-center opacity-70 hover:opacity-100 hover:underline ease transition-opacity duration-150">
+			{props.route.displayName}
+		</a>
+	</Link>;
+};
 
 const Footer: React.FC = () => {
 	return (
-		<footer className="font-sans text-sm flex flex-col items-center mt-8 gap-3 pb-6 select-none">
+		<footer className="font-sans text-sm flex flex-col items-center mt-8 pb-6 select-none border-t border-t-black">
 			<div className="flex flex-row">
 				{socialLinks.map(link => {
 					const href = link.href.hrefWithSource("footer");
@@ -63,23 +74,22 @@ const Footer: React.FC = () => {
 					</SocialIcon>;
 				})}
 			</div>
-			<div className="opacity-70">
+
+			<div className="flex gap-2">
+				<TextLink route={Colophon} />
+				<TextLink route={Privacy} />
+				<TextLink route={Legal} />
+			</div>
+
+			<div className="opacity-70 mb-6 mt-2">
 				<span className="italic mr-2">Slava Ukraini.</span>
 				Copyright © {new Date().getFullYear()} Jakub Staniszewski
 			</div>
-			<div className="opacity-70 flex gap-2">
-				<div className="min-h-44 min-w-44 flex items-center">
-					Colophon
-				</div>
-				<div className="min-h-44 min-w-44 flex items-center">
-					Privacy
-				</div>
-				<div className="min-h-44 min-w-44 flex items-center">
-					Legal
-				</div>
-			</div>
+
+
+
 			{(!isProd) && <div className="opacity-70 font-bold italic text-center">
-				This is a development version of my website which is not intended for public viewing. <br/>If you believe you are here by mistake, click <a className="underline min-h-44 min-w-44" href="https://jakub.studio">here</a> to go to my public website.
+				This is a development version of my website which is not intended for public viewing. <br />If you believe you are here by mistake, click <a className="underline min-h-44 min-w-44" href="https://jakub.studio">here</a> to go to my public website.
 			</div>}
 		</footer>
 	);

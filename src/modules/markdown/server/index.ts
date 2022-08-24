@@ -12,6 +12,7 @@ import serialiseTopLevel, { serialise } from "./serialise";
 import parseYaml from "./yaml";
 import { MarkdocData } from "../types";
 import { transformConfig as basicMarkdownComponentsConfig } from "@/components/markdown/sets/basic";
+import { contentDirectory } from "@/modules/fs";
 
 export interface MarkdocLoaderProps {
 	markdocContent: RenderableTreeNode
@@ -24,7 +25,6 @@ const onDefaultFrontmatterWarning = (): void => {
 const defaultFrontmatter: Frontmatter = {
 	meta: {
 		title: "Unnamed document",
-		description: "Document description missing"
 	},
 	pageProps: {},
 	variables: {}
@@ -80,7 +80,7 @@ export const getStaticMarkdoc: (path: string[]) => GetStaticProps<MarkdocData> =
 		// Transformations
 		const frontmatter = processFrontmatter(
 			documentAST.attributes.frontmatter,
-			path + "::frontmatter",
+			contentDirectory + "/" + path.join("/") + "::frontmatter",
 			// the arg above appends "frontmatter" to the filename (such as "/Site/Content/hello-world.md::frontmatter")
 			// to improve readability of any YAML parser errors that could be thrown.
 		);

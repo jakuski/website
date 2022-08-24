@@ -26,8 +26,13 @@ export class Route {
 
 export const Home = new Route("/", "Home");
 export const About = Home.extend("about", "About");
-export const WorksIndex = Home.extend("works", "Works");
 export const Contact = Home.extend("contact", "Contact");
+
+export const Colophon = Home.extend("colophon", "Colophon");
+export const Legal = Home.extend("legal", "Legal");
+export const Privacy = Home.extend("privacy", "Privacy");
+
+export const WorksIndex = Home.extend("works", "Works");
 
 // unused
 // export const Blog = Home.extend("blog", "Blog");

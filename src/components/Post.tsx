@@ -63,7 +63,14 @@ export const BasicMarkdownPost: React.FC<BasicMarkdownPostProps> = props => {
 			showMetadata={pageProps?.showMetadata}
 			description={meta.description}
 			category={project?.category}
-			footnotes={<Footnotes published={publishedDate} modified={modifiedDate} softwareUsed={project?.softwareUsed} credits={project?.credits}/>}
+			footnotes={
+				(publishedDate || modifiedDate || project?.softwareUsed || project?.credits) &&
+				<Footnotes
+					published={publishedDate}
+					modified={modifiedDate}
+					softwareUsed={project?.softwareUsed}
+					credits={project?.credits}/>
+			}
 		>
 			<MarkdocRenderer content={props.content} />
 		</Post>
@@ -98,12 +105,12 @@ const Footnotes: React.FC<FootnotesProps> = (props) => {
 		{(props.modified || props.published) && (
 			<FootnoteSection label="History"><p>
 				{props.published && <>
-					First published on {props.published.toLocaleDateString()} {props.modified && "and "}
+					First published on {props.published.toLocaleDateString()}{props.modified ? " and " : "."}
 				</>}
 				
 				{props.modified && <>
-					{props.published ? "l" : "L"}ast edited on {props.modified.toLocaleDateString()}
-				</>}.
+					{props.published ? "l" : "L"}ast edited on {props.modified.toLocaleDateString()}.
+				</>}
 			</p></FootnoteSection>
 		)}
 

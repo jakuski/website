@@ -7,8 +7,12 @@
 	"[markdoc]": {
         "editor.autoClosingBrackets": "always"
 	},
+	"files.associations": {
+		"tailwind.css": "tailwind.css" 
+	},
 
 	// Code Spell checker (streetsidesoftware.code-spell-checker) dictionary 
+	"cSpell.language": "en-GB",
 	"cSpell.words": [
 		"Frontmatter",
 		"Jakub",
@@ -25,5 +29,4 @@
 		"lightroom",
 		"figjam"
 	],
-	"cSpell.language": "en-GB"
 }

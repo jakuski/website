@@ -1,7 +1,7 @@
 ---
 meta:
     title: Title
-	displayTitle: Display Title
+    displayTitle: Display Title
     description: Lorem Ipsum
     published: 2022-07-04
     edited: 2022-07-05
@@ -14,12 +14,12 @@ pageProps:
 
 variables:
     links:
-        figmaPrototype: "https://jakub.studio/go/xyz";
+        figmaPrototype: "https://jakub.studio/go/xyz"
 
 project:
     category: "ui/ux"
     softwareUsed: ["adobe.cc.lightroom", "maxon.cinema4d"]
-	credits: Maria Uwu
+    credits: Maria Uwu
 ---
 **Bio**
 

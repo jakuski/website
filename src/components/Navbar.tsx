@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { navbar as navbarRoutes, Home } from "@/routes";
+import LogoIcon from "./icons/Logo";
 
 const NavbarLink: React.FC<React.PropsWithChildren<{
 	href: string;
@@ -20,6 +21,7 @@ export default function Navbar() {
 			<header className="p-4 md:p-6 fixed w-full flex justify-between items-center select-none">
 				<Link href={Home.href}>
 					<a>
+						<LogoIcon />
 						<Image src="/logo.svg" alt="Logo" height={80} width={80} />
 					</a>
 				</Link>

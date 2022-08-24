@@ -1,4 +1,5 @@
 /* Global CSS */
+import "@/styles/tailwind.css";
 import "@/styles/globals.css";
 import "@/styles/variables.css";
 
