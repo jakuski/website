@@ -28,3 +28,9 @@ Hey, I'm Jakub. A UI/UX focused-designer and diehard perfectionist who's margin 
 **Future Ambitions**
 
 I aim of starting my own studio later down the line, delivering beautifully crafted bespoke websites and applications to clients who want to be ahead of the game. After all, we take our first bite with our eyes.
+
+## Header 2
+Hello this is text of a header 2
+
+### Header 3
+Hello this is text of a header 3.

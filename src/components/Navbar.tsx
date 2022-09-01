@@ -22,7 +22,6 @@ export default function Navbar() {
 				<Link href={Home.href}>
 					<a>
 						<LogoIcon />
-						<Image src="/logo.svg" alt="Logo" height={80} width={80} />
 					</a>
 				</Link>
 

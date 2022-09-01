@@ -1,7 +1,7 @@
 import React, { useMemo } from "react";
 import { renderers, RenderableTreeNode } from "@markdoc/markdoc";
 import { MarkdocData } from "@/modules/markdown/types";
-import { renderConfig } from "@/components/markdown/sets/basic";
+import { renderConfig } from "@/components/markdown";
 
 export const render = (renderableNodes: RenderableTreeNode): React.ReactNode => {
 	return renderers.react(renderableNodes, React, renderConfig);

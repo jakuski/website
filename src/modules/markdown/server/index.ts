@@ -11,8 +11,9 @@ import readContent, { getContentPath } from "./fs";
 import serialiseTopLevel, { serialise } from "./serialise";
 import parseYaml from "./yaml";
 import { MarkdocData } from "../types";
-import { transformConfig as basicMarkdownComponentsConfig } from "@/components/markdown/sets/basic";
+import { transformConfig as basicMarkdownComponentsConfig } from "@/components/markdown";
 import { contentDirectory } from "@/modules/fs";
+import { domain, emailDomain } from "@/config";
 
 export interface MarkdocLoaderProps {
 	markdocContent: RenderableTreeNode
@@ -59,12 +60,14 @@ const processFrontmatter = (rawFrontmatter: string, filename?: string): Frontmat
 
 const createTransformConfig = (frontmatter: Frontmatter) => {
 	return Object.assign({}, {
-		variables: {
+		variables: Object.assign({
 			frontmatter,
 			utils: {
-				currentYear: new Date().getFullYear()
+				currentYear: new Date().getFullYear(),
+				domain,
+				emailDomain
 			}
-		},
+		}, frontmatter.variables),
 	}, basicMarkdownComponentsConfig);
 };
 

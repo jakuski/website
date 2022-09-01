@@ -18,6 +18,7 @@ import InstagramIcon from "@/components/icons/Instagram";
 import LinkedInIcon from "@/components/icons/LinkedIn";
 import TwitterIcon from "@/components/icons/Twitter";
 import GitHubIcon from "@/components/icons/GitHub";
+import FigmaIcon from "@/components/icons/Figma";
 import VimeoIcon from "@/components/icons/Vimeo";
 import { isProd } from "@/utils";
 
@@ -50,7 +51,7 @@ const socialLinks: SocialLink[] = [
 	{ icon: LinkedInIcon, href: LinkedInRedirectRoute, label: "LinkedIn" },
 	{ icon: TwitterIcon, href: TwitterRedirectRoute, label: "Twitter" },
 	{ icon: GitHubIcon, href: GitHubRedirectRoute, label: "GitHub" },
-	{ icon: () => <>CHANGE ME</>, href: FigmaCommunityAccountRedirectRoute, label: "Figma Community" },
+	{ icon: FigmaIcon, href: FigmaCommunityAccountRedirectRoute, label: "Figma Community" },
 	{ icon: VimeoIcon, href: VimeoRedirectRoute, label: "Vimeo" }
 ];
 
@@ -64,7 +65,7 @@ const TextLink: React.FC<{ route: Route }> = props => {
 
 const Footer: React.FC = () => {
 	return (
-		<footer className="font-sans text-sm flex flex-col items-center mt-8 pb-6 select-none border-t border-t-black">
+		<footer className="font-sans text-sm flex flex-col items-center mt-8 pb-6 select-none">
 			<div className="flex flex-row">
 				{socialLinks.map(link => {
 					const href = link.href.hrefWithSource("footer");

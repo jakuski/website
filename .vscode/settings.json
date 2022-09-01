@@ -9,24 +9,5 @@
 	},
 	"files.associations": {
 		"tailwind.css": "tailwind.css" 
-	},
-
-	// Code Spell checker (streetsidesoftware.code-spell-checker) dictionary 
-	"cSpell.language": "en-GB",
-	"cSpell.words": [
-		"Frontmatter",
-		"Jakub",
-		"Markdoc",
-		"postbuild",
-		"renderable",
-		"Staniszewski",
-		"tailwindcss",
-		"vars",
-
-		// Software vendors and names
-		"maxon",
-		"indesign",
-		"lightroom",
-		"figjam"
-	],
+	}
 }
