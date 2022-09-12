@@ -1,5 +1,5 @@
 :root {
-	--color-brand: #d48724;
+	--color-brand: hsl(38deg 100% 52%);
 	--color-background: var(--color-brand);
 	--color-foreground: #140e05;
 }
