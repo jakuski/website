@@ -9,13 +9,15 @@
 	// words - list of words to be always considered correct
 	"words": [
 		"Frontmatter",
-		"Jakub",
 		"Markdoc",
 		"postbuild",
 		"renderable",
-		"Staniszewski",
 		"tailwindcss",
 		"vars",
+
+		"Jakub",
+		"Staniszewski",
+		"jakuski",
 
 		// Software vendors and names
 		"maxon",

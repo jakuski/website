@@ -1,7 +1,7 @@
 export const websiteName = "Jakub Staniszewski";
 export const domain = "jakub.studio";
 export const emailDomain = domain;
-export const githubRepo = "jakuski/website";
+export const githubRepo = "jakub-studio/website";
 export const defaultThemeColour = "#d48724";
 
 // Used in footer and <head/> elements.

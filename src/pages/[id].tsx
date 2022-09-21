@@ -34,26 +34,3 @@ export const getStaticProps: GetStaticProps<BasicMarkdownPostProps, Params> = as
 
 	return result;
 };
-
-/* {
-	props: {
-		content: "lorem ipsum",
-		frontmatter: {
-			meta: {
-				title: "Working title",
-				displayTitle: "Working display title.",
-				description: "Hello xyz",
-				edited: new Date().toJSON(),
-				published: new Date().toJSON()
-			},
-			pageProps: {
-				showMetadata: true
-			},
-			project: {
-				category: "UI/UX",
-				softwareUsed: ["adobe.cc.after-effects", "adobe.cc.lightroom-cc", "figma.design"],
-				credits: "Mawia uwu"
-			}
-		}
-	}
-}; */

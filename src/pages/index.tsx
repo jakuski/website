@@ -1,4 +1,3 @@
-
 import Metadata from "@/components/Meta";
 import Image from "next/image";
 import NextLink from "next/link";
