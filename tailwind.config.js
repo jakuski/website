@@ -10,6 +10,10 @@ module.exports = {
 		colors: {
 			"brand": v("color-brand"),
 			"black": v("color-foreground"),
+			"white": v("color-white"),
+
+			"pure-black": "#000",
+			"transparent": "transparent",
 		},
 		fontFamily:{
 			serif: ["quincy-cf", ...defaultTheme.fontFamily.serif],
