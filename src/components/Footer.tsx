@@ -65,8 +65,8 @@ const TextLink: React.FC<{ route: Route }> = props => {
 
 const Footer: React.FC = () => {
 	return (
-		<footer className="font-sans text-sm flex flex-col items-center mt-8 pb-6 select-none">
-			<div className="flex flex-row">
+		<footer className="font-sans text-sm flex flex-col items-center mt-8 pb-6 print:pb-2 select-none">
+			<div className="flex flex-row print:hidden">
 				{socialLinks.map(link => {
 					const href = link.href.hrefWithSource("footer");
 
@@ -76,20 +76,18 @@ const Footer: React.FC = () => {
 				})}
 			</div>
 
-			<div className="flex gap-2">
+			<div className="flex gap-2 print:hidden">
 				<TextLink route={Colophon} />
 				<TextLink route={Privacy} />
 				<TextLink route={Legal} />
 			</div>
 
-			<div className="opacity-70 mb-6 mt-2">
+			<div className="opacity-70 mb-6 mt-2 print:mb-0">
 				<span className="italic mr-2">Slava Ukraini.</span>
 				Copyright © {new Date().getFullYear()} Jakub Staniszewski
 			</div>
 
-
-
-			{(!isProd) && <div className="opacity-70 font-bold italic text-center">
+			{(!isProd) && <div className=" font-bold px-4 py-2 bg-black text-white tracking-wide">
 				This is a development version of my website which is not intended for public viewing. <br />If you believe you are here by mistake, click <a className="underline min-h-44 min-w-44" href="https://jakub.studio">here</a> to go to my public website.
 			</div>}
 		</footer>

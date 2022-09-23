@@ -2,6 +2,9 @@ import Post from "@/components/Post";
 import Image from "next/image";
 import Link from "next/link";
 import images, { Image as ImageType } from "@/modules/images";
+import { ContentDirectoryNames, getContentIDs } from "@/modules/fs";
+import projectIndexPageSort from "@/content/projects/_indexPageSort.json";
+import { getStaticMarkdoc } from "@/modules/markdown/server";
 
 interface ProjectLinkProps {
 	title: string;
@@ -32,31 +35,37 @@ const ProjectLink: React.FC<ProjectLinkProps> = props => {
 	</Link>;
 };
 
-const WorksPage: React.FC<{}> = props => {
+interface ProjectPageProps {
+
+}
+
+const ProjectsIndexPage: React.FC<{}> = props => {
 	return <Post title="Works.">
 		<p>Here are some of my selected works.</p>
-		<ProjectLink
-			title="Example Project"
-			description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl vitae ultricies lacinia, nisl nisl aliquet nisl, eget aliquet nunc nisl eget nisl. Sed euismod, nisl vitae ultricies lacinia, nisl nisl aliquet nisl, eget aliquet nunc nisl eget nisl."
-			category="Graphic Design"
-			image="p/cookbook/cookbook_cover"
-		/>
-		<ProjectLink
-			title="Example Project"
-			description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl vitae ultricies lacinia, nisl nisl aliquet nisl, eget aliquet nunc nisl eget nisl. Sed euismod, nisl vitae ultricies lacinia, nisl nisl aliquet nisl, eget aliquet nunc nisl eget nisl."
-
-			category="Graphic Design"
-			image="p/cookbook/cookbook_cover"
-		/>
+		
 	</Post>;
 };
 
-export default WorksPage;
+export default ProjectsIndexPage;
 
-export const getStaticProps = () => {
+export const getStaticProps = async () => {
+	const availableProjectIDs = await getContentIDs(ContentDirectoryNames.PROJECTS);
+
+	const computedProjects = [];
+
+	for (const id of projectIndexPageSort.sort) {
+		// Check if the ID in the sort array is present within the project directory
+		if (!availableProjectIDs.includes(id)) {
+			throw Error(`Project index page sort array specifies project id '${id}' however it is not present within projects content directory. Check for typos.`);
+		}
+
+		const markdoc = await getStaticMarkdoc([ContentDirectoryNames.PROJECTS, `${id}.md`])({});
+		
+	}
+
 	return {
 		props: {
-			projects: []
+			projects: availableProjectIDs
 		},
 	};
 };

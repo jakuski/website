@@ -14,11 +14,11 @@ const NavbarLink: React.FC<React.PropsWithChildren<{
 export default function Navbar() {
 	return (
 		<>
-			<a href="#main-content" className="absolute left-0 top-4 bg-black text-brand pointer-events-none shadow-md z-10 py-4 px-6 -translate-x-full transition-transform duration-75 focus:pointer-events-auto focus:-translate-x-0">
+			<a href="#main-content" className="absolute left-0 top-4 bg-black text-brand pointer-events-none shadow-md z-20 py-4 px-6 -translate-x-full transition-transform duration-75 focus:pointer-events-auto focus:-translate-x-0">
 				Skip to main content
 			</a>
 
-			<header className="p-4 md:p-6 fixed w-full flex justify-between items-center select-none">
+			<header className="p-4 md:p-6 fixed w-full flex justify-between items-center select-none z-10 print:hidden">
 				<Link href={Home.href}>
 					<a>
 						<LogoIcon />

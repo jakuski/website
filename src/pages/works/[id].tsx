@@ -1,8 +1,8 @@
 import Post from "../../components/Post";
 import { GetStaticPaths, GetStaticProps } from "next";
-import ProjectData from "../../content/projects/index.json";
 import Head from "next/head";
 import { WorksIndex } from "@/routes";
+import { ContentDirectoryNames, getContentIDs } from "@/modules/fs";
 
 interface ProjectPageProps {
 
@@ -14,10 +14,12 @@ export default function ProjectPage() {
 	</Post>;
 }
 
-export const getStaticPaths: GetStaticPaths = () => {
+export const getStaticPaths: GetStaticPaths = async () => {
+	const projectIDs = await getContentIDs(ContentDirectoryNames.PROJECTS);
+
 	return {
-		paths: Object.keys(ProjectData.projectDefs).map(projectName => ({
-			params: { id: projectName }
+		paths: projectIDs.map(id => ({
+			params: { id }
 		})),
 		fallback: false
 	};

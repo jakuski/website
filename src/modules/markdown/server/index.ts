@@ -10,7 +10,7 @@ import { Config, parse, RenderableTreeNode, transform } from "@markdoc/markdoc";
 import readContent, { getContentPath } from "./fs";
 import serialiseTopLevel, { serialise } from "./serialise";
 import parseYaml from "./yaml";
-import { MarkdocData } from "../types";
+import { MarkdocData, Frontmatter } from "../types";
 import { transformConfig as basicMarkdownComponentsConfig } from "@/components/markdown";
 import { contentDirectory } from "@/modules/fs";
 import { domain, emailDomain } from "@/config";
