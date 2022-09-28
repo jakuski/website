@@ -71,14 +71,14 @@ const createTransformConfig = (frontmatter: Frontmatter) => {
 	}, basicMarkdownComponentsConfig);
 };
 
-export const getStaticMarkdoc: (path: string[]) => GetStaticProps<MarkdocData> = (path: string[]) => {
+export const getStaticMarkdoc = (path: string[]) => {
 	return async () => {
 		// File system operations.
 		const filePath = getContentPath(path);
-		const document = await readContent(filePath);
+		const rawDocument = await readContent(filePath);
 
 		// Parsing
-		const documentAST = parse(document, filePath);
+		const documentAST = parse(rawDocument, filePath);
 
 		// Transformations
 		const frontmatter = processFrontmatter(

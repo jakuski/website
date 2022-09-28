@@ -1,9 +1,10 @@
 ---
 meta:
-    title: The Spectrum Clock
+    title: How to cook and not die trying
     description: Communicating time through colour.
     published: 2022-07-04
     edited: 2022-07-05
+    image: p/cookbook/cookbook_cover
 
 pageProps:
     showMetadata: true
@@ -13,10 +14,10 @@ pageProps:
 
 variables:
     links:
-        figmaPrototype: "https://jakub.studio/go/xyz";
+        figmaPrototype: "https://jakub.studio/go/xyz"
 
 project:
-    category: "ui/ux"
+    category: Editorial
     softwareUsed: ["adobe.cc.lightroom", "maxon.cinema4d"]
 ---
 **Bio**

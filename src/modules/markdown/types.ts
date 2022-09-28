@@ -4,7 +4,7 @@ export enum MarkdownComponentSets {
 	BASIC = "BASIC"
 }
 
-export interface MarkdocData <F = Record<string, unknown>> {
+export interface MarkdocData <F = Frontmatter> {
 	content: unknown;
 	frontmatter: F
 }
@@ -16,6 +16,7 @@ export type Frontmatter = {
 		description?: string;
 		published?: Date;
 		edited?: Date;
+		image?: string;
 	};
 	pageProps?: {
 		showMetadata?: boolean;
