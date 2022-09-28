@@ -1,7 +1,7 @@
 import Post from "@/components/Post";
 import Image from "next/image";
 import Link from "next/link";
-import images, { Image as ImageType } from "@/modules/images";
+import images from "@/modules/images";
 import { ContentDirectoryNames, getContentIDs } from "@/modules/fs";
 import projectIndexPageSort from "@/content/projects/_indexPageSort.json";
 import { getStaticMarkdoc } from "@/modules/markdown/server";
