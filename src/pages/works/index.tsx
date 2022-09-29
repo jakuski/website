@@ -86,6 +86,16 @@ const mapProjectsToCategories = (projects: ProjectLinkProps[]): Record<string, n
 	return final;
 };
 
+const ProjectCountLabel: React.FC<{
+	selectedCategory: string | null;
+	categoryCounts: Record<string, number>;
+	projects: ProjectLinkProps[];
+}> = props => {
+	const count = props.selectedCategory === null ? props.projects.length : props.categoryCounts[props.selectedCategory];
+
+	return <p>Showing {count} project{count === 1 ? "" : "s"} out of {props.projects.length}.</p>;
+};
+
 const ProjectsIndexPage: React.FC<ProjectPageProps> = props => {
 	const categoryCounts = mapProjectsToCategories(props.projects);
 	const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
@@ -95,8 +105,8 @@ const ProjectsIndexPage: React.FC<ProjectPageProps> = props => {
 			title="Works."
 			description="Projects by Jakub Staniszewski"
 		/>
-		<p className="mb-2">Here are some of my selected works. Press the buttons below if you would like to filter by category/discipline.</p>
-		<div className="flex gap-2 flex-wrap">
+		<p className="mb-4">Here are some of my selected works. Press the buttons below if you would like to filter by category/discipline.</p>
+		<div className="flex gap-2 flex-wrap mb-2">
 			{Object.keys(categoryCounts).map(category => (
 				<ProjectCategoryPill
 					key={category}
@@ -110,6 +120,7 @@ const ProjectsIndexPage: React.FC<ProjectPageProps> = props => {
 				/>
 			))}
 		</div>
+		<ProjectCountLabel selectedCategory={selectedCategory} projects={props.projects} categoryCounts={categoryCounts} />
 		{props.projects.filter(val => {
 			if (selectedCategory === null) return true;
 			else if (selectedCategory === val.category) return true;

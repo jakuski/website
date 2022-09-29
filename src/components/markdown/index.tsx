@@ -20,6 +20,19 @@ enum MarkdocComponentNames  {
 	TAG_EMAIL = "E"
 }
 
+const linkTag = {
+	render: MarkdocComponentNames.NODE_ANCHOR,
+	attributes: {
+		href: {
+			type: String
+		},
+		newWindow: {
+			type: Boolean,
+			required: false
+		}
+	}
+};
+
 export const transformConfig: Config = {
 	nodes: {
 		document: { render: MarkdocComponentNames.NODE_ARTICLE  },
@@ -33,11 +46,7 @@ export const transformConfig: Config = {
 				type: String
 			}
 		} },
-		link: { render: MarkdocComponentNames.NODE_ANCHOR, attributes: {
-			href: {
-				type: String
-			}
-		}}
+		link: linkTag
 	},
 	tags: {
 		email: {
@@ -46,7 +55,8 @@ export const transformConfig: Config = {
 				address: { type: String },
 				domain: { type: String }
 			}
-		}
+		},
+		link: linkTag
 	}
 };
 

@@ -5,6 +5,7 @@ const getHeaderClassName = (level: number): string => {
 	switch (level) {
 	case 2: return "text-xl mb-1";
 	case 3: return "text-lg mb-1";
+	case 4: return "mb-1";
 	default: return "";
 	}
 };
@@ -23,9 +24,17 @@ const Header: React.FC<React.PropsWithChildren<{
 		return null;
 	}
 
+	if (props.level >= 5) {
+		if (isDev) {
+			console.warn("<h5/> or higher (e.g. <h6/>, <h7>) are not permitted in markdoc documents the Heading component does not support it.");
+		}
+		
+		return null;
+	}
+
 	return React.createElement(`h${props.level}`, {
-		id: "md-" + props.id,
-		className: getHeaderClassName(props.level) + " font-bold"
+		id: props.id,
+		className: (getHeaderClassName(props.level) + " font-bold").trim()
 	}, props.children);
 };
 

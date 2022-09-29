@@ -29,7 +29,7 @@ const App: React.FC<{
 		</Layout>
 		<Script
 			id="source-tracker"
-			src="js/track-src.js"
+			src="/js/track-src.js"
 			strategy="lazyOnload"
 		/>
 	</>;

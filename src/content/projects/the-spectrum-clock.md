@@ -8,24 +8,35 @@ meta:
 
 pageProps:
     showMetadata: true
-    colours:
-        foreground: "#323232"
-        background: "#323232"
 
 variables:
     links:
         figmaPrototype: "https://jakub.studio/go/xyz"
+        javascriptPrototype: https://jakub-studio.github.io/SpectrumClock/build/
+        javascriptPrototypeSource: https://github.com/jakub-studio/SpectrumClock
 
 project:
     category: UI/UX
-    softwareUsed: ["figma.design", "maxon.cinema4d"]
+    softwareUsed: ["figma.design", "adobe.cc.after-effects", "maxon.cinema4d", "maxon.redshift"]
 ---
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Aliquam id diam maecenas ultricies mi. Vel eros donec ac odio tempor orci dapibus. Praesent elementum facilisis leo vel fringilla. Sem viverra aliquet eget sit amet tellus cras adipiscing enim. Id cursus metus aliquam eleifend mi in nulla posuere. Nunc vel risus commodo viverra maecenas accumsan lacus. Quisque sagittis purus sit amet volutpat. Sit amet risus nullam eget felis. Dignissim sodales ut eu sem integer. Amet volutpat consequat mauris nunc. At elementum eu facilisis sed odio morbi quis commodo. Pellentesque dignissim enim sit amet venenatis urna cursus eget nunc. Odio facilisis mauris sit amet massa vitae. Nunc mi ipsum faucibus vitae aliquet nec ullamcorper sit.
+The Spectrum Clock explores how time can be told through colour, instead of string of text that we are normally used to.
 
-Id interdum velit laoreet id donec. Vivamus at augue eget arcu dictum varius. Lorem ipsum dolor sit amet consectetur adipiscing. Amet volutpat consequat mauris nunc congue. Gravida cum sociis natoque penatibus et magnis. Aliquam sem et tortor consequat id porta nibh venenatis. Eget felis eget nunc lobortis mattis. Augue interdum velit euismod in pellentesque massa placerat duis ultricies. Eu volutpat odio facilisis mauris sit amet massa vitae. Mattis ullamcorper velit sed ullamcorper. Quam vulputate dignissim suspendisse in est ante in nibh mauris. Nisi quis eleifend quam adipiscing vitae proin sagittis nisl. At urna condimentum mattis pellentesque id nibh. Ac ut consequat semper viverra nam libero justo laoreet. Sollicitudin nibh sit amet commodo nulla facilisi. Enim ut sem viverra aliquet. Sit amet aliquam id diam maecenas ultricies mi eget.
+## The Challenge {% id="challenge" %}
+The brief was set out by university staff, with one simple question. "Explore interesting ways to visually communicate time". It was such an open question which presented infinite amounts of possible avenues this project could've go on. My initial ideas ranged from creating codes/IDs for every second possible under the gregorian calendar (like [what3words](https://what3words.com/) but for time), an anonymous social media board where users could go and share what happened to them at any particular moment in time (inspired by the anonymity and sharing of [The Unsent Project](https://theunsentproject.com/)), a climate count-up clock where users could see the impact of humans on Earth and it's climate by the second, showing in real time how many plastic bottles are dumped into the ocean, CO2 into the atmosphere and other variables which would intentionally create a sense of anxiety and stress in the user to encourage the user to make more climate concious choices. My last initial idea and the one I ended up going forward with was trying to tell the time through colour, it was inspired by the perceptual phenomenon [Synesthesia](https://en.wikipedia.org/wiki/Synesthesia), in particular, [Grapheme-color synesthesia](https://en.wikipedia.org/wiki/Grapheme%E2%80%93color_synesthesia) which is where a individual (or *synesthete*) associates numbers and letters with colours. They may see the letter 'A' as blue and the letter 'B' as yellow and so fourth. I encourage you to read the Wikipedia articles linked for more information. My idea stemmed around the concept of assigning each number from 0-9 it's own unique colour and telling the time through that.
 
-Risus sed vulputate odio ut enim. Faucibus pulvinar elementum integer enim neque volutpat. Amet mauris commodo quis imperdiet. Nunc consequat interdum varius sit amet mattis vulputate enim. Nibh praesent tristique magna sit amet. Nec ultrices dui sapien eget mi. Augue ut lectus arcu bibendum at varius vel pharetra vel. Massa sapien faucibus et molestie ac feugiat sed. Non sodales neque sodales ut. Pellentesque eu tincidunt tortor aliquam nulla. Lacus luctus accumsan tortor posuere ac. Tincidunt augue interdum velit euismod. Dui nunc mattis enim ut tellus elementum sagittis vitae.
+## The Solution {% id="solution" %}
 
-Volutpat est velit egestas dui. Faucibus interdum posuere lorem ipsum dolor sit amet. Rhoncus aenean vel elit scelerisque. Feugiat sed lectus vestibulum mattis ullamcorper. Mauris commodo quis imperdiet massa tincidunt nunc. Enim eu turpis egestas pretium aenean pharetra magna ac placerat. Eu ultrices vitae auctor eu augue ut lectus arcu. Tellus cras adipiscing enim eu turpis egestas pretium aenean pharetra. Vestibulum morbi blandit cursus risus. Non pulvinar neque laoreet suspendisse interdum consectetur libero id. At tempor commodo ullamcorper a lacus vestibulum sed.
 
-Pulvinar elementum integer enim neque volutpat ac tincidunt vitae. Iaculis eu non diam phasellus vestibulum lorem sed risus. Sed egestas egestas fringilla phasellus faucibus. Mi quis hendrerit dolor magna eget. Amet consectetur adipiscing elit duis tristique. Vitae et leo duis ut. Consequat interdum varius sit amet mattis. Odio euismod lacinia at quis risus sed vulputate. Orci a scelerisque purus semper eget. Cras semper auctor neque vitae tempus quam. Libero nunc consequat interdum varius sit amet mattis vulputate enim. Ipsum dolor sit amet consectetur adipiscing. Id aliquet risus feugiat in ante metus dictum. Malesuada fames ac turpis egestas. Euismod nisi porta lorem mollis aliquam ut. Pharetra et ultrices neque ornare aenean euismod elementum nisi. Turpis egestas pretium aenean pharetra magna ac placerat vestibulum. Turpis egestas pretium aenean pharetra magna ac. Molestie nunc non blandit massa enim nec dui nunc mattis. Ut eu sem integer vitae justo eget magna fermentum iaculis.
+## The Outcome {% id="outcome" %}
+
+### Prototypes {% id="prototypes" %}
+I created two prototypes for this project, one in [Figma](https://www.figma.com/) to showcase the UI and features of The Spectrum Clock's website and another in JavaScript. I had to create the JavaScript prototype as Figma was unable to showcase how I wanted the clock to look and feel like.  
+Unfortunately, I was not able to get the JavaScript prototype to a point where I was happy with it, browser engines do not support animation from gradient to gradient and as a result the JavaScript result ended up very 'jumpy' and not as smooth as I wanted it to be. However I was able to successfully make it show the colours for the user's current time as well as any time/date combination they desire through the use of a date picker control at the top of the prototype.
+
+#### Figma Prototype {% id="figma-prototype" %}
+<!-- {% figma address=$contactEmail domain=$utils.emailDomain /%} -->
+
+[test link](https://jakub.studio/contact)
+
+#### JavaScript Prototype {% id="js-prototype" %}
+Source code available on my {% link href=$links.javascriptPrototypeSource newWindow=true %}GitHub{% /link %}.
