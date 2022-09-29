@@ -11,7 +11,7 @@ import readContent, { getContentPath } from "./fs";
 import serialiseTopLevel, { serialise } from "./serialise";
 import parseYaml from "./yaml";
 import { MarkdocData, Frontmatter } from "../types";
-import { transformConfig as basicMarkdownComponentsConfig } from "@/components/markdown";
+import { transformConfig } from "@/components/markdown";
 import { contentDirectory } from "@/modules/fs";
 import { domain, emailDomain } from "@/config";
 
@@ -59,7 +59,7 @@ const processFrontmatter = (rawFrontmatter: string, filename?: string): Frontmat
 };
 
 const createTransformConfig = (frontmatter: Frontmatter) => {
-	return Object.assign({}, {
+	const frontmatterConfig = {
 		variables: Object.assign({
 			frontmatter,
 			utils: {
@@ -68,7 +68,9 @@ const createTransformConfig = (frontmatter: Frontmatter) => {
 				emailDomain
 			}
 		}, frontmatter.variables),
-	}, basicMarkdownComponentsConfig);
+	};
+
+	return Object.assign(frontmatterConfig, transformConfig);
 };
 
 export const getStaticMarkdoc = (path: string[]) => {

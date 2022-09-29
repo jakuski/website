@@ -56,8 +56,9 @@ const ProjectLink: React.FC<ProjectLinkProps> = props => {
 				className="rounded-md shadow-inner h-80"
 				layout="fill"
 				objectFit="cover"
+				quality={90}
 			/>
-			<div className="absolute bottom-0 h-1/3 w-full rounded-md bg-gradient-to-t from-black opacity-40" />
+			<div className="absolute bottom-0 h-2/5 w-full rounded-md bg-gradient-to-t from-black opacity-50" />
 			<div className="absolute bottom-0 left-0 text-white drop-shadow-md h-full flex justify-between flex-col p-4">
 				<span className="uppercase tracking-widest text-xs mb-1">{props.category}</span>
 				<div>
@@ -92,7 +93,7 @@ const ProjectsIndexPage: React.FC<ProjectPageProps> = props => {
 			title="Works."
 			description="Projects by Jakub Staniszewski"
 		/>
-		<p className="mb-2">Here are some of my selected works. Press the buttons below if you would like to filter by category discipline.</p>
+		<p className="mb-2">Here are some of my selected works. Press the buttons below if you would like to filter by category/discipline.</p>
 		<div className="flex gap-2 flex-wrap">
 			{Object.keys(categoryCounts).map(category => (
 				<ProjectCategoryPill

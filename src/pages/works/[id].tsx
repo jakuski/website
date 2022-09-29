@@ -1,32 +1,31 @@
-import Post from "../../components/Post";
+import { BasicMarkdownPost, BasicMarkdownPostProps } from "@/components/Post";
+import { ContentDirectoryNames, getContentIDs, readContentFile } from "@/modules/fs";
+import { getStaticMarkdoc } from "@/modules/markdown/server";
 import { GetStaticPaths, GetStaticProps } from "next";
-import Head from "next/head";
-import { WorksIndex } from "@/routes";
-import { ContentDirectoryNames, getContentIDs } from "@/modules/fs";
 
-interface ProjectPageProps {
-
+interface Params {
+	[param: string]: string;
+	id: string;
 }
 
-export default function ProjectPage() {
-	return <Post title="Works">
-		Hello
-	</Post>;
-}
+export default BasicMarkdownPost;
 
 export const getStaticPaths: GetStaticPaths = async () => {
-	const projectIDs = await getContentIDs(ContentDirectoryNames.PROJECTS);
-
+	const ids = await getContentIDs(ContentDirectoryNames.PROJECTS);
 	return {
-		paths: projectIDs.map(id => ({
-			params: { id }
+		paths: ids.map(pageName => ({
+			params: { id: pageName }
 		})),
 		fallback: false
 	};
 };
 
-export const getStaticProps: GetStaticProps = () => {
-	return {
-		props: {}
-	};
+export const getStaticProps: GetStaticProps<BasicMarkdownPostProps, Params> = async (context) => {
+	// This will never be thrown but it's here to satisfy TypeScript.
+	if (!context.params) throw "Error: works/[id]::getStaticProps context#params is falsy";
+	const { id: pageID } = context.params;
+
+	const result = await getStaticMarkdoc([ContentDirectoryNames.PROJECTS, `${pageID}.md`])();
+
+	return result;
 };
