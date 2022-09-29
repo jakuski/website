@@ -17,7 +17,7 @@ interface ProjectCategoryPillProps {
 }
 
 const ProjectCategoryPill: React.FC<ProjectCategoryPillProps> = props => {
-	let className = "border border-black rounded-full flex px-4 py-2 items-center justify-center hover:bg-black hover:text-brand transition-all shrink-0";
+	let className = "border border-black rounded-full flex px-4 py-2 items-center justify-center transition-all shrink-0";
 	
 	if (props.unselected) {
 		className += " opacity-50 hover:opacity-100";
@@ -58,7 +58,9 @@ const ProjectLink: React.FC<ProjectLinkProps> = props => {
 				objectFit="cover"
 				quality={90}
 			/>
+			{/* Bottom black gradient */}
 			<div className="absolute bottom-0 h-2/5 w-full rounded-md bg-gradient-to-t from-black opacity-50" />
+			<div className="absolute top-0 h-1/5 w-full rounded-md bg-gradient-to-b from-black opacity-50" />
 			<div className="absolute bottom-0 left-0 text-white drop-shadow-md h-full flex justify-between flex-col p-4">
 				<span className="uppercase tracking-widest text-xs mb-1">{props.category}</span>
 				<div>
