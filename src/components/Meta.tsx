@@ -59,7 +59,7 @@ const Metadata: React.FC<MetaProps> = props => {
 export const MetaKeys = {
 	htmlTitle: "title",
 	description: "description",
-	themeColour: "theme-colour",
+	themeColour: "theme-color",
 
 	openGraphTitle: "og:title",
 	openGraphDescription: "og:description",
