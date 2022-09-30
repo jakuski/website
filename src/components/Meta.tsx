@@ -1,6 +1,7 @@
 import Head from "next/head";
 import { websiteName, defaultThemeColour } from "@/config";
 import { About as AboutRoute } from "@/routes";
+import images from "@/modules/images";
 
 interface MetaProps {
 	/* Basic Meta Stuff */
@@ -19,6 +20,8 @@ interface MetaProps {
 
 	/* Other small tweaks */
 	omitTitleSuffix?: true;
+
+	image?: string;
 }
 
 export const createHtmlTitleString = (pageTitle: string, omitSuffix?: boolean): string => {
@@ -29,12 +32,12 @@ const Metadata: React.FC<MetaProps> = props => {
 	return <Head>
 		<title key={MetaKeys.htmlTitle}>{createHtmlTitleString(props.title, props.omitTitleSuffix)}</title>
 
-		<meta name={MetaKeys.openGraphTitle} key={MetaKeys.openGraphTitle} content={props.title} />
+		<meta property={MetaKeys.openGraphTitle} key={MetaKeys.openGraphTitle} content={props.title} />
 		<meta name={MetaKeys.twitterTitle} key={MetaKeys.twitterTitle} content={props.title} />
 
 		{props.description && <>
 			<meta name={MetaKeys.description} key={MetaKeys.description} content={props.description} />
-			<meta name={MetaKeys.openGraphDescription} key={MetaKeys.openGraphDescription} content={props.description} />
+			<meta property={MetaKeys.openGraphDescription} key={MetaKeys.openGraphDescription} content={props.description} />
 			<meta name={MetaKeys.twitterDescription} key={MetaKeys.twitterDescription} content={props.description} />
 		</>}
 
@@ -50,6 +53,13 @@ const Metadata: React.FC<MetaProps> = props => {
 		{props.modified && props.modified instanceof Date && <>
 			<meta property={MetaKeys.articleModifiedTime} key={MetaKeys.articleModifiedTime} content={props.modified.toJSON()} />
 		</>}
+
+		{props.image && (typeof props.image === "string") && images[props.image] && <>
+			<meta property={MetaKeys.openGraphImage} key={MetaKeys.openGraphImage} content={images[props.image].src.src} />
+			<meta name={MetaKeys.twitterImage} key={MetaKeys.twitterImage} content={images[props.image].src.src} />
+			<meta property={MetaKeys.openGraphImageAlt} key={MetaKeys.openGraphImageAlt} content={images[props.image].alt} />
+			<meta name={MetaKeys.twitterImageAlt} key={MetaKeys.twitterImageAlt} content={images[props.image].alt} />
+		</>}
 	
 		<meta name={MetaKeys.themeColour} key={MetaKeys.themeColour} content={props.themeColour || defaultThemeColour} />
 	</Head>;
@@ -63,15 +73,20 @@ export const MetaKeys = {
 
 	openGraphTitle: "og:title",
 	openGraphDescription: "og:description",
+	openGraphImage: "og:image",
+	openGraphImageAlt: "og:image:alt",
 
 	twitterTitle: "twitter:title",
 	twitterDescription: "twitter:description",
+	twitterImage: "twitter:image",
+	twitterImageAlt: "twitter:image:alt",
 
 	author: "author",
 	articleAuthor: "article:author",
 
 	articlePublishedTime: "article:published_time",
 	articleModifiedTime: "article:modified_time"
+
 };
 
 export default Metadata;

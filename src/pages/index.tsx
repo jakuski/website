@@ -16,7 +16,12 @@ const Link: React.FC<PropsWithChildren<{
 export default function Home() {
 	return (
 		<>
-			<Metadata title={websiteName} omitTitleSuffix description="Jakub is a multidisciplinary graphic designer and developer specialising in UI/UX design. " />
+			<Metadata
+				title={websiteName}
+				omitTitleSuffix
+				description="Jakub is a multi-disciplinary graphic designer and developer specialising in UI/UX design. "
+				image="g/logo"
+			/>
 			<main className="flex items-center justify-center h-full gap-12 flex-col sm:flex-row mx-8 font-serif">
 				<div>
 					<Image src="/logo.svg" alt="Logo" height={128} width={128} />

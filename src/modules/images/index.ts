@@ -1,5 +1,7 @@
 import { StaticImageData } from "next/image";
 
+import imageGenericLogo from "@/content/_images/generic/logo.png";
+
 import imageProjectCookbookCover from "@/content/_images/projects/uni-y3-cookbook/cookbook_cover.jpg";
 import imageProjectClockRings from "@/content/_images/projects/uni-y3-spectrum-clock/rings.png";
 import imageProjectChivasHero from "@/content/_images/projects/uni-y3-chivas-regal/hero_closeup.jpg";
@@ -12,6 +14,10 @@ interface Image {
 }
 
 const images: Record<string, Image> = {
+	"g/logo": {
+		src: imageGenericLogo,
+		alt: "Jakub Staniszewski's Logo, a beanie and glasses"
+	},
 	"p/cookbook/cookbook_cover": {
 		src: imageProjectCookbookCover,
 		alt: "Cover of 'How to cook and not die trying' cookbook",

@@ -18,7 +18,7 @@ interface ProjectCategoryPillProps {
 
 const ProjectCategoryPill: React.FC<ProjectCategoryPillProps> = props => {
 	let className = "border border-black rounded-full flex px-4 py-2 items-center justify-center transition-all shrink-0";
-	
+
 	if (props.unselected) {
 		className += " opacity-50 hover:opacity-100";
 	}
@@ -26,7 +26,7 @@ const ProjectCategoryPill: React.FC<ProjectCategoryPillProps> = props => {
 	if (props.active) {
 		className += " bg-black text-brand";
 	}
-	
+
 	return <button
 		onClick={props.onClick}
 		className={className}
@@ -34,7 +34,6 @@ const ProjectCategoryPill: React.FC<ProjectCategoryPillProps> = props => {
 		<div>
 			{props.name} &mdash; {props.count}
 		</div>
-		
 	</button>;
 };
 
@@ -44,6 +43,7 @@ interface ProjectLinkProps {
 	category: string;
 	image: string;
 	href: string;
+	requestPriorityLoading?: boolean;
 }
 
 const ProjectLink: React.FC<ProjectLinkProps> = props => {
@@ -57,10 +57,15 @@ const ProjectLink: React.FC<ProjectLinkProps> = props => {
 				layout="fill"
 				objectFit="cover"
 				quality={90}
+				priority={props.requestPriorityLoading === true}
 			/>
 			{/* Bottom black gradient */}
 			<div className="absolute bottom-0 h-2/5 w-full rounded-md bg-gradient-to-t from-black opacity-50" />
+
+			{/* Top black gradient */}
 			<div className="absolute top-0 h-1/5 w-full rounded-md bg-gradient-to-b from-black opacity-50" />
+
+			{/* Text content */}
 			<div className="absolute bottom-0 left-0 text-white drop-shadow-md h-full flex justify-between flex-col p-4">
 				<span className="uppercase tracking-widest text-xs mb-1">{props.category}</span>
 				<div>
@@ -76,7 +81,7 @@ interface ProjectPageProps {
 	projects: ProjectLinkProps[];
 }
 
-const mapProjectsToCategories = (projects: ProjectLinkProps[]): Record<string, number> => {
+const countProjectCategories = (projects: ProjectLinkProps[]): Record<string, number> => {
 	const final: Record<string, number> = {};
 
 	for (const project of projects) {
@@ -97,7 +102,7 @@ const ProjectCountLabel: React.FC<{
 };
 
 const ProjectsIndexPage: React.FC<ProjectPageProps> = props => {
-	const categoryCounts = mapProjectsToCategories(props.projects);
+	const categoryCounts = countProjectCategories(props.projects);
 	const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 
 	return <Post title="Works.">
@@ -106,6 +111,7 @@ const ProjectsIndexPage: React.FC<ProjectPageProps> = props => {
 			description="Projects by Jakub Staniszewski"
 		/>
 		<p className="mb-4">Here are some of my selected works. Press the buttons below if you would like to filter by category/discipline.</p>
+
 		<div className="flex gap-2 flex-wrap mb-2">
 			{Object.keys(categoryCounts).map(category => (
 				<ProjectCategoryPill
@@ -120,12 +126,22 @@ const ProjectsIndexPage: React.FC<ProjectPageProps> = props => {
 				/>
 			))}
 		</div>
+
 		<ProjectCountLabel selectedCategory={selectedCategory} projects={props.projects} categoryCounts={categoryCounts} />
+
 		{props.projects.filter(val => {
+			// If no category is selected, return everything.
 			if (selectedCategory === null) return true;
+
+			// Else only return projects with a matching category to the selected one.
 			else if (selectedCategory === val.category) return true;
+			
+			return false;
 		}).map((project, index) => (
-			<ProjectLink key={index} {...project} />
+			<ProjectLink
+				key={index}
+				requestPriorityLoading={(index === 0) || (index === 1)}
+				{...project} />
 		))}
 	</Post>;
 };

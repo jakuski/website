@@ -5,9 +5,11 @@ import LogoIcon from "./icons/Logo";
 const NavbarLink: React.FC<React.PropsWithChildren<{
 	href: string;
 }>> = props => {
-	return <Link href={props.href}>
-		<a className="text-md font-semibold flex items-center px-2 min-h-44 lowercase">{props.children}</a>
-	</Link>;
+	return <li>
+		<Link href={props.href}>
+			<a className="text-md font-semibold flex items-center px-2 min-h-44 lowercase">{props.children}</a>
+		</Link>
+	</li>;
 };
 
 export default function Navbar() {
@@ -24,15 +26,17 @@ export default function Navbar() {
 					</a>
 				</Link>
 
-				<nav className="font-serif flex gap-4">
-					{navbarRoutes.map(route => (
-						<NavbarLink
-							href={route.href}
-							key={route.href}
-						>
-							{route.displayName}
-						</NavbarLink>
-					))}
+				<nav className="font-serif">
+					<ul className="flex gap-4">
+						{navbarRoutes.map(route => (
+							<NavbarLink
+								href={route.href}
+								key={route.href}
+							>
+								{route.displayName}
+							</NavbarLink>
+						))}
+					</ul>
 				</nav>
 			</header>
 		</>
