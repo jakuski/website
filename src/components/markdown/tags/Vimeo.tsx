@@ -1,6 +1,7 @@
 import { useScript } from "@/modules/script-handler";
 import React from "react";
 
+// https://developer.vimeo.com/player/sdk/embed
 interface VimeoEmbedProps {
 	// Video ID
 	id: string;
