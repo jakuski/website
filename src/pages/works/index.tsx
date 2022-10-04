@@ -7,6 +7,7 @@ import projectIndexPageSort from "@/content/projects/_indexPageSort.json";
 import { getStaticMarkdoc } from "@/modules/markdown/server";
 import Metadata from "@/components/Meta";
 import { useState } from "react";
+import VimeoEmbed from "@/components/markdown/tags/Vimeo";
 
 interface ProjectCategoryPillProps {
 	name: string;
@@ -107,7 +108,7 @@ const ProjectsIndexPage: React.FC<ProjectPageProps> = props => {
 
 	return <Post title="Works.">
 		<Metadata
-			title="Works."
+			title="Works"
 			description="Projects by Jakub Staniszewski"
 		/>
 		<p className="mb-4">Here are some of my selected works. Press the buttons below if you would like to filter by category/discipline.</p>
@@ -160,8 +161,6 @@ export const getStaticProps = async (): Promise<{ props: ProjectPageProps }> => 
 		}
 
 		const { props: markdoc } = await getStaticMarkdoc([ContentDirectoryNames.PROJECTS, `${id}.md`])();
-
-		console.log(markdoc);
 
 		const projectData: ProjectLinkProps = {
 			title: markdoc.frontmatter.meta.title,

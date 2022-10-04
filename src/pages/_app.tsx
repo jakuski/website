@@ -10,6 +10,7 @@ import { DeveloperOnly } from "@/components/Developer";
 import If from "@/components/If";
 import { isDev } from "@/utils";
 import React from "react";
+import { ScriptContextProvider, ScriptLoader } from "@/modules/script-handler";
 
 const App: React.FC<{
 	Component: (React.FC & { layout: string})
@@ -19,11 +20,13 @@ const App: React.FC<{
 	// eslint-disable-next-line react/display-name
 	if (Layout === "none") Layout = ({children}) => <>{children}</>;
 
-	return <>
+	return <ScriptContextProvider>
 		<Layout>
 			<If condition={isDev}>
 				<DeveloperOnly />
 			</If>
+
+			<ScriptLoader />
 			
 			<Component {...pageProps} />
 		</Layout>
@@ -32,7 +35,7 @@ const App: React.FC<{
 			src="/js/track-src.js"
 			strategy="lazyOnload"
 		/>
-	</>;
+	</ScriptContextProvider>;
 };
 
 export default App;

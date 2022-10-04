@@ -32,10 +32,16 @@ const Header: React.FC<React.PropsWithChildren<{
 		return null;
 	}
 
+	// Trim whitespace from headers
+	let children = props.children;
+	if (typeof children === "string") {
+		children = children.trim();
+	}
+
 	return React.createElement(`h${props.level}`, {
 		id: props.id,
 		className: (getHeaderClassName(props.level) + " font-bold").trim()
-	}, props.children);
+	}, children);
 };
 
 export default Header;

@@ -9,6 +9,7 @@ import Divider from "./nodes/Divider";
 
 // Tags
 import Email from "./tags/Email";
+import VimeoEmbed from "./tags/Vimeo";
 
 enum MarkdocComponentNames  {
 	NODE_ARTICLE = "AR",
@@ -17,7 +18,9 @@ enum MarkdocComponentNames  {
 	NODE_HEADER = "H",
 	NODE_DIVIDER = "D",
 
-	TAG_EMAIL = "E"
+	TAG_EMAIL = "E",
+	TAG_EMBED_VIMEO = "EM_VIMEO",
+	TAG_EMBED_FIGMA = "EM_FIGMA"
 }
 
 const linkTag = {
@@ -56,7 +59,13 @@ export const transformConfig: Config = {
 				domain: { type: String }
 			}
 		},
-		link: linkTag
+		link: linkTag,
+		vimeo: {
+			render: MarkdocComponentNames.TAG_EMBED_VIMEO,
+			attributes: {
+				id: { type: String }
+			}
+		}
 	}
 };
 
@@ -68,6 +77,9 @@ export const renderConfig = {
 		[MarkdocComponentNames.NODE_ANCHOR]: Anchor,
 		[MarkdocComponentNames.NODE_HEADER]: Header,
 		[MarkdocComponentNames.NODE_DIVIDER]: Divider,
-		[MarkdocComponentNames.TAG_EMAIL]: Email
+
+		// Tags
+		[MarkdocComponentNames.TAG_EMAIL]: Email,
+		[MarkdocComponentNames.TAG_EMBED_VIMEO]: VimeoEmbed
 	}
 };

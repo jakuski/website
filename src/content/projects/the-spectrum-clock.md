@@ -29,6 +29,12 @@ The brief was set out by university staff, with one simple question. "Explore in
 
 ## The Outcome {% id="outcome" %}
 
+### Phone Mock-up
+{% vimeo id="714461646" /%}
+
+### Raw UI
+{% vimeo id="716819915" /%}
+
 ### Prototypes {% id="prototypes" %}
 I created two prototypes for this project, one in [Figma](https://www.figma.com/) to showcase the UI and features of The Spectrum Clock's website and another in JavaScript. I had to create the JavaScript prototype as Figma was unable to showcase how I wanted the clock to look and feel like.  
 Unfortunately, I was not able to get the JavaScript prototype to a point where I was happy with it, browser engines do not support animation from gradient to gradient and as a result the JavaScript result ended up very 'jumpy' and not as smooth as I wanted it to be. However I was able to successfully make it show the colours for the user's current time as well as any time/date combination they desire through the use of a date picker control at the top of the prototype.
