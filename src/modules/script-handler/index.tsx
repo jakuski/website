@@ -61,7 +61,7 @@ const ScriptLoader: React.FC = () => {
 		if (!scriptDefinitions[script]) continue;
 
 		scriptElements.push(
-			<Script src={scriptDefinitions[script]} key={script} id={"external-script__" + script} />
+			<Script src={scriptDefinitions[script]} key={script} id={"external-script-handler__" + script} />
 		);
 	} 
 

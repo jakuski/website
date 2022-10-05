@@ -15,22 +15,38 @@ pageProps:
 variables:
     links:
         figmaPrototype: "https://jakub.studio/go/xyz"
+    testString: This string is found within the variables.
 
 project:
-    category: "ui/ux"
+    category: Category String
     softwareUsed: ["adobe.cc.lightroom", "maxon.cinema4d"]
-    credits: Maria Uwu
+    credits: Credits String
 ---
-**Bio**
+## Example Paragraphs
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum gravida id quam a mattis. Sed finibus ut ligula at sagittis. Curabitur fringilla est vitae massa facilisis, id ullamcorper libero pellentesque. Suspendisse augue urna, suscipit non tincidunt eu, blandit ac est. In ut dui in ligula consectetur tristique. Aenean iaculis semper libero, eget rhoncus mauris dictum sit amet. In dictum nisi sed diam ultrices, at convallis ex consequat. In ut feugiat diam. Integer eu odio volutpat lacus convallis consequat nec in justo. Donec non lectus eget est consequat vehicula in a purus. Cras blandit quam magna. Ut tincidunt volutpat velit. Integer cursus luctus lacus in vulputate.
 
-Hey, I'm Jakub. A UI/UX focused-designer and diehard perfectionist who's margin for error is practically nil. As a result, I often spend a lot of time refining small details in my designs, to which people tell me "Nobody will notice that!", however I don't listen to them. I believe it's the small details that matter. Those details are what put the user experience above and beyond other designs/applications. I also highly enjoy learning new skills/techniques/software that I can use to push my designs above and beyond. Apart from design, I enjoy cooking, working on cars and coding.
+Suspendisse sagittis mollis ligula vitae pulvinar. Proin placerat, enim eu pellentesque consequat, quam nulla pharetra dui, ac interdum turpis dolor vel felis. Integer consequat dui eu velit lobortis suscipit. Aenean vestibulum tellus aliquam libero eleifend, in dapibus nunc convallis. Aenean eget tincidunt lectus. Nulla efficitur metus quis mi finibus accumsan ut sed ligula. Proin dictum lorem nibh. Donec vel ante elementum orci pretium porta.
 
-**Future Ambitions**
+Nunc ac orci vel metus venenatis luctus ut in nisl. Proin laoreet urna eget pharetra venenatis. Duis semper ut diam dictum congue. Fusce mattis mi quam, eu maximus quam dapibus id. Praesent at libero diam. Cras ac rhoncus arcu, id facilisis justo. Nunc vestibulum tempus urna ac aliquet. Aenean eleifend diam vel dapibus cursus. Nunc cursus tellus et quam suscipit, euismod elementum libero malesuada. Suspendisse potenti. Nam aliquet quis nunc nec egestas. Nam mollis sapien sed venenatis scelerisque.
 
-I aim of starting my own studio later down the line, delivering beautifully crafted bespoke websites and applications to clients who want to be ahead of the game. After all, we take our first bite with our eyes.
-
-## Header 2
+## Header Level 2
 Hello this is text of a header 2
 
-### Header 3
+### Header Level 3
 Hello this is text of a header 3.
+
+#### Header Level 4
+Example of header level 4.
+
+## Header Level 2 with ID {% id="header-2-id" %}
+This header has a HTML ID attribute.
+
+## Variable Embedding
+{% $testString %}
+
+
+### (h3) Vimeo Embed
+{% vimeo id="714461646" color="#ffa50a" /%}
+
+### (h3) Figma Embed
+{% figma url="https://www.figma.com/file/ADbpaUBjZcJkeBZWP1NmUu/Figma-CV?node-id=16%3A5&hide-ui=1" /%}

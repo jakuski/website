@@ -6,7 +6,7 @@ import { parse, UrlWithStringQuery } from "url";
 const domainSplit = domain.split(".");
 
 const isExternalHref = (url: UrlWithStringQuery): boolean => {
-	// If 'host' or 'hostname' are null, then the link wil not navigate away from the website.
+	// If 'host' or 'hostname' are null, then the link wil not navigate away from the current domain.
 	if ((url.host === null) || (url.hostname === null)) return false;
 
 	const hostnameSplit = url.hostname.split(".");
@@ -30,7 +30,6 @@ const Anchor: React.FC<React.PropsWithChildren<{
 	href: string;
 	newWindow?: string;
 }>> = props => {
-
 	const parsed = parse(props.href);
 	const isExternal = isExternalHref(parsed);
 

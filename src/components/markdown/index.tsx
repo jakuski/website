@@ -9,7 +9,8 @@ import Divider from "./nodes/Divider";
 
 // Tags
 import Email from "./tags/Email";
-import VimeoEmbed from "./tags/Vimeo";
+import VimeoEmbed from "./tags/VimeoEmbed";
+import FigmaEmbed, { FIGMA_EMBEDDABLE_URL_REGEX } from "./tags/FigmaEmbed";
 
 enum MarkdocComponentNames  {
 	NODE_ARTICLE = "AR",
@@ -63,7 +64,18 @@ export const transformConfig: Config = {
 		vimeo: {
 			render: MarkdocComponentNames.TAG_EMBED_VIMEO,
 			attributes: {
-				id: { type: String }
+				id: { type: String, required: true },
+				color: { type: String}
+			}
+		},
+		figma: {
+			render: MarkdocComponentNames.TAG_EMBED_FIGMA,
+			attributes: {
+				url: {
+					type: String,
+					required: true,
+					matches: FIGMA_EMBEDDABLE_URL_REGEX
+				}
 			}
 		}
 	}
@@ -80,6 +92,7 @@ export const renderConfig = {
 
 		// Tags
 		[MarkdocComponentNames.TAG_EMAIL]: Email,
-		[MarkdocComponentNames.TAG_EMBED_VIMEO]: VimeoEmbed
+		[MarkdocComponentNames.TAG_EMBED_VIMEO]: VimeoEmbed,
+		[MarkdocComponentNames.TAG_EMBED_FIGMA]: FigmaEmbed
 	}
 };

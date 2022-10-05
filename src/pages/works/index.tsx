@@ -7,7 +7,6 @@ import projectIndexPageSort from "@/content/projects/_indexPageSort.json";
 import { getStaticMarkdoc } from "@/modules/markdown/server";
 import Metadata from "@/components/Meta";
 import { useState } from "react";
-import VimeoEmbed from "@/components/markdown/tags/Vimeo";
 
 interface ProjectCategoryPillProps {
 	name: string;

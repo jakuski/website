@@ -4,12 +4,16 @@ meta:
     displayTitle: Colophon.
     description: A brief insight into the history, design and development of my website.
     edited: 2022-07-05
+
+variables:
+    repoIssueLink: https://github.com/jakub-studio/website/issues
+    bugReportEmailUsername: ayup
 ---
 This website is designed and developed by Jakub Staniszewski in London, England.
 
 ### History
 
-You may have seen a placeholder website present early 2022 on this domain, this was replaced with the current version of the website but was hosted on GitHub pages and used zero libraries. You may visit it [here](https://jakuski.github.io/website-dep/). *Note the header text which changes weight depending on the y-position of the user's cursor, that was awesome.*
+You may have seen a placeholder website present early 2022 on this domain, this was replaced with the current version of the website but was hosted on GitHub pages and used zero libraries. You may visit it [here](https://jakub-studio.github.io/website-dep/). *Note the header text which changes weight depending on the y-position of the user's cursor, that was awesome.*
 
 ### Design and Typography
 
@@ -22,3 +26,6 @@ The website was developed in [Visual Studio Code](https://code.visualstudio.com/
 ### Hosting
 
 It is currently hosted on [Vercel](https://vercel.com).
+
+### Bugs, errors, oopsies and typos.
+If you notice any of the above in my website, please report them at the website's {% link href=$repoIssueLink newWindow=true %}GitHub repository{% /link %}. If you do not have a GitHub account or do not wish to use GitHub for any reason, please email me at {% email address=$bugReportEmailUsername domain=$utils.emailDomain /%} with steps on how to reproduce it.

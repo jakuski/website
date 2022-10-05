@@ -30,7 +30,7 @@ The brief was set out by university staff, with one simple question. "Explore in
 ## The Outcome {% id="outcome" %}
 
 ### Phone Mock-up
-{% vimeo id="714461646" /%}
+{% vimeo id="714461646" color="#ffa50a" /%}
 
 ### Raw UI
 {% vimeo id="716819915" /%}

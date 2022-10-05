@@ -5,7 +5,7 @@ import React from "react";
 interface VimeoEmbedProps {
 	// Video ID
 	id: string;
-	hash?: string; // for private video
+	h?: string; // hash for private videos
 
 	// Functionality
 	autoplay?: boolean;
@@ -13,9 +13,9 @@ interface VimeoEmbedProps {
 
 	// Customisation
 	color?: string;
-	hidePortrait?: boolean;
-	hideTitle?: boolean;
-	hideByLine?: boolean;
+	portrait?: boolean;
+	title?: boolean;
+	byline?: boolean;
 }
 
 const VIMEO_PLAYER_URL = "https://player.vimeo.com/video/";
@@ -23,7 +23,22 @@ const VIMEO_PLAYER_URL = "https://player.vimeo.com/video/";
 const buildVimeoEmbedUrl = (props: VimeoEmbedProps): string => {
 	const url = new URL(VIMEO_PLAYER_URL + props.id);
 
-	// todo
+	const propsKeys = Object.keys(props) as Array<keyof VimeoEmbedProps>;
+	for (const prop of propsKeys) {
+		if (prop === "id") continue;
+		
+		const propData = props[prop];
+		if (!propData) continue;
+
+		if (typeof propData === "string") {
+			url.searchParams.append(prop,
+				// If the prop is color, remove the hash from hex code
+				prop === "color" ? propData.replace("#", "") : propData
+			);
+		} else if (typeof propData === "boolean") {
+			url.searchParams.append(prop, Number(propData).toString()); // Converts booleans to numbers, e.g. true -> "1"
+		}
+	}
 
 	return url.toString();
 };
@@ -47,10 +62,12 @@ const buildVimeoEmbedUrl = (props: VimeoEmbedProps): string => {
 const VimeoEmbed: React.FC<VimeoEmbedProps> = props => {
 	useScript("vimeo");
 
-	return <div className=" bg-pure-black rounded-md select-none">
+	const src = buildVimeoEmbedUrl(props);
+
+	return <div className="bg-pure-black rounded-md select-none">
 		<div>
 			<iframe
-				src={VIMEO_PLAYER_URL + props.id}
+				src={src}
 				className="w-full aspect-video"
 				frameBorder="0"
 				allow="autoplay; fullscreen; picture-in-picture"
