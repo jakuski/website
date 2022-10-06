@@ -42,6 +42,10 @@ const images: Record<string, Image> = {
 
 export default images;
 
+export const resolveImage = (imageName: string): Image => {
+	return images[imageName];
+};
+
 export type {
 	Image
 };

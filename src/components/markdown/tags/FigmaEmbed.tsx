@@ -1,3 +1,5 @@
+// TODO Fix or remove Figma Embeds
+
 import { domain } from "@/config";
 import React from "react";
 

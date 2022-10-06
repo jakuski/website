@@ -6,13 +6,12 @@ is only responsible for rendering ready-to-go data.
 */
 
 import { GetStaticProps } from "next";
-import { Config, parse, RenderableTreeNode, transform } from "@markdoc/markdoc";
-import readContent, { getContentPath } from "./fs";
+import { Config, parse, RenderableTreeNode, Tokenizer, transform } from "@markdoc/markdoc";
 import serialiseTopLevel, { serialise } from "./serialise";
 import parseYaml from "./yaml";
 import { MarkdocData, Frontmatter } from "../types";
 import { transformConfig } from "@/components/markdown";
-import { contentDirectory } from "@/modules/fs";
+import { contentDirectory, ContentDirectoryNames, readContentFile } from "@/modules/fs";
 import { domain, emailDomain } from "@/config";
 
 export interface MarkdocLoaderProps {
@@ -58,8 +57,8 @@ const processFrontmatter = (rawFrontmatter: string, filename?: string): Frontmat
 	}
 };
 
-const createTransformConfig = (frontmatter: Frontmatter) => {
-	const frontmatterConfig = {
+const createTransformConfig = (frontmatter: Frontmatter): Config => {
+	const frontmatterConfig: Config = {
 		variables: Object.assign({
 			frontmatter,
 			utils: {
@@ -70,17 +69,22 @@ const createTransformConfig = (frontmatter: Frontmatter) => {
 		}, frontmatter.variables),
 	};
 
-	return Object.assign(frontmatterConfig, transformConfig);
+	return Object.assign<Config, Config>(frontmatterConfig, transformConfig);
 };
 
-export const getStaticMarkdoc = (path: string[]) => {
+export const getStaticMarkdoc = (directory: ContentDirectoryNames, filename: string) => {
 	return async () => {
+		const path = [directory, filename];
+
 		// File system operations.
-		const filePath = getContentPath(path);
-		const rawDocument = await readContent(filePath);
+		const rawDocument = await readContentFile(directory, filename);
 
 		// Parsing
-		const documentAST = parse(rawDocument, filePath);
+		const tokeniser = new Tokenizer({
+			allowComments: true
+		});
+		const tokens = tokeniser.tokenize(rawDocument);
+		const documentAST = parse(tokens, path.join("/"));
 
 		// Transformations
 		const frontmatter = processFrontmatter(

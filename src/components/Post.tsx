@@ -88,7 +88,7 @@ const Footnotes: React.FC<FootnotesProps> = (props) => {
 	return <>
 		{(props.softwareUsed && props.softwareUsed.length !== 0 && (
 			<FootnoteSection label="Software Used">
-				<ul className=" list-disc list-inside">
+				<ul className="list-disc list-inside">
 					{props.softwareUsed.map(id => {
 						const program = programs[id];
 						if (!program) return null;

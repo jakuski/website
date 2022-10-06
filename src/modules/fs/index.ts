@@ -16,7 +16,8 @@ export const contentDirectory = resolve(process.cwd(), "src", "content");
 export enum ContentDirectoryNames {
 	BASE = "base",
 	BLOG = "blog",
-	PROJECTS = "projects"
+	PROJECTS = "projects",
+	PARTIALS = "_partials"
 };
 const _getContentPath = (path: string[]) => resolve(contentDirectory, ...path);
 

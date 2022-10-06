@@ -11,6 +11,7 @@ import Divider from "./nodes/Divider";
 import Email from "./tags/Email";
 import VimeoEmbed from "./tags/VimeoEmbed";
 import FigmaEmbed, { FIGMA_EMBEDDABLE_URL_REGEX } from "./tags/FigmaEmbed";
+import Image from "./tags/Image";
 
 enum MarkdocComponentNames  {
 	NODE_ARTICLE = "AR",
@@ -20,19 +21,37 @@ enum MarkdocComponentNames  {
 	NODE_DIVIDER = "D",
 
 	TAG_EMAIL = "E",
+	TAG_IMAGE = "I",
 	TAG_EMBED_VIMEO = "EM_VIMEO",
 	TAG_EMBED_FIGMA = "EM_FIGMA"
 }
 
-const linkTag = {
-	render: MarkdocComponentNames.NODE_ANCHOR,
-	attributes: {
-		href: {
-			type: String
-		},
-		newWindow: {
-			type: Boolean,
-			required: false
+const sharedComponents: Config["tags"] = {
+	link: {
+		render: MarkdocComponentNames.NODE_ANCHOR,
+		attributes: {
+			href: {
+				type: String
+			},
+			newWindow: {
+				type: Boolean,
+				required: false
+			}
+		}
+	},
+	image: {
+		render: MarkdocComponentNames.TAG_IMAGE,
+		attributes: {
+			src: {
+				type: String,
+				required: true
+			},
+			alt: {
+				type: String
+			},
+			caption: {
+				type: String
+			}
 		}
 	}
 };
@@ -42,15 +61,20 @@ export const transformConfig: Config = {
 		document: { render: MarkdocComponentNames.NODE_ARTICLE  },
 		paragraph: { render: MarkdocComponentNames.NODE_PARAGRAPH },
 		hr: { render: MarkdocComponentNames.NODE_DIVIDER },
-		heading: { render: MarkdocComponentNames.NODE_HEADER, attributes: {
-			level: {
-				type: Number
-			},
-			id: {
-				type: String
+		heading: { render: MarkdocComponentNames.NODE_HEADER,
+			attributes: {
+				level: {
+					type: Number
+				},
+				id: {
+					type: String
+				}
 			}
-		} },
-		link: linkTag
+		},
+		
+		// Overwriting built ins
+		link: sharedComponents.link,
+		image: sharedComponents.image
 	},
 	tags: {
 		email: {
@@ -60,12 +84,13 @@ export const transformConfig: Config = {
 				domain: { type: String }
 			}
 		},
-		link: linkTag,
+		link: sharedComponents.link,
+		image: sharedComponents.image,
 		vimeo: {
 			render: MarkdocComponentNames.TAG_EMBED_VIMEO,
 			attributes: {
 				id: { type: String, required: true },
-				color: { type: String}
+				color: { type: String }
 			}
 		},
 		figma: {
@@ -92,6 +117,7 @@ export const renderConfig = {
 
 		// Tags
 		[MarkdocComponentNames.TAG_EMAIL]: Email,
+		[MarkdocComponentNames.TAG_IMAGE]: Image,
 		[MarkdocComponentNames.TAG_EMBED_VIMEO]: VimeoEmbed,
 		[MarkdocComponentNames.TAG_EMBED_FIGMA]: FigmaEmbed
 	}

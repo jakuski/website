@@ -1,9 +1,9 @@
 import React from "react";
 
 const Paragraph: React.FC<React.PropsWithChildren> = props => {
-	return <p className="mb-4">
+	return <div className="mb-4" role="paragraph">
 		{props.children}
-	</p>;
+	</div>;
 };
 
 export default Paragraph;

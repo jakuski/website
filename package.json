@@ -12,23 +12,23 @@
     "postbuild": "next-sitemap"
   },
   "dependencies": {
-    "@markdoc/markdoc": "^0.1.6",
-    "axios": "^0.27.2",
+    "@markdoc/markdoc": "^0.1.12",
+    "axios": "^1.0.0",
     "js-yaml": "^4.1.0",
-    "next": "^12.2.5",
-    "next-sitemap": "^3.1.21",
+    "next": "^12.3.1",
+    "next-sitemap": "^3.1.23",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@types/js-yaml": "^4.0.5",
-    "@types/node": "^18.7.13",
-    "@types/react": "^18.0.17",
-    "autoprefixer": "^10.4.8",
-    "eslint": "^8.22.0",
-    "eslint-config-next": "^12.2.5",
-    "postcss": "^8.4.16",
+    "@types/node": "^18.8.2",
+    "@types/react": "^18.0.21",
+    "autoprefixer": "^10.4.12",
+    "eslint": "^8.24.0",
+    "eslint-config-next": "^12.3.1",
+    "postcss": "^8.4.17",
     "tailwindcss": "^3.1.8",
-    "typescript": "^4.7.4"
+    "typescript": "^4.8.4"
   }
 }

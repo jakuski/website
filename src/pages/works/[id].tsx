@@ -25,7 +25,7 @@ export const getStaticProps: GetStaticProps<BasicMarkdownPostProps, Params> = as
 	if (!context.params) throw "Error: works/[id]::getStaticProps context#params is falsy";
 	const { id: pageID } = context.params;
 
-	const result = await getStaticMarkdoc([ContentDirectoryNames.PROJECTS, `${pageID}.md`])();
+	const result = await getStaticMarkdoc(ContentDirectoryNames.PROJECTS, `${pageID}.md`)();
 
 	return result;
 };

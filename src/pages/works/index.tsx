@@ -1,7 +1,7 @@
 import Post from "@/components/Post";
 import Image from "next/image";
 import Link from "next/link";
-import images from "@/modules/images";
+import images, { resolveImage } from "@/modules/images";
 import { ContentDirectoryNames, getContentIDs } from "@/modules/fs";
 import projectIndexPageSort from "@/content/projects/_indexPageSort.json";
 import { getStaticMarkdoc } from "@/modules/markdown/server";
@@ -47,11 +47,13 @@ interface ProjectLinkProps {
 }
 
 const ProjectLink: React.FC<ProjectLinkProps> = props => {
+	const { src, alt } = resolveImage(props.image);
+
 	return <Link href={props.href}>
 		<a className="shadow-md rounded-md mt-4 relative block hover:scale-[1.025] transition-all hover:shadow-lg transform-gpu h-80 overflow-hidden" >
 			<Image
-				src={images[props.image].src}
-				alt={images[props.image].alt}
+				src={src}
+				alt={alt}
 				placeholder="blur"
 				className="rounded-md shadow-inner h-80"
 				layout="fill"
@@ -159,7 +161,7 @@ export const getStaticProps = async (): Promise<{ props: ProjectPageProps }> => 
 			throw Error(`Project index page sort array specifies project id '${id}' however it is not present within projects content directory. Check for typos.`);
 		}
 
-		const { props: markdoc } = await getStaticMarkdoc([ContentDirectoryNames.PROJECTS, `${id}.md`])();
+		const { props: markdoc } = await getStaticMarkdoc(ContentDirectoryNames.PROJECTS, `${id}.md`)();
 
 		const projectData: ProjectLinkProps = {
 			title: markdoc.frontmatter.meta.title,
