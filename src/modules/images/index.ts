@@ -5,7 +5,7 @@ import imageGenericLogo from "@/content/_images/generic/logo.png";
 import imageProjectCookbookCover from "@/content/_images/projects/uni-y3-cookbook/cookbook_cover.jpg";
 import imageProjectClockRings from "@/content/_images/projects/uni-y3-spectrum-clock/rings.png";
 import imageProjectChivasHero from "@/content/_images/projects/uni-y3-chivas-regal/hero_closeup.jpg";
-import imageProjectScrewdMockup from "@/content/_images/projects/uni-y3-screwd/mockup.png";
+import imageProjectScrewdMockup from "@/content/_images/projects/uni-y3-screwd/mockup.jpg";
 import imageProjectSpotifyPostcodesCover from "@/content/_images/projects/uni-y2-spotify/SubmissionCover.jpg";
 
 interface Image {
