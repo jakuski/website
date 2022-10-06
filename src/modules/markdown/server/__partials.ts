@@ -10,7 +10,7 @@ getContentIDs(ContentDirectoryNames.PARTIALS);
 
 const partialsConfig: Config = {
 	partials: {
-		"header.md": parse("file content")
+		"example_name.md": /* parse("file content") */ ""
 	}
 };
 
