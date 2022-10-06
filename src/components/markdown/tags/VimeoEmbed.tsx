@@ -64,11 +64,11 @@ const VimeoEmbed: React.FC<VimeoEmbedProps> = props => {
 
 	const src = buildVimeoEmbedUrl(props);
 
-	return <div className="bg-pure-black rounded-md select-none">
-		<div>
+	return <div className="">
+		<div className="bg-pure-black rounded-md overflow-hidden select-none mb-1">
 			<iframe
 				src={src}
-				className="w-full aspect-video"
+				className="w-full aspect-video rounded-md"
 				frameBorder="0"
 				allow="autoplay; fullscreen; picture-in-picture"
 				allowFullScreen

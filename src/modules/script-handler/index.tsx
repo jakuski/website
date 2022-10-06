@@ -21,7 +21,9 @@ const ScriptContext: Context<ScriptContextType> = createContext<ScriptContextTyp
 	useScript(name: ScriptNames) {}
 }, defaultScriptContextValue));
 
-const ScriptContextProvider: React.FC<React.PropsWithChildren> = props => {
+ScriptContext.displayName = "ScriptContext";
+
+const ScriptContextController: React.FC<React.PropsWithChildren> = props => {
 	const [state, setState] = useState<ScriptBooleansObject>(defaultScriptContextValue);
 
 	const useScript = useCallback((name: ScriptNames) => {
@@ -71,7 +73,7 @@ const ScriptLoader: React.FC = () => {
 };
 
 export {
-	ScriptContextProvider,
+	ScriptContextController as ScriptContextProvider,
 	useScript,
 	ScriptLoader
 };

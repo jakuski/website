@@ -41,6 +41,9 @@ Example of header level 4.
 ## Header Level 2 with ID {% id="header-2-id" %}
 This header has a HTML ID attribute.
 
+## Header Level 2 with ID New Style {% #header-2-id .bg-black %}
+This header has a HTML ID attribute.
+
 ## Variable Embedding
 {% $testString %}
 
@@ -50,3 +53,5 @@ This header has a HTML ID attribute.
 
 ### (h3) Figma Embed
 {% figma url="https://www.figma.com/file/ADbpaUBjZcJkeBZWP1NmUu/Figma-CV?node-id=16%3A5&hide-ui=1" /%}
+
+{% figma url="https://www.figma.com/proto/lRA7N3IpU0zIZaNb4hCfsZ/The-Spectrum-Clock?page-id=0%3A1&node-id=2%3A169&starting-point-node-id=2%3A47&scaling=scale-down" /%}
