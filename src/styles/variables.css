@@ -2,6 +2,6 @@
 	--color-brand: hsl(38deg 100% 52%);
 	--color-white: white;
 
-	--color-background: var(--color-brand);
-	--color-foreground: #140e05;
+	--color-background: hsl(38, 90%, 95%);
+	--color-foreground: hsl(38, 80%, 5%);
 }

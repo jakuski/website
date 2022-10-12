@@ -82,8 +82,11 @@ const Footer: React.FC = () => {
 				<TextLink route={Legal} />
 			</div>
 
-			<div className="opacity-70 mb-6 mt-2 print:mb-0">
-				<span className="italic mr-2">Slava Ukraini.</span>
+			<div className="opacity-70 mb-6 mt-2 print:mb-0 flex flex-col items-center gap-1">
+				<div>
+					<span className="italic">&ldquo;Create something wonderful and put it out there&rdquo;</span> &mdash; Steve Jobs
+				</div>
+				
 				Copyright © {new Date().getFullYear()} Jakub Staniszewski
 			</div>
 

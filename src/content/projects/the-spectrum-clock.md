@@ -26,8 +26,6 @@ The brief was set out by university staff, with one simple question. "Explore in
 
 {% gallery %}
 
-{% image name="p/3/rerea" /%}
-
 {% /gallery %}
 
 ## The Solution {% #solution %}

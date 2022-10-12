@@ -7,7 +7,7 @@ const NavbarLink: React.FC<React.PropsWithChildren<{
 }>> = props => {
 	return <li>
 		<Link href={props.href}>
-			<a className="text-md font-semibold flex items-center px-2 min-h-44 lowercase">{props.children}</a>
+			<a className="text-md font-semibold flex items-center px-2 min-h-44 lowercase last:pl-2 last:pr-0">{props.children}</a>
 		</Link>
 	</li>;
 };

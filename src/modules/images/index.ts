@@ -43,6 +43,9 @@ const images: Record<string, Image> = {
 export default images;
 
 export const resolveImage = (imageName: string): Image => {
+	if (!images.hasOwnProperty(imageName)) {
+		throw Error(`Image '${imageName}' does not exist`);
+	}
 	return images[imageName];
 };
 
