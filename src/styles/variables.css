@@ -2,6 +2,9 @@
 	--color-brand: hsl(38deg 100% 52%);
 	--color-white: white;
 
-	--color-background: hsl(38, 90%, 95%);
-	--color-foreground: hsl(38, 80%, 5%);
+	--color-background: hsl(38deg, 90%, 95%);
+	--color-foreground: hsl(38deg, 80%, 5%);
+
+	--color-background-dark: hsl(0deg 0% 10%);
+	--color-foreground-dark: hsl(0deg, 0%, 75%);
 }
