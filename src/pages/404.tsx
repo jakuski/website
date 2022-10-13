@@ -4,7 +4,7 @@ import Post from "../components/Post";
 const NotFoundPage: React.FC<MarkdocData<Frontmatter>> = props => {
 	return (
 		<Post title="Error 404">
-			The page/content you are looking has not been found.
+			The page you are looking has not been found.
 		</Post>
 	);
 };

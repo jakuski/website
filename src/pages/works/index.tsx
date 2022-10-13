@@ -1,5 +1,5 @@
 import Post from "@/components/Post";
-import Image from "next/image";
+import Image from "next/future/image";
 import Link from "next/link";
 import images, { resolveImage } from "@/modules/images";
 import { ContentDirectoryNames, getContentIDs } from "@/modules/fs";
@@ -17,23 +17,23 @@ interface ProjectCategoryPillProps {
 }
 
 const ProjectCategoryPill: React.FC<ProjectCategoryPillProps> = props => {
-	let className = "border border-black rounded-full flex px-4 py-2 items-center justify-center transition-all shrink-0";
+	let className = "border border-black rounded-full flex px-4 py-2 items-center justify-center transition-all shrink-0 ";
 
 	if (props.unselected) {
-		className += " opacity-50 hover:opacity-100";
+		className += "opacity-50 hover:opacity-100";
 	}
 
 	if (props.active) {
-		className += " bg-black text-brand";
+		className += "bg-foreground text-background";
 	}
+
+	className = className.trim();
 
 	return <button
 		onClick={props.onClick}
 		className={className}
 	>
-		<div>
-			{props.name} &mdash; {props.count}
-		</div>
+		{props.name} &mdash; {props.count}
 	</button>;
 };
 
@@ -55,17 +55,16 @@ const ProjectLink: React.FC<ProjectLinkProps> = props => {
 				src={src}
 				alt={alt}
 				placeholder="blur"
-				className="rounded-md shadow-inner h-80"
-				layout="fill"
-				objectFit="cover"
+				className="rounded-md shadow-inner h-80 object-cover"
+				fill
 				quality={90}
 				priority={props.requestPriorityLoading === true}
 			/>
 			{/* Bottom black gradient */}
-			<div className="absolute bottom-0 h-2/5 w-full rounded-md bg-gradient-to-t from-black opacity-50" />
+			<div className="absolute bottom-0 h-2/5 w-full rounded-md bg-gradient-to-t from-pure-black opacity-50" />
 
 			{/* Top black gradient */}
-			<div className="absolute top-0 h-1/5 w-full rounded-md bg-gradient-to-b from-black opacity-50" />
+			<div className="absolute top-0 h-1/5 w-full rounded-md bg-gradient-to-b from-pure-black opacity-50" />
 
 			{/* Text content */}
 			<div className="absolute bottom-0 left-0 text-white drop-shadow-md h-full flex justify-between flex-col p-4">

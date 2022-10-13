@@ -2,6 +2,7 @@
 import "@/styles/tailwind.css";
 import "@/styles/globals.css";
 import "@/styles/variables.css";
+import "@/styles/lightgallery.css";
 
 /* App imports */
 import DefaultLayout from "../components/Layout";

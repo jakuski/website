@@ -1,0 +1,23 @@
+.lg-outer .lg-thumb-item.active,
+.lg-outer .lg-thumb-item:hover {
+	@apply border-brand !important;
+}
+
+.lg-container {
+	@apply font-sans !important;
+}
+
+.lg-backdrop {
+	background-color: rgba(0,0,0,0.8) !important;
+	backdrop-filter: blur(20px);
+}
+
+.lg-outer .lg-thumb-outer {
+	background-color: transparent !important;
+}
+
+@media (min-width: 768px) {
+	.lg-outer .lg-thumb-item {
+	  border-color: transparent !important;
+	}
+}

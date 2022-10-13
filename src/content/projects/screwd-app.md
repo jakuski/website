@@ -1,7 +1,7 @@
 ---
 meta:
     title: screw'd
-    description: Communicating time through colour.
+    description: Keeping the world together, one screw at a time.
     published: 2022-07-04
     edited: 2022-07-05
     image: p/screwd/mockup_1

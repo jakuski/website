@@ -8,8 +8,9 @@ module.exports = {
 	],
 	theme: {
 		colors: {
-			"brand": v("color-background"),
-			"black": v("color-foreground"),
+			"brand": v("color-brand"),
+			"background": v("color-background"),
+			"foreground": v("color-foreground"),
 			"white": v("color-white"),
 
 			"pure-black": "#000",

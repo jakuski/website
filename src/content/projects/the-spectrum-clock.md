@@ -27,6 +27,7 @@ The brief was set out by university staff, with one simple question. "Explore in
 {% gallery %}
 
 {% /gallery %}
+*My initial ideas/concepts*
 
 ## The Solution {% #solution %}
 

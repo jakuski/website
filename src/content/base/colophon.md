@@ -6,10 +6,15 @@ meta:
     edited: 2022-07-05
 
 variables:
+    repoLink: https://github.com/jakub-studio/website
     repoIssueLink: https://github.com/jakub-studio/website/issues
     bugReportEmailUsername: ayup
 ---
 This website is designed and developed by Jakub Staniszewski in London, England.
+
+### Logo
+
+My logo (the hat and beanie) was designed by [Maria Vidal](https://vmaria.cargo.site/). It was designed on [Procreate](https://procreate.art/) and then vectorised in [Adobe Illustrator](https://www.adobe.com/uk/products/illustrator.html).
 
 ### History
 
@@ -21,7 +26,7 @@ It is designed in [Figma](https://www.figma.com/). The website uses two typeface
 
 ### Development
 
-The website was developed in [Visual Studio Code](https://code.visualstudio.com/), with [Next.js](https://nextjs.org/), [React](https://reactjs.org/) and [TypeScript](https://www.typescriptlang.org/). The written content is authored in Markdoc with frontmatter (metadata) being stored in YAML. The source code is available on GitHub.
+The website was developed in [Visual Studio Code](https://code.visualstudio.com/), with [Next.js](https://nextjs.org/), [React](https://reactjs.org/) and [TypeScript](https://www.typescriptlang.org/). The written content is authored in [Markdoc](https://markdoc.dev/) with frontmatter (metadata) being stored in [YAML](https://en.wikipedia.org/wiki/YAML). The source code is available on {% link href=$repoLink newWindow=true %}GitHub{% /link %}.
 
 ### Hosting
 

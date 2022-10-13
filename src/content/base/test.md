@@ -70,3 +70,6 @@ This header has a HTML ID attribute.
 
 ## Image with caption
 {% image src="p/cookbook/cookbook_cover" caption="The cover for 'How to cook and not die trying'." /%}
+
+## Gallery
+{% gallery /%}

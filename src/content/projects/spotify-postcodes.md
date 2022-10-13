@@ -1,6 +1,6 @@
 ---
 meta:
-    title: Spotify Postcodes
+    title: Spotify Post-codes
     description: Community run playlists, discoverable by the world.
     published: 2022-07-04
     edited: 2022-07-05

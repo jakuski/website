@@ -12,6 +12,7 @@ import Email from "./tags/Email";
 import VimeoEmbed from "./tags/VimeoEmbed";
 import FigmaEmbed, { FIGMA_EMBEDDABLE_URL_REGEX } from "./tags/FigmaEmbed";
 import Image from "./tags/Image";
+import Gallery from "./tags/Gallery";
 
 enum MarkdocComponentNames  {
 	NODE_ARTICLE = "AR",
@@ -22,8 +23,9 @@ enum MarkdocComponentNames  {
 
 	TAG_EMAIL = "E",
 	TAG_IMAGE = "I",
+	TAG_GALLERY = "G",
 	TAG_EMBED_VIMEO = "EM_VIMEO",
-	TAG_EMBED_FIGMA = "EM_FIGMA"
+	TAG_EMBED_FIGMA = "EM_FIGMA",
 }
 
 const sharedComponents: Config["tags"] = {
@@ -86,6 +88,9 @@ export const transformConfig: Config = {
 		},
 		link: sharedComponents.link,
 		image: sharedComponents.image,
+		gallery: {
+			render: MarkdocComponentNames.TAG_GALLERY,
+		},
 		vimeo: {
 			render: MarkdocComponentNames.TAG_EMBED_VIMEO,
 			attributes: {
@@ -118,7 +123,8 @@ export const renderConfig = {
 		// Tags
 		[MarkdocComponentNames.TAG_EMAIL]: Email,
 		[MarkdocComponentNames.TAG_IMAGE]: Image,
+		[MarkdocComponentNames.TAG_GALLERY]: Gallery,
 		[MarkdocComponentNames.TAG_EMBED_VIMEO]: VimeoEmbed,
-		[MarkdocComponentNames.TAG_EMBED_FIGMA]: FigmaEmbed
+		[MarkdocComponentNames.TAG_EMBED_FIGMA]: FigmaEmbed,
 	}
 };

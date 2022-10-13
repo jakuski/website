@@ -10,6 +10,7 @@ variables:
     availability: September 2022
     contactEmail: ayup
 ---
+**Available for work with immediate start.**
 
 If you would like to get in touch with me, please send me an email at {% email address=$contactEmail domain=$utils.emailDomain /%}.
 

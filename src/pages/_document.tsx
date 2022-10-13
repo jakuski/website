@@ -10,7 +10,7 @@ class SiteDocument extends Document {
 		return (
 			<Html
 				lang="en"
-				className="bg-brand text-black"
+				className="bg-background text-foreground"
 				data-github-repo={githubRepo}
 			>
 				<Head>
