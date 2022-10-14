@@ -15,12 +15,13 @@ const Image: React.FC<React.PropsWithChildren<{
 		caption = alt;
 	}
 
-	return <figure className="" style={{fontSize: 0}}>
+	return <figure className="relative h-full w-full aspect-video" style={{fontSize: 0}}>
 		<NextImage
-			className="rounded"
+			className="rounded object-cover"
 			src={src}
 			alt={alt}
 			placeholder="blur"
+			fill
 		/>
 		{caption && <figcaption className="italic text-base text-center mt-1 mb-1">{caption}</figcaption>}
 	</figure>;

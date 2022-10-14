@@ -53,14 +53,16 @@ const useScript = (name: ScriptNames) => {
 };
 
 const ScriptLoader: React.FC = () => {
-	const scripts = useContext(ScriptContext);
+	// @TODO The variables here need to be renamed, they are a mess
+	const scriptsToLoad = useContext(ScriptContext);
 
-	const scriptNames = Object.keys(scripts) as ScriptNames[];
+	const scriptNames = Object.keys(scriptsToLoad) as ScriptNames[];
 
 	const scriptElements = [];
 
 	for (const script of scriptNames) {
 		if (!scriptDefinitions[script]) continue;
+		if (!scriptsToLoad[script]) continue;
 
 		scriptElements.push(
 			<Script src={scriptDefinitions[script]} key={script} id={"external-script-handler__" + script} />

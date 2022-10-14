@@ -47,7 +47,7 @@ const Gallery: React.FC<React.PropsWithChildren<{}>> = props => {
 		exThumbImage="data-thumbnail-url"
 		selector={"." + galleryImageClassName}
 	>
-		<div className="flex gap-2 justify-between">
+		<div className="flex gap-2 justify-between w-full mb-2">
 			<GalleryImage src="p/cookbook/cookbook_cover"/>
 			<GalleryImage src="p/spectrum-clock/rings"/>
 		</div>

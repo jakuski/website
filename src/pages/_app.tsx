@@ -12,6 +12,7 @@ import If from "@/components/If";
 import { isDev } from "@/utils";
 import React from "react";
 import { ScriptContextProvider, ScriptLoader } from "@/modules/script-handler";
+import SkipToMainButton from "@/components/SkipToMainContent";
 
 const App: React.FC<{
 	Component: (React.FC & { layout: string})
@@ -22,15 +23,16 @@ const App: React.FC<{
 	if (Layout === "none") Layout = ({children}) => <>{children}</>;
 
 	return <ScriptContextProvider>
+		<SkipToMainButton />
+		<If condition={isDev}>
+			<DeveloperOnly />
+		</If>
+		
 		<Layout>
-			<If condition={isDev}>
-				<DeveloperOnly />
-			</If>
-
-			<ScriptLoader />
-			
 			<Component {...pageProps} />
 		</Layout>
+
+		<ScriptLoader />
 		<Script
 			id="source-tracker"
 			src="/js/track-src.js"
