@@ -17,7 +17,7 @@ interface ProjectCategoryPillProps {
 }
 
 const ProjectCategoryPill: React.FC<ProjectCategoryPillProps> = props => {
-	let className = "border border-black rounded-full flex px-4 py-2 items-center justify-center transition-all shrink-0 ";
+	let className = "border border-black rounded-full flex px-4 py-2 items-center justify-center transition-all shrink-0 select-none" + " "; // This has a space appended as otherwise the classnames would merge in the conditions below.
 
 	if (props.unselected) {
 		className += "opacity-50 hover:opacity-100";
@@ -50,7 +50,7 @@ const ProjectLink: React.FC<ProjectLinkProps> = props => {
 	const { src, alt } = resolveImage(props.image);
 
 	return <Link href={props.href}>
-		<a className="shadow-md rounded-md mt-4 relative block hover:scale-[1.025] transition-all hover:shadow-lg transform-gpu h-80 overflow-hidden" >
+		<a className="shadow-md rounded-md mt-4 relative block hover:scale-[1.025] transition-all hover:shadow-lg transform-gpu h-80 overflow-hidden select-none" >
 			<Image
 				src={src}
 				alt={alt}

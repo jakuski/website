@@ -99,8 +99,12 @@ export const getStaticMarkdoc = (directory: ContentDirectoryNames, filename: str
 		return {
 			props: {
 				content: serialiseTopLevel(renderable),
-				/* frontmatter needs to be serialised as any dates in YAML will fail Next.js validation for some reason. */
-				frontmatter: serialise(frontmatter) as MarkdocData["frontmatter"]
+				// frontmatter needs to be serialised as any dates in YAML will fail Next.js validation for some reason.
+				frontmatter: serialise(frontmatter) as MarkdocData["frontmatter"],
+				/* computedData: {
+					tableOfContents: {},
+					
+				} */
 			}
 		};
 	};

@@ -27,21 +27,14 @@ export default function Home() {
 					<Image src="/logo.svg" alt="Logo" height={128} width={128} />
 				</div>
 				<div className="flex gap-4 flex-col">
-					<h1 className="text-5xl font-bold tracking-tight">{websiteName}</h1>
+					<div className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight max-w-lg">
+						<h1 className="inline">{websiteName}</h1> is a UI/UX designer and developer based in London.
+					</div>
+					<div className="text-xl font-sans">Currently available for work. <span className="font-bold block sm:inline">Get in touch.</span></div>
 					<div className="flex justify-between">
 						<Link href="/works">works</Link><span className="sr-only">{" "}</span>
 						<Link href="/about">about</Link><span className="sr-only">{" "}</span>
 						<Link href="/contact">contact</Link>
-					</div>
-					<div className="font-sans max-w-sm">
-						Hey friend!<br/>
-						Welcome to my website, it is still a WIP as I have not had much time to work on it during the current academic year. So be warned, You may see a few loose nuts and bolts but I hope to get it finished Summer 2022.
-						<br/>
-						<br/>
-						In the mean time, I am looking for new opportunities.
-						<NextLink href="/contact">
-							<a className="ml-1 font-bold underline">Let&apos;s chat.</a>
-						</NextLink>
 					</div>
 				</div>
 			</main>

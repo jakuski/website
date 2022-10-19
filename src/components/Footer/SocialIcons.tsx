@@ -1,5 +1,5 @@
-import Link from "next/link";
 import React from "react";
+import Link from "next/link";
 
 import {
 	Instagram as InstagramRedirectRoute,
@@ -9,9 +9,6 @@ import {
 	Vimeo as VimeoRedirectRoute,
 	Route,
 	FigmaCommunityAccount as FigmaCommunityAccountRedirectRoute,
-	Colophon,
-	Privacy,
-	Legal
 } from "@/routes";
 
 import InstagramIcon from "@/components/icons/Instagram";
@@ -20,7 +17,7 @@ import TwitterIcon from "@/components/icons/Twitter";
 import GitHubIcon from "@/components/icons/GitHub";
 import FigmaIcon from "@/components/icons/Figma";
 import VimeoIcon from "@/components/icons/Vimeo";
-import { isProd } from "@/utils";
+
 
 interface SocialIconProps extends React.PropsWithChildren {
 	href: string;
@@ -55,46 +52,16 @@ const socialLinks: SocialLink[] = [
 	{ icon: VimeoIcon, href: VimeoRedirectRoute, label: "Vimeo" }
 ];
 
-const TextLink: React.FC<{ route: Route }> = props => {
-	return <Link href={props.route.href}>
-		<a className="min-h-44 min-w-44 flex items-center opacity-70 hover:opacity-100 hover:underline ease transition-opacity duration-150">
-			{props.route.displayName}
-		</a>
-	</Link>;
+const SocialIcons = () => {
+	return 	<div className="flex flex-row print:hidden">
+		{socialLinks.map(link => {
+			const href = link.href.hrefWithSource("footer");
+
+			return <SocialIcon href={href} key={href} srLabel={link.label}>
+				{React.createElement(link.icon, {})}
+			</SocialIcon>;
+		})}
+	</div>;
 };
 
-const Footer: React.FC = () => {
-	return (
-		<footer className="font-sans text-sm flex flex-col items-center mt-8 pb-6 print:pb-2 select-none">
-			<div className="flex flex-row print:hidden">
-				{socialLinks.map(link => {
-					const href = link.href.hrefWithSource("footer");
-
-					return <SocialIcon href={href} key={href} srLabel={link.label}>
-						{React.createElement(link.icon, {})}
-					</SocialIcon>;
-				})}
-			</div>
-
-			<div className="flex gap-2 print:hidden">
-				<TextLink route={Colophon} />
-				<TextLink route={Privacy} />
-				<TextLink route={Legal} />
-			</div>
-
-			<div className="opacity-70 mb-6 mt-2 print:mb-0 flex flex-col items-center gap-1">
-				<div>
-					<span className="italic">&ldquo;Create something wonderful and put it out there&rdquo;</span> &mdash; Steve Jobs
-				</div>
-				
-				Copyright © {new Date().getFullYear()} Jakub Staniszewski
-			</div>
-
-			{(!isProd) && <div className="font-bold px-4 py-2 bg-foreground text-background tracking-wide">
-				This is a development version of my website which is not intended for public viewing. <br />If you believe you are here by mistake, click <a className="underline min-h-44 min-w-44" href="https://jakub.studio">here</a> to go to my public website.
-			</div>}
-		</footer>
-	);
-};
-
-export default Footer;
+export default SocialIcons;

@@ -22,7 +22,7 @@ export default function Navbar() {
 					</a>
 				</Link>
 
-				<nav className="font-serif text-md font-semibold lowercase">
+				<nav className="font-serif text-lg font-semibold lowercase">
 					<ul className="flex gap-4">
 						{navbarRoutes.map(route => (
 							<NavbarLink
