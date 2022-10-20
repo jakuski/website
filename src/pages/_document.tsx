@@ -10,7 +10,6 @@ class SiteDocument extends Document {
 		return (
 			<Html
 				lang="en"
-				className="bg-background text-foreground selection:bg-brand"
 				data-github-repo={githubRepo}
 			>
 				<Head>
@@ -27,7 +26,7 @@ class SiteDocument extends Document {
 					<meta name="twitter:creator" content={"@" + socialHandles.twitter} />
 					<link rel="index" href="/" />
 				</Head>
-				<body>
+				<body className="bg-background text-foreground selection:bg-brand dark:selection:text-background-dark dark:bg-background-dark dark:text-foreground-dark">
 					<noscript>
 						For full functionality of this site, it is necessary to enable JavaScript.
 						Here are the <a href="https://www.enable-javascript.com/">instructions on how to enable JavaScript in your web browser</a>.

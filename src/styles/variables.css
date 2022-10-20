@@ -5,6 +5,6 @@
 	--color-background: hsl(38deg, 20%, 95%);
 	--color-foreground: hsl(38deg, 20%, 5%);
 
-	--color-background-dark: hsl(0deg 20% 10%);
-	--color-foreground-dark: hsl(0deg, 20%, 75%);
+	--color-background-dark: hsl(38deg 5% 10%);
+	--color-foreground-dark: hsl(38deg, 5%, 75%);
 }

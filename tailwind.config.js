@@ -3,6 +3,7 @@ const defaultTheme = require("tailwindcss/defaultTheme");
 const v = varName => `var(--${varName})`;
 
 module.exports = {
+	darkMode: "class",
 	content: [
 		"./src/**/*.{js,ts,jsx,tsx}",
 	],
@@ -11,6 +12,8 @@ module.exports = {
 			"brand": v("color-brand"),
 			"background": v("color-background"),
 			"foreground": v("color-foreground"),
+			"background-dark": v("color-background-dark"),
+			"foreground-dark": v("color-foreground-dark"),
 			"white": v("color-white"),
 
 			"pure-black": "#000",

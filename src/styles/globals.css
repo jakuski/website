@@ -21,3 +21,11 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.disable-select-icon {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  text-indent: 0.1;
+  text-overflow: '';
+}

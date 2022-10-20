@@ -13,6 +13,7 @@ import { isDev } from "@/utils";
 import React from "react";
 import { ScriptContextProvider, ScriptLoader } from "@/modules/script-handler";
 import SkipToMainButton from "@/components/SkipToMainContent";
+import { ThemeProvider } from "next-themes";
 
 const App: React.FC<{
 	Component: (React.FC & { layout: string})
@@ -24,13 +25,17 @@ const App: React.FC<{
 
 	return <ScriptContextProvider>
 		<SkipToMainButton />
+
 		<If condition={isDev}>
 			<DeveloperOnly />
 		</If>
-		
-		<Layout>
-			<Component {...pageProps} />
-		</Layout>
+
+		{/* https://github.com/pacocoursey/next-themes#with-tailwind */}
+		<ThemeProvider attribute="class">
+			<Layout>
+				<Component {...pageProps} />
+			</Layout>
+		</ThemeProvider>
 
 		<ScriptLoader />
 		<Script

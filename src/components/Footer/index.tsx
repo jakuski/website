@@ -22,7 +22,7 @@ const TextLink: React.FC<{ route: Route }> = props => {
 
 const Footer: React.FC = () => {
 	return (
-		<footer className="font-sans text-sm flex flex-col items-center mt-8 pb-6 print:pb-2 select-none">
+		<footer className="font-sans text-sm flex flex-col items-center mt-8 pb-6 print:pb-2 select-none border-t border-t-white">
 
 			<SocialIcons />
 
