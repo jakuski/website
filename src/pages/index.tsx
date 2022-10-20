@@ -26,15 +26,12 @@ export default function Home() {
 				<div>
 					<Image src="/logo.svg" alt="Logo" height={128} width={128} />
 				</div>
-				<div className="flex gap-4 flex-col">
-					<div className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight max-w-lg">
-						<h1 className="inline">{websiteName}</h1> is a UI/UX designer and developer based in London.
-					</div>
-					<div className="text-xl font-sans">Currently available for work. <span className="font-bold block sm:inline">Get in touch.</span></div>
-					<div className="flex justify-between">
-						<Link href="/works">works</Link><span className="sr-only">{" "}</span>
-						<Link href="/about">about</Link><span className="sr-only">{" "}</span>
-						<Link href="/contact">contact</Link>
+				<div className="flex gap-5 flex-col">
+					<div className="max-w-lg">
+						<div className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight mb-3"><h1 className="inline">{websiteName}</h1> is a UI/UX designer and developer based in London.</div>
+						<div className="text-xl font-sans mb-6">Designing and engineering interfaces for humans. See my <span className="font-bold">work</span>, find out more <span className="font-bold">about me </span> or <span className="font-bold">get in touch</span>.</div>
+
+						<div className="text-xl font-sans">Currently available for freelance and FT work/roles.</div>
 					</div>
 				</div>
 			</main>

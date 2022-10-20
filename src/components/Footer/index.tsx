@@ -10,6 +10,7 @@ import {
 
 import { isProd } from "@/utils";
 import SocialIcons from "./SocialIcons";
+import ThemePicker from "./ThemePicker";
 
 const TextLink: React.FC<{ route: Route }> = props => {
 	return <Link href={props.route.href}>
@@ -32,13 +33,7 @@ const Footer: React.FC = () => {
 			</div>
 
 			<div className="opacity-70 mb-6 mt-2 print:mb-0 flex flex-col items-center gap-1">
-				<div>
-					Theme - <select className=" bg-transparent">
-						<option>System Default</option>
-						<option>Dark</option>
-						<option>Light</option>
-					</select>
-				</div>
+				<ThemePicker />
 				
 				Copyright © {new Date().getFullYear()} Jakub Staniszewski
 			</div>
