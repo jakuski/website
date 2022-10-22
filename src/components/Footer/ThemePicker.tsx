@@ -18,7 +18,7 @@ const ThemePicker = () => {
 	}, []);
 
 	return <form className="flex">
-		<div className="mr-2 flex items-center" title="Pick website theme">
+		<div className="mr-3 flex items-center" title="Pick website theme">
 			🎨
 			<label htmlFor={selectName} className="sr-only">
 				Theme

@@ -70,7 +70,7 @@ const ProjectLink: React.FC<ProjectLinkProps> = props => {
 			<div className="absolute bottom-0 left-0 text-white drop-shadow-md h-full flex justify-between flex-col p-4">
 				<span className="uppercase tracking-widest text-xs mb-1">{props.category}</span>
 				<div>
-					<h2 className="font-serif text-2xl md:text-4xl">{props.title}</h2>
+					<h2 className="font-serif text-2xl md:text-4xl mb-1">{props.title}</h2>
 					<p className="tracking-wider text-sm">{props.description}</p>
 				</div>
 			</div>
