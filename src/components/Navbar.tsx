@@ -16,8 +16,8 @@ export default function Navbar() {
 	return (
 		<>
 			<header className="p-4 md:p-6 fixed w-full flex justify-between items-center select-none z-10 print:hidden">
-				<Link href={Home.href}>
-					<a>
+				<Link href={Home.href} >
+					<a className="hover:text-brand transition-colors duration-200">
 						<LogoIcon />
 					</a>
 				</Link>

@@ -27,9 +27,9 @@ interface SocialIconProps extends React.PropsWithChildren {
 const SocialIcon: React.FC<SocialIconProps> = props => {
 	return <Link href={props.href}>
 		<a
-			title={`View ${props.srLabel} profile`}
+			title={`View my ${props.srLabel} profile`}
 			target="_blank"
-			className="min-h-44 min-w-44 flex items-center justify-center opacity-50 hover:opacity-100 ease transition-opacity duration-150"
+			className="min-h-44 min-w-44 flex items-center  justify-end opacity-50 hover:opacity-100 ease transition-opacity duration-150"
 		>
 			<span className="sr-only">{props.srLabel} icon</span>
 			{props.children}
@@ -53,7 +53,7 @@ const socialLinks: SocialLink[] = [
 ];
 
 const SocialIcons = () => {
-	return 	<div className="flex flex-row print:hidden">
+	return 	<div className="flex flex-row items-start print:hidden">
 		{socialLinks.map(link => {
 			const href = link.href.hrefWithSource("footer");
 
