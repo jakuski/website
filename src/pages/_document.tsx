@@ -1,9 +1,16 @@
 import { githubRepo, socialHandles, websiteName } from "@/config";
 import { isProd } from "@/utils";
 import Document, { Html, Head, Main, NextScript } from "next/document";
+import c from "clsx";
 
 // Disable search engine indexing of development and Vercel Preview variants of the website.
 const robotsMetaContent = isProd ? "index,follow" : "noindex,nofollow";
+
+const bodyClassName = c(
+	"bg-stone-100 text-stone-700",
+	"dark:bg-stone-900 dark:text-stone-300",
+	"selection:bg-brand dark:selection:text-background-dark"
+);
 
 class SiteDocument extends Document {
 	render(): JSX.Element {
@@ -26,7 +33,7 @@ class SiteDocument extends Document {
 					<meta name="twitter:creator" content={"@" + socialHandles.twitter} />
 					<link rel="index" href="/" />
 				</Head>
-				<body className="bg-background text-foreground selection:bg-brand dark:selection:text-background-dark dark:bg-background-dark dark:text-foreground-dark">
+				<body className={bodyClassName}>
 					<noscript>
 						For full functionality of this site, it is necessary to enable JavaScript.
 						Here are the <a href="https://www.enable-javascript.com/">instructions on how to enable JavaScript in your web browser</a>.

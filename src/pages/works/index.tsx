@@ -61,10 +61,10 @@ const ProjectLink: React.FC<ProjectLinkProps> = props => {
 				priority={props.requestPriorityLoading === true}
 			/>
 			{/* Bottom black gradient */}
-			<div className="absolute bottom-0 h-2/5 w-full rounded-md bg-gradient-to-t from-pure-black opacity-50" />
+			<div className="absolute bottom-0 h-2/5 w-full rounded-md bg-gradient-to-t from-black opacity-50" />
 
 			{/* Top black gradient */}
-			<div className="absolute top-0 h-1/5 w-full rounded-md bg-gradient-to-b from-pure-black opacity-50" />
+			<div className="absolute top-0 h-1/5 w-full rounded-md bg-gradient-to-b from-black opacity-50" />
 
 			{/* Text content */}
 			<div className="absolute bottom-0 left-0 text-white drop-shadow-md h-full flex justify-between flex-col p-4">
