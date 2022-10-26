@@ -31,6 +31,7 @@ export const Contact = Home.extend("contact", "Contact");
 export const Colophon = Home.extend("colophon", "Colophon");
 export const Legal = Home.extend("legal", "Legal");
 export const Privacy = Home.extend("privacy", "Privacy");
+export const CookiePolicy = Home.extend("cookie-policy", "Cookies");
 
 export const WorksIndex = Home.extend("works", "Works");
 

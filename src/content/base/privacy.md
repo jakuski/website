@@ -4,13 +4,14 @@ meta:
     edited: 2022-07-05
 
 variables:
+    revision: 1
     privacyEmail: "privacy"
 ---
-## Revision 1
+## Revision {% $revision %} {% #privacy-policy-revision %}
 ---
 
 ### X. Definitions.
-**"The Site"**, or **"The Website"** - www.jakub.studio  
+**"The Site"**, or **"The Website"** - www.jakub.studio
 **"Us"**, **"We"**, **"I"**, **"Me"**, **"Admin"**, **"Administrator"** - The owner and administrator of this website, Jakub Staniszewski.
 
 ### X. Collection and storage of sensitive personal information.
@@ -41,6 +42,28 @@ The Site may automatically share your information with the following Vendors, Co
 - Hosting and content delivery network services
 - Functionality and debugging services
 - Professional service providers, such as auditors, lawyers, consultants, accountants and insurers
+
+### X. Browser storage technology usage. {% #browser_technology %}
+Upon the user's arrival to the site, the user will be greeted with a prompt to accept the use of browser storage technologies for either all usage (labelled as 'Accept all') or only strictly necessary usage (labelled as 'Reject non-essential').
+The Site uses the following browser storage technologies:
+- [Cookies](https://en.wikipedia.org/wiki/HTTP_cookie) {% #browser_technology_cookie %}
+- [Local Storage](https://en.wikipedia.org/wiki/Web_storage#Local_storage) {% #browser_technology_ls %}
+
+#### Strictly necessary data storage.
+The following data is stored in the user's browser for strictly necessary purposes and cannot be disabled. If the user chooses to disable the use of browser storage technologies via the browser settings, the user may not be able to use the site as intended. Should the user not wish to have their data stored, they should not use the site.
+
+| Identifier       | Technology                              | Usage description |
+|------------------|-----------------------------------------|------------|
+| `privacy_agreed` | [Cookies](#browser_technology_cookie)   | This cookie is stored after the user interacts with the privacy prompt mentioned in [**Browser storage technology usage**](#browser_technology). The cookie stores the users choice of either all storage usage or only strictly necessary as well as the privacy policy [revision](#privacy-policy-revision). This cookie will expire after 60 days or will be automatically reset if a new revision of the privacy policy is published. |
+| Bananas          | [Local Storage](#browser_technology_ls) | 5234       |
+
+
+#### Non-essential data storage.
+
+| Identifier       | Technology                              | Usage description |
+|------------------|-----------------------------------------|------------|
+| `theme` | [Local Storage](#browser_technology_ls)   |  ere |
+| `site_customisation` | [Local Storage](#browser_technology_ls) | 5234       |
 
 ### X. Information collection regarding minors. {% id="information-collection-minors" %}
 We do not knowingly solicit data from or market to children under 18 years of age. By using the Website, you represent that you are at least 18 or that you are the parent or guardian of such a minor and consent to such minor dependent's use of the Website.

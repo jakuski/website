@@ -14,7 +14,7 @@ import React from "react";
 import { ScriptContextProvider, ScriptLoader } from "@/modules/script-handler";
 import SkipToMainButton from "@/components/SkipToMainContent";
 import { ThemeProvider } from "next-themes";
-import CookieConsentBanner from "@/components/CookieConsent";
+import StorageConsentBanner from "@/components/StorageConsent/Banner";
 
 const App: React.FC<{
 	Component: (React.FC & { layout: string})
@@ -36,7 +36,7 @@ const App: React.FC<{
 			<Layout>
 				<Component {...pageProps} />
 			</Layout>
-			<CookieConsentBanner />
+			<StorageConsentBanner />
 		</ThemeProvider>
 
 		<ScriptLoader />

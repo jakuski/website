@@ -8,7 +8,8 @@ import {
 	Legal,
 	WorksIndex,
 	About,
-	Contact
+	Contact,
+	CookiePolicy
 } from "@/routes";
 
 import { isProd } from "@/utils";
@@ -33,7 +34,7 @@ const Footer: React.FC = () => {
 	return (
 		<footer className="font-sans text-sm items-center mt-12 pb-6 print:pb-2 select-none mx-10">
 			<hr className="opacity-30 mb-4" />
-			<div className="flex justify-between">
+			<div className="flex flex-col-reverse md:flex-row justify-between">
 				<div>
 					<div className="flex flex-row gap-4 mb-6 print:hidden">
 						<FooterColumn>
@@ -48,6 +49,7 @@ const Footer: React.FC = () => {
 
 						<FooterColumn>
 							<TextLink route={Contact} />
+							<TextLink route={CookiePolicy}/>
 						</FooterColumn>
 
 						<FooterColumn>
