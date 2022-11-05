@@ -59,7 +59,12 @@ const Footer: React.FC = () => {
 
 					<div className="opacity-70 mb-6 mt-4 print:mb-0 flex flex-col gap-10">
 						<ThemePicker />
-						Copyright © {new Date().getFullYear()} Jakub Staniszewski. All rights reserved.
+						<div>
+							This website is currently under active development.<br/>The layout, visuals and content may change frequently.
+						</div>
+						<div>
+							Copyright © {new Date().getFullYear()} Jakub Staniszewski. All rights reserved.
+						</div>
 					</div>
 				</div>
 				<SocialIcons />
