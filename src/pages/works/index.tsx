@@ -7,6 +7,7 @@ import projectIndexPageSort from "@/content/projects/_indexPageSort.json";
 import { getStaticMarkdoc } from "@/modules/markdown/server";
 import Metadata from "@/components/Meta";
 import { useState } from "react";
+import c from "clsx";
 
 interface ProjectCategoryPillProps {
 	name: string;
@@ -17,17 +18,10 @@ interface ProjectCategoryPillProps {
 }
 
 const ProjectCategoryPill: React.FC<ProjectCategoryPillProps> = props => {
-	let className = "border border-black rounded-full flex px-4 py-2 items-center justify-center transition-all shrink-0 select-none" + " "; // This has a space appended as otherwise the classnames would merge in the conditions below.
-
-	if (props.unselected) {
-		className += "opacity-50 hover:opacity-100";
-	}
-
-	if (props.active) {
-		className += "bg-foreground text-background";
-	}
-
-	className = className.trim();
+	const className = c("border border-stone-800 dark:border-stone-700 rounded-full text-stone-800 dark:text-stone-300 flex px-4 py-2 items-center justify-center transition-all shrink-0 select-none", {
+		"opacity-50 hover:opacity-100": props.unselected,
+		"bg-stone-800 dark:bg-stone-700 text-stone-50 dark:text-stone-50": props.active
+	});
 
 	return <button
 		onClick={props.onClick}

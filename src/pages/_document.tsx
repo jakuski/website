@@ -9,7 +9,7 @@ const robotsMetaContent = isProd ? "index,follow" : "noindex,nofollow";
 const bodyClassName = c(
 	"bg-stone-100 text-stone-700",
 	"dark:bg-stone-900 dark:text-stone-300",
-	"selection:bg-brand dark:selection:text-background-dark"
+	"selection:bg-brand dark:selection:text-stone-800"
 );
 
 class SiteDocument extends Document {

@@ -35,7 +35,7 @@ const Anchor: React.FC<React.PropsWithChildren<{
 
 	return <Link href={props.href}>
 		<a
-			className="underline cursor-pointer"
+			className="cursor-pointer text-brand hover:underline"
 			target={props.newWindow ? "_blank" : void 0}
 			rel={isExternal ? privateRel : void 0}
 		>

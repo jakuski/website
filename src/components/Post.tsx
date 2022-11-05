@@ -127,8 +127,8 @@ interface FootnoteSectionProps extends React.PropsWithChildren {
 }
 
 const FootnoteSection: React.FC<FootnoteSectionProps> = (props) => {
-	return <div className="mb-2">
-		<h4 className="font-bold">{props.label}</h4>
+	return <div className="mb-4">
+		<h4 className="font-bold mb-1">{props.label}</h4>
 		<div>{props.children}</div>
 	</div>;
 };
