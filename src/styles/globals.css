@@ -35,3 +35,11 @@ a {
 .disable-tap-highlight {
   -webkit-tap-highlight-color: transparent;
 }
+
+.md-wrapper ol {
+  list-style: inside decimal;
+}
+
+.md-wrapper ul {
+  list-style: inside disc;
+}

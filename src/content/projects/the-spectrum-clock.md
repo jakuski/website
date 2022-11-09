@@ -22,7 +22,8 @@ project:
 The Spectrum Clock explores how time can be told through colour, instead of string of text (like 10th October, 2022 14:45) that we are normally used to.
 
 ## The Challenge {% #challenge %}
-The brief was set out by university staff, with one simple question. "Explore interesting ways to visually communicate time". It was such an open question which presented infinite amounts of possible avenues this project could've go on.
+The brief was set out by university staff, with one simple question. "Explore interesting ways to visually communicate time". It was such an open question which presented infinite amounts of possible avenues this project could've go on.  
+
 My initial ideas for this project were the following:
 1. Creating codes/IDs for every second possible under the gregorian calendar (like [what3words](https://what3words.com/) but for time).
 2. An anonymous social media board where users could go and share what happened to them at any particular moment in time (inspired by the anonymity and sharing of [The Unsent Project](https://theunsentproject.com/)).

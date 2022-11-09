@@ -3,6 +3,7 @@ import Navbar from "./Navbar";
 import React from "react";
 
 const StandardLayout: React.FC<React.PropsWithChildren> = props => {
+	console.log(props);
 	return (
 		<>
 			<Navbar />
