@@ -20,6 +20,9 @@
 		"jakuski",
 		"jakubstudio",
 
+		// libraries
+		"clsx",
+
 		// Software vendors and names
 		"maxon",
 		"indesign",

@@ -6,7 +6,7 @@ import imageProjectCookbookCover from "@/content/_images/projects/uni-y3-cookboo
 import imageProjectClockRings from "@/content/_images/projects/uni-y3-spectrum-clock/rings.png";
 import imageProjectChivasHero from "@/content/_images/projects/uni-y3-chivas-regal/hero_closeup.jpg";
 import imageProjectScrewdMockup from "@/content/_images/projects/uni-y3-screwd/mockup.jpg";
-import imageProjectSpotifyPostcodesCover from "@/content/_images/projects/uni-y2-spotify/SubmissionCover.jpg";
+import imageProjectSpotifyPostcodesCover from "@/content/_images/projects/uni-y2-spotify/project_cover.jpg";
 
 interface Image {
 	src: StaticImageData;

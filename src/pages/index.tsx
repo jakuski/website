@@ -1,5 +1,4 @@
 import Metadata from "@/components/Meta";
-import Image from "next/image";
 import NextLink from "next/link";
 import { PropsWithChildren, useEffect, useState } from "react";
 import Footer from "../components/Footer";
@@ -43,9 +42,11 @@ const LoadingCover: React.FC<PropsWithChildren<{}>> = props => {
 		}, 1000);
 	}, []);
 	
-	const containerClassName = c("fixed left-0 top-0 h-full w-full bg-brand flex justify-center items-center text-stone-900 translate-y-0 transition-transform duration-300 shadow-md", {
-		["-translate-y-full"]: reveal
-	});
+	const containerClassName = c("fixed left-0 top-0 h-full w-full flex justify-center items-center",
+		"bg-brand text-stone-900 shadow-md",
+		"translate-y-0 transition-transform duration-300",
+		{ ["-translate-y-full"]: reveal }
+	);
 
 	const logoContainerClassName = c("scale-0 transition-transform duration-200", {
 		["scale-100"]: showLogo

@@ -55,7 +55,6 @@ The following data is stored in the user's browser for strictly necessary purpos
 | Identifier       | Technology                              | Usage description |
 |------------------|-----------------------------------------|------------|
 | `privacy_agreed` | [Cookies](#browser_technology_cookie)   | This cookie is stored after the user interacts with the privacy prompt mentioned in [**Browser storage technology usage**](#browser_technology). The cookie stores the users choice of either all storage usage or only strictly necessary as well as the privacy policy [revision](#privacy-policy-revision). This cookie will expire after 60 days or will be automatically reset if a new revision of the privacy policy is published. |
-| Bananas          | [Local Storage](#browser_technology_ls) | 5234       |
 
 
 #### Non-essential data storage.
