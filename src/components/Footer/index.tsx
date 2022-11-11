@@ -18,7 +18,7 @@ import ThemePicker from "./ThemePicker";
 
 const TextLink: React.FC<{ route: Route }> = props => {
 	return <Link href={props.route.href}>
-		<a className="min-w-44 min-h-44 flex items-center opacity-70 hover:opacity-100 hover:underline ease transition-opacity duration-150">
+		<a className="min-w-44 min-h-44 flex items-center opacity-70 hover:opacity-100 font-medium ease transition-opacity duration-150">
 			{props.route.displayName}
 		</a>
 	</Link>;
@@ -32,9 +32,9 @@ const FooterColumn: React.FC<PropsWithChildren> = props => {
 
 const Footer: React.FC = () => {
 	return (
-		<footer className="font-sans text-sm items-center mt-12 pb-6 print:pb-2 select-none mx-10">
+		<footer className="font-sans text-sm items-center mt-12 pb-6 print:pb-2 select-none mx-4 md:mx-10">
 			<hr className="opacity-30 mb-4" />
-			<div className="flex flex-col-reverse md:flex-row justify-between">
+			<div className="flex flex-col-reverse sm:flex-row justify-between gap-2">
 				<div>
 					<div className="flex flex-row gap-4 mb-6 print:hidden">
 						<FooterColumn>
@@ -63,7 +63,7 @@ const Footer: React.FC = () => {
 							This website is currently under active development.<br/>The layout, visuals and content may change frequently.
 						</div>
 						<div>
-							Copyright © {new Date().getFullYear()} Jakub Staniszewski. All rights reserved.
+							Copyright © {new Date().getFullYear()} Jakub Staniszewski. <span className="block sm:inline">All rights reserved.</span>
 						</div>
 					</div>
 				</div>

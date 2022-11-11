@@ -47,4 +47,6 @@ export const Vimeo = Redirect.extend("/vimeo", "Vimeo");
 export const GithubAccount = Redirect.extend("/github", "GitHub");
 export const FigmaCommunityAccount = Redirect.extend("/figma-community", "Figma Community");
 
+export const PortfolioPDF = Redirect.extend("/portfolio", "Portfolio PDF");
+
 export const navbar = [WorksIndex, About, Contact];

@@ -7,9 +7,9 @@ import LogoIcon from "./icons/Logo";
 const NavbarLink: React.FC<React.PropsWithChildren<{
 	href: string;
 }>> = props => {
-	return <li className="px-2 last:pl-2 last:pr-0 hover:text-brand transition-colors duration-150 overflow-hidden">
+	return <li className="mx-2 last:ml-2 last:mr-0 hover:text-brand transition-colors duration-150 ">
 		<Link href={props.href}>
-			<a className="flex items-center min-h-44">{props.children}</a>
+			<a className="flex items-center min-h-44 after:absolute after:h-[2px] after:w-full after:bg-brand after:bottom-3 after:left-0 after:scale-x-0 after:hover:scale-x-100 after:transition-transform after:origin-right after:hover:origin-left after:opacity-50 relative">{props.children}</a>
 		</Link>
 	</li>;
 };

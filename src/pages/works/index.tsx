@@ -9,6 +9,7 @@ import Metadata from "@/components/Meta";
 import { useState } from "react";
 import c from "clsx";
 import Anchor from "@/components/markdown/nodes/Anchor";
+import { PortfolioPDF } from "@/routes";
 
 interface ProjectCategoryPillProps {
 	name: string;
@@ -19,9 +20,10 @@ interface ProjectCategoryPillProps {
 }
 
 const ProjectCategoryPill: React.FC<ProjectCategoryPillProps> = props => {
-	const className = c("border border-stone-800 dark:border-stone-700 rounded-full text-stone-800 dark:text-stone-300 flex px-4 py-2 items-center justify-center transition-all shrink-0 select-none disable-tap-highlight", {
+	const className = c("border  dark:border-stone-700 rounded-full text-stone-800 dark:text-stone-300 flex px-4 py-2 items-center justify-center transition-all shrink-0 select-none disable-tap-highlight", {
 		"opacity-50 hover:opacity-100": props.unselected,
-		"bg-stone-800 dark:bg-stone-700 text-stone-50 dark:text-stone-50": props.active
+		" border-stone-400": !props.active,
+		"bg-stone-800 border-stone-800 dark:bg-stone-700 text-stone-50 dark:text-stone-50": props.active
 	});
 
 	return <button
@@ -63,10 +65,10 @@ const ProjectLink: React.FC<ProjectLinkProps> = props => {
 
 			{/* Text content */}
 			<div className="absolute bottom-0 left-0 text-white drop-shadow-md h-full flex justify-between flex-col p-4">
-				<span className="uppercase tracking-widest text-xs mb-1">{props.category}</span>
+				<span className="uppercase tracking-widest text-xs mb-1 font-medium">{props.category}</span>
 				<div>
-					<h2 className="font-serif text-xl md:text-2xl mb-1">{props.title}</h2>
-					<p className="tracking-wider text-sm">{props.description}</p>
+					<h2 className="font-serif text-xl md:text-2xl mb-1 font-bold">{props.title}</h2>
+					<p className="font-medium text-sm">{props.description}</p>
 				</div>
 			</div>
 		</a>
@@ -140,9 +142,22 @@ const ProjectsIndexPage: React.FC<ProjectPageProps> = props => {
 				{...project} />
 		))}
 
-		<div className=" bg-stone-800 mt-6 p-4 rounded">
-			<h4 className="tracking-wider text-sm opacity-70 uppercase mb-2 ">👀 Looking for more?</h4>
-			I&apos;m currently migrating my old PDF portfolio to this website. If you&apos;d like to see my old portfolio (which contains the rest of my projects), you can find it <Anchor href="">here</Anchor>. 
+		<div className="bg-stone-200 dark:bg-stone-800 mt-6 p-4 rounded">
+			<h4 className="tracking-wider text-sm font-bold uppercase mb-2 ">👀 Looking for more?</h4>
+			I&apos;m currently migrating my old PDF portfolio to this website.
+			If you&apos;d like to see my old portfolio (which contains the rest of my projects),
+			please click the button below.
+
+			<a 
+				role="button"
+				href={PortfolioPDF.hrefWithSource("works_index")}
+				className="my-4 bg-brand text-stone-800 rounded px-4 py-2 min-h-44 flex gap-2 justify-center items-center hover:underline"
+			>
+				<span className="font-semibold">View old portfolio</span>
+				<span>(.pdf)</span>
+			</a>
+
+			<div className="font-semibold">Please accept my apologies for any inconvenience/poor UX this has caused.</div>
 		</div>
 	</Post>;
 };

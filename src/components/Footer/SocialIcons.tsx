@@ -53,7 +53,7 @@ const socialLinks: SocialLink[] = [
 ];
 
 const SocialIcons = () => {
-	return 	<div className="flex flex-row gap-5 items-start print:hidden">
+	return 	<div className="flex flex-row gap-8 sm:gap-7 md:gap-6 justify-start items-start print:hidden">
 		{socialLinks.map(link => {
 			const href = link.href.hrefWithSource("footer");
 

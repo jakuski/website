@@ -38,7 +38,7 @@ const ThemePicker = () => {
 				onChange={e => setTheme(e.target.value)}
 				className={selectClassName}
 			>
-				<option value="system">🖥 System Default ({mounted && capitaliseFirstLetter(systemTheme as string)})</option>
+				<option value="system">🖥 Device Default ({mounted && capitaliseFirstLetter(systemTheme as string)})</option>
 				<option value="dark">🌘 Dark</option>
 				<option value="light">☀️ Light</option>
 			</select>
