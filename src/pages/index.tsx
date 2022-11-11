@@ -74,7 +74,7 @@ export default function Home() {
 				</div>
 				<div className="flex gap-5 flex-col">
 					<div className="max-w-lg">
-						<div className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight mb-6"><h1 className="inline">{websiteName}</h1> is a UI/UX designer and developer based in London.</div>
+						<div className="text-5xl md:leading-tight font-bold tracking-tight mb-6"><h1 className="inline md:block">{websiteName}</h1> is a digital designer and developer based in London.</div>
 						<div className="text-xl font-sans mb-6">Designing and engineering interfaces for humans.<br/> See <Link href="/works">my work</Link>, find out more <Link href="/about">about me</Link> or <Link href="/contact">get in touch</Link>.</div>
 
 						<div className="text-xl font-sans">Currently available for freelance and full-time work/roles.</div>

@@ -16,7 +16,7 @@ variables:
         javascriptPrototypeSource: https://github.com/jakub-studio/SpectrumClock
 
 project:
-    category: UI/UX
+    category: Interface Design
     softwareUsed: ["figma.design", "adobe.cc.after-effects", "maxon.cinema4d", "maxon.redshift"]
 ---
 The Spectrum Clock explores how time can be told through colour, instead of string of text (like 10th October, 2022 14:45) that we are normally used to.

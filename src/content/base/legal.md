@@ -3,6 +3,14 @@ meta:
     title: Legal
     edited: 2022-07-05
 ---
+
+---
+
+## Foreword
+
+**This is a work in progress. This document is not yet complete and should not be treated as such.**
+
+---
 Welcome to my website. By browsing, you agree to the following terms and conditions (the "Terms and Conditions").
 If you disagree with the following terms and conditions, discontinue use/browsing of the website immediately.
 

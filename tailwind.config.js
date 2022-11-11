@@ -9,8 +9,9 @@ module.exports = {
 	],
 	theme: {
 		fontFamily:{
-			serif: ["quincy-cf", ...defaultTheme.fontFamily.serif],
-			sans: ["neue-haas-grotesk-text", ...defaultTheme.fontFamily.sans],
+			serif: ["Libre Baskerville", ...defaultTheme.fontFamily.serif],
+			// this is not the way things should be done iirc
+			sans: ["Inter", ...defaultTheme.fontFamily.sans],
 		},
 		extend: {
 			colors: {

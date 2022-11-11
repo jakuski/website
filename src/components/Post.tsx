@@ -21,7 +21,7 @@ const Post: React.FC<PostProps> = props => (
 				{props.category}
 			</div>}
 
-			{props.title && <h1 id="title" className="font-serif text-5xl font-bold tracking-tight mb-4">
+			{props.title && <h1 id="title" className="font-serif text-5xl leading-tight font-bold tracking-tight mb-4">
 				{props.title}
 			</h1>}
 

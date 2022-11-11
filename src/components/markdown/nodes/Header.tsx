@@ -1,5 +1,6 @@
 import { isDev } from "@/utils";
 import React from "react";
+import c from "clsx";
 
 const getHeaderClassName = (level: number): string => {
 	switch (level) {
@@ -13,6 +14,7 @@ const getHeaderClassName = (level: number): string => {
 const Header: React.FC<React.PropsWithChildren<{
 	level: number;
 	id?: string;
+	className?: string;
 }>> = props => {
 
 	if (props.level === 1) {
@@ -40,7 +42,7 @@ const Header: React.FC<React.PropsWithChildren<{
 
 	return React.createElement(`h${props.level}`, {
 		id: props.id,
-		className: (getHeaderClassName(props.level) + " font-bold").trim()
+		className: c(getHeaderClassName(props.level), "font-bold", props.className),
 	}, children);
 };
 

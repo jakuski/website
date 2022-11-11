@@ -1,6 +1,6 @@
 ---
 meta:
-    title: Cookie Policy
+    title: [WIP] Cookie Policy
     edited: 2022-07-05
 
 variables:

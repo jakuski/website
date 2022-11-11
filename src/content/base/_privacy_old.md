@@ -1,23 +1,18 @@
 ---
 meta:
     title: Privacy Policy
-    edited: 2022-11-11
+    edited: 2022-07-05
 
 variables:
     revision: 1
+    privacyEmail: "privacy"
 ---
 ## Revision {% $revision %} {% #privacy-policy-revision %}
 ---
 
-## Foreword
-
-**This is a work in progress. This document is not yet complete and should not be treated as such.**
-
----
-
 ### 1. Definitions.
-1. **"The Site"**, or **"The Website"** - www.jakub.studio
-2. **"Us"**, **"We"**, **"I"**, **"Me"**, **"Admin"**,**"Administrator"** - The owner and administrator of this website, Jakub Staniszewski.
+**"The Site"**, or **"The Website"** - www.jakub.studio
+**"Us"**, **"We"**, **"I"**, **"Me"**, **"Admin"**, **"Administrator"** - The owner and administrator of this website, Jakub Staniszewski.
 
 ### 2. Collection and storage of sensitive personal information.
 The Site does **not** collect any personal information that can be regarded as sensitive, this includes but is not limited to:
@@ -58,15 +53,19 @@ The Site may need to utilise the following browser storage technologies, by usin
 - [Local Storage](https://en.wikipedia.org/wiki/Web_storage#Local_storage) {% #browser_technology_ls %}
 
 #### 6. Strictly necessary data storage.
-The Site does not currently store any data that is strictly necessary for the operation of the Site. This is subject to change at any time and this section will be updated accordingly.
-
-
-#### 7. Non-essential data storage.
-The Site may store the following data that is not strictly necessary for the operation of the Site:
+The following data is stored in the user's browser for strictly necessary purposes and cannot be disabled. If the user chooses to disable the use of browser storage technologies via the browser settings, the user may not be able to use the site as intended. Should the user not wish to have their data stored, they should not use the site.
 
 | Identifier       | Technology                              | Usage description |
 |------------------|-----------------------------------------|------------|
-| `theme` | [Local Storage](#browser_technology_ls)   | This stores the users chosen preference for the website theme should they interact with the theme picker available at the bottom of each webpage. Should a user not wish to have `theme` stored, they should not interact with the theme picker. |
+| `privacy_agreed` | [Cookies](#browser_technology_cookie)   | This cookie is stored after the user interacts with the privacy prompt mentioned in [**Browser storage technology usage**](#browser_technology). The cookie stores the users choice of either all storage usage or only strictly necessary as well as the privacy policy [revision](#privacy-policy-revision). This cookie will expire after 60 days or will be automatically reset if a new revision of the privacy policy is published. |
+
+
+#### 7. Non-essential data storage.
+
+| Identifier       | Technology                              | Usage description |
+|------------------|-----------------------------------------|------------|
+| `theme` | [Local Storage](#browser_technology_ls)   |  ere |
+| `site_customisation` | [Local Storage](#browser_technology_ls) | 5234       |
 
 ### 8. Information collection regarding minors. {% id="information-collection-minors" %}
 We do not and do not wish to collect information from minors. If you legally class as a minor in your country/territory, please do not use this site.
@@ -81,4 +80,8 @@ If you have any queries relating to this website, please contact the administrat
 
 ### 11. Changes.
 This policy is subject to change at any time without announcement, as a result it is recommended that you revisit this page regularly to see any changes.
-A change of policy can be indicated by the revision number at the top of this page.
+A change of policy can be indicated by the revision number at the top of this page. A changelog of this page may also be present to aid in differentiating revisions however the accuracy and availability of ae changelog is not guaranteed.
+
+---
+### Policy Changelog
+- **Revision 1**: Initial Release

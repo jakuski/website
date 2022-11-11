@@ -17,7 +17,7 @@ variables:
         figmaPrototype: "https://jakub.studio/go/xyz"
 
 project:
-    category: UI/UX
+    category: Interface Design
     softwareUsed: ["figma.design"]
 ---
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Aliquam id diam maecenas ultricies mi. Vel eros donec ac odio tempor orci dapibus. Praesent elementum facilisis leo vel fringilla. Sem viverra aliquet eget sit amet tellus cras adipiscing enim. Id cursus metus aliquam eleifend mi in nulla posuere. Nunc vel risus commodo viverra maecenas accumsan lacus. Quisque sagittis purus sit amet volutpat. Sit amet risus nullam eget felis. Dignissim sodales ut eu sem integer. Amet volutpat consequat mauris nunc. At elementum eu facilisis sed odio morbi quis commodo. Pellentesque dignissim enim sit amet venenatis urna cursus eget nunc. Odio facilisis mauris sit amet massa vitae. Nunc mi ipsum faucibus vitae aliquet nec ullamcorper sit.

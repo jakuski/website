@@ -18,7 +18,7 @@ interface ProjectCategoryPillProps {
 }
 
 const ProjectCategoryPill: React.FC<ProjectCategoryPillProps> = props => {
-	const className = c("border border-stone-800 dark:border-stone-700 rounded-full text-stone-800 dark:text-stone-300 flex px-4 py-2 items-center justify-center transition-all shrink-0 select-none", {
+	const className = c("border border-stone-800 dark:border-stone-700 rounded-full text-stone-800 dark:text-stone-300 flex px-4 py-2 items-center justify-center transition-all shrink-0 select-none disable-tap-highlight", {
 		"opacity-50 hover:opacity-100": props.unselected,
 		"bg-stone-800 dark:bg-stone-700 text-stone-50 dark:text-stone-50": props.active
 	});
@@ -64,7 +64,7 @@ const ProjectLink: React.FC<ProjectLinkProps> = props => {
 			<div className="absolute bottom-0 left-0 text-white drop-shadow-md h-full flex justify-between flex-col p-4">
 				<span className="uppercase tracking-widest text-xs mb-1">{props.category}</span>
 				<div>
-					<h2 className="font-serif text-2xl md:text-4xl mb-1">{props.title}</h2>
+					<h2 className="font-serif text-xl md:text-2xl mb-1">{props.title}</h2>
 					<p className="tracking-wider text-sm">{props.description}</p>
 				</div>
 			</div>

@@ -49,7 +49,7 @@ const Footer: React.FC = () => {
 
 						<FooterColumn>
 							<TextLink route={Contact} />
-							<TextLink route={CookiePolicy}/>
+							{/* <TextLink route={CookiePolicy}/> */}
 						</FooterColumn>
 
 						<FooterColumn>
