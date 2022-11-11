@@ -24,7 +24,7 @@ export default function Navbar() {
 					</a>
 				</Link>
 
-				<nav className="font-serif lowercase">
+				<nav className="font-serif lowercase italic">
 					<ul className="flex gap-4">
 						{navbarRoutes.map(route => (
 							<NavbarLink

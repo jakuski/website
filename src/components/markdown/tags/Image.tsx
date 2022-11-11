@@ -15,7 +15,7 @@ const Image: React.FC<React.PropsWithChildren<{
 		caption = alt;
 	}
 
-	return <figure className="relative h-full w-full aspect-video" style={{fontSize: 0}}>
+	return <figure className="relative h-full w-full aspect-video mb-4 shadow-sm" style={{fontSize: 0}}>
 		<NextImage
 			className="rounded object-cover"
 			src={src}

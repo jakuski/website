@@ -28,7 +28,7 @@ The brief was set out by university staff, with one simple question. "Explore in
 1. Creating codes/IDs for every second possible under the gregorian calendar (like [what3words](https://what3words.com/) but for time).
 2. An anonymous social media board where users could go and share what happened to them at any particular moment in time (inspired by the anonymity and sharing of [The Unsent Project](https://theunsentproject.com/)).
 3. A climate count-up clock where users could see the impact of humans on Earth and it's climate by the second, showing in real time how many plastic bottles are dumped into the ocean, CO2 into the atmosphere and other variables which would intentionally create a sense of anxiety and stress in the user to encourage the user to make more climate concious choices.
-4. My last initial idea and the one I ended up going forward with was trying to tell the time through colour, it was inspired by the perceptual phenomenon [Synesthesia](https://en.wikipedia.org/wiki/Synesthesia), in particular, [Grapheme-color synesthesia](https://en.wikipedia.org/wiki/Grapheme%E2%80%93color_synesthesia) which is where a individual (or *synesthete*) associates numbers and letters with colours. They may see the letter 'A' as blue and the letter 'B' as yellow and so fourth. I encourage you to read the Wikipedia articles linked for more information. My idea stemmed around the concept of assigning each number from 0-9 it's own unique colour and telling the time through that.
+4. My last initial idea and the one I ended up going forward with was trying to tell the time through colour,  My idea stemmed around the concept of assigning each number from 0-9 it's own unique colour and telling the time through that.
 
 {% gallery caption="My initial ideas/concepts" %}
 
@@ -38,8 +38,19 @@ The brief was set out by university staff, with one simple question. "Explore in
     {% gallery-image src="" /%}
 {% /gallery %}
 
-## The Solution {% #solution %}
-As mentioned in initial idea #4, I decided to go with the idea of telling the time through colour. My first step in this was creating a colour palette which could be translated into numbers. It was essentially a key/value pair set with each number 0-9 assigned it's own unique colour. I created the following palette by starting with pure RGB red `rgb(255,0,0)` 
+## Development {% #development %}
+As mentioned in initial idea #4, I decided to go with the idea of telling the time through colour.
+
+It was inspired by the perceptual phenomenon [Synesthesia](https://en.wikipedia.org/wiki/Synesthesia), in particular, [Grapheme-color synesthesia](https://en.wikipedia.org/wiki/Grapheme%E2%80%93color_synesthesia) which is where a individual (or *synesthete*) associates numbers and letters with colours. They may see the letter 'A' as blue and the letter 'B' as yellow and so fourth. I encourage you to read the Wikipedia articles linked for more information.
+
+My first step in this was creating a colour palette which could be translated into numbers. It was essentially a key/value pair set with each number 0-9 assigned it's own unique colour. I created the following palette by starting with pure HSL red being assigned to 0 (`hsl(0,100,50) = 0`) then incremented by 36 degrees (360 degrees of colour in HSL &#247; 10) for each number (`hsl(36,100,50) = 1`, `hsl(72,100,50) = 2` and so on).
+
+{% image src="p/spectrum-clock/palette" /%}
+
+### Clock Development
+After creating the palette, I then started to develop the clock itself. I started by creating a simple clock face with the numbers 0-9 in the correct positions. I further carried on experimenting with it to a point where I was happy with it.
+
+{% image src="p/spectrum-clock/clock_dev" /%}
 
 ## The Outcome {% #outcome %}
 

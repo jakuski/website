@@ -8,6 +8,7 @@ import { getStaticMarkdoc } from "@/modules/markdown/server";
 import Metadata from "@/components/Meta";
 import { useState } from "react";
 import c from "clsx";
+import Anchor from "@/components/markdown/nodes/Anchor";
 
 interface ProjectCategoryPillProps {
 	name: string;
@@ -27,7 +28,7 @@ const ProjectCategoryPill: React.FC<ProjectCategoryPillProps> = props => {
 		onClick={props.onClick}
 		className={className}
 	>
-		{props.name} &mdash; {props.count}
+		{props.name} &ndash; {props.count}
 	</button>;
 };
 
@@ -138,6 +139,11 @@ const ProjectsIndexPage: React.FC<ProjectPageProps> = props => {
 				requestPriorityLoading={(index === 0) || (index === 1)}
 				{...project} />
 		))}
+
+		<div className=" bg-stone-800 mt-6 p-4 rounded">
+			<h4 className="tracking-wider text-sm opacity-70 uppercase mb-2 ">👀 Looking for more?</h4>
+			I&apos;m currently migrating my old PDF portfolio to this website. If you&apos;d like to see my old portfolio (which contains the rest of my projects), you can find it <Anchor href="">here</Anchor>. 
+		</div>
 	</Post>;
 };
 

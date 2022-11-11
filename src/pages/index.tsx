@@ -68,16 +68,16 @@ export default function Home() {
 				description="Jakub is a multi-disciplinary graphic designer and developer specialising in UI/UX design. "
 				image="g/logo"
 			/>
-			<main className="flex items-center justify-center h-full gap-14 flex-col sm:flex-row mx-8 font-serif">
+			<main className="flex items-center justify-center h-full gap-14 flex-col sm:flex-row mx-8 font-sans">
 				<div className=" before:opacity-20 after:opacity-20">
 					<LogoIcon size={128} />
 				</div>
 				<div className="flex gap-5 flex-col">
 					<div className="max-w-lg">
-						<div className="text-5xl md:leading-tight font-bold tracking-tight mb-6"><h1 className="inline md:block">{websiteName}</h1> is a digital designer and developer based in London.</div>
-						<div className="text-xl font-sans mb-6">Designing and engineering interfaces for humans.<br/> See <Link href="/works">my work</Link>, find out more <Link href="/about">about me</Link> or <Link href="/contact">get in touch</Link>.</div>
+						<div className="text-3xl lg:text-5xl leading-tight md:leading-snug lg:leading-[1.25] font-bold tracking-tight mb-6 font-serif"><h1 className="inline lg:block">{websiteName}</h1> is a digital designer and developer based in London.</div>
+						<div className="text-xl mb-6 tracking-tight">Designing and engineering interfaces for humans.<br/> See <Link href="/works">my work</Link>, find out more <Link href="/about">about me</Link> or <Link href="/contact">get in touch</Link>.</div>
 
-						<div className="text-xl font-sans">Currently available for freelance and full-time work/roles.</div>
+						<div className="text-xl tracking-tight">Currently available for freelance and full-time work/roles.</div>
 					</div>
 				</div>
 			</main>

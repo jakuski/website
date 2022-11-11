@@ -26,7 +26,7 @@ const GalleryImage: React.FC<{
 
 	return <a
 		href={src.src}
-		className={galleryImageClassName + " w-full"}
+		className={galleryImageClassName + " w-full shadow-sm"}
 		data-lg-size={src.width + "-" + src.height}
 		data-sub-html={alt}
 		data-thumbnail-url={"/_next/image?" + thumbnailParams.toString()}
