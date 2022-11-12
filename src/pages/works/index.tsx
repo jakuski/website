@@ -64,8 +64,11 @@ const ProjectLink: React.FC<ProjectLinkProps> = props => {
 			<div className="absolute top-0 h-1/5 w-full rounded-md bg-gradient-to-b from-black opacity-50" />
 
 			{/* Text content */}
-			<div className="absolute bottom-0 left-0 text-white drop-shadow-md h-full flex justify-between flex-col p-4">
-				<span className="uppercase tracking-widest text-xs mb-1 font-medium">{props.category}</span>
+			<div className="absolute bottom-0 left-0 text-white drop-shadow-md h-full w-full flex justify-between flex-col p-4">
+				<div className="uppercase tracking-widest text-xs mb-1 font-medium flex w-full justify-between items-center">
+					<span>{props.category}</span>
+					<span>2021</span>
+				</div>
 				<div>
 					<h2 className="font-serif text-xl md:text-2xl mb-1 font-bold">{props.title}</h2>
 					<p className="font-medium text-sm">{props.description}</p>
@@ -143,7 +146,7 @@ const ProjectsIndexPage: React.FC<ProjectPageProps> = props => {
 		))}
 
 		<div className="bg-stone-200 dark:bg-stone-800 mt-6 p-4 rounded">
-			<h4 className="tracking-wider text-sm font-bold uppercase mb-2 ">👀 Looking for more?</h4>
+			<h4 className="tracking-wider text-sm font-bold uppercase mb-2 ">Looking for more?</h4>
 			I&apos;m currently migrating my old PDF portfolio to this website.
 			If you&apos;d like to see my old portfolio (which contains the rest of my projects),
 			please click the button below.
@@ -154,7 +157,7 @@ const ProjectsIndexPage: React.FC<ProjectPageProps> = props => {
 				className="my-4 bg-brand text-stone-800 rounded px-4 py-2 min-h-44 flex gap-2 justify-center items-center hover:underline"
 			>
 				<span className="font-semibold">View old portfolio</span>
-				<span>(.pdf)</span>
+				<span>(.pdf, ~18mb)</span>
 			</a>
 
 			<div className="font-semibold">Please accept my apologies for any inconvenience/poor UX this has caused.</div>

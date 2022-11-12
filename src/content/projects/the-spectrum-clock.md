@@ -14,6 +14,7 @@ variables:
         figmaPrototype: "https://jakub.studio/go/xyz"
         javascriptPrototype: https://jakub-studio.github.io/SpectrumClock/build/
         javascriptPrototypeSource: https://github.com/jakub-studio/SpectrumClock
+        movingPreviewRawVimeo: https://vimeo.com/716819915
 
 project:
     category: Interface Design
@@ -56,18 +57,14 @@ After creating the palette, I then started to develop the clock itself. I starte
 
 ### Phone Mock-up
 {% vimeo id="714461646" color="#ffa50a" /%}
-There is also a version of this mock-up of the raw UI which isn't placed into a phone. Available on Vimeo.
-
-### Raw UI
-{% vimeo id="716819915" /%}
+There is also a version of this mock-up of the raw UI which isn't placed into a phone. Available on {% link href=$links.movingPreviewRawVimeo newWindow=true %}Vimeo{% /link %}.
 
 ### Prototypes {% id="prototypes" %}
 I created two prototypes for this project, one in [Figma](https://www.figma.com/) to showcase the UI and features of The Spectrum Clock's website and another in JavaScript. I had to create the JavaScript prototype as Figma was unable to showcase how I wanted the clock to look and feel like.  
 Unfortunately, I was not able to get the JavaScript prototype to a point where I was happy with it, browser engines do not support animation from gradient to gradient and as a result the JavaScript result ended up very 'jumpy' and not as smooth as I wanted it to be. However I was able to successfully make it show the colours for the user's current time as well as any time/date combination they desire through the use of a date picker control at the top of the prototype.
 
 #### Figma Prototype {% #figma-prototype %}
-
-
+The Figma Prototype I created
 
 #### JavaScript Prototype {% #js-prototype %}
 Source code available on my {% link href=$links.javascriptPrototypeSource newWindow=true %}GitHub{% /link %}.

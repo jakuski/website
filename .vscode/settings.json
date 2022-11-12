@@ -8,6 +8,6 @@
         "editor.autoClosingBrackets": "always"
 	},
 	"files.associations": {
-		"tailwind.css": "tailwind.css" 
+		"*.css": "tailwindcss" 
 	}
 }
