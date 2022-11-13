@@ -1,14 +1,13 @@
 import Post from "@/components/Post";
 import Image from "next/future/image";
 import Link from "next/link";
-import images, { resolveImage } from "@/modules/images";
+import allImagesObject, { resolveImage } from "@/modules/images";
 import { ContentDirectoryNames, getContentIDs } from "@/modules/fs";
 import projectIndexPageSort from "@/content/projects/_indexPageSort.json";
 import { getStaticMarkdoc } from "@/modules/markdown/server";
 import Metadata from "@/components/Meta";
 import { useState } from "react";
 import c from "clsx";
-import Anchor from "@/components/markdown/nodes/Anchor";
 import { PortfolioPDF } from "@/routes";
 
 interface ProjectCategoryPillProps {

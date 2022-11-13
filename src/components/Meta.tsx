@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { websiteName, defaultThemeColour } from "@/config";
 import { About as AboutRoute } from "@/routes";
-import images from "@/modules/images";
+import allImagesObject from "@/modules/images";
 
 interface MetaProps {
 	/* Basic Meta Stuff */
@@ -54,11 +54,11 @@ const Metadata: React.FC<MetaProps> = props => {
 			<meta property={MetaKeys.articleModifiedTime} key={MetaKeys.articleModifiedTime} content={props.modified.toJSON()} />
 		</>}
 
-		{props.image && (typeof props.image === "string") && images[props.image] && <>
-			<meta property={MetaKeys.openGraphImage} key={MetaKeys.openGraphImage} content={images[props.image].src.src} />
-			<meta name={MetaKeys.twitterImage} key={MetaKeys.twitterImage} content={images[props.image].src.src} />
-			<meta property={MetaKeys.openGraphImageAlt} key={MetaKeys.openGraphImageAlt} content={images[props.image].alt} />
-			<meta name={MetaKeys.twitterImageAlt} key={MetaKeys.twitterImageAlt} content={images[props.image].alt} />
+		{props.image && (typeof props.image === "string") && allImagesObject[props.image] && <>
+			<meta property={MetaKeys.openGraphImage} key={MetaKeys.openGraphImage} content={allImagesObject[props.image].src.src} />
+			<meta name={MetaKeys.twitterImage} key={MetaKeys.twitterImage} content={allImagesObject[props.image].src.src} />
+			<meta property={MetaKeys.openGraphImageAlt} key={MetaKeys.openGraphImageAlt} content={allImagesObject[props.image].alt} />
+			<meta name={MetaKeys.twitterImageAlt} key={MetaKeys.twitterImageAlt} content={allImagesObject[props.image].alt} />
 		</>}
 	
 		<meta name={MetaKeys.themeColour} key={MetaKeys.themeColour} content={props.themeColour || defaultThemeColour} />
