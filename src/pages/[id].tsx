@@ -1,4 +1,4 @@
-import Post, { BasicMarkdownPost, BasicMarkdownPostProps } from "@/components/Post";
+import { BasicMarkdownPost, BasicMarkdownPostProps } from "@/components/Post";
 import { ContentDirectoryNames, getContentIDs, readContentFile } from "@/modules/fs";
 import { getStaticMarkdoc } from "@/modules/markdown/server";
 import { GetStaticPaths, GetStaticProps } from "next";
@@ -27,10 +27,6 @@ export const getStaticProps: GetStaticProps<BasicMarkdownPostProps, Params> = as
 	const { id: pageID, directory } = context.params;
 
 	const result = await getStaticMarkdoc(ContentDirectoryNames.BASE, `${pageID}.md`)();
-
-	//
-	// INSERT CONTENT LOADING LOGIC
-	//
 
 	return result;
 };
