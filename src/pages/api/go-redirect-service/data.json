@@ -1,0 +1,26 @@
+{
+	"links": {
+		"instagram": "https://www.instagram.com/jakub.studio/",
+		"linkedin": "https://www.linkedin.com/in/jakub-staniszewski/",
+		"twitter": "https://twitter.com/jakubstudio_",
+		"vimeo": "https://vimeo.com/jakubstudio",
+		"figma-community": "https://www.figma.com/@jakub_",
+		"github": "https://github.com/jakub-studio",
+	
+		"p/tps-build": "https://jakub-studio.github.io/SpectrumClock/build/",
+		"p/tps-ui": "https://www.figma.com/proto/lRA7N3IpU0zIZaNb4hCfsZ/The-Spectrum-Clock?page-id=0%3A1&node-id=2%3A169&viewport=241%2C48%2C0.15&scaling=contain&starting-point-node-id=2%3A47&show-proto-sidebar=1",
+		"p/spc-vid": "https://vimeo.com/714433414",
+	
+		"p/spotify21/video": "https://vimeo.com/714433414",
+		"p/clock/build": "https://jakub-studio.github.io/SpectrumClock/build/",
+		"p/clock/ui": "https://www.figma.com/proto/lRA7N3IpU0zIZaNb4hCfsZ/The-Spectrum-Clock?page-id=0%3A1&node-id=2%3A169&viewport=241%2C48%2C0.15&scaling=contain&starting-point-node-id=2%3A47&show-proto-sidebar=1",
+		"p/clock/video": "https://vimeo.com/714461646",
+		"p/buzz/ui": "",
+		"p/screwd/ui": "https://www.figma.com/proto/MNtcKmUjrOe9wShI146I96/ScrewdApp?node-id=132%3A127&viewport=657%2C922%2C0.5&scaling=scale-down&starting-point-node-id=216%3A296",
+	
+		"portfolio": "/_assets/JakubStaniszewskiPortfolio_W.pdf"
+	},
+	"tempDisable": {
+		
+	}
+}

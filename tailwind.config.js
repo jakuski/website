@@ -1,23 +1,27 @@
 const defaultTheme = require("tailwindcss/defaultTheme");
 
+const v = varName => `var(--${varName})`;
+
 module.exports = {
+	darkMode: "class",
 	content: [
-		"./pages/**/*.{js,ts,jsx,tsx}",
-		"./components/**/*.{js,ts,jsx,tsx}",
+		"./src/**/*.{js,ts,jsx,tsx}",
 	],
 	theme: {
-    
-		colors: {
-			"citrine": "#d48724",
-			"black": "#0D0D0D"
-		},
 		fontFamily:{
-			serif: ["quincy-cf", ...defaultTheme.fontFamily.serif],
-			sans: ["neue-haas-grotesk-text", ...defaultTheme.fontFamily.sans],
+			serif: ["Libre Baskerville", ...defaultTheme.fontFamily.serif],
+			// this is not the way things should be done iirc
+			sans: ["Inter", ...defaultTheme.fontFamily.sans],
 		},
 		extend: {
+			colors: {
+				"brand": "#ffa50a"
+			},
 			minHeight: {
 				"44": "44px",
+			},
+			minWidth: {
+				"44": "44px"
 			}
 		}
 	},

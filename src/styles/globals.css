@@ -1,0 +1,92 @@
+/* Enable MacOS font anti-aliasing */
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osxfont-smoothing: grayscale
+}
+
+html,
+body,
+#__next {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* For use with <select /> elements */
+.disable-select-arrow-icon {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  text-indent: 0.1;
+  text-overflow: '';
+}
+
+/* Disable blue tap highlight on mobile */
+.disable-tap-highlight {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* lists */
+
+.md-wrapper ol {
+  list-style: inside decimal;
+}
+
+.md-wrapper ul {
+  list-style: inside disc;
+}
+
+.md-wrapper ol,
+.md-wrapper ul {
+  margin-bottom: 1rem;
+}
+
+/* tables */
+
+.md-wrapper table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.md-wrapper table thead th {
+  padding: 0.5rem;
+  text-align: left;
+}
+
+.md-wrapper table thead {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.md-wrapper table td {
+  padding: 0.5rem;
+}
+
+.md-wrapper table tr:nth-child(even) {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+
+/* code */
+
+.md-wrapper code {
+  font-family: monospace;
+  font-size: 0.9rem;
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.2rem;
+}
+
+.light .md-wrapper code {
+  background-color: rgba(0, 0, 0, 0.15);
+}
