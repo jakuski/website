@@ -1,5 +1,21 @@
 import { resolveImage } from "@/modules/images";
 import NextImage from "next/future/image";
+import React from "react";
+import c from "clsx";
+
+export const Caption: React.FC<React.PropsWithChildren<{
+	className?: string;
+	as?: React.ElementType
+}>> = props => {
+	const Tag = props.as ?? "figcaption";
+
+	const className = c("italic text-base text-center mt-2 mb-2", props.className);
+
+	return <Tag className={className}>
+		{props.children}
+	</Tag>;
+};
+
 
 const Image: React.FC<React.PropsWithChildren<{
 	src: string;
@@ -15,15 +31,14 @@ const Image: React.FC<React.PropsWithChildren<{
 		caption = alt;
 	}
 
-	return <figure className="relative h-full w-full aspect-video mb-4 shadow-sm" style={{fontSize: 0}}>
+	return <figure className="relative h-full w-full flex mb-4 flex-col" style={{fontSize: 0}}>
 		<NextImage
-			className="rounded object-cover"
+			className="rounded object-cover shadow grow"
 			src={src}
 			alt={alt}
 			placeholder="blur"
-			fill
 		/>
-		{caption && <figcaption className="italic text-base text-center mt-1 mb-1">{caption}</figcaption>}
+		{caption && <Caption>{caption}</Caption>}
 	</figure>;
 };
 

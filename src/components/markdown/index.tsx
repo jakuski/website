@@ -85,6 +85,9 @@ export const transformConfig: Config = {
 		image: sharedComponents.image,
 		gallery: {
 			render: MarkdocComponentNames.TAG_GALLERY,
+			attributes: {
+				caption: { type: String }
+			}
 		},
 		galleryImage: {
 			render: MarkdocComponentNames.TAG_GALLERY_IMAGE,

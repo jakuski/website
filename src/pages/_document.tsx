@@ -7,9 +7,14 @@ import c from "clsx";
 const robotsMetaContent = isProd ? "index,follow" : "noindex,nofollow";
 
 const bodyClassName = c(
+	// Light
 	"bg-stone-100 text-stone-700",
+	// Dark
 	"dark:bg-stone-900 dark:text-stone-300",
-	"selection:bg-brand dark:selection:text-stone-800"
+	// Selections
+	"selection:bg-brand dark:selection:text-stone-800",
+	// Misc
+	"antialiased"
 );
 
 class SiteDocument extends Document {
