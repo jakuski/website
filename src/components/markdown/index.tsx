@@ -14,6 +14,10 @@ import FigmaEmbed, { FIGMA_EMBEDDABLE_URL_REGEX } from "./tags/FigmaEmbed";
 import Image from "./tags/Image";
 import Gallery from "./tags/Gallery";
 
+// Common attributes
+const className = { type: String };
+const id = { type: String };
+
 enum MarkdocComponentNames  {
 	NODE_ARTICLE = "AR",
 	NODE_PARAGRAPH = "P",
@@ -23,7 +27,11 @@ enum MarkdocComponentNames  {
 
 	TAG_EMAIL = "E",
 	TAG_IMAGE = "I",
+
 	TAG_GALLERY = "G",
+	TAG_GALLERY_IMAGE = "G/I",
+	TAG_GALLERY_ROW = "G/R",
+
 	TAG_EMBED_VIMEO = "EM_VIMEO",
 	TAG_EMBED_FIGMA = "EM_FIGMA",
 }
@@ -32,28 +40,16 @@ const sharedComponents: Config["tags"] = {
 	link: {
 		render: MarkdocComponentNames.NODE_ANCHOR,
 		attributes: {
-			href: {
-				type: String
-			},
-			newWindow: {
-				type: Boolean,
-				required: false
-			}
+			href: { type: String },
+			newWindow: { type: Boolean, required: false }
 		}
 	},
 	image: {
 		render: MarkdocComponentNames.TAG_IMAGE,
 		attributes: {
-			src: {
-				type: String,
-				required: true
-			},
-			alt: {
-				type: String
-			},
-			caption: {
-				type: String
-			}
+			src: { type: String, required: true },
+			alt: { type: String },
+			caption: { type: String }
 		}
 	}
 };
@@ -65,12 +61,8 @@ export const transformConfig: Config = {
 		hr: { render: MarkdocComponentNames.NODE_DIVIDER },
 		heading: { render: MarkdocComponentNames.NODE_HEADER,
 			attributes: {
-				level: {
-					type: Number
-				},
-				id: {
-					type: String
-				}
+				level: { type: Number },
+				id
 			}
 		},
 		
@@ -90,6 +82,12 @@ export const transformConfig: Config = {
 		image: sharedComponents.image,
 		gallery: {
 			render: MarkdocComponentNames.TAG_GALLERY,
+		},
+		galleryImage: {
+			render: MarkdocComponentNames.TAG_GALLERY_IMAGE,
+			attributes: {
+				src: { type: String, required: true }
+			}
 		},
 		vimeo: {
 			render: MarkdocComponentNames.TAG_EMBED_VIMEO,

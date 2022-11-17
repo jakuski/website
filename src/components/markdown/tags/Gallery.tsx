@@ -11,6 +11,8 @@ import "lightgallery/css/lightgallery.css";
 import "lightgallery/css/lg-zoom.css";
 import "lightgallery/css/lg-thumbnail.css";
 
+// This is passed to classNames and as a selector for the gallery library
+// to add the correct images to the reel.
 const galleryImageClassName = "_gallery_image";
 
 const GalleryImage: React.FC<{
