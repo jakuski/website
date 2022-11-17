@@ -39,6 +39,7 @@ interface ProjectLinkProps {
 	category: string;
 	image: string;
 	href: string;
+	year?: number;
 	requestPriorityLoading?: boolean;
 }
 
@@ -66,7 +67,7 @@ const ProjectLink: React.FC<ProjectLinkProps> = props => {
 			<div className="absolute bottom-0 left-0 text-white drop-shadow-md h-full w-full flex justify-between flex-col p-4">
 				<div className="uppercase tracking-widest text-xs mb-1 font-medium flex w-full justify-between items-center">
 					<span>{props.category}</span>
-					<span>2021</span>
+					<span>{props.year}</span>
 				</div>
 				<div>
 					<h2 className="font-serif text-xl md:text-2xl mb-1 font-bold">{props.title}</h2>
@@ -184,6 +185,7 @@ export const getStaticProps = async (): Promise<{ props: ProjectPageProps }> => 
 			description: markdoc.frontmatter.meta?.description || "",
 			image: markdoc.frontmatter.meta?.image as string,
 			category: markdoc.frontmatter.project?.category || "",
+			year: markdoc.frontmatter.project?.date ? new Date(markdoc.frontmatter.project?.date).getFullYear() : void 0,
 			href: `/works/${id}`
 		};
 		

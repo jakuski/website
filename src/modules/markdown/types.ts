@@ -29,6 +29,7 @@ export type Frontmatter = {
 		category?: string;
 		softwareUsed?: AllApps[];
 		credits?: string;
+		date?: Date;
 	};
 	variables?: Record<string, unknown>;
 }

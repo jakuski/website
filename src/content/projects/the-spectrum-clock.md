@@ -17,6 +17,7 @@ variables:
         movingPreviewRawVimeo: https://vimeo.com/716819915
 
 project:
+    date: 2021-09-01
     category: Interface Design
     softwareUsed: ["figma.design", "adobe.cc.after-effects", "maxon.cinema4d", "maxon.redshift"]
 ---
@@ -33,10 +34,12 @@ The brief was set out by university staff, with one simple question. "Explore in
 
 {% gallery caption="My initial ideas/concepts" %}
 
-    {% gallery-row %}
-    {% /gallery-row %}
+    {% galleryRow %}
+        {% galleryImage src="p/spectrum-clock/rings" /%}
+        {% galleryImage src="p/spectrum-clock/rings" /%}
+    {% /galleryRow %}
 
-    {% gallery-image src="" /%}
+    {% galleryImage src="p/spectrum-clock/rings" /%}
 {% /gallery %}
 
 ## Development {% #development %}

@@ -1,6 +1,3 @@
-
-
-
 import LightGallery from "lightgallery/react";
 import lgZoom from "lightgallery/plugins/zoom";
 import lgThumb from "lightgallery/plugins/thumbnail";

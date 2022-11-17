@@ -5,3 +5,5 @@ const GalleryRow: React.FC<PropsWithChildren> = ({children}) => {
 		{children}
 	</div>;
 };
+
+export default GalleryRow;

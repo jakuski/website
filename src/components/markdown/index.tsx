@@ -13,6 +13,8 @@ import VimeoEmbed from "./tags/VimeoEmbed";
 import FigmaEmbed, { FIGMA_EMBEDDABLE_URL_REGEX } from "./tags/FigmaEmbed";
 import Image from "./tags/Image";
 import Gallery from "./tags/Gallery";
+import GalleryImage from "./tags/Gallery/Image";
+import GalleryRow from "./tags/Gallery/Row";
 
 // Common attributes
 const className = { type: String };
@@ -59,10 +61,11 @@ export const transformConfig: Config = {
 		document: { render: MarkdocComponentNames.NODE_ARTICLE  },
 		paragraph: { render: MarkdocComponentNames.NODE_PARAGRAPH },
 		hr: { render: MarkdocComponentNames.NODE_DIVIDER },
-		heading: { render: MarkdocComponentNames.NODE_HEADER,
+		heading: {
+			render: MarkdocComponentNames.NODE_HEADER,
 			attributes: {
-				level: { type: Number },
-				id
+				id, className,
+				level: { type: Number }
 			}
 		},
 		
@@ -88,6 +91,9 @@ export const transformConfig: Config = {
 			attributes: {
 				src: { type: String, required: true }
 			}
+		},
+		galleryRow: {
+			render: MarkdocComponentNames.TAG_GALLERY_ROW,
 		},
 		vimeo: {
 			render: MarkdocComponentNames.TAG_EMBED_VIMEO,
@@ -121,7 +127,11 @@ export const renderConfig = {
 		// Tags
 		[MarkdocComponentNames.TAG_EMAIL]: Email,
 		[MarkdocComponentNames.TAG_IMAGE]: Image,
+
 		[MarkdocComponentNames.TAG_GALLERY]: Gallery,
+		[MarkdocComponentNames.TAG_GALLERY_IMAGE]: GalleryImage,
+		[MarkdocComponentNames.TAG_GALLERY_ROW]: GalleryRow,
+
 		[MarkdocComponentNames.TAG_EMBED_VIMEO]: VimeoEmbed,
 		[MarkdocComponentNames.TAG_EMBED_FIGMA]: FigmaEmbed,
 	}
