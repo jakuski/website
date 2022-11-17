@@ -12,5 +12,5 @@ export const socialHandles = {
 	vimeo: "jakubstudio"
 };
 
-// set document.designMode = "on" when isDev (defined below) is true.
+// runs document.designMode = "on" when isDev (defined below) is true.
 export const useDocumentDesignModeDuringDev = false;
