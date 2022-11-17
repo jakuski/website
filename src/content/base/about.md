@@ -17,7 +17,7 @@ As a result, I often spend a lot of time refining small details in my designs, t
 
 ### Experience
 I've previously done a placement at [The One Off](http://theoneoff.com). Here, I worked on a conceptual digital way-finding experience for [FLANNELS Liverpool](https://www.flannels.com/liverpool-flagshp-fl-store-2781), in-store experiences for [Sports Direct](http://www.sportsdirect.com/) and some concepting/ideation work for other international clients.  
-*The work mentioned cannot be shown publicly, please [contact me](/contact) if you would like to find out more.*
+*The work mentioned cannot be shown publicly, but please [contact me](/contact) if you would like to find out more.*
 
 ### Outside of design
 When I'm not in Figma or Visual Studio Code, I enjoy(-*mostly*) working on my car, buying tools I definitely do not need but absolutely want or spinning something up in the kitchen. I'm a massive foodie and love trying new recipes and techniques. I also enjoy a nice tea, preferably loose leaf. I'm a bit of a tea snob.
