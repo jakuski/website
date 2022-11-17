@@ -1,10 +1,10 @@
 ---
 meta:
     title: Privacy Policy
-    edited: 2022-11-11
+    edited: 2022-11-17
 
 variables:
-    revision: 1
+    revision: 0
 ---
 ## Revision {% $revision %} {% #privacy-policy-revision %}
 ---

@@ -3,7 +3,7 @@ meta:
     title: Colophon
     displayTitle: Colophon.
     description: A brief insight into the history, design and development of my website.
-    edited: 2022-07-05
+    edited: 2022-11-17
 
 variables:
     repoLink: https://github.com/jakub-studio/website

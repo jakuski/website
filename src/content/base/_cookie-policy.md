@@ -1,7 +1,7 @@
 ---
 meta:
     title: "[WIP] Cookie Policy"
-    edited: 2022-07-05
+    edited: 2022-11-17
 
 variables:
     revision: 1

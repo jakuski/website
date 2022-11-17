@@ -1,7 +1,9 @@
 ---
 meta:
     title: Legal
-    edited: 2022-07-05
+    edited: 2022-11-17
+
+# The double dividers (---) below are intentional.
 ---
 
 ---

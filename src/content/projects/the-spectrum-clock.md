@@ -2,8 +2,8 @@
 meta:
     title: The Spectrum Clock
     description: Communicating time through colour.
-    published: 2022-07-04
-    edited: 2022-07-05
+    published: 2022-11-17
+    # edited: 2022-07-05
     image: p/spectrum-clock/rings
 
 pageProps:
