@@ -6,14 +6,15 @@ meta:
 
 ---
 
-## &ldquo;Make something wonderful and put it out there&rdquo; &ndash; Steve Jobs, 2007. {% .font-serif %}
+## &ldquo;Make something wonderful and put it out there&rdquo;  {% .font-serif %}
+## &ndash; Steve Jobs, 2007. {% .font-serif %}
 
 ---
 
 {% image src="g/figma-london" /%}
+A digital designer with a passion for creating beautiful, functional and intuitive user experiences, putting thought and care into every last minute detail. I come from a Graphic Design degree but have focused on UI and UX design. I've also been a self-taught developer since 2018. Primarily learning and working within the JavaScript ecosystem. I have a strong understanding of JavaScript, HTML, CSS and have also worked with Node.js, React, TypeScript, Electron, Express, Next.js, TailwindCSS and many more. Recently, I've been learning Rust and Apple's Swift (+ SwiftUI).
 
-Hey, I'm Jakub. A UI/UX focused-designer and diehard perfectionist who's margin for error is practically nil.
-As a result, I often spend a lot of time refining small details in my designs, to which people tell me "Nobody will notice that!", however I don't listen to them. I believe it's the small details that matter. Those details are what put the user experience above and beyond other designs/applications. I also highly enjoy learning new skills/techniques/software that I can use to push my designs above and beyond.
+At my core, I'm a problem solver. I love to learn and I love to create. I'm always looking for new challenges and opportunities to learn and grow. 
 
 ### Experience
 I've previously done a placement at [The One Off](http://theoneoff.com). Here, I worked on a conceptual digital way-finding experience for [FLANNELS Liverpool](https://www.flannels.com/liverpool-flagshp-fl-store-2781), in-store experiences for [Sports Direct](http://www.sportsdirect.com/) and some concepting/ideation work for other international clients.  
