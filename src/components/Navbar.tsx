@@ -2,7 +2,6 @@ import Link from "next/link";
 import { navbar as navbarRoutes, Home } from "@/routes";
 import LogoIcon from "./icons/Logo";
 
-/* const old = "flex items-center min-h-44 relative after:absolute after:h-6 after:w-[calc(100%+10px)] after:px-2 after:bg-brand/20 after:-left-1 after:transform after:translate-x-full after:hover:translate-x-0 after:transition-transform after:origin-right after:hover:origin-left after:-z-10  after:rounded-full after:overflow-hidden" */
 
 const NavbarLink: React.FC<React.PropsWithChildren<{
 	href: string;

@@ -5,13 +5,20 @@ import Footer from "../components/Footer";
 import { websiteName } from "../config";
 import LogoIcon from "@/components/icons/Logo";
 import c from "clsx";
-import { useRouter } from "next/router";
+
+const linkClassName = c(
+	"inline text-brand font-bold relative",
+	"after:absolute after:h-[2px] after:w-full after:bg-brand after:opacity-50 after:bottom-0 after:left-0 after:scale-x-0 after:hover:scale-x-100 after:transition-transform after:origin-right",
+	"after:hover:origin-left",
+);
 
 const Link: React.FC<PropsWithChildren<{
 	href: string;
 }>> = props => {
+	
+
 	return <NextLink href={props.href}>
-		<a className="inline text-brand font-bold relative after:absolute after:h-[2px] after:w-full after:bg-brand after:bottom-0 after:left-0 after:scale-x-0 after:hover:scale-x-100 after:transition-transform after:origin-right after:hover:origin-left after:opacity-50">{props.children}</a>
+		<a className={linkClassName}>{props.children}</a>
 	</NextLink>;
 };
 

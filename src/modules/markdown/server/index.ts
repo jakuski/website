@@ -5,7 +5,6 @@ is only responsible for rendering ready-to-go data.
 
 */
 
-import { GetStaticProps } from "next";
 import { Config, parse, RenderableTreeNode, Tokenizer, transform } from "@markdoc/markdoc";
 import serialiseTopLevel, { serialise } from "./serialise";
 import parseYaml from "./yaml";

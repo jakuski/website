@@ -1,7 +1,7 @@
 import Post from "@/components/Post";
 import Image from "next/future/image";
 import Link from "next/link";
-import allImagesObject, { resolveImage } from "@/modules/images";
+import { resolveImage } from "@/modules/images";
 import { ContentDirectoryNames, getContentIDs } from "@/modules/fs";
 import projectIndexPageSort from "@/content/projects/_indexPageSort.json";
 import { getStaticMarkdoc } from "@/modules/markdown/server";
@@ -21,7 +21,7 @@ interface ProjectCategoryPillProps {
 const ProjectCategoryPill: React.FC<ProjectCategoryPillProps> = props => {
 	const className = c("border  dark:border-stone-700 rounded-full text-stone-800 dark:text-stone-300 flex px-4 py-2 items-center justify-center transition-all shrink-0 select-none disable-tap-highlight", {
 		"opacity-50 hover:opacity-100": props.unselected,
-		" border-stone-400": !props.active,
+		"border-stone-400": !props.active,
 		"bg-stone-800 border-stone-800 dark:bg-stone-700 text-stone-50 dark:text-stone-50": props.active
 	});
 

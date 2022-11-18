@@ -1,4 +1,4 @@
-import { githubRepo, socialHandles, websiteName } from "@/config";
+import { githubRepo, socialHandles } from "@/config";
 import { isProd } from "@/utils";
 import Document, { Html, Head, Main, NextScript } from "next/document";
 import c from "clsx";

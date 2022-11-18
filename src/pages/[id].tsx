@@ -1,5 +1,5 @@
 import { BasicMarkdownPost, BasicMarkdownPostProps } from "@/components/Post";
-import { ContentDirectoryNames, getContentIDs, readContentFile } from "@/modules/fs";
+import { ContentDirectoryNames, getContentIDs } from "@/modules/fs";
 import { getStaticMarkdoc } from "@/modules/markdown/server";
 import { GetStaticPaths, GetStaticProps } from "next";
 

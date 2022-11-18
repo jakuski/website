@@ -1,5 +1,15 @@
+import c from "clsx";
+
+const SkipToMainButtonClassName = c(
+	"pointer-events-none",
+	"fixed left-0 top-4 z-50 py-4 px-6",
+	"bg-stone-300 shadow-md",
+	"-translate-x-full transition-transform duration-75",
+	"focus:pointer-events-auto focus:translate-x-0"
+);
+
 const SkipToMainButton: React.FC = () => {
-	return <a href="#main-content" className="fixed left-0 top-4 bg-stone-300 pointer-events-none shadow-md z-20 py-4 px-6 -translate-x-full transition-transform duration-75 focus:pointer-events-auto focus:translate-x-0">
+	return <a href="#main-content" className={SkipToMainButtonClassName}>
 		Skip to main content
 	</a>;
 };

@@ -3,7 +3,6 @@ import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import If from "../If";
 
-
 const selectName = "site-wide-theme-picker";
 const selectClassName = "p-1 rounded bg-stone-200 dark:bg-stone-800 text-stone-900 dark:text-stone-200 shadow";
 
