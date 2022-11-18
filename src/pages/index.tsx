@@ -15,8 +15,6 @@ const linkClassName = c(
 const Link: React.FC<PropsWithChildren<{
 	href: string;
 }>> = props => {
-	
-
 	return <NextLink href={props.href}>
 		<a className={linkClassName}>{props.children}</a>
 	</NextLink>;
@@ -76,7 +74,7 @@ export default function Home() {
 				image="g/logo"
 			/>
 			<main className="flex items-center justify-center h-full gap-14 flex-col sm:flex-row mx-8 font-sans">
-				<div className=" before:opacity-20 after:opacity-20">
+				<div>
 					<LogoIcon size={128} />
 				</div>
 				<div className="flex gap-5 flex-col">
