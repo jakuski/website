@@ -3,7 +3,7 @@ meta:
     title: Contact
     displayTitle: Ay-up.
     description: Hire me, send me a funny meme or just discuss business.
-    published: 2022-11-17
+    # published: 2022-11-17
     # edited: 2022-07-05
 
 variables:
