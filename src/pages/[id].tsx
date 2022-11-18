@@ -12,10 +12,10 @@ interface Params {
 export default BasicMarkdownPost;
 
 export const getStaticPaths: GetStaticPaths = async () => {
-	const ids = await getContentIDs(ContentDirectoryNames.BASE);
+	const ids = await getContentIDs(ContentDirectoryNames.ROOT);
 	return {
 		paths: ids.map(pageName => ({
-			params: { id: pageName, directory: ContentDirectoryNames.BASE }
+			params: { id: pageName, directory: ContentDirectoryNames.ROOT }
 		})),
 		fallback: false
 	};
@@ -26,7 +26,7 @@ export const getStaticProps: GetStaticProps<BasicMarkdownPostProps, Params> = as
 	if (!context.params) throw "Error: root(id)/getStaticProps context#params is falsy";
 	const { id: pageID, directory } = context.params;
 
-	const result = await getStaticMarkdoc(ContentDirectoryNames.BASE, `${pageID}.md`)();
+	const result = await getStaticMarkdoc(ContentDirectoryNames.ROOT, `${pageID}.md`)();
 
 	return result;
 };

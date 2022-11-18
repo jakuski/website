@@ -14,7 +14,7 @@ export const pathIsSafe = (path: string): boolean => {
 
 export const contentDirectory = resolve(process.cwd(), "src", "content");
 export enum ContentDirectoryNames {
-	BASE = "base",
+	ROOT = "root",
 	BLOG = "blog",
 	PROJECTS = "projects",
 	PARTIALS = "_partials"
