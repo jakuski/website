@@ -76,7 +76,7 @@ export default function Home() {
 					<div className="max-w-lg">
 						<div className="text-3xl lg:text-5xl leading-tight md:leading-snug lg:leading-[1.25] font-bold tracking-tight mb-6 font-serif">
 							<h1 className="inline lg:block">{websiteName}</h1> is&nbsp;a digital designer and developer based in&nbsp;London.
-							</div>
+						</div>
 						<div className="text-xl mb-6 tracking-tight">
 							Designing and engineering interfaces for humans.<br/>
 							See <Link href="/works">my work</Link>, find out more <Link href="/about">about me</Link> or <Link href="/contact">get in touch</Link>.
