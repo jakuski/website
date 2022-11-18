@@ -12,7 +12,7 @@ meta:
 ---
 
 {% image src="g/figma-london" /%}
-A digital designer with a passion for creating beautiful, functional and intuitive user experiences, putting thought and care into every last minute detail. I come from a Graphic Design degree but have focused on UI and UX design. I've also been a self-taught developer since 2018. Primarily learning and working within the JavaScript ecosystem. I have a strong understanding of JavaScript, HTML, CSS and have also worked with Node.js, React, TypeScript, Electron, Express, Next.js, TailwindCSS and many more. Recently, I've been learning Rust and Apple's Swift (+ SwiftUI).
+A digital designer with a passion for creating beautiful, functional and intuitive user experiences, putting thought and care into every last detail. I come from a Graphic Design degree but have focused on UI and UX design. I've also been a self-taught developer since 2018. Primarily learning and working within the JavaScript ecosystem. I have a strong understanding of JavaScript, HTML, CSS and have also worked with Node.js, React, TypeScript, Electron, Express, Next.js, TailwindCSS and many more. Recently, I've been learning Rust and Apple's Swift (+ SwiftUI).
 
 At my core, I'm a problem solver. I love to learn and I love to create. I'm always looking for new challenges and opportunities to learn and grow. 
 
