@@ -13,6 +13,7 @@ import React from "react";
 import { ScriptContextProvider, ScriptLoader } from "@/modules/script-handler";
 import SkipToMainButton from "@/components/SkipToMainContent";
 import { ThemeProvider } from "next-themes";
+import { Analytics } from '@vercel/analytics/react';
 /* import StorageConsentBanner from "@/components/StorageConsent/Banner"; */
 
 const App: React.FC<{
@@ -39,6 +40,7 @@ const App: React.FC<{
 		</ThemeProvider>
 
 		<ScriptLoader />
+		<Analytics />
 		<Script
 			id="source-tracker"
 			src="/js/track-src.js"
