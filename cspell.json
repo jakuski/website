@@ -22,6 +22,7 @@
 
 		// libraries
 		"clsx",
+		"lightgallery",
 
 		// Software vendors and names
 		"maxon",

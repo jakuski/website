@@ -1,7 +1,8 @@
 {
+  "name": "jakub-studio-website",
   "private": true,
   "repository": {
-    "url": "https://github.com/jakuski/website"
+    "url": "https://github.com/jakub-studio/website"
   },
   "scripts": {
     "dev": "next dev",
