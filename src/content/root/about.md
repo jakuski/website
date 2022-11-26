@@ -20,6 +20,10 @@ At my core, I'm a problem solver. I love to learn and I love to create. I'm alwa
 I've previously done a placement at [The One Off](http://theoneoff.com). Here, I worked on a conceptual digital way-finding experience for [FLANNELS Liverpool](https://www.flannels.com/liverpool-flagshp-fl-store-2781), in-store experiences for [Sports Direct](http://www.sportsdirect.com/) and some concepting/ideation work for other international clients.  
 *The work mentioned cannot be shown publicly, but please [contact me](/contact) if you would like to find out more.*
 
+### Currently
+I'm currently looking for a full-time role as a UI/UX designer or front-end developer. I'm open to remote work but would prefer a London-based hybrid/in-person role.  
+I'm also open to freelance work. Please [contact me](/contact) if you would like to get in touch.
+
 ### Outside of design
 When I'm not in Figma or Visual Studio Code, I enjoy(-*mostly*) working on my car, buying tools I definitely do not need but absolutely want or spinning something up in the kitchen. I'm a massive foodie and love trying new recipes and techniques. I also enjoy a nice tea, preferably loose leaf. I'm a bit of a tea snob.
 
