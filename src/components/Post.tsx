@@ -62,7 +62,7 @@ export const BasicMarkdownPost: React.FC<BasicMarkdownPostProps> = props => {
 			title={meta.displayTitle || meta.title}
 			showMetadata={pageProps?.showMetadata}
 			description={meta.description}
-			category={project?.category}
+			category={project?.category?.join(", ")}
 			footnotes={
 				(publishedDate || modifiedDate || project?.softwareUsed || project?.credits) &&
 				<Footnotes
