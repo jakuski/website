@@ -17,7 +17,7 @@ const Post: React.FC<PostProps> = props => (
 	<div className="max-w-md md:max-w-xl m-auto print:max-w-full">
 		<div className="mx-4 pt-64 print:pt-12">
 
-			{props.category && <div id="category" className="tracking-wide font-medium mb-2">
+			{props.category && <div id="category" className="font-medium mb-2">
 				{props.category}
 			</div>}
 
