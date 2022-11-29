@@ -12,6 +12,7 @@ import { MarkdocData, Frontmatter } from "../types";
 import { transformConfig } from "@/components/markdown";
 import { contentDirectory, ContentDirectoryNames, readContentFile } from "@/modules/fs";
 import { domain, emailDomain } from "@/config";
+import { categoriesMappings } from "@/modules/mappings/project-categories";
 
 export interface MarkdocLoaderProps {
 	markdocContent: RenderableTreeNode
@@ -54,7 +55,21 @@ const processFrontmatter = (rawFrontmatter: string, filename?: string): Frontmat
 			const category = parsed.project.category;
 
 			if (!Array.isArray(category)) {
-				parsed.project.category = [category];
+				if (!categoriesMappings.hasOwnProperty(category)) {
+					parsed.project.category = [];
+				};
+			
+				parsed.project.category = [
+					categoriesMappings[category]
+				];
+			} else {
+				parsed.project.category = category.map((id) => {
+					if (!categoriesMappings.hasOwnProperty(id)) {
+						return null;
+					};
+
+					return categoriesMappings[id as keyof typeof categoriesMappings];
+				}).filter((cat) => cat !== null) as string[];
 			}
 		}
 

@@ -1,4 +1,4 @@
-import { AllApps } from "@/modules/software-links/types";
+import { AllApps } from "@/modules/mappings/software-links/types";
 
 export enum MarkdownComponentSets {
 	BASIC = "BASIC"

@@ -1,7 +1,7 @@
 import MarkdocRenderer from "@/modules/markdown/client";
 import { MarkdocData, Frontmatter } from "@/modules/markdown/types";
-import programs from "@/modules/software-links";
-import { AllApps } from "@/modules/software-links/types";
+import programs from "@/modules/mappings/software-links";
+import { AllApps } from "@/modules/mappings/software-links/types";
 import { ReactNode } from "react";
 import Metadata from "./Meta";
 
