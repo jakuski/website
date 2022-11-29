@@ -26,7 +26,7 @@ export type Frontmatter = {
 		}
 	};
 	project?: {
-		category?: string;
+		category?: string[];
 		softwareUsed?: AllApps[];
 		credits?: string;
 		date?: Date;

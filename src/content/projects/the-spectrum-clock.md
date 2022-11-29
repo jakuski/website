@@ -18,7 +18,7 @@ variables:
 
 project:
     date: 2021-09-01
-    category: Interface Design
+    category: [Interface Design, Web Development]
     softwareUsed: ["figma.design", "adobe.cc.after-effects", "maxon.cinema4d", "maxon.redshift"]
 ---
 The Spectrum Clock explores how time can be told through colour, instead of string of text (like 10th October, 2022 14:45) that we are normally used to.

@@ -49,6 +49,15 @@ const processFrontmatter = (rawFrontmatter: string, filename?: string): Frontmat
 		if (parsed.meta.published) {
 			parsed.meta.published = new Date(parsed.meta.published);
 		}
+
+		if (parsed.project?.category) {
+			const category = parsed.project.category;
+
+			if (!Array.isArray(category)) {
+				parsed.project.category = [category];
+			}
+		}
+
 		return Object.assign({}, defaultFrontmatter, parsed);
 	} else {
 		onDefaultFrontmatterWarning();

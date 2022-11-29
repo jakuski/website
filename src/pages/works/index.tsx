@@ -36,7 +36,7 @@ const ProjectCategoryPill: React.FC<ProjectCategoryPillProps> = props => {
 interface ProjectLinkProps {
 	title: string;
 	description: string;
-	category: string;
+	category: string[];
 	image: string;
 	href: string;
 	year?: number;
@@ -66,7 +66,7 @@ const ProjectLink: React.FC<ProjectLinkProps> = props => {
 			{/* Text content */}
 			<div className="absolute bottom-0 left-0 text-white drop-shadow-md h-full w-full flex justify-between flex-col p-4">
 				<div className="uppercase tracking-widest text-xs mb-1 font-medium flex w-full justify-between items-center">
-					<span>{props.category}</span>
+					<span>{props.category.join(", ")}</span>
 					<span>{props.year}</span>
 				</div>
 				<div>
@@ -86,7 +86,13 @@ const countProjectCategories = (projects: ProjectLinkProps[]): Record<string, nu
 	const final: Record<string, number> = {};
 
 	for (const project of projects) {
-		final[project.category] ? final[project.category]++ : final[project.category] = 1;
+		for (const category of project.category) {
+			if (final[category] == null) {
+				final[category] = 1;
+			} else {
+				final[category]++;
+			}
+		}
 	}
 
 	return final;
@@ -135,7 +141,7 @@ const ProjectsIndexPage: React.FC<ProjectPageProps> = props => {
 			if (selectedCategory === null) return true;
 
 			// Else only return projects with a matching category to the selected one.
-			else if (selectedCategory === val.category) return true;
+			else if (val.category.includes(selectedCategory)) return true;
 			
 			return false;
 		}).map((project, index) => (
@@ -180,11 +186,22 @@ export const getStaticProps = async (): Promise<{ props: ProjectPageProps }> => 
 
 		const { props: markdoc } = await getStaticMarkdoc(ContentDirectoryNames.PROJECTS, `${id}.md`)();
 
+		let category: string | string[] | void = markdoc.frontmatter.project?.category;
+
+		if (category != null) {
+			// If the category is a string, convert it to an array.
+			if (typeof category === "string") {
+				category = [category];
+			}
+		} else {
+			category = [];
+		}
+
 		const projectData: ProjectLinkProps = {
 			title: markdoc.frontmatter.meta.title,
 			description: markdoc.frontmatter.meta?.description || "",
 			image: markdoc.frontmatter.meta?.image as string,
-			category: markdoc.frontmatter.project?.category || "",
+			category,
 			year: markdoc.frontmatter.project?.date ? new Date(markdoc.frontmatter.project?.date).getFullYear() : void 0,
 			href: `/works/${id}`
 		};
