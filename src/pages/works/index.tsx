@@ -65,7 +65,7 @@ const ProjectLink: React.FC<ProjectLinkProps> = props => {
 
 			{/* Text content */}
 			<div className="absolute bottom-0 left-0 text-white drop-shadow-md h-full w-full flex justify-between flex-col p-4">
-				<div className="uppercase tracking-widest text-xs mb-1 font-medium flex w-full justify-between items-center">
+				<div className="uppercase tracking-widest text-xs mb-1 font-medium flex w-full justify-between items-start">
 					<span>{props.category.join(", ")}</span>
 					<span>{props.year}</span>
 				</div>
