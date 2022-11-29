@@ -1,11 +1,11 @@
 {
 	"sort": [
-		"the-spectrum-clock"
+		"the-spectrum-clock",
+		"spotify-postcodes"
 
 	],
 	"__wip_projects": [
 		"screwd-app",
-		"spotify-postcodes",
 		"chivas-sovereigns-reserve",
 		"uni-cookbook"
 	]
