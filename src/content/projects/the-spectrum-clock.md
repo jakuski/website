@@ -104,5 +104,3 @@ I used the following tech stack for the prototype.
 
 You can try it out for yourself {% link href=$links.javascriptPrototype newWindow=true %}here{% /link %}.
 The source code is available on my {% link href=$links.javascriptPrototypeSource newWindow=true %}GitHub{% /link %}.
-
-## Evaluation {% #evaluation %}
