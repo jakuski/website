@@ -38,10 +38,20 @@ My tutors got me to do a summarisation task which involved shortening the brief 
 7. **Spotify "Booths"**. Inspired by Instagram's Live feature, users or artists can create a "booth" and which others can watch. Booths are live streams where artists could hold mini concerts and where users can share and talk about music with each other. This would allow artists to have a more intimate experience with their fans and also allows listeners to discover new artists and music.
 8. **Spotify Post-Codes**. Post-Codes would be a community run playlist for major cities across the world. Users within the geographical vicinity ([geo-fence](https://en.wikipedia.org/wiki/Geo-fence)) of a city could contribute to the playlist by upvoting songs they feel are right for the city. The playlist would then be discoverable by the world through Spotify and users could listen to it at any time. Use case scenarios I imagined involved trying to learn a new language, cooking a new cuisine, etc. Users could tune into the sounds of a city and get a feel for the culture and the people.
 
+Ultimately, 8 ideas was too much to pursue. I had to filter down the ideas down, I decided to go with the following:
+
+(in order of priority)
+1. Spotify Post-Codes
+2. Spotify "Booths"
+3. Spotify "Post"
+
 ## The Process {% #process %}
+
 
 ### Research
 
 ### Spotify Design System
+
+### 
 
 ## The Outcome {% #outcome %}
