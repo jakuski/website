@@ -1,6 +1,6 @@
 ---
 meta:
-    title: Spotify Post-codes
+    title: Spotify Post-Codes
     description: Community run playlists, discoverable by the world.
     published: 2022-07-04
     edited: 2022-07-05
@@ -17,12 +17,20 @@ project:
 variables:
     vimeoId: 714433414
     vimeoColor: "#ffa50a" # Change to a website theme variable when possible
-    spotifyPostCodes: https://spotify-post-codes.netlify.app/
+    spotifyPostCodes: 
     spotifyPostCodesGithub:
 ---
-Spotify Post-Codes explores how Spotify can become more of a social platform. This project was done as part of the [D&AD New Blood Awards](https://www.dandad.org/en/d-ad-new-blood-awards/) 2021.
+Spotify Post-Codes explores how Spotify can become more of a social platform. This project was done as part of the [D&AD New Blood Awards](https://www.dandad.org/en/d-ad-new-blood-awards/) 2021.  
+Post-Codes are community run playlists for pre-defined "cultural hotspots" (think major cities) where users who are within the geographical vicinity of the Post-Code can upvote and submit tracks they are right for it. The Post-Code playlists could then be discovered and played-back by any users on Spotify.
 
+## Launch Video & Outcomes
 {% vimeo id=$vimeoId color="#ffa50a" /%}
+{% gallery %}
+    {% galleryImage src="p/spectrum-clock/finals/1" /%}
+    {% galleryImage src="p/spectrum-clock/finals/2" /%}
+    {% galleryImage src="p/spectrum-clock/finals/3" /%}
+{% /gallery %}
+
 
 ## The Brief {% #brief %}
 The brief was set out by [Spotify.design](https://spotify.design/) in collaboration with [D&AD](https://www.dandad.org) as mentioned above. The main prompt behind the brief was the following:
