@@ -13,8 +13,16 @@ project:
     date: 2021-03-23 # <- Deadline of the brief
     category: [design.ui, dev.web, design.motion]
     softwareUsed: [adobe.cc.xd, adobe.cc.after-effects, adobe.cc.photoshop]
+
+variables:
+    vimeoId: 714433414
+    vimeoColor: "#ffa50a" # Change to a website theme variable when possible
+    spotifyPostCodes: https://spotify-post-codes.netlify.app/
+    spotifyPostCodesGithub:
 ---
 Spotify Post-Codes explores how Spotify can become more of a social platform. This project was done as part of the [D&AD New Blood Awards](https://www.dandad.org/en/d-ad-new-blood-awards/) 2021.
+
+{% vimeo id=$vimeoId color="#ffa50a" /%}
 
 ## The Brief {% #brief %}
 The brief was set out by [Spotify.design](https://spotify.design/) in collaboration with [D&AD](https://www.dandad.org) as mentioned above. The main prompt behind the brief was the following:
