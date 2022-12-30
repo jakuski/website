@@ -56,10 +56,11 @@ My tutors got me to do a summarisation task which involved shortening the brief 
 
 Ultimately, 8 ideas was too much to pursue. I had to filter down the ideas down, I decided to go with the following:
 
-(in order of priority)
+(in order of priority, the higher up the list, the more I wanted to develop the idea)
 1. Spotify Post-Codes
 2. Spotify "Booths"
 3. Spotify "Post"
+4. Spotify + FaceTime integration
 
 ## The Process {% #process %}
 
