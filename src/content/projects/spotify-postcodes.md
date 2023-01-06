@@ -31,6 +31,7 @@ Post-Codes are community run playlists for pre-defined "cultural hotspots" (thin
     {% galleryImage src="p/spectrum-clock/finals/3" /%}
 {% /gallery %}
 
+---
 
 ## The Brief {% #brief %}
 The brief was set out by [Spotify.design](https://spotify.design/) in collaboration with [D&AD](https://www.dandad.org) as mentioned above. The main prompt behind the brief was the following:
