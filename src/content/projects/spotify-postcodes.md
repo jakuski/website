@@ -31,7 +31,7 @@ Post-Codes are community run playlists for pre-defined "cultural hotspots" (thin
     {% galleryImage src="p/spotify21/postcodes_playlists" /%}
 {% /gallery %}
 
-***[Additional Outcomes were produced for other concept features, see here](#additional-outcomes)***
+**[Additional Outcomes produced for other concept features](#additional-outcomes)**
 
 ---
 
@@ -52,9 +52,9 @@ My tutors got me to do a summarisation task which involved shortening the brief 
 2. **Merging [Last.FM](https://last.fm/) into Spotify**. At the time of the project, I was a heavy user of Last.FM, and I thought it would be a great idea to merge the two platforms together. This would allow users to share their listening habits with their friends, and also allow artists to see how their music is being consumed.
 3. **Spotify + FaceTime integration**. This idea was initially aimed at long distance couples at the time and the the idea of "playing love songs" together. However, I expanded this idea to aim at all FaceTime users instead of just long distance relationships as otherwise I would be focusing on a very small and niche market.
 4. **Spotify "Post"**. An improved direct messaging experience within Spotify. Users can "post" songs, albums and artists to each other and get a mail-like notification.
-5. **Album / Song / Artist reviews**. Users can review albums, songs and artists and share it with their friends. This would allow users to discover new music based on their friends’ reviews.
-6. **Silent Party Sessions**. A way for DJs and venues to run silent parties with everyone’s headphones connected to the same session. This would allow DJs to play music without having to worry about the volume and also allow venues to run silent parties without having to worry about the noise complaints. The user would also be easily able to know the track that is playing instead of awkwardly asking the DJ or opening Shazam.
-7. **Spotify "Booths"**. Inspired by Instagram’s Live feature, users or artists can create a "booth" and which others can watch. Booths are live streams where artists could hold mini concerts and where users can share and talk about music with each other. This would allow artists to have a more intimate experience with their fans and also allows listeners to discover new artists and music.
+5. **Album / Song / Artist reviews**. Users can review albums, songs and artists and share it with their friends. This would allow users to discover new music based on their friends&rsquo; reviews.
+6. **Silent Party Sessions**. A way for DJs and venues to run silent parties with everyone&rsquo;s headphones connected to the same session. This would allow DJs to play music without having to worry about the volume and also allow venues to run silent parties without having to worry about the noise complaints. The user would also be easily able to know the track that is playing instead of awkwardly asking the DJ or opening Shazam.
+7. **Spotify "Booths"**. Inspired by Instagram&rsquo;s Live feature, users or artists can create a "booth" and which others can watch. Booths are live streams where artists could hold mini concerts and where users can share and talk about music with each other. This would allow artists to have a more intimate experience with their fans and also allows listeners to discover new artists and music.
 8. **Spotify Post-Codes**. Post-Codes would be a community run playlist for major cities across the world. Users within the geographical vicinity ([geo-fence](https://en.wikipedia.org/wiki/Geo-fence)) of a city could contribute to the playlist by upvoting songs they feel are right for the city. The playlist would then be discoverable by the world through Spotify and users could listen to it at any time. Use case scenarios I imagined involved trying to learn a new language, cooking a new cuisine, etc. Users could tune into the sounds of a city and get a feel for the culture and the people.
 
 Ultimately, 8 ideas was too much to pursue. I had to filter down the ideas down, I decided to go with the following:
