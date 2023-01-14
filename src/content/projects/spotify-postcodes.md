@@ -23,7 +23,7 @@ variables:
 Spotify Post-Codes explores how Spotify can become more of a social platform. This project was done as part of the [D&AD New Blood Awards](https://www.dandad.org/en/d-ad-new-blood-awards/) 2021.  
 Post-Codes are community run playlists for pre-defined "cultural hotspots" (think major cities) where users who are within the geographical vicinity of the Post-Code can upvote and submit tracks they are right for it. The Post-Code playlists could then be discovered and played-back by any users on Spotify.
 
-## Launch Video & Outcomes
+## Launch Video & Outcomes {% #intro-outcomes %}
 {% vimeo id=$vimeoId color=$vimeoColor /%}
 {% gallery %}
     {% galleryImage src="p/spotify21/postcodes_onboarding" /%}
@@ -31,7 +31,7 @@ Post-Codes are community run playlists for pre-defined "cultural hotspots" (thin
     {% galleryImage src="p/spotify21/postcodes_playlists" /%}
 {% /gallery %}
 
-**[Additional Outcomes produced for other concept features](#additional-outcomes)**
+**[Additional Outcomes produced for other concept features](#outcomes)**
 
 ---
 
@@ -60,10 +60,10 @@ My tutors got me to do a summarisation task which involved shortening the brief 
 Ultimately, 8 ideas was too much to pursue. I had to filter down the ideas down, I decided to go with the following:
 
 (in order of priority, the higher up the list, the more I wanted to develop the idea)
-1. Spotify Post-Codes
+1. Spotify "Post-Codes"
 2. Spotify "Booths"
 3. Spotify "Post"
-4. Spotify + FaceTime integration
+4. Spotify + Apple FaceTime integration
 
 ## The Process {% #process %}
 
@@ -71,9 +71,19 @@ Ultimately, 8 ideas was too much to pursue. I had to filter down the ideas down,
 ### Research
 
 ### Spotify Design System
+The Spotify Design system, called "Encore" (see [this article](https://spotify.design/article/reimagining-design-systems-at-spotify) about the introduction of Encore and [this one](https://spotify.design/article/can-i-get-an-encore-spotifys-design-system-three-years-on) about how Encore is holding up 3 years after it's release.) is **not** public. Before I could start designing, I had to essentially reverse-engineer Encore. I did this by using the [Chrome DevTools](https://developer.chrome.com/docs/devtools/) to inspect the Spotify website and see what colours and fonts were being used and by using [Adobe Photoshop](https://www.adobe.com/uk/products/photoshop.html) to essentially tear apart the Spotify Mobile UI and get all of the tokens that I could require (colours, spacing, sizes, etc.) This was done by taking screenshots within the Spotify app, taking them into Photoshop and quite literally drawing rectangles to approximate the sizes and spacing of elements.
 
-### 
+From this process I was able to create this rough Mobile UI token sheet:
 
-## The Outcome {% #outcome %}
+{% gallery %}
+    {% galleryImage src="p/spotify21/spotify_ui_guidelines" /%}
+{% /gallery %}
 
-### Additional Outcomes {% #additional-outcomes %}
+### Development
+
+### Globe
+
+### Launch Video
+The Launch video (shown in the [introduction](#intro-outcomes)) was done in [Adobe After Effects](https://www.adobe.com/uk/products/aftereffects.html). It was an amalgamation of screen recordings of HTML elements, exported XD elements animated in After Effects and some general purpose After Effects animations.
+
+## The Outcomes {% #outcomes %}
