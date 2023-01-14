@@ -16,7 +16,7 @@ project:
 
 variables:
     vimeoId: 714433414
-    vimeoColor: "#ffa50a" # Change to a website theme variable when possible
+    vimeoColor: "#ffa50a" # Change to a util var ($.utils.XXX) soon
     spotifyPostCodes: 
     spotifyPostCodesGithub:
 ---
@@ -24,7 +24,7 @@ Spotify Post-Codes explores how Spotify can become more of a social platform. Th
 Post-Codes are community run playlists for pre-defined "cultural hotspots" (think major cities) where users who are within the geographical vicinity of the Post-Code can upvote and submit tracks they are right for it. The Post-Code playlists could then be discovered and played-back by any users on Spotify.
 
 ## Launch Video & Outcomes
-{% vimeo id=$vimeoId color="#ffa50a" /%}
+{% vimeo id=$vimeoId color=$vimeoColor /%}
 {% gallery %}
     {% galleryImage src="p/spotify21/postcodes_onboarding" /%}
     {% galleryImage src="p/spotify21/postcodes_exploration" /%}
