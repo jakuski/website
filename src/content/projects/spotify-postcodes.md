@@ -26,8 +26,8 @@ Post-Codes are community run playlists for pre-defined "cultural hotspots" (thin
 ## Launch Video & Outcomes
 {% vimeo id=$vimeoId color="#ffa50a" /%}
 {% gallery %}
-    {% galleryImage src="p/spectrum-clock/finals/1" /%}
-    {% galleryImage src="p/spectrum-clock/finals/2" /%}
+    {% galleryImage src="p/spotify21/postcodes_onboarding" /%}
+    {% galleryImage src="p/spotify21/postcodes_exploration" /%}
     {% galleryImage src="p/spectrum-clock/finals/3" /%}
 {% /gallery %}
 
