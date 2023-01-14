@@ -31,6 +31,8 @@ Post-Codes are community run playlists for pre-defined "cultural hotspots" (thin
     {% galleryImage src="p/spectrum-clock/finals/3" /%}
 {% /gallery %}
 
+***[Additional Outcomes were produced for other concept features, see here](#additional-outcomes)***
+
 ---
 
 ## The Brief {% #brief %}
@@ -73,3 +75,5 @@ Ultimately, 8 ideas was too much to pursue. I had to filter down the ideas down,
 ### 
 
 ## The Outcome {% #outcome %}
+
+### Additional Outcomes {% #additional-outcomes %}
