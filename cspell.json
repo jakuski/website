@@ -14,7 +14,10 @@
 		"renderable",
 		"tailwindcss",
 		"vars",
+		"color", // the american spelling is stupid... C O L O U R.
+		"rsquo", // apostrophe html entity
 
+		// Personal
 		"Jakub",
 		"Staniszewski",
 		"jakuski",
@@ -28,7 +31,8 @@
 		"maxon",
 		"indesign",
 		"lightroom",
-		"figjam"
+		"figjam",
+		"Shazam"
 	],
 	"enableFiletypes": [
 		"markdoc"
