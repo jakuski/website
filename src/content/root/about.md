@@ -21,8 +21,11 @@ I've previously done a placement at [The One Off](http://theoneoff.com). Here, I
 *The work mentioned cannot be shown publicly, but please [contact me](/contact) if you would like to find out more.*
 
 ### Currently
-I'm currently looking for a full-time role as a UI/UX designer or front-end developer. I'm open to remote work but would prefer a London-based hybrid/in-person role.  
-I'm also open to freelance work. Please [contact me](/contact) if you would like to get in touch.
+I'm on the [Flipside programme](https://www.anewdirection.org.uk/programmes/flipside) which is run by [A New Direction](https://anewdirection.org.uk/). An industry-led programme helping people kickstart their careers in digital product design. I'm being taught by some of the best-in-the-business, [ustwo](https://ustwo.com/), [Made by Many](https://madebymany.com/), [Bynd](https://bynd.com/), [Frog](https://www.frog.co/), [Digitas](https://www.digitas.com/en-gb/) and [Normally](https://normally.com/). 
+
+### Work
+I'm also looking for a role (part-time until end of March, full-time after that) as a UI/UX designer or front-end developer. I'm open to remote work but would prefer a London-based hybrid/in-person role.  
+Please [contact me](/contact) if you would like to get in touch.
 
 ### Outside of design
 When I'm not in Figma or Visual Studio Code, I enjoy(-*mostly*) working on my car, buying tools I definitely do not need but absolutely want or spinning something up in the kitchen. I'm a massive foodie and love trying new recipes and techniques. I also enjoy a nice tea, preferably loose leaf. I'm a bit of a tea snob.

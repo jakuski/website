@@ -24,7 +24,7 @@ const LoadingCover: React.FC<PropsWithChildren<{}>> = props => {
 	//const router = useRouter();
 
 	// If ?c=0 is present, don't show the loading cover.
-	const animationInitialState = /* router.query.c === "0" */ false;
+	const hideBannerAnimation = /* router.query.c === "0" */ false;
 
 	//
 	// The above has been commented out as it's not working as intended.
@@ -34,8 +34,8 @@ const LoadingCover: React.FC<PropsWithChildren<{}>> = props => {
 	// and not replay it on subsequent visits.
 	//
 
-	const [reveal, setReveal] = useState(animationInitialState);
-	const [showLogo, setShowLogo] = useState(animationInitialState);
+	const [reveal, setReveal] = useState(hideBannerAnimation);
+	const [showLogo, setShowLogo] = useState(hideBannerAnimation);
 
 	useEffect(() => {
 		// Size the logo up
@@ -87,7 +87,7 @@ export default function Home() {
 							See <Link href="/works">my work</Link>, find out more <Link href="/about">about me</Link> or <Link href="/contact">get in touch</Link>.
 						</div>
 
-						<div className="text-xl tracking-tight">Currently available for freelance and full-time work/roles.</div>
+						<div className="text-xl tracking-tight">Seeking digital product design roles.</div>
 					</div>
 				</div>
 			</main>
