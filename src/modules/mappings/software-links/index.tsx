@@ -54,6 +54,10 @@ const programs: Record<AllApps, Program> = {
 		vendor: Vendors.ADOBE,
 		productName: "Photoshop"
 	}),
+	"adobe.cc.xd": new Program({
+		vendor: Vendors.ADOBE,
+		productName: "XD"
+	}),
 	"figma.design": new Program({
 		vendor: Vendors.FIGMA,
 		productName: "" // Product name is an empty string as I simply want it to say "Figma" instead of "Figma Design"
