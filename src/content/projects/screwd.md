@@ -21,7 +21,9 @@ The app is a conceptual AR scanner for screws (think [PlantApp](https://plantapp
 
 ## Outcomes
 {% gallery %}
-    {% galleryImage src="p/spotify21/postcodes_onboarding" /%}
-    {% galleryImage src="p/spotify21/postcodes_exploration" /%}
-    {% galleryImage src="p/spotify21/postcodes_playlists" /%}
+    {% galleryImage src="p/screwd/main_menu" /%}
+    {% galleryImage src="p/screwd/screw_scans" /%}
+    {% galleryImage src="p/screwd/screw_scan_result" /%}
+    {% galleryImage src="p/screwd/ios" /%}
+    {% galleryImage src="p/screwd/error_state" /%}
 {% /gallery %}
