@@ -2,8 +2,7 @@
 meta:
     title: Spotify Post-Codes
     description: Community run playlists, discoverable by the world.
-    published: 2022-07-04
-    edited: 2022-07-05
+    published: 2023-01-14
     image: p/spotify21/cover
 
 pageProps:
