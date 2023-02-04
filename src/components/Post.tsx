@@ -4,6 +4,7 @@ import programs from "@/modules/mappings/software-links";
 import { AllApps } from "@/modules/mappings/software-links/types";
 import { ReactNode } from "react";
 import Metadata from "./Meta";
+import { websiteLocale } from "@/config";
 
 export interface PostProps extends React.PropsWithChildren {
 	title?: ReactNode;
@@ -105,11 +106,11 @@ const Footnotes: React.FC<FootnotesProps> = (props) => {
 		{(props.modified || props.published) && (
 			<FootnoteSection label="History"><p>
 				{props.published && <>
-					First published on {props.published.toLocaleDateString()}{props.modified ? " and " : "."}
+					First published on {props.published.toLocaleDateString(websiteLocale)}{props.modified ? " and " : "."}
 				</>}
 				
 				{props.modified && <>
-					{props.published ? "l" : "L"}ast edited on {props.modified.toLocaleDateString()}.
+					{props.published ? "l" : "L"}ast edited on {props.modified.toLocaleDateString(websiteLocale)}.
 				</>}
 			</p></FootnoteSection>
 		)}

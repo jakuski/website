@@ -3,6 +3,7 @@ export const domain = "jakub.studio";
 export const emailDomain = domain;
 export const githubRepo = "jakub-studio/website";
 export const defaultThemeColour = "#FFA50A";
+export const websiteLocale = "en-GB"; // Used in https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleDateString
 
 // Used in footer and <head/> elements.
 export const socialHandles = {
