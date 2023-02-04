@@ -1,6 +1,6 @@
 import { ImageObject } from "@/modules/images";
 
-import imageMockup from "@/content/_images/projects/uni-y3-screwd/mockup.jpg";
+import imageCover from "@/content/_images/projects/uni-y3-screwd/screwd_cover_image.jpg";
 import imageMainMenu from "@/content/_images/projects/uni-y3-screwd/screwd_main_menus.jpg";
 import imageScrewScans from "@/content/_images/projects/uni-y3-screwd/screwd_screw_scans.jpg";
 import imageScrewScanResult from "@/content/_images/projects/uni-y3-screwd/screwd_screw_scan_result.jpg";
@@ -9,9 +9,9 @@ import imageErrorState from "@/content/_images/projects/uni-y3-screwd/screwd_err
 import imageDriveSheet from "@/content/_images/projects/uni-y3-screwd/screw_drive_sheet.jpg";
 
 const images: ImageObject = {
-	"p/screwd/mockup_1": {
-		src: imageMockup,
-		alt: "Phones showcasing screwd's user interface"
+	"p/screwd/cover": {
+		src: imageCover,
+		alt: "screwd app icon"
 	},
 	"p/screwd/main_menu": {
 		src: imageMainMenu,
