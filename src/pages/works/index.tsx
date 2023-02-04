@@ -66,8 +66,14 @@ const ProjectLink: React.FC<ProjectLinkProps> = props => {
 			{/* Text content */}
 			<div className="absolute bottom-0 left-0 text-white drop-shadow-md h-full w-full flex justify-between flex-col p-4">
 				<div className="uppercase tracking-widest text-xs mb-1 font-medium flex w-full justify-between items-start">
-					<span>{props.category.join(", ")}</span>
-					<span>{props.year}</span>
+					<div className="leading-normal">
+						{props.category.map((category, index) => (
+							<div key={category} className="inline-block">
+								{category}{index === (props.category.length - 1) ? "" : <span>,&nbsp;</span>}
+							</div>
+						))}
+					</div>
+					<span className="ml-5">{props.year}</span>
 				</div>
 				<div>
 					<h2 className="font-serif text-xl md:text-2xl mb-1 font-bold">{props.title}</h2>
