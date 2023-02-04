@@ -6,6 +6,7 @@ import imageScrewScans from "@/content/_images/projects/uni-y3-screwd/screwd_scr
 import imageScrewScanResult from "@/content/_images/projects/uni-y3-screwd/screwd_screw_scan_result.jpg";
 import imageIos from "@/content/_images/projects/uni-y3-screwd/screwd_ios.jpg";
 import imageErrorState from "@/content/_images/projects/uni-y3-screwd/screwd_error_state.jpg";
+import imageDriveSheet from "@/content/_images/projects/uni-y3-screwd/screw_drive_sheet.jpg";
 
 const images: ImageObject = {
 	"p/screwd/mockup_1": {
@@ -31,6 +32,10 @@ const images: ImageObject = {
 	"p/screwd/error_state": {
 		src: imageErrorState,
 		alt: "The error state of the screwd app",
+	},
+	"p/screwd/drive_sheet": {
+		src: imageDriveSheet,
+		alt: "A poster detailing screw drives from across the world.",
 	},
 };
 

@@ -26,4 +26,7 @@ The app is a conceptual AR scanner for screws (think [PlantApp](https://plantapp
     {% galleryImage src="p/screwd/screw_scan_result" /%}
     {% galleryImage src="p/screwd/ios" /%}
     {% galleryImage src="p/screwd/error_state" /%}
+    {% galleryImage src="p/screwd/drive_sheet" /%}
 {% /gallery %}
+
+The last image is a poster of different screw drives I came across during my research for this project. I thought a poster of all the different drives would be a great addition to any workshop so I made this one. There are still a few rare drives missing, but I'll add them in soon and distribute the poster as a PDF.
