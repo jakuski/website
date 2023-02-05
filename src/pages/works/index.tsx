@@ -8,7 +8,6 @@ import { getStaticMarkdoc } from "@/modules/markdown/server";
 import Metadata from "@/components/Meta";
 import { useState } from "react";
 import c from "clsx";
-import { PortfolioPDF } from "@/routes";
 
 interface ProjectCategoryPillProps {
 	name: string;
