@@ -3,7 +3,7 @@ meta:
     title: The Spectrum Clock
     description: Communicating time through colour.
     published: 2022-11-17
-    # edited: 2022-07-05
+    edited: 2023-02-05
     image: p/spectrum-clock/rings
 
 pageProps:
@@ -11,8 +11,8 @@ pageProps:
 
 variables:
     links:
-        figmaPrototype: "https://jakub.studio/go/xyz"
-        javascriptPrototype: https://jakub-studio.github.io/SpectrumClock/build/
+        figmaPrototype: https://jakub.studio/go/p/clock/ui
+        javascriptPrototype: https://jakub.studio/go/p/clock/build
         javascriptPrototypeSource: https://github.com/jakub-studio/SpectrumClock
         movingPreviewRawVimeo: https://vimeo.com/716819915
 
@@ -22,6 +22,14 @@ project:
     softwareUsed: ["figma.design", "adobe.cc.after-effects", "maxon.cinema4d", "maxon.redshift"]
 ---
 The Spectrum Clock explores how time can be told through colour, instead of string of text (like 10th October, 2022 14:45) that we are normally used to.
+
+{% gallery %}
+    {% galleryImage src="p/spectrum-clock/finals/1" /%}
+    {% galleryImage src="p/spectrum-clock/finals/2" /%}
+    {% galleryImage src="p/spectrum-clock/finals/3" /%}
+{% /gallery %}
+
+---
 
 ## The Brief {% #brief %}
 The brief was set out by university staff, with one simple question. "Explore interesting ways to visually communicate time". It was such an open question which presented infinite amounts of possible avenues this project could've go on.
@@ -75,12 +83,6 @@ During my development process, I created a semi-working [JavaScript prototype](#
 
 ## The Outcome {% #outcome %}
 I created a series of mock-ups and prototypes to demonstrate what a finished and built version of the Spectrum Clock would look and function like.
-
-{% gallery %}
-    {% galleryImage src="p/spectrum-clock/finals/1" /%}
-    {% galleryImage src="p/spectrum-clock/finals/2" /%}
-    {% galleryImage src="p/spectrum-clock/finals/3" /%}
-{% /gallery %}
 
 ### Animated Phone Mock-up
 {% vimeo id="714461646" color="#ffa50a" /%}
