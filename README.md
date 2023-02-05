@@ -2,7 +2,7 @@
 
 
 <h1 align="center">
-	<a align="center" href="www.jakub.studio">🌍 jakub.studio</a>
+	<a align="center" href="https://www.jakub.studio">🌍 jakub.studio</a>
 </h1>
 
 This is my personal website, available at [jakub.studio](https://jakub.studio). This repository is here to showcase my JS/TS capabilities to potential employers and to anyone who is interested in the behind the scenes.
