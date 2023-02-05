@@ -156,24 +156,6 @@ const ProjectsIndexPage: React.FC<ProjectPageProps> = props => {
 				requestPriorityLoading={(index === 0) || (index === 1)}
 				{...project} />
 		))}
-
-		<div className="bg-stone-200 dark:bg-stone-800 mt-6 p-4 rounded">
-			<h4 className="tracking-wider text-sm font-bold uppercase mb-2 ">Looking for more?</h4>
-			I&apos;m currently migrating my old PDF portfolio to this website.
-			If you&apos;d like to see my old portfolio (which contains the rest of my projects),
-			please click the button below.
-
-			<a 
-				role="button"
-				href={PortfolioPDF.hrefWithSource("works_index")}
-				className="my-4 bg-brand text-stone-800 rounded px-4 py-2 min-h-44 flex gap-2 justify-center items-center hover:underline"
-			>
-				<span className="font-semibold">View old portfolio</span>
-				<span>(.pdf, ~18mb)</span>
-			</a>
-
-			<div className="font-semibold">Please accept my apologies for any inconvenience/poor UX this has caused.</div>
-		</div>
 	</Post>;
 };
 
