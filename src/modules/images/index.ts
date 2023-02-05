@@ -4,7 +4,6 @@ import genericImages from "./generic";
 import spectrumClockProjectImages from "./projects/spectrum-clock";
 import spotify21ProjectImages from "./projects/spotify21";
 import screwdProjectImages from "./projects/screwd";
-import cookbookProjectImages from "./projects/cookbook";
 import chivasRegalProjectImages from "./projects/chivas-regal";
 
 interface Image {
@@ -16,7 +15,6 @@ type ImageObject = Record<string, Image>;
 
 const allImagesObject: ImageObject = Object.assign({},
 	genericImages,
-	cookbookProjectImages,
 	spotify21ProjectImages,
 	spectrumClockProjectImages,
 	screwdProjectImages,
