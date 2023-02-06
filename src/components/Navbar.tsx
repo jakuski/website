@@ -18,7 +18,7 @@ const NavbarLink: React.FC<React.PropsWithChildren<{
 export default function Navbar() {
 	return (
 		<>
-			<header className="p-4 md:p-6 fixed w-full flex justify-between items-center select-none z-10 dar:mix-blend-exclusion print:hidden">
+			<header className="p-4 md:p-6 fixed w-full flex justify-between items-center select-none z-10 dark:mix-blend-exclusion print:hidden">
 				<Link href={Home.href} >
 					<a className="hover:text-brand transition-colors duration-150">
 						<LogoIcon />
