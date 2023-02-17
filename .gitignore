@@ -39,3 +39,6 @@ yarn-error.log*
 
 # typescript cache
 tsconfig.tsbuildinfo
+
+# bundle analyzer
+analyze
