@@ -1,4 +1,4 @@
-import { BasicMarkdownPost, BasicMarkdownPostProps } from "@/components/Post";
+import { MarkdownPost, MarkdownPostProps } from "@/components/MarkdownPost";
 import { ContentDirectoryNames, getContentIDs } from "@/modules/fs";
 import { getStaticMarkdoc } from "@/modules/markdown/server";
 import { GetStaticPaths, GetStaticProps } from "next";
@@ -9,7 +9,7 @@ interface Params {
 	directory: string;
 }
 
-export default BasicMarkdownPost;
+export default MarkdownPost;
 
 export const getStaticPaths: GetStaticPaths = async () => {
 	const ids = await getContentIDs(ContentDirectoryNames.ROOT);
@@ -21,7 +21,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 	};
 };
 
-export const getStaticProps: GetStaticProps<BasicMarkdownPostProps, Params> = async (context) => {
+export const getStaticProps: GetStaticProps<MarkdownPostProps, Params> = async (context) => {
 	// This will never be thrown but it's here to satisfy TypeScript.
 	if (!context.params) throw "Error: root(id)/getStaticProps context#params is falsy";
 	const { id: pageID, directory } = context.params;
