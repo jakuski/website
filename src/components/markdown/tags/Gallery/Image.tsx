@@ -3,8 +3,8 @@
 // handles alt tags for us.
 
 import { resolveImage } from "@/modules/images";
-import { galleryImageSelectorName } from ".";
 import Image from "@/components/markdown/tags/Image";
+import { galleryImageClassName } from "./shared";
 
 const GalleryImage: React.FC<{
 	src: string;
@@ -23,7 +23,7 @@ const GalleryImage: React.FC<{
 
 	return <a
 		href={src.src}
-		className={galleryImageSelectorName + " w-full shadow-sm"}
+		className={galleryImageClassName + " w-full shadow-sm"}
 		data-lg-size={src.width + "-" + src.height}
 		data-sub-html={alt}
 		data-thumbnail-url={"/_next/image?" + thumbnailParams.toString()}

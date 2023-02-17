@@ -7,10 +7,8 @@ import "lightgallery/css/lg-zoom.css";
 import "lightgallery/css/lg-thumbnail.css";
 
 import { Caption } from "@/components/markdown/tags/Image";
+import { galleryImageClassName } from "./shared";
 
-// This is passed to classNames and as a selector for the gallery library
-// to add the correct images to the reel.
-export const galleryImageSelectorName = "_gallery_image";
 
 const Gallery: React.FC<React.PropsWithChildren<{
 	caption?: string;
@@ -23,7 +21,7 @@ const Gallery: React.FC<React.PropsWithChildren<{
 			download={false}
 			plugins={[lgZoom, lgThumb]}
 			exThumbImage="data-thumbnail-url"
-			selector={"." + galleryImageSelectorName}
+			selector={"." + galleryImageClassName}
 			addClass="mb-4"
 		>
 			{props.children}
