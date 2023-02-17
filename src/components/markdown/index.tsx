@@ -1,4 +1,4 @@
-import { Config } from "@markdoc/markdoc";
+import type { Config } from "@markdoc/markdoc";
 
 // Nodes
 import Paragraph from "./nodes/Paragraph";

@@ -1,4 +1,4 @@
-import { RenderableTreeNode } from "@markdoc/markdoc";
+import type { RenderableTreeNode } from "@markdoc/markdoc";
 
 type ObjectWithToJSON = object & {
 	toJSON(): unknown;

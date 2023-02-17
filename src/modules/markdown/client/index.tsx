@@ -1,14 +1,19 @@
-import React, { useMemo } from "react";
-import { renderers, RenderableTreeNode } from "@markdoc/markdoc";
+import { useMemo, createElement, Fragment } from "react";
+import type { RenderableTreeNode } from "@markdoc/markdoc";
 import { MarkdocData } from "@/modules/markdown/types";
 import { renderConfig } from "@/components/markdown";
+import markdocReactRenderer from "./experimentalRender";
 
-export const render = (renderableNodes: RenderableTreeNode): React.ReactNode => {
+/* export const render = (renderableNodes: RenderableTreeNode): React.ReactNode => {
 	return renderers.react(renderableNodes, React, renderConfig);
-}; 
+}; */
+
+const render__EXPERIMENTAL__ = (renderableNodes: RenderableTreeNode): React.ReactNode => {
+	return markdocReactRenderer(renderableNodes, { createElement, Fragment }, renderConfig );
+};
 
 const MarkdocRenderer: React.FC<Pick<MarkdocData, "content">> = props => {
-	const content = useMemo(() => render(props.content as RenderableTreeNode), [props.content]);
+	const content = useMemo(() => render__EXPERIMENTAL__(props.content as RenderableTreeNode), [props.content]);
 
 	return <>{content}</>;
 };
