@@ -8,7 +8,7 @@ import {
 	GithubAccount as GitHubRedirectRoute,
 	Vimeo as VimeoRedirectRoute,
 	Route,
-	FigmaCommunityAccount as FigmaCommunityAccountRedirectRoute,
+	FigmaCommunityAccount as FigmaCommunityAccountRedirectRoute
 } from "@/routes";
 
 import InstagramIcon from "@/components/icons/Instagram";
@@ -18,29 +18,30 @@ import GitHubIcon from "@/components/icons/GitHub";
 import FigmaIcon from "@/components/icons/Figma";
 import VimeoIcon from "@/components/icons/Vimeo";
 
-
 interface SocialIconProps extends React.PropsWithChildren {
 	href: string;
 	srLabel: string;
 }
 
 const SocialIcon: React.FC<SocialIconProps> = props => {
-	return <Link href={props.href}>
-		<a
-			title={`View my ${props.srLabel} profile`}
-			target="_blank"
-			className="flex items-center justify-center min-h-44 opacity-50 hover:opacity-100 ease transition-opacity duration-150"
-		>
-			<span className="sr-only">{props.srLabel} icon</span>
-			{props.children}
-		</a>
-	</Link>;
+	return (
+		<Link href={props.href}>
+			<a
+				title={`View my ${props.srLabel} profile`}
+				target="_blank"
+				className="flex items-center justify-center min-h-44 opacity-50 hover:opacity-100 ease transition-opacity duration-150"
+			>
+				<span className="sr-only">{props.srLabel} icon</span>
+				{props.children}
+			</a>
+		</Link>
+	);
 };
 
 interface SocialLink {
-	icon: React.FC,
-	href: Route,
-	label: string
+	icon: React.FC;
+	href: Route;
+	label: string;
 }
 
 const socialLinks: SocialLink[] = [
@@ -48,20 +49,28 @@ const socialLinks: SocialLink[] = [
 	{ icon: LinkedInIcon, href: LinkedInRedirectRoute, label: "LinkedIn" },
 	{ icon: TwitterIcon, href: TwitterRedirectRoute, label: "Twitter" },
 	{ icon: GitHubIcon, href: GitHubRedirectRoute, label: "GitHub" },
-	{ icon: FigmaIcon, href: FigmaCommunityAccountRedirectRoute, label: "Figma Community" },
+	{
+		icon: FigmaIcon,
+		href: FigmaCommunityAccountRedirectRoute,
+		label: "Figma Community"
+	},
 	{ icon: VimeoIcon, href: VimeoRedirectRoute, label: "Vimeo" }
 ];
 
 const SocialIcons = () => {
-	return 	<div className="flex flex-row gap-8 sm:gap-7 md:gap-6 justify-start items-start print:hidden">
-		{socialLinks.map(link => {
-			const href = link.href.hrefWithSource("footer");
+	return (
+		<div className="flex flex-row gap-8 sm:gap-7 md:gap-6 justify-start items-start print:hidden">
+			{socialLinks.map(link => {
+				const href = link.href.hrefWithSource("footer");
 
-			return <SocialIcon href={href} key={href} srLabel={link.label}>
-				{React.createElement(link.icon, {})}
-			</SocialIcon>;
-		})}
-	</div>;
+				return (
+					<SocialIcon href={href} key={href} srLabel={link.label}>
+						{React.createElement(link.icon, {})}
+					</SocialIcon>
+				);
+			})}
+		</div>
+	);
 };
 
 export default SocialIcons;

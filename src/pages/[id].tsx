@@ -21,12 +21,19 @@ export const getStaticPaths: GetStaticPaths = async () => {
 	};
 };
 
-export const getStaticProps: GetStaticProps<MarkdownPostProps, Params> = async (context) => {
+export const getStaticProps: GetStaticProps<
+	MarkdownPostProps,
+	Params
+> = async context => {
 	// This will never be thrown but it's here to satisfy TypeScript.
-	if (!context.params) throw "Error: root(id)/getStaticProps context#params is falsy";
+	if (!context.params)
+		throw "Error: root(id)/getStaticProps context#params is falsy";
 	const { id: pageID, directory } = context.params;
 
-	const result = await getStaticMarkdoc(ContentDirectoryNames.ROOT, `${pageID}.md`)();
+	const result = await getStaticMarkdoc(
+		ContentDirectoryNames.ROOT,
+		`${pageID}.md`
+	)();
 
 	return result;
 };

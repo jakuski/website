@@ -20,7 +20,7 @@ import GalleryRow from "./tags/Gallery/Row";
 const className = { type: String };
 const id = { type: String };
 
-enum MarkdocComponentNames  {
+enum MarkdocComponentNames {
 	NODE_ARTICLE = "AR",
 	NODE_PARAGRAPH = "P",
 	NODE_ANCHOR = "A",
@@ -35,7 +35,7 @@ enum MarkdocComponentNames  {
 	TAG_GALLERY_ROW = "G/R",
 
 	TAG_EMBED_VIMEO = "EM_VIMEO",
-	TAG_EMBED_FIGMA = "EM_FIGMA",
+	TAG_EMBED_FIGMA = "EM_FIGMA"
 }
 
 const sharedComponents: Config["tags"] = {
@@ -58,17 +58,18 @@ const sharedComponents: Config["tags"] = {
 
 export const transformConfig: Config = {
 	nodes: {
-		document: { render: MarkdocComponentNames.NODE_ARTICLE  },
+		document: { render: MarkdocComponentNames.NODE_ARTICLE },
 		paragraph: { render: MarkdocComponentNames.NODE_PARAGRAPH },
 		hr: { render: MarkdocComponentNames.NODE_DIVIDER },
 		heading: {
 			render: MarkdocComponentNames.NODE_HEADER,
 			attributes: {
-				id, className,
+				id,
+				className,
 				level: { type: Number }
 			}
 		},
-		
+
 		// Overwriting built ins
 		link: sharedComponents.link,
 		image: sharedComponents.image
@@ -96,7 +97,7 @@ export const transformConfig: Config = {
 			}
 		},
 		galleryRow: {
-			render: MarkdocComponentNames.TAG_GALLERY_ROW,
+			render: MarkdocComponentNames.TAG_GALLERY_ROW
 		},
 		vimeo: {
 			render: MarkdocComponentNames.TAG_EMBED_VIMEO,
@@ -136,6 +137,6 @@ export const renderConfig = {
 		[MarkdocComponentNames.TAG_GALLERY_ROW]: GalleryRow,
 
 		[MarkdocComponentNames.TAG_EMBED_VIMEO]: VimeoEmbed,
-		[MarkdocComponentNames.TAG_EMBED_FIGMA]: FigmaEmbed,
+		[MarkdocComponentNames.TAG_EMBED_FIGMA]: FigmaEmbed
 	}
 };

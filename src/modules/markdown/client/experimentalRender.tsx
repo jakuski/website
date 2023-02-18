@@ -46,10 +46,10 @@ function tagName(
 	return typeof name !== "string"
 		? name // This can be an object, e.g. when React.forwardRef is used
 		: name[0] !== name[0].toUpperCase()
-			? name
-			: components instanceof Function
-				? components(name)
-				: components[name];
+		? name
+		: components instanceof Function
+		? components(name)
+		: components[name];
 }
 
 export default function markdocReactRenderer(
@@ -60,7 +60,7 @@ export default function markdocReactRenderer(
 	function deepRender(value: any): any {
 		if (value == null || typeof value !== "object") return value;
 
-		if (Array.isArray(value)) return value.map((item) => deepRender(item));
+		if (Array.isArray(value)) return value.map(item => deepRender(item));
 
 		if (value.$$mdtype === "Tag") return render(value);
 
@@ -81,7 +81,7 @@ export default function markdocReactRenderer(
 		const {
 			name,
 			attributes: { class: className, ...attrs } = {},
-			children = [],
+			children = []
 		} = node;
 
 		if (className) attrs.className = className;

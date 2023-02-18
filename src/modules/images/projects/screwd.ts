@@ -15,28 +15,28 @@ const images: ImageObject = {
 	},
 	"p/screwd/main_menu": {
 		src: imageMainMenu,
-		alt: "The main pages of the screwd app",
+		alt: "The main pages of the screwd app"
 	},
 	"p/screwd/screw_scans": {
 		src: imageScrewScans,
-		alt: "The scanning process of the screwd app",
+		alt: "The scanning process of the screwd app"
 	},
 	"p/screwd/screw_scan_result": {
 		src: imageScrewScanResult,
-		alt: "The screw scan result page of the screwd app",
+		alt: "The screw scan result page of the screwd app"
 	},
 	"p/screwd/ios": {
 		src: imageIos,
-		alt: "How the screwd app would look on iOS",
+		alt: "How the screwd app would look on iOS"
 	},
 	"p/screwd/error_state": {
 		src: imageErrorState,
-		alt: "The error state of the screwd app",
+		alt: "The error state of the screwd app"
 	},
 	"p/screwd/drive_sheet": {
 		src: imageDriveSheet,
-		alt: "A poster detailing screw drives from across the world.",
-	},
+		alt: "A poster detailing screw drives from across the world."
+	}
 };
 
 export default images;

@@ -1,6 +1,3 @@
-
-const useStorageConsent = () => {
-
-};
+const useStorageConsent = () => {};
 
 export default useStorageConsent;

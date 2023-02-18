@@ -3,9 +3,7 @@ import Post from "../components/Post";
 
 const NotFoundPage: React.FC = () => {
 	return (
-		<Post title="Error 404">
-			The page you are looking has not been found.
-		</Post>
+		<Post title="Error 404">The page you are looking has not been found.</Post>
 	);
 };
 

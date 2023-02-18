@@ -8,7 +8,7 @@
 }
 
 .lg-backdrop {
-	background-color: rgba(0,0,0,0.8) !important;
+	background-color: rgba(0, 0, 0, 0.8) !important;
 	backdrop-filter: blur(20px);
 }
 
@@ -18,6 +18,6 @@
 
 @media (min-width: 768px) {
 	.lg-outer .lg-thumb-item {
-	  border-color: transparent !important;
+		border-color: transparent !important;
 	}
 }

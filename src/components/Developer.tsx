@@ -10,8 +10,15 @@ export const DeveloperOnly: React.FC = () => {
 			designModeEnabled = true;
 		}
 
-		if (typeof document.getElementById("__NEXT_DATA__")?.innerText === "string") {
-			console.log("Next Data ", JSON.parse(document.getElementById("__NEXT_DATA__")?.innerText as string));
+		if (
+			typeof document.getElementById("__NEXT_DATA__")?.innerText === "string"
+		) {
+			console.log(
+				"Next Data ",
+				JSON.parse(
+					document.getElementById("__NEXT_DATA__")?.innerText as string
+				)
+			);
 		}
 
 		return () => {

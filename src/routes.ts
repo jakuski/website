@@ -4,22 +4,22 @@ export class Route {
 	href: string;
 	displayName: string;
 	parent?: Route;
-	constructor (href: string, displayName: string) {
+	constructor(href: string, displayName: string) {
 		this.href = href;
 		this.displayName = displayName;
-	};
-	extend (appendHref: string, displayName: string): Route {
+	}
+	extend(appendHref: string, displayName: string): Route {
 		const route = new Route(this.href + appendHref, displayName);
 		route.parent = this;
 		return route;
 	}
-	hrefWithSource (source: string): string {
-		return this.href + "?" + new URLSearchParams({s: source}).toString();
+	hrefWithSource(source: string): string {
+		return this.href + "?" + new URLSearchParams({ s: source }).toString();
 	}
-	get hrefWithDomain () {
+	get hrefWithDomain() {
 		return domain + this.href;
 	}
-	get hrefWithHttpsDomain () {
+	get hrefWithHttpsDomain() {
 		return "https://" + this.hrefWithDomain;
 	}
 }
@@ -45,6 +45,9 @@ export const Twitter = Redirect.extend("/twitter", "Twitter");
 export const LinkedIn = Redirect.extend("/linkedin", "LinkedIn");
 export const Vimeo = Redirect.extend("/vimeo", "Vimeo");
 export const GithubAccount = Redirect.extend("/github", "GitHub");
-export const FigmaCommunityAccount = Redirect.extend("/figma-community", "Figma Community");
+export const FigmaCommunityAccount = Redirect.extend(
+	"/figma-community",
+	"Figma Community"
+);
 
 export const navbar = [WorksIndex, About, Contact];

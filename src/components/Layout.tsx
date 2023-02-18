@@ -7,9 +7,7 @@ const StandardLayout: React.FC<React.PropsWithChildren> = props => {
 		<>
 			<Navbar />
 			<div className="flex h-full flex-col">
-				<main id="main-content">
-					{props.children}
-				</main>
+				<main id="main-content">{props.children}</main>
 
 				{/* Space element for footer */}
 				<div className="h-full w-full" />

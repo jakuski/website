@@ -17,19 +17,21 @@ const GalleryImage: React.FC<{
 		// for the zoom open animation so if a really low quality image is used,
 		// the zoom animation will enlarge the low quality image and doesn't look good.
 		["w", "384"],
-		
+
 		["q", "80"]
 	]);
 
-	return <a
-		href={src.src}
-		className={galleryImageClassName + " w-full shadow-sm"}
-		data-lg-size={src.width + "-" + src.height}
-		data-sub-html={alt}
-		data-thumbnail-url={"/_next/image?" + thumbnailParams.toString()}
-	>
-		<Image src={props.src} />
-	</a>;
+	return (
+		<a
+			href={src.src}
+			className={galleryImageClassName + " w-full shadow-sm"}
+			data-lg-size={src.width + "-" + src.height}
+			data-sub-html={alt}
+			data-thumbnail-url={"/_next/image?" + thumbnailParams.toString()}
+		>
+			<Image src={props.src} />
+		</a>
+	);
 };
 
 export default GalleryImage;

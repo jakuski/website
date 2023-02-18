@@ -3,7 +3,7 @@ const nextConfig = {
 	reactStrictMode: true,
 	productionBrowserSourceMaps: true,
 	poweredByHeader: false,
-	rewrites () {
+	rewrites() {
 		return [
 			{
 				source: "/go/:path*",
@@ -11,13 +11,14 @@ const nextConfig = {
 			}
 		];
 	},
-	redirects () {
+	redirects() {
 		return [
 			{
 				source: "/_assets/JakubStaniszewskiPortfolio_W.pdf",
 				destination: "/works?pdf-redirect=1",
 				permanent: true
-			},{
+			},
+			{
 				source: "/go/portfolio",
 				destination: "/works?pdf-redirect=1",
 				permanent: true
@@ -34,4 +35,5 @@ if (process.env.ANALYZE === "true") {
 	});
 }
 
-module.exports = process.env.ANALYZE === "true" ? withBundleAnalyser(nextConfig) : nextConfig;
+module.exports =
+	process.env.ANALYZE === "true" ? withBundleAnalyser(nextConfig) : nextConfig;

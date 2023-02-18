@@ -11,7 +11,7 @@ const images: ImageObject = {
 	"g/figma-london": {
 		src: imageFigmaLondon,
 		alt: "Jakub Staniszewski standing next to #FigmaInLondon 2022 banner"
-	},
+	}
 };
 
 export default images;
