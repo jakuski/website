@@ -20,7 +20,7 @@ import { Inter, Libre_Baskerville } from "@next/font/google";
 const inter = Inter({subsets: ["latin"], variable: "--font-sans"});
 const libreBaskerville = Libre_Baskerville({subsets: ["latin"], weight: ["400","700"], style: ["normal", "italic"], variable: "--font-serif"});
 
-const fontProviderClassName = [inter.variable, libreBaskerville.variable, "h-full", "w-full"].join(" ");
+const fontProviderClassName = [inter.variable, libreBaskerville.variable, "h-full", "w-full", "font-sans"].join(" ");
 
 const App: React.FC<{
 	Component: React.FC & { layout: string };
@@ -41,11 +41,11 @@ const App: React.FC<{
 
 			{/* https://github.com/pacocoursey/next-themes#with-tailwind */}
 			<ThemeProvider attribute="class">
+			<div className={fontProviderClassName}>
 				<Layout>
-					<div className={fontProviderClassName}>
-						<Component {...pageProps} />
-					</div>
+					<Component {...pageProps} />
 				</Layout>
+				</div>
 				{/* <StorageConsentBanner /> */}
 			</ThemeProvider>
 
