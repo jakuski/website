@@ -35,7 +35,9 @@ export const recordWithLogSnag = async (event: SourceQueryEvent) => {
 				["URL", `[${event.url}](${event.rawUrl})`],
 				["Environment", isProd ? "Production" : "Development"],
 				["Server time", new Date().toUTCString()]
-			].map(a => keyValMarkdown(a[0] as string, a[1] as string)).join("\n"),
+			]
+				.map(a => keyValMarkdown(a[0] as string, a[1] as string))
+				.join("\n")
 		})
 	});
 };

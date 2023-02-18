@@ -5,6 +5,4 @@ interface SourceQueryEvent {
 	rawUrl: string;
 }
 
-export type {
-	SourceQueryEvent
-};
+export type { SourceQueryEvent };

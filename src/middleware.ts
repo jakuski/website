@@ -6,9 +6,7 @@ export function middleware(req: NextRequest, event: NextFetchEvent) {
 	// Record ?s= query parameter
 	const sourceParam = req.nextUrl.searchParams.get("s");
 	if (sourceParam) {
-		event.waitUntil(
-			recordSource(sourceParam, req)
-		);
+		event.waitUntil(recordSource(sourceParam, req));
 	}
 
 	return NextResponse.next();

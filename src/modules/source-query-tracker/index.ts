@@ -12,7 +12,10 @@ const sources: Record<string, string> = {
 	footer: "Website Footer"
 };
 
-export const recordSource = (source: string, request: NextRequest): Promise<unknown> => {
+export const recordSource = (
+	source: string,
+	request: NextRequest
+): Promise<unknown> => {
 	const { nextUrl: url } = request;
 	const data: SourceQueryEvent = {
 		rawSource: source,
