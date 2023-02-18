@@ -25,17 +25,17 @@ interface SocialIconProps extends React.PropsWithChildren {
 
 const SocialIcon: React.FC<SocialIconProps> = props => {
 	return (
-		<Link href={props.href}>
-			<a
-				title={`View my ${props.srLabel} profile`}
-				target="_blank"
-				className="flex items-center justify-center min-h-44 opacity-50 hover:opacity-100 ease transition-opacity duration-150"
-			>
-				<span className="sr-only">{props.srLabel} icon</span>
-				{props.children}
-			</a>
-		</Link>
-	);
+        (<Link
+            href={props.href}
+            title={`View my ${props.srLabel} profile`}
+            target="_blank"
+            className="flex items-center justify-center min-h-44 opacity-50 hover:opacity-100 ease transition-opacity duration-150">
+
+            <span className="sr-only">{props.srLabel} icon</span>
+            {props.children}
+
+        </Link>)
+    );
 };
 
 interface SocialLink {
