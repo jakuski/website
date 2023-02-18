@@ -14,7 +14,7 @@ const bodyClassName = c(
 	// Selections
 	"selection:bg-brand dark:selection:text-stone-800",
 	// Misc
-	"antialiased",
+	"antialiased"
 );
 
 class SiteDocument extends Document {
