@@ -7,9 +7,9 @@ module.exports = {
 	content: ["./src/**/*.{js,ts,jsx,tsx}"],
 	theme: {
 		fontFamily: {
-			serif: ["Libre Baskerville", ...defaultTheme.fontFamily.serif],
+			serif: ["var(--font-serif)", ...defaultTheme.fontFamily.serif],
 			// this is not the way things should be done iirc
-			sans: ["Inter", ...defaultTheme.fontFamily.sans]
+			sans: ["var(--font-sans)", ...defaultTheme.fontFamily.sans]
 		},
 		extend: {
 			colors: {
