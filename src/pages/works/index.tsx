@@ -1,5 +1,5 @@
 import Post from "@/components/Post";
-import Image from "next/future/image";
+import Image from "next/image";
 import Link from "next/link";
 import { resolveImage } from "@/modules/images";
 import { ContentDirectoryNames, getContentIDs } from "@/modules/fs";
