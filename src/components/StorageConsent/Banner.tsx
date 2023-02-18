@@ -12,10 +12,11 @@ const Link: React.FC<
 > = props => {
 	return (
 		<li>
-			<NextLink href={props.href.href}>
-				<a className="hover:underline font-bold cursor-pointer text-brand">
-					{props.children}
-				</a>
+			<NextLink
+				href={props.href.href}
+				className="hover:underline font-bold cursor-pointer text-brand"
+			>
+				{props.children}
 			</NextLink>
 		</li>
 	);

@@ -1,5 +1,5 @@
 import { resolveImage } from "@/modules/images";
-import NextImage from "next/future/image";
+import NextImage from "next/image";
 import React from "react";
 import c from "clsx";
 

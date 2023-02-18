@@ -18,8 +18,8 @@ const Link: React.FC<
 	}>
 > = props => {
 	return (
-		<NextLink href={props.href}>
-			<a className={linkClassName}>{props.children}</a>
+		<NextLink href={props.href} className={linkClassName}>
+			{props.children}
 		</NextLink>
 	);
 };
