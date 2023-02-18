@@ -18,10 +18,10 @@ const Link: React.FC<
 	}>
 > = props => {
 	return (
-        <NextLink href={props.href} className={linkClassName}>
+		<NextLink href={props.href} className={linkClassName}>
 			{props.children}
 		</NextLink>
-    );
+	);
 };
 
 const LoadingCover: React.FC<PropsWithChildren<{}>> = props => {

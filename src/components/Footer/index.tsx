@@ -18,14 +18,13 @@ import ThemePicker from "./ThemePicker";
 
 const TextLink: React.FC<{ route: Route }> = props => {
 	return (
-        (<Link
-            href={props.route.href}
-            className="min-w-44 min-h-44 flex items-center opacity-70 hover:opacity-100 font-medium ease transition-opacity duration-150">
-
-            {props.route.displayName}
-
-        </Link>)
-    );
+		<Link
+			href={props.route.href}
+			className="min-w-44 min-h-44 flex items-center opacity-70 hover:opacity-100 font-medium ease transition-opacity duration-150"
+		>
+			{props.route.displayName}
+		</Link>
+	);
 };
 
 const FooterColumn: React.FC<PropsWithChildren> = props => {

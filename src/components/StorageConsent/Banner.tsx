@@ -11,16 +11,15 @@ const Link: React.FC<
 	}>
 > = props => {
 	return (
-        <li>
+		<li>
 			<NextLink
-                href={props.href.href}
-                className="hover:underline font-bold cursor-pointer text-brand">
-
-                {props.children}
-
-            </NextLink>
+				href={props.href.href}
+				className="hover:underline font-bold cursor-pointer text-brand"
+			>
+				{props.children}
+			</NextLink>
 		</li>
-    );
+	);
 };
 
 const StorageConsentBanner = () => {
