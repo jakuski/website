@@ -13,7 +13,8 @@ interface Image {
 
 type ImageObject = Record<string, Image>;
 
-const allImagesObject: ImageObject = Object.assign({},
+const allImagesObject: ImageObject = Object.assign(
+	{},
 	genericImages,
 	spotify21ProjectImages,
 	spectrumClockProjectImages,
@@ -30,7 +31,4 @@ export const resolveImage = (imageName: string): Image => {
 	return allImagesObject[imageName];
 };
 
-export type {
-	Image,
-	ImageObject
-};
+export type { Image, ImageObject };

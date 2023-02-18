@@ -45,7 +45,7 @@ const images: ImageObject = {
 	},
 	"p/spectrum-clock/palette": {
 		src: imagePalette,
-		alt: "Palette of colours with their assigned numbers",
+		alt: "Palette of colours with their assigned numbers"
 	},
 	"p/spectrum-clock/clock_dev": {
 		src: imageClockDevelopment,
@@ -78,7 +78,7 @@ const images: ImageObject = {
 	"p/spectrum-clock/finals/3": {
 		src: imageFinal3,
 		alt: "A desktop and smart phones showcasing a responsive design of The Spectrum Clock app/website"
-	},
+	}
 };
 
 export default images;

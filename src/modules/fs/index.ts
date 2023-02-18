@@ -8,7 +8,7 @@ export const fileIsSafe = (filename: string): boolean => {
 	return !fileShouldBeIgnored(filename);
 };
 export const pathIsSafe = (path: string): boolean => {
-	if ((!path) || (typeof path !== "string")) return false;
+	if (!path || typeof path !== "string") return false;
 	return path.startsWith(contentDirectory); // @TODO I don't believe this is sufficient. Possibly revisit this.
 };
 
@@ -18,10 +18,12 @@ export enum ContentDirectoryNames {
 	BLOG = "blog",
 	PROJECTS = "projects",
 	PARTIALS = "_partials"
-};
+}
 const _getContentPath = (path: string[]) => resolve(contentDirectory, ...path);
 
-export const getContentIDs = (directory: ContentDirectoryNames): Promise<string[]> => {
+export const getContentIDs = (
+	directory: ContentDirectoryNames
+): Promise<string[]> => {
 	return new Promise((res, rej) => {
 		readdir(
 			_getContentPath([directory]),
@@ -42,13 +44,19 @@ export const getContentIDs = (directory: ContentDirectoryNames): Promise<string[
 	});
 };
 
-export const readContentFile = (directory: ContentDirectoryNames, filename: string): Promise<string> => {
+export const readContentFile = (
+	directory: ContentDirectoryNames,
+	filename: string
+): Promise<string> => {
 	const path = _getContentPath([directory, filename]);
 
 	return new Promise((res, rej) => {
-		if (!pathIsSafe(path)) return rej(new Error("[modules/markdown/fs#readContentFile]: unsafe path detected"));
-	
-		readFile(path, {encoding: "utf-8"}, (err, data) => {
+		if (!pathIsSafe(path))
+			return rej(
+				new Error("[modules/markdown/fs#readContentFile]: unsafe path detected")
+			);
+
+		readFile(path, { encoding: "utf-8" }, (err, data) => {
 			if (err) return rej(err);
 			res(data);
 		});

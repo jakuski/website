@@ -17,10 +17,10 @@ interface SoftwareData {
 
 class Program {
 	data: SoftwareData;
-	constructor (data: SoftwareData) {
+	constructor(data: SoftwareData) {
 		this.data = data;
 	}
-	get displayName () {
+	get displayName() {
 		return `${this.data.vendor} ${this.data.productName}`.trim();
 	}
 }

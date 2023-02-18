@@ -1,7 +1,7 @@
 import React from "react";
 
 export interface IfProps extends React.PropsWithChildren {
-	condition: unknown
+	condition: unknown;
 }
 
 const If: React.FC<IfProps> = props => {

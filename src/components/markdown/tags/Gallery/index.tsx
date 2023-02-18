@@ -15,7 +15,6 @@ interface GalleryProps extends React.PropsWithChildren {
 	caption?: string;
 }
 
-
 const Fallback: React.FC<DynamicOptionsLoadingProps> = props => {
 	return (
 		<div className="mb-4">
@@ -24,47 +23,50 @@ const Fallback: React.FC<DynamicOptionsLoadingProps> = props => {
 	);
 };
 
-const GalleryLoader = dynamic<GalleryProps>(async () => {
-	const { default: LG } = await import("lightgallery/react");
-	const { default: lgZoom } = await import("lightgallery/plugins/zoom");
-	const { default: lgThumb } = await import("lightgallery/plugins/thumbnail");
+const GalleryLoader = dynamic<GalleryProps>(
+	async () => {
+		const { default: LG } = await import("lightgallery/react");
+		const { default: lgZoom } = await import("lightgallery/plugins/zoom");
+		const { default: lgThumb } = await import("lightgallery/plugins/thumbnail");
 
-	// TS fails to find the CSS files, so we have to ignore it.
-	// @ts-ignore
-	await import("lightgallery/css/lightgallery.css");
-	// @ts-ignore
-	await import("lightgallery/css/lg-zoom.css");
-	// @ts-ignore
-	await import("lightgallery/css/lg-thumbnail.css");
+		// TS fails to find the CSS files, so we have to ignore it.
+		// @ts-ignore
+		await import("lightgallery/css/lightgallery.css");
+		// @ts-ignore
+		await import("lightgallery/css/lg-zoom.css");
+		// @ts-ignore
+		await import("lightgallery/css/lg-thumbnail.css");
 
-	const LightGalleryWrapper: React.FC<GalleryProps> = props => (
-		<LG
-			speed={180}
-			backdropDuration={200}
-			startAnimationDuration={200}
-			download={false}
-			plugins={[lgZoom, lgThumb]}
-			exThumbImage="data-thumbnail-url"
-			selector={"." + galleryImageClassName}
-			addClass="mb-4"
-		>
-			{props.children}
-			{props.caption && <Caption>{props.caption}</Caption>}
-		</LG>
-	);
+		const LightGalleryWrapper: React.FC<GalleryProps> = props => (
+			<LG
+				speed={180}
+				backdropDuration={200}
+				startAnimationDuration={200}
+				download={false}
+				plugins={[lgZoom, lgThumb]}
+				exThumbImage="data-thumbnail-url"
+				selector={"." + galleryImageClassName}
+				addClass="mb-4"
+			>
+				{props.children}
+				{props.caption && <Caption>{props.caption}</Caption>}
+			</LG>
+		);
 
-	return LightGalleryWrapper;
-
-}, {
-	ssr: false,
-	loading: Fallback
-});
-
+		return LightGalleryWrapper;
+	},
+	{
+		ssr: false,
+		loading: Fallback
+	}
+);
 
 const Gallery: React.FC<GalleryProps> = props => {
-	return <div className="mb-4">
-		<GalleryLoader {...props} />
-	</div>;
+	return (
+		<div className="mb-4">
+			<GalleryLoader {...props} />
+		</div>
+	);
 };
 
 export default Gallery;

@@ -4,9 +4,9 @@ export enum MarkdownComponentSets {
 	BASIC = "BASIC"
 }
 
-export interface MarkdocData <F = Frontmatter> {
+export interface MarkdocData<F = Frontmatter> {
 	content: unknown;
-	frontmatter: F
+	frontmatter: F;
 }
 
 export type Frontmatter = {
@@ -23,7 +23,7 @@ export type Frontmatter = {
 		colours?: {
 			foreground?: string;
 			background?: string;
-		}
+		};
 	};
 	project?: {
 		category?: string[];
@@ -32,4 +32,4 @@ export type Frontmatter = {
 		date?: Date;
 	};
 	variables?: Record<string, unknown>;
-}
+};

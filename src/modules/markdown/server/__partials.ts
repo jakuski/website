@@ -4,7 +4,7 @@
 //
 
 import { ContentDirectoryNames, getContentIDs } from "@/modules/fs";
-import type {  Config } from "@markdoc/markdoc";
+import type { Config } from "@markdoc/markdoc";
 
 getContentIDs(ContentDirectoryNames.PARTIALS);
 

@@ -26,12 +26,13 @@ const buildVimeoEmbedUrl = (props: VimeoEmbedProps): string => {
 	const propsKeys = Object.keys(props) as Array<keyof VimeoEmbedProps>;
 	for (const prop of propsKeys) {
 		if (prop === "id") continue;
-		
+
 		const propData = props[prop];
 		if (!propData) continue;
 
 		if (typeof propData === "string") {
-			url.searchParams.append(prop,
+			url.searchParams.append(
+				prop,
 				// If the prop is color, remove the hash from hex code
 				prop === "color" ? propData.replace("#", "") : propData
 			);
@@ -64,17 +65,19 @@ const VimeoEmbed: React.FC<VimeoEmbedProps> = props => {
 
 	const src = buildVimeoEmbedUrl(props);
 
-	return <div className="">
-		<div className="bg-pure-black rounded-md overflow-hidden select-none mb-4">
-			<iframe
-				src={src}
-				className="w-full aspect-video rounded-md"
-				frameBorder="0"
-				allow="autoplay; fullscreen; picture-in-picture"
-				allowFullScreen
-			/>
+	return (
+		<div className="">
+			<div className="bg-pure-black rounded-md overflow-hidden select-none mb-4">
+				<iframe
+					src={src}
+					className="w-full aspect-video rounded-md"
+					frameBorder="0"
+					allow="autoplay; fullscreen; picture-in-picture"
+					allowFullScreen
+				/>
+			</div>
 		</div>
-	</div>;
+	);
 };
 
 export default VimeoEmbed;

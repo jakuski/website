@@ -5,7 +5,7 @@ export default function handler(req, res) {
 
 	const redirectUrl = Data.links[name];
 
-	if (!redirectUrl || (Data.tempDisable[name])) return res.status(404).end();
+	if (!redirectUrl || Data.tempDisable[name]) return res.status(404).end();
 
 	res.redirect(302, redirectUrl);
 }

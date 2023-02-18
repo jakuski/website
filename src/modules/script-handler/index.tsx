@@ -1,5 +1,12 @@
 import Script from "next/script";
-import { Context, createContext, useCallback, useContext, useEffect, useState } from "react";
+import {
+	Context,
+	createContext,
+	useCallback,
+	useContext,
+	useEffect,
+	useState
+} from "react";
 
 const scriptDefinitions = {
 	vimeo: "https://player.vimeo.com/api/player.js"
@@ -17,28 +24,41 @@ const defaultScriptContextValue: ScriptBooleansObject = {
 	vimeo: false
 };
 
-const ScriptContext: Context<ScriptContextType> = createContext<ScriptContextType>(Object.assign({
-	useScript(name: ScriptNames) {}
-}, defaultScriptContextValue));
+const ScriptContext: Context<ScriptContextType> =
+	createContext<ScriptContextType>(
+		Object.assign(
+			{
+				useScript(name: ScriptNames) {}
+			},
+			defaultScriptContextValue
+		)
+	);
 
 ScriptContext.displayName = "ScriptContext";
 
 const ScriptContextController: React.FC<React.PropsWithChildren> = props => {
-	const [state, setState] = useState<ScriptBooleansObject>(defaultScriptContextValue);
+	const [state, setState] = useState<ScriptBooleansObject>(
+		defaultScriptContextValue
+	);
 
-	const useScript = useCallback((name: ScriptNames) => {
-		state[name] = true;
-		setState(state);
-	}, [state]);
+	const useScript = useCallback(
+		(name: ScriptNames) => {
+			state[name] = true;
+			setState(state);
+		},
+		[state]
+	);
 
 	const contextValue: ScriptContextType = {
 		...state,
 		useScript
 	};
 
-	return <ScriptContext.Provider value={contextValue}>
-		{props.children}
-	</ScriptContext.Provider>;
+	return (
+		<ScriptContext.Provider value={contextValue}>
+			{props.children}
+		</ScriptContext.Provider>
+	);
 };
 
 const useScript = (name: ScriptNames) => {
@@ -65,13 +85,15 @@ const ScriptLoader: React.FC = () => {
 		if (!scriptsToLoad[script]) continue;
 
 		scriptElements.push(
-			<Script src={scriptDefinitions[script]} key={script} id={"external-script-handler__" + script} />
+			<Script
+				src={scriptDefinitions[script]}
+				key={script}
+				id={"external-script-handler__" + script}
+			/>
 		);
-	} 
+	}
 
-	return <>
-		{scriptElements}
-	</>;
+	return <>{scriptElements}</>;
 };
 
 export {

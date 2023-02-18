@@ -5,17 +5,27 @@ is only responsible for rendering ready-to-go data.
 
 */
 
-import { Config, parse, RenderableTreeNode, Tokenizer, transform } from "@markdoc/markdoc";
+import {
+	Config,
+	parse,
+	RenderableTreeNode,
+	Tokenizer,
+	transform
+} from "@markdoc/markdoc";
 import serialiseTopLevel, { serialise } from "./serialise";
 import parseYaml from "./yaml";
 import { MarkdocData, Frontmatter } from "../types";
 import { transformConfig } from "@/components/markdown";
-import { contentDirectory, ContentDirectoryNames, readContentFile } from "@/modules/fs";
+import {
+	contentDirectory,
+	ContentDirectoryNames,
+	readContentFile
+} from "@/modules/fs";
 import { domain, emailDomain } from "@/config";
 import { categoriesMappings } from "@/modules/mappings/project-categories";
 
 export interface MarkdocLoaderProps {
-	markdocContent: RenderableTreeNode
+	markdocContent: RenderableTreeNode;
 }
 
 const onDefaultFrontmatterWarning = (): void => {
@@ -24,13 +34,16 @@ const onDefaultFrontmatterWarning = (): void => {
 
 const defaultFrontmatter: Frontmatter = {
 	meta: {
-		title: "Unnamed document",
+		title: "Unnamed document"
 	},
 	pageProps: {},
 	variables: {}
 };
 
-const processFrontmatter = (rawFrontmatter: string, filename?: string): Frontmatter => {
+const processFrontmatter = (
+	rawFrontmatter: string,
+	filename?: string
+): Frontmatter => {
 	if (!rawFrontmatter) {
 		onDefaultFrontmatterWarning();
 		return defaultFrontmatter;
@@ -38,7 +51,7 @@ const processFrontmatter = (rawFrontmatter: string, filename?: string): Frontmat
 
 	const parsed = parseYaml(rawFrontmatter, filename) as Frontmatter;
 
-	if ((parsed !== null) && (typeof parsed === "object")) {
+	if (parsed !== null && typeof parsed === "object") {
 		if (!parsed.meta.displayTitle) {
 			// Use the base #title if #displayTitle is not provided.
 			parsed.meta.displayTitle = parsed.meta.title;
@@ -57,19 +70,19 @@ const processFrontmatter = (rawFrontmatter: string, filename?: string): Frontmat
 			if (!Array.isArray(category)) {
 				if (!categoriesMappings.hasOwnProperty(category)) {
 					parsed.project.category = [];
-				};
-			
-				parsed.project.category = [
-					categoriesMappings[category]
-				];
-			} else {
-				parsed.project.category = category.map((id) => {
-					if (!categoriesMappings.hasOwnProperty(id)) {
-						return null;
-					};
+				}
 
-					return categoriesMappings[id as keyof typeof categoriesMappings];
-				}).filter((cat) => cat !== null) as string[];
+				parsed.project.category = [categoriesMappings[category]];
+			} else {
+				parsed.project.category = category
+					.map(id => {
+						if (!categoriesMappings.hasOwnProperty(id)) {
+							return null;
+						}
+
+						return categoriesMappings[id as keyof typeof categoriesMappings];
+					})
+					.filter(cat => cat !== null) as string[];
 			}
 		}
 
@@ -82,20 +95,26 @@ const processFrontmatter = (rawFrontmatter: string, filename?: string): Frontmat
 
 const createTransformConfig = (frontmatter: Frontmatter): Config => {
 	const frontmatterConfig: Config = {
-		variables: Object.assign({
-			frontmatter,
-			utils: {
-				currentYear: new Date().getFullYear(),
-				domain,
-				emailDomain
-			}
-		}, frontmatter.variables),
+		variables: Object.assign(
+			{
+				frontmatter,
+				utils: {
+					currentYear: new Date().getFullYear(),
+					domain,
+					emailDomain
+				}
+			},
+			frontmatter.variables
+		)
 	};
 
 	return Object.assign<Config, Config>(frontmatterConfig, transformConfig);
 };
 
-export const getStaticMarkdoc = (directory: ContentDirectoryNames, filename: string) => {
+export const getStaticMarkdoc = (
+	directory: ContentDirectoryNames,
+	filename: string
+) => {
 	return async () => {
 		const path = [directory, filename];
 
@@ -112,18 +131,21 @@ export const getStaticMarkdoc = (directory: ContentDirectoryNames, filename: str
 		// Transformations
 		const frontmatter = processFrontmatter(
 			documentAST.attributes.frontmatter,
-			contentDirectory + "/" + path.join("/") + "::frontmatter",
+			contentDirectory + "/" + path.join("/") + "::frontmatter"
 			// the arg above appends "frontmatter" to the filename (such as "/Site/Content/hello-world.md::frontmatter")
 			// to improve readability of any YAML parser errors that could be thrown.
 		);
 
-		const renderable = transform(documentAST, createTransformConfig(frontmatter));
+		const renderable = transform(
+			documentAST,
+			createTransformConfig(frontmatter)
+		);
 
 		return {
 			props: {
 				content: serialiseTopLevel(renderable),
 				// frontmatter needs to be serialised as any dates in YAML will fail Next.js validation for some reason.
-				frontmatter: serialise(frontmatter) as MarkdocData["frontmatter"],
+				frontmatter: serialise(frontmatter) as MarkdocData["frontmatter"]
 				/* computedData: {
 					tableOfContents: {},
 					

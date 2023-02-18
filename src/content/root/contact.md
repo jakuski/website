@@ -1,14 +1,14 @@
 ---
 meta:
-    title: Contact
-    displayTitle: Ay-up.
-    description: Hire me, send me a funny meme or just discuss business.
-    # published: 2022-11-17
-    # edited: 2022-07-05
+  title: Contact
+  displayTitle: Ay-up.
+  description: Hire me, send me a funny meme or just discuss business.
+  # published: 2022-11-17
+  # edited: 2022-07-05
 
 variables:
-    availability: September 2022
-    contactEmail: ayup
+  availability: September 2022
+  contactEmail: ayup
 ---
 
 If you would like to get in touch with me, please send me an email at {% email address=$contactEmail domain=$utils.emailDomain /%}.

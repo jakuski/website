@@ -9,9 +9,11 @@ const SkipToMainButtonClassName = c(
 );
 
 const SkipToMainButton: React.FC = () => {
-	return <a href="#main-content" className={SkipToMainButtonClassName}>
-		Skip to main content
-	</a>;
+	return (
+		<a href="#main-content" className={SkipToMainButtonClassName}>
+			Skip to main content
+		</a>
+	);
 };
 
 export default SkipToMainButton;
