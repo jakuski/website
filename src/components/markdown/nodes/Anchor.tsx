@@ -36,14 +36,13 @@ const Anchor: React.FC<
 	const isExternal = isExternalHref(parsed);
 
 	return (
-		<Link href={props.href}>
-			<a
-				className="cursor-pointer text-brand hover:underline font-semibold"
-				target={props.newWindow ? "_blank" : void 0}
-				rel={isExternal ? privateRel : void 0}
-			>
-				{props.children}
-			</a>
+		<Link
+			href={props.href}
+			className="cursor-pointer text-brand hover:underline font-semibold"
+			target={props.newWindow ? "_blank" : void 0}
+			rel={isExternal ? privateRel : void 0}
+		>
+			{props.children}
 		</Link>
 	);
 };

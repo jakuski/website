@@ -9,10 +9,11 @@ const NavbarLink: React.FC<
 > = props => {
 	return (
 		<li className="mx-2 last:ml-2 last:mr-0 hover:text-brand transition-colors duration-150 ">
-			<Link href={props.href}>
-				<a className="flex items-center min-h-44 after:absolute after:h-[2px] after:w-full after:bg-brand after:bottom-3 after:left-0 after:scale-x-0 after:hover:scale-x-100 after:transition-transform after:origin-right after:hover:origin-left after:opacity-50 relative">
-					{props.children}
-				</a>
+			<Link
+				href={props.href}
+				className="flex items-center min-h-44 after:absolute after:h-[2px] after:w-full after:bg-brand after:bottom-3 after:left-0 after:scale-x-0 after:hover:scale-x-100 after:transition-transform after:origin-right after:hover:origin-left after:opacity-50 relative"
+			>
+				{props.children}
 			</Link>
 		</li>
 	);
@@ -23,10 +24,11 @@ export default function Navbar() {
 	return (
 		<>
 			<header className="p-4 md:p-6 fixed w-full flex justify-between items-center select-none z-10 dark:mix-blend-exclusion print:hidden">
-				<Link href={Home.href}>
-					<a className="hover:text-brand transition-colors duration-150">
-						<LogoIcon />
-					</a>
+				<Link
+					href={Home.href}
+					className="hover:text-brand transition-colors duration-150"
+				>
+					<LogoIcon />
 				</Link>
 
 				<nav className="font-serif lowercase italic">

@@ -1,5 +1,5 @@
 import Post from "@/components/Post";
-import Image from "next/future/image";
+import Image from "next/image";
 import Link from "next/link";
 import { resolveImage } from "@/modules/images";
 import { ContentDirectoryNames, getContentIDs } from "@/modules/fs";
@@ -49,48 +49,47 @@ const ProjectLink: React.FC<ProjectLinkProps> = props => {
 	const { src, alt } = resolveImage(props.image);
 
 	return (
-		<Link href={props.href}>
-			<a className="shadow-md rounded-md mt-4 relative block hover:scale-[1.025] transition-all hover:shadow-lg transform-gpu h-80 overflow-hidden select-none">
-				<Image
-					src={src}
-					alt={alt}
-					placeholder="blur"
-					className="rounded-md shadow-inner h-80 object-cover"
-					fill
-					quality={90}
-					priority={props.requestPriorityLoading === true}
-				/>
-				{/* Bottom black gradient */}
-				<div className="absolute bottom-0 h-2/5 w-full rounded-md bg-gradient-to-t from-black opacity-50" />
-
-				{/* Top black gradient */}
-				<div className="absolute top-0 h-1/5 w-full rounded-md bg-gradient-to-b from-black opacity-50" />
-
-				{/* Text content */}
-				<div className="absolute bottom-0 left-0 text-white drop-shadow-md h-full w-full flex justify-between flex-col p-4">
-					<div className="uppercase tracking-widest text-xs mb-1 font-medium flex w-full justify-between items-start">
-						<div className="leading-normal">
-							{props.category.map((category, index) => (
-								<div key={category} className="inline-block">
-									{category}
-									{index === props.category.length - 1 ? (
-										""
-									) : (
-										<span>,&nbsp;</span>
-									)}
-								</div>
-							))}
-						</div>
-						<span className="ml-5">{props.year}</span>
+		<Link
+			href={props.href}
+			className="shadow-md rounded-md mt-4 relative block hover:scale-[1.025] transition-all hover:shadow-lg transform-gpu h-80 overflow-hidden select-none"
+		>
+			<Image
+				src={src}
+				alt={alt}
+				placeholder="blur"
+				className="rounded-md shadow-inner h-80 object-cover"
+				fill
+				quality={90}
+				priority={props.requestPriorityLoading === true}
+			/>
+			{/* Bottom black gradient */}
+			<div className="absolute bottom-0 h-2/5 w-full rounded-md bg-gradient-to-t from-black opacity-50" />
+			{/* Top black gradient */}
+			<div className="absolute top-0 h-1/5 w-full rounded-md bg-gradient-to-b from-black opacity-50" />
+			{/* Text content */}
+			<div className="absolute bottom-0 left-0 text-white drop-shadow-md h-full w-full flex justify-between flex-col p-4">
+				<div className="uppercase tracking-widest text-xs mb-1 font-medium flex w-full justify-between items-start">
+					<div className="leading-normal">
+						{props.category.map((category, index) => (
+							<div key={category} className="inline-block">
+								{category}
+								{index === props.category.length - 1 ? (
+									""
+								) : (
+									<span>,&nbsp;</span>
+								)}
+							</div>
+						))}
 					</div>
-					<div>
-						<h2 className="font-serif text-xl md:text-2xl mb-1 font-bold">
-							{props.title}
-						</h2>
-						<p className="font-medium text-sm">{props.description}</p>
-					</div>
+					<span className="ml-5">{props.year}</span>
 				</div>
-			</a>
+				<div>
+					<h2 className="font-serif text-xl md:text-2xl mb-1 font-bold">
+						{props.title}
+					</h2>
+					<p className="font-medium text-sm">{props.description}</p>
+				</div>
+			</div>
 		</Link>
 	);
 };
