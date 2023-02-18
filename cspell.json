@@ -30,6 +30,7 @@
 		// libraries
 		"clsx",
 		"lightgallery",
+		"analyzer",
 
 		// Software vendors and names
 		"maxon",
