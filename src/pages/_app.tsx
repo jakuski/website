@@ -39,8 +39,12 @@ const App: React.FC<{
 }> = ({ Component, pageProps }) => {
 	let Layout: string | React.FC<React.PropsWithChildren> =
 		Component.layout || DefaultLayout;
-	// eslint-disable-next-line react/display-name
-	if (Layout === "none") Layout = ({ children }) => <>{children}</>;
+
+	if (Layout === "none") {
+		Layout = function NoLayout({ children }) {
+			return <>{children}</>;
+		};
+	}
 
 	return (
 		<ScriptContextProvider>
@@ -62,11 +66,6 @@ const App: React.FC<{
 
 			<ScriptLoader />
 			<Analytics />
-			<Script
-				id="source-tracker"
-				src="/js/track-src.js"
-				strategy="lazyOnload"
-			/>
 		</ScriptContextProvider>
 	);
 };
