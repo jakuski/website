@@ -11,7 +11,8 @@
     "lint": "next lint",
     "types": "tsc",
     "analyze": "ANALYZE=true next build",
-    "postbuild": "next-sitemap"
+    "postbuild": "next-sitemap",
+    "format": "prettier --write ."
   },
   "dependencies": {
     "@markdoc/markdoc": "^0.2.2",
@@ -34,6 +35,7 @@
     "eslint": "^8.33.0",
     "eslint-config-next": "^13.1.6",
     "postcss": "^8.4.21",
+    "prettier": "^2.8.4",
     "tailwindcss": "^3.2.4",
     "typescript": "^4.9.5"
   }
