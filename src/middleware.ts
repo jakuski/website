@@ -1,8 +1,10 @@
 import { NextResponse } from "next/server";
 import type { NextRequest, NextFetchEvent } from "next/server";
 import { recordSource } from "@/modules/source-query-tracker";
+import { recordSourceQueryMiddleware } from "@/config";
 
 export function middleware(req: NextRequest, event: NextFetchEvent) {
+	if (recordSourceQueryMiddleware !== true ) { return NextResponse.next(); }
 	// Record ?s= query parameter
 	const sourceParam = req.nextUrl.searchParams.get("s");
 	if (sourceParam) {
