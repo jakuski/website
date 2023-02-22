@@ -12,7 +12,7 @@ import {
 	CookiePolicy
 } from "@/routes";
 
-import { isProd } from "@/utils";
+import { isDev, isProd } from "@/utils";
 import SocialIcons from "./SocialIcons";
 import ThemePicker from "./ThemePicker";
 
@@ -61,11 +61,6 @@ const Footer: React.FC = () => {
 					<div className="opacity-70 mb-6 mt-4 print:mb-0 flex flex-col gap-10">
 						<ThemePicker />
 						<div>
-							This website is currently under active development.
-							<br />
-							The layout, visuals and content may change frequently.
-						</div>
-						<div>
 							Copyright © {new Date().getFullYear()} Jakub Staniszewski.{" "}
 							<span className="block sm:inline">All rights reserved.</span>
 						</div>
@@ -74,8 +69,8 @@ const Footer: React.FC = () => {
 				<SocialIcons />
 			</div>
 
-			{!isProd && false && (
-				<div className=" px-4 py-2 bg-foreground text-background tracking-wide max-w-2xl mx-auto">
+			{isDev && (
+				<div className=" px-4 py-2 bg-brand text-stone-800 max-w-2xl mx-auto">
 					This is a development version of my website which is{" "}
 					<strong>not intended</strong> for public viewing. If you believe you
 					are here by mistake, click{" "}
