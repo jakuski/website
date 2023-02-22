@@ -4,7 +4,9 @@ import { recordSource } from "@/modules/source-query-tracker";
 import { recordSourceQueryMiddleware } from "@/config";
 
 export function middleware(req: NextRequest, event: NextFetchEvent) {
-	if (!recordSourceQueryMiddleware) { return NextResponse.next(); }
+	if (!recordSourceQueryMiddleware) {
+		return NextResponse.next();
+	}
 	// Record ?s= query parameter
 	const sourceParam = req.nextUrl.searchParams.get("s");
 	if (sourceParam) {

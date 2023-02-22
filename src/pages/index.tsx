@@ -45,17 +45,23 @@ const LoadingCover: React.FC<PropsWithChildren<{}>> = props => {
 		// Size the logo up
 		setShowLogo(true);
 
-		setTimeout(() => {
-			// Reveal web page
-			setReveal(true);
-		}, 1000);
+		const timeout = setTimeout(
+			setReveal => {
+				// Reveal web page
+				setReveal(true);
+			},
+			1000,
+			setReveal
+		);
+
+		return () => clearTimeout(timeout);
 	}, []);
 
 	const containerClassName = c(
 		"fixed left-0 top-0 h-full w-full flex justify-center items-center",
 		"bg-brand text-stone-900 shadow-md",
-		"translate-y-0 transition-transform duration-300",
-		{ ["-translate-y-full"]: reveal }
+		" transition-transform duration-300",
+		{ ["translate-y-0"]: !reveal, ["-translate-y-full"]: reveal }
 	);
 
 	const logoContainerClassName = c(
@@ -108,7 +114,7 @@ export default function Home() {
 				</div>
 			</main>
 			<Footer />
-			{/* <LoadingCover /> */}
+			<LoadingCover />
 		</>
 	);
 }
