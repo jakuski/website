@@ -19,7 +19,7 @@
 		"@next/font": "^13.1.6",
 		"@vercel/analytics": "^0.1.10",
 		"clsx": "^1.2.1",
-		"eslint-config-next": "^13.1.6",
+		"eslint-config-next": "^13.2.3",
 		"js-yaml": "^4.1.0",
 		"lightgallery": "^2.7.1",
 		"next": "^13.1.6",
