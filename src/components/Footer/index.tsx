@@ -21,6 +21,7 @@ const TextLink: React.FC<{ route: Route }> = props => {
 		<Link
 			href={props.route.href}
 			className="min-w-44 min-h-44 flex items-center opacity-70 hover:opacity-100 font-medium ease transition-opacity duration-150"
+			prefetch={false}
 		>
 			{props.route.displayName}
 		</Link>

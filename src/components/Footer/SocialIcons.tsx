@@ -30,6 +30,7 @@ const SocialIcon: React.FC<SocialIconProps> = props => {
 			title={`View my ${props.srLabel} profile`}
 			target="_blank"
 			className="flex items-center justify-center min-h-44 opacity-50 hover:opacity-100 ease transition-opacity duration-150"
+			prefetch={false}
 		>
 			<span className="sr-only">{props.srLabel} icon</span>
 			{props.children}
