@@ -31,14 +31,10 @@ const libreBaskerville = Libre_Baskerville({
 export const fontClassNames = [
 	inter.variable,
 	libreBaskerville.variable,
-	"font-sans",
+	"font-sans"
 ].join(" ");
 
-const fontsRootClassName = [
-	fontClassNames,
-	"h-full",
-	"w-full",
-].join(" ");
+const fontsRootClassName = [fontClassNames, "h-full", "w-full"].join(" ");
 
 const App: React.FC<{
 	Component: React.FC & { layout: string };

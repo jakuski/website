@@ -41,19 +41,21 @@ const GalleryLoader = dynamic<GalleryProps>(
 		await import("lightgallery/css/lg-thumbnail.css");
 
 		const LightGalleryWrapper: React.FC<GalleryProps> = props => {
-			return <LG
-				speed={180}
-				backdropDuration={200}
-				startAnimationDuration={200}
-				download={false}
-				plugins={[lgZoom, lgThumb]}
-				exThumbImage="data-thumbnail-url"
-				selector={"." + galleryImageClassName}
-				addClass={clsx("mb-4", fontClassNames)}
-			>
-				{props.children}
-				{props.caption && <Caption>{props.caption}</Caption>}
-			</LG>;
+			return (
+				<LG
+					speed={180}
+					backdropDuration={200}
+					startAnimationDuration={200}
+					download={false}
+					plugins={[lgZoom, lgThumb]}
+					exThumbImage="data-thumbnail-url"
+					selector={"." + galleryImageClassName}
+					addClass={clsx("mb-4", fontClassNames)}
+				>
+					{props.children}
+					{props.caption && <Caption>{props.caption}</Caption>}
+				</LG>
+			);
 		};
 
 		return LightGalleryWrapper;
