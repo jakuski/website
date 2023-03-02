@@ -16,7 +16,7 @@ import { ThemeProvider } from "next-themes";
 import { Analytics } from "@vercel/analytics/react";
 /* import StorageConsentBanner from "@/components/StorageConsent/Banner"; */
 
-import { Inter, Libre_Baskerville } from "@next/font/google";
+import { Inter, Libre_Baskerville } from "next/font/google";
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 const libreBaskerville = Libre_Baskerville({
 	subsets: ["latin"],
