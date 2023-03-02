@@ -16,7 +16,6 @@
 	},
 	"dependencies": {
 		"@markdoc/markdoc": "^0.2.2",
-		"@next/font": "^13.2.3",
 		"@vercel/analytics": "^0.1.10",
 		"clsx": "^1.2.1",
 		"js-yaml": "^4.1.0",
