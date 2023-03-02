@@ -10,4 +10,4 @@ updates:
     labels:
       - "dependencies"
     schedule:
-      interval: "daily" # Change later down the line
+      interval: "weekly" # Change later down the line
