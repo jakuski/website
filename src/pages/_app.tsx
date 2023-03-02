@@ -25,13 +25,16 @@ const libreBaskerville = Libre_Baskerville({
 	variable: "--font-serif"
 });
 
-const fontProviderClassName = [
+// This needs to be exported as it's shared with the Gallery component.
+// The Gallery component is appended to the end of document.body, which is
+// outside of the scope of the <div id="fonts-root"> element.
+export const fontClassNames = [
 	inter.variable,
 	libreBaskerville.variable,
-	"h-full",
-	"w-full",
 	"font-sans"
 ].join(" ");
+
+const fontsRootClassName = [fontClassNames, "h-full", "w-full"].join(" ");
 
 const App: React.FC<{
 	Component: React.FC & { layout: string };
@@ -56,7 +59,7 @@ const App: React.FC<{
 
 			{/* https://github.com/pacocoursey/next-themes#with-tailwind */}
 			<ThemeProvider attribute="class">
-				<div className={fontProviderClassName}>
+				<div className={fontsRootClassName} id="fonts-root">
 					<Layout>
 						<Component {...pageProps} />
 					</Layout>

@@ -10,6 +10,9 @@ import "lightgallery/css/lg-thumbnail.css"; */
 
 import { Caption } from "@/components/markdown/tags/Image";
 import { galleryImageClassName } from "./shared";
+import { useEffect, useState } from "react";
+import clsx from "clsx";
+import { fontClassNames } from "@/pages/_app";
 
 interface GalleryProps extends React.PropsWithChildren {
 	caption?: string;
@@ -37,21 +40,23 @@ const GalleryLoader = dynamic<GalleryProps>(
 		// @ts-ignore
 		await import("lightgallery/css/lg-thumbnail.css");
 
-		const LightGalleryWrapper: React.FC<GalleryProps> = props => (
-			<LG
-				speed={180}
-				backdropDuration={200}
-				startAnimationDuration={200}
-				download={false}
-				plugins={[lgZoom, lgThumb]}
-				exThumbImage="data-thumbnail-url"
-				selector={"." + galleryImageClassName}
-				addClass="mb-4"
-			>
-				{props.children}
-				{props.caption && <Caption>{props.caption}</Caption>}
-			</LG>
-		);
+		const LightGalleryWrapper: React.FC<GalleryProps> = props => {
+			return (
+				<LG
+					speed={180}
+					backdropDuration={200}
+					startAnimationDuration={200}
+					download={false}
+					plugins={[lgZoom, lgThumb]}
+					exThumbImage="data-thumbnail-url"
+					selector={"." + galleryImageClassName}
+					addClass={clsx("mb-4", fontClassNames)}
+				>
+					{props.children}
+					{props.caption && <Caption>{props.caption}</Caption>}
+				</LG>
+			);
+		};
 
 		return LightGalleryWrapper;
 	},
