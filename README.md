@@ -11,7 +11,7 @@ This is my personal website, available at [jakub.studio](https://jakub.studio). 
 My website primarily utilises these technologies:
 
 - [React.js](https://reactjs.org)
-- [Next.js](https://nextjs.org)
+- [Next.js](https://nextjs.org), hosted on [Vercel](https://vercel.com)
 - [TailwindCSS](https://tailwindcss.com)
 - [Markdoc](https://markdoc.io)
 
