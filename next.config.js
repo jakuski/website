@@ -1,3 +1,5 @@
+const CONTENT_SECURITY_POLICY_IS_REPORT_ONLY = true;
+
 const securityHeaders = [
 	{ key: "X-DNS-Prefetch-Control", value: "on" },
 	{ key: "Strict-Transport-Security", value: "max-age=63072000; includeSubDomains; preload" },
@@ -8,6 +10,10 @@ const securityHeaders = [
 	{
 		key: "Permissions-Policy",
 		value: "camera=(), microphone=(), geolocation=(), browsing-topics=()"
+	},
+	{
+		key: [CONTENT_SECURITY_POLICY_IS_REPORT_ONLY ? "Content-Security-Policy-Report-Only" : "Content-Security-Policy"],
+		value: ""
 	}
 ];
 
