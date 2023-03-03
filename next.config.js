@@ -1,3 +1,5 @@
+
+const self = "'self'";
 const securityHeaders = [
 	{ key: "X-DNS-Prefetch-Control", value: "on" },
 	{ key: "Strict-Transport-Security", value: "max-age=63072000; includeSubDomains; preload" },
@@ -7,14 +9,15 @@ const securityHeaders = [
 	{ key: "Referrer-Policy", value: "origin-when-cross-origin" }, // https://scotthelme.co.uk/a-new-security-header-referrer-policy/
 	{
 		key: "Permissions-Policy",
-		value: "camera=(), microphone=(), geolocation=(), browsing-topics=()"
+		value: "camera=(), microphone=(), geolocation=()"
 	},
 	{
 		key: "Content-Security-Policy-Report-Only",
 		value: [
-			["default-src", "'self'"],
-			["style-src",   "'self'", "'unsafe-inline'"],
-			["frame-src",    "https://player.vimeo.com/"],
+			["default-src", self],
+			["style-src",   self, "'unsafe-inline'"],
+			["frame-src",   "https://player.vimeo.com/"],
+			["connect-src", self, "https://vitals.vercel-insights.com/"],
 		].map(declaration => {
 			const directive = declaration.shift();
 			const value = declaration.join(" ");
