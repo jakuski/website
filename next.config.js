@@ -1,5 +1,3 @@
-const CONTENT_SECURITY_POLICY_IS_REPORT_ONLY = true;
-
 const securityHeaders = [
 	{ key: "X-DNS-Prefetch-Control", value: "on" },
 	{ key: "Strict-Transport-Security", value: "max-age=63072000; includeSubDomains; preload" },
@@ -12,8 +10,17 @@ const securityHeaders = [
 		value: "camera=(), microphone=(), geolocation=(), browsing-topics=()"
 	},
 	{
-		key: [CONTENT_SECURITY_POLICY_IS_REPORT_ONLY ? "Content-Security-Policy-Report-Only" : "Content-Security-Policy"],
-		value: ""
+		key: "Content-Security-Policy-Report-Only",
+		value: [
+			["default-src", "'self'"],
+			["style-src",   "'self'", "'unsafe-inline'"],
+			["frame-src",    "https://player.vimeo.com/"],
+		].map(declaration => {
+			const directive = declaration.shift();
+			const value = declaration.join(" ");
+
+			return `${directive} ${value}`;
+		}).join("; ")
 	}
 ];
 
