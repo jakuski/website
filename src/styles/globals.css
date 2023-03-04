@@ -22,22 +22,15 @@ a {
 	box-sizing: border-box;
 }
 
-/* For use with <select /> elements */
-.disable-select-arrow-icon {
-	-moz-appearance: none;
+select.reset-appearance {
 	-webkit-appearance: none;
+	-moz-appearance: none;
 	appearance: none;
 	text-indent: 0.1;
 	text-overflow: "";
 }
 
-select {
-	-webkit-appearance: none;
-	-moz-appearance: none;
-	appearance: none;
-}
-
-select::-ms-expand {
+select.reset-appearance::-ms-expand {
 	display: none;
 }
 

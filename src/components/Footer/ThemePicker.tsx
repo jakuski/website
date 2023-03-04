@@ -7,7 +7,7 @@ import If from "../If";
 
 const selectName = "site-wide-theme-picker";
 const selectClassName =
-	"py-1 pl-2 pr-8 rounded bg-stone-300 dark:bg-stone-700 text-stone-900 dark:text-stone-200 shadow";
+	"py-1 pl-2 pr-8 rounded bg-stone-300 dark:bg-stone-700 text-stone-900 dark:text-stone-200 shadow reset-appearance";
 
 const ThemePicker = () => {
 	const { theme, setTheme, systemTheme } = useTheme();
