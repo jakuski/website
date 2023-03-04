@@ -22,13 +22,16 @@ a {
 	box-sizing: border-box;
 }
 
-/* For use with <select /> elements */
-.disable-select-arrow-icon {
-	-moz-appearance: none;
+select.reset-appearance {
 	-webkit-appearance: none;
+	-moz-appearance: none;
 	appearance: none;
 	text-indent: 0.1;
 	text-overflow: "";
+}
+
+select.reset-appearance::-ms-expand {
+	display: none;
 }
 
 /* Disable blue tap highlight on mobile */

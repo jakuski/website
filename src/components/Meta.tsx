@@ -28,7 +28,7 @@ export const createHtmlTitleString = (
 	pageTitle: string,
 	omitSuffix?: boolean
 ): string => {
-	return pageTitle + (omitSuffix ? "" : ` - ${websiteName}`);
+	return pageTitle + (omitSuffix ? "" : ` — ${websiteName}`);
 };
 
 const Metadata: React.FC<MetaProps> = props => {

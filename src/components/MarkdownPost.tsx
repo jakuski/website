@@ -3,10 +3,12 @@ import { MarkdocData, Frontmatter } from "@/modules/markdown/types";
 import programs from "@/modules/mappings/software-links";
 import { AllApps } from "@/modules/mappings/software-links/types";
 import Metadata from "./Meta";
-import { websiteLocale } from "@/config";
+import { websiteLocale, websiteName } from "@/config";
 import Post from "./Post";
 
-export type MarkdownPostProps = MarkdocData<Frontmatter>;
+export interface MarkdownPostProps extends MarkdocData<Frontmatter> {
+	project?: boolean;
+}
 
 export const MarkdownPost: React.FC<MarkdownPostProps> = props => {
 	const { meta, pageProps, project } = props.frontmatter;
@@ -18,9 +20,14 @@ export const MarkdownPost: React.FC<MarkdownPostProps> = props => {
 		<>
 			<Metadata
 				title={meta.title}
-				description={meta.description}
+				description={
+					meta.description +
+					(props.project ? `\nA project by ${websiteName}.` : "")
+				}
 				published={publishedDate}
+				author={websiteName}
 				modified={modifiedDate}
+				image={meta.image}
 			/>
 			<Post
 				title={meta.displayTitle || meta.title}

@@ -8,7 +8,11 @@ interface Params {
 	id: string;
 }
 
-export default MarkdownPost;
+const ProjectPost: React.FC<MarkdownPostProps> = props => {
+	return <MarkdownPost {...props} project={true} />;
+};
+
+export default ProjectPost;
 
 export const getStaticPaths: GetStaticPaths = async () => {
 	const ids = await getContentIDs(ContentDirectoryNames.PROJECTS);
