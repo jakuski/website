@@ -57,6 +57,7 @@ const nextConfig = {
 						"'unsafe-inline'",
 						isDev && "'unsafe-eval' https://cdn.vercel-insights.com"
 					],
+					["img-src", self, "data:"],
 					["frame-src", "https://player.vimeo.com/"],
 					["connect-src", self, "https://vitals.vercel-insights.com/"]
 				]
