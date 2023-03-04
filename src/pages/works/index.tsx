@@ -42,18 +42,29 @@ interface ProjectLinkProps {
 	description: string;
 	category: string[];
 	image: string;
-	href: string;
+	href?: string;
 	year?: number;
+	comingSoon?: boolean;
 	requestPriorityLoading?: boolean;
 }
 
 const ProjectLink: React.FC<ProjectLinkProps> = props => {
+	const { comingSoon } = props;
 	const { src, alt } = resolveImage(props.image);
 
+	const LinkComponent = comingSoon ? "div" : Link;
+
 	return (
-		<Link
-			href={props.href}
-			className="shadow-md rounded-md mt-4 relative block hover:scale-[1.025] transition-all hover:shadow-lg transform-gpu h-80 overflow-hidden select-none"
+		<LinkComponent
+			href={props.href || ""}
+			className={c(
+				"shadow-md rounded-md mt-4 relative block overflow-hidden select-none",
+				{
+					["h-60 grayscale"]: comingSoon,
+					["h-80 hover:scale-[1.025] transition-all hover:shadow-lg transform-gpu"]:
+						!comingSoon
+				}
+			)}
 		>
 			<Image
 				src={src}
@@ -83,7 +94,9 @@ const ProjectLink: React.FC<ProjectLinkProps> = props => {
 							</div>
 						))}
 					</div>
-					<span className="ml-5">{props.year}</span>
+					<span className="ml-5">
+						{comingSoon ? "Coming soon" : props.year}
+					</span>
 				</div>
 				<div>
 					<h2 className="font-serif text-xl md:text-2xl mb-1 font-bold">
@@ -92,7 +105,7 @@ const ProjectLink: React.FC<ProjectLinkProps> = props => {
 					<p className="font-medium text-sm">{props.description}</p>
 				</div>
 			</div>
-		</Link>
+		</LinkComponent>
 	);
 };
 
@@ -290,6 +303,16 @@ export const getStaticProps = async (): Promise<{
 		};
 
 		computedProjects.push(projectData);
+	}
+
+	for (const project of projectIndexPageSort.comingSoon) {
+		computedProjects.unshift({
+			title: project.title,
+			description: project.description,
+			image: project.image,
+			category: project.category,
+			comingSoon: true
+		});
 	}
 
 	return {

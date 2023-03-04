@@ -5,5 +5,13 @@
 		"the-spectrum-clock",
 		"spotify-postcodes"
 	],
+	"comingSoon": [
+		{
+			"title": "Example Project",
+			"description": "Coming soon test",
+			"category": ["Web Development"],
+			"image": "p/chivas-regal/box_emblem"
+		}
+	],
 	"_wip_projects": []
 }
