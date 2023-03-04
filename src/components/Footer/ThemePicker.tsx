@@ -1,11 +1,12 @@
 import { capitaliseFirstLetter } from "@/utils";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
+import ThemeIcon from "../icons/Theme";
 import If from "../If";
 
 const selectName = "site-wide-theme-picker";
 const selectClassName =
-	"p-1 rounded bg-stone-200 dark:bg-stone-800 text-stone-900 dark:text-stone-200 shadow";
+	"p-1 rounded bg-stone-300 dark:bg-stone-700 text-stone-900 dark:text-stone-200 shadow";
 
 const ThemePicker = () => {
 	const { theme, setTheme, systemTheme } = useTheme();
@@ -20,7 +21,7 @@ const ThemePicker = () => {
 	return (
 		<form className="flex">
 			<div className="mr-3 flex items-center" title="Pick website theme">
-				🎨
+				<ThemeIcon />
 				<label htmlFor={selectName} className="sr-only">
 					Theme
 				</label>
@@ -40,11 +41,11 @@ const ThemePicker = () => {
 					className={selectClassName}
 				>
 					<option value="system">
-						🖥 Device Default (
+						Device Default (
 						{mounted && capitaliseFirstLetter(systemTheme as string)})
 					</option>
-					<option value="dark">🌘 Dark</option>
-					<option value="light">☀️ Light</option>
+					<option value="dark">Dark</option>
+					<option value="light">Light</option>
 				</select>
 			</If>
 		</form>
