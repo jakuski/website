@@ -36,22 +36,22 @@ const ThemePicker = () => {
 
 			<If condition={mounted}>
 				<div className="relative">
-				<select
-					name={selectName}
-					value={theme}
-					onChange={e => setTheme(e.target.value)}
-					className={selectClassName}
-				>
-					<option value="system">
-						Device Default (
-						{mounted && capitaliseFirstLetter(systemTheme as string)})
-					</option>
-					<option value="dark">Dark</option>
-					<option value="light">Light</option>
-				</select>
-				<div className="absolute right-2 top-0 bottom-0 flex items-center pointer-events-none">
-					<ChevronIcon />
-				</div>
+					<select
+						name={selectName}
+						value={theme}
+						onChange={e => setTheme(e.target.value)}
+						className={selectClassName}
+					>
+						<option value="system">
+							Device Default (
+							{mounted && capitaliseFirstLetter(systemTheme as string)})
+						</option>
+						<option value="dark">Dark</option>
+						<option value="light">Light</option>
+					</select>
+					<div className="absolute right-2 top-0 bottom-0 flex items-center pointer-events-none">
+						<ChevronIcon />
+					</div>
 				</div>
 			</If>
 		</form>
