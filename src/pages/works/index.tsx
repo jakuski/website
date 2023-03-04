@@ -6,8 +6,9 @@ import { ContentDirectoryNames, getContentIDs } from "@/modules/fs";
 import projectIndexPageSort from "@/content/projects/_indexPageSort.json";
 import { getStaticMarkdoc } from "@/modules/markdown/server";
 import Metadata from "@/components/Meta";
-import { useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import c from "clsx";
+import { useRouter } from "next/router";
 
 interface ProjectCategoryPillProps {
 	name: string;
@@ -135,13 +136,62 @@ const ProjectCountLabel: React.FC<{
 	);
 };
 
+const FILTER_CATEGORY_QUERY_NAME = "filter";
+
 const ProjectsIndexPage: React.FC<ProjectPageProps> = props => {
 	const categoryCounts = countProjectCategories(props.projects);
-	const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+	const [selectedCategory, _setSelectedCategory] = useState<string | null>(
+		null
+	);
+	const { isReady, query, push } = useRouter();
+
+	// This is to prevent the query params from being applied multiple times
+	const appliedQueryParams = useRef<boolean>(false);
+
+	useEffect(() => {
+		if (!isReady) return;
+		if (appliedQueryParams.current) return;
+
+		appliedQueryParams.current = true;
+
+		if (!query[FILTER_CATEGORY_QUERY_NAME]) return;
+
+		const rawCategoryQuery = query[FILTER_CATEGORY_QUERY_NAME];
+		const categoryQuery = Array.isArray(rawCategoryQuery)
+			? rawCategoryQuery[0]
+			: rawCategoryQuery;
+
+		// If the category doesn't exist, don't apply it
+		if (!categoryCounts[categoryQuery]) return;
+
+		_setSelectedCategory(categoryQuery);
+	}, [isReady, query, categoryCounts]);
+
+	const setSelectedCategory = useCallback(
+		(category: string | null) => {
+			let query;
+
+			if (typeof category === "string") {
+				query = {
+					[FILTER_CATEGORY_QUERY_NAME]: category
+				};
+			}
+
+			push({ query }, undefined, {
+				shallow: true
+			});
+
+			_setSelectedCategory(category);
+		},
+		[push]
+	);
+
+	const title =
+		selectedCategory === null ? "Works" : `${selectedCategory} Works`;
 
 	return (
 		<Post title="Works.">
-			<Metadata title="Works" description="Projects by Jakub Staniszewski" />
+			<Metadata title={title} description="Projects by Jakub Staniszewski" />
 			<p className="mb-4">
 				Here are some of my selected works. Press the buttons below if you would
 				like to filter by category/discipline.
