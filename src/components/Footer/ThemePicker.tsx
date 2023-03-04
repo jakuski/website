@@ -1,12 +1,13 @@
 import { capitaliseFirstLetter } from "@/utils";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
+import ChevronIcon from "../icons/Chevron";
 import ThemeIcon from "../icons/Theme";
 import If from "../If";
 
 const selectName = "site-wide-theme-picker";
 const selectClassName =
-	"p-1 rounded bg-stone-300 dark:bg-stone-700 text-stone-900 dark:text-stone-200 shadow";
+	"py-1 pl-2 pr-8 rounded bg-stone-300 dark:bg-stone-700 text-stone-900 dark:text-stone-200 shadow";
 
 const ThemePicker = () => {
 	const { theme, setTheme, systemTheme } = useTheme();
@@ -34,6 +35,7 @@ const ThemePicker = () => {
 			</If>
 
 			<If condition={mounted}>
+				<div className="relative">
 				<select
 					name={selectName}
 					value={theme}
@@ -47,6 +49,10 @@ const ThemePicker = () => {
 					<option value="dark">Dark</option>
 					<option value="light">Light</option>
 				</select>
+				<div className="absolute right-2 top-0 bottom-0 flex items-center pointer-events-none">
+					<ChevronIcon />
+				</div>
+				</div>
 			</If>
 		</form>
 	);

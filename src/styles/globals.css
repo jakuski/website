@@ -31,6 +31,16 @@ a {
 	text-overflow: "";
 }
 
+select {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
+select::-ms-expand {
+	display: none;
+}
+
 /* Disable blue tap highlight on mobile */
 .disable-tap-highlight {
 	-webkit-tap-highlight-color: transparent;

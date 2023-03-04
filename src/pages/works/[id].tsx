@@ -9,10 +9,7 @@ interface Params {
 }
 
 const ProjectPost: React.FC<MarkdownPostProps> = props => {
-	return <MarkdownPost
-		{...props}
-		project={true}
-	/>;
+	return <MarkdownPost {...props} project={true} />;
 };
 
 export default ProjectPost;
