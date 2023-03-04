@@ -58,10 +58,10 @@ const ProjectLink: React.FC<ProjectLinkProps> = props => {
 		<LinkComponent
 			href={props.href || ""}
 			className={c(
-				"shadow-md rounded-md mt-4 relative block overflow-hidden select-none",
+				"shadow-md rounded-md mt-4 relative block overflow-hidden select-none transition-all",
 				{
-					["h-60 grayscale"]: comingSoon,
-					["h-80 hover:scale-[1.025] transition-all hover:shadow-lg transform-gpu"]:
+					["h-56 grayscale hover:grayscale-0 cursor-not-allowed"]: comingSoon,
+					["h-80 hover:scale-[1.025] hover:shadow-lg transform-gpu"]:
 						!comingSoon
 				}
 			)}
