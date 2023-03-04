@@ -1,32 +1,5 @@
-
-const self = "'self'";
-const securityHeaders = [
-	{ key: "X-DNS-Prefetch-Control", value: "on" },
-	{ key: "Strict-Transport-Security", value: "max-age=63072000; includeSubDomains; preload" },
-	{ key: "X-XSS-Protection", value: "1; mode=block" },
-	{ key: "X-Frame-Options", value: "SAMEORIGIN" },
-	{ key: "X-Content-Type-Options", value: "nosniff" },
-	{ key: "Referrer-Policy", value: "origin-when-cross-origin" }, // https://scotthelme.co.uk/a-new-security-header-referrer-policy/
-	{
-		key: "Permissions-Policy",
-		value: "camera=(), microphone=(), geolocation=()"
-	},
-	{
-		key: "Content-Security-Policy-Report-Only",
-		value: [
-			["default-src", self],
-			["style-src",   self, "'unsafe-inline'"],
-			["script-src",  self, "'unsafe-inline'", "'unsafe-eval'"],
-			["frame-src",   "https://player.vimeo.com/"],
-			["connect-src", self, "https://vitals.vercel-insights.com/"],
-		].map(declaration => {
-			const directive = declaration.shift();
-			const value = declaration.join(" ");
-
-			return `${directive} ${value}`;
-		}).join("; ")
-	}
-];
+const isProd = process.env.NODE_ENV === "production";
+const isDev = !isProd;
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -56,6 +29,48 @@ const nextConfig = {
 		];
 	},
 	async headers() {
+		const CSP_REPORT_URI = "/api/csp-report";
+		const self = "'self'";
+
+		const securityHeaders = [
+			{ key: "X-DNS-Prefetch-Control", value: "on" },
+			{
+				key: "Strict-Transport-Security",
+				value: "max-age=63072000; includeSubDomains; preload"
+			},
+			{ key: "X-XSS-Protection", value: "1; mode=block" },
+			{ key: "X-Frame-Options", value: "SAMEORIGIN" },
+			{ key: "X-Content-Type-Options", value: "nosniff" },
+			{ key: "Referrer-Policy", value: "origin-when-cross-origin" }, // https://scotthelme.co.uk/a-new-security-header-referrer-policy/
+			{
+				key: "Permissions-Policy",
+				value: "camera=(), microphone=(), geolocation=()"
+			},
+			{
+				key: "Content-Security-Policy-Report-Only",
+				value: [
+					["default-src", self],
+					["style-src", self, "'unsafe-inline'"],
+					[
+						"script-src",
+						self,
+						"'unsafe-inline'",
+						isDev && "'unsafe-eval' https://cdn.vercel-insights.com"
+					],
+					["frame-src", "https://player.vimeo.com/"],
+					["connect-src", self, "https://vitals.vercel-insights.com/"]
+				]
+					.map(declarationRaw => {
+						const declaration = declarationRaw.filter(Boolean);
+						const directive = declaration.shift();
+						const value = declaration.join(" ");
+
+						return `${directive} ${value}`;
+					})
+					.join("; ")
+			}
+		];
+
 		return [
 			{
 				// Apply these headers to all routes in your application.
