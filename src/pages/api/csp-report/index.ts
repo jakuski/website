@@ -3,7 +3,7 @@ import type { CspReport } from "./types";
 
 export default async function handler(req: NextRequest) {
 	// ROUTE IS WIP
-	return new Response(null, { status: 404 });
+	return new Response(null, { status: 503 });
 
 	// Only allow POST requests
 	if (req.method !== "POST")
