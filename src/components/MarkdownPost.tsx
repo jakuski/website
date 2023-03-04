@@ -6,7 +6,9 @@ import Metadata from "./Meta";
 import { websiteLocale, websiteName } from "@/config";
 import Post from "./Post";
 
-export type MarkdownPostProps = MarkdocData<Frontmatter>;
+export interface MarkdownPostProps extends MarkdocData<Frontmatter> {
+	project?: boolean;
+};
 
 export const MarkdownPost: React.FC<MarkdownPostProps> = props => {
 	const { meta, pageProps, project } = props.frontmatter;
@@ -18,7 +20,7 @@ export const MarkdownPost: React.FC<MarkdownPostProps> = props => {
 		<>
 			<Metadata
 				title={meta.title}
-				description={meta.description}
+				description={meta.description + (props.project ? `\nA project by ${websiteName}.`  : "")}
 				published={publishedDate}
 				author={websiteName}
 				modified={modifiedDate}
