@@ -3,7 +3,7 @@ import { MarkdocData, Frontmatter } from "@/modules/markdown/types";
 import programs from "@/modules/mappings/software-links";
 import { AllApps } from "@/modules/mappings/software-links/types";
 import Metadata from "./Meta";
-import { websiteLocale } from "@/config";
+import { websiteLocale, websiteName } from "@/config";
 import Post from "./Post";
 
 export type MarkdownPostProps = MarkdocData<Frontmatter>;
@@ -20,7 +20,9 @@ export const MarkdownPost: React.FC<MarkdownPostProps> = props => {
 				title={meta.title}
 				description={meta.description}
 				published={publishedDate}
+				author={websiteName}
 				modified={modifiedDate}
+				image={meta.image}
 			/>
 			<Post
 				title={meta.displayTitle || meta.title}
