@@ -29,7 +29,6 @@ const nextConfig = {
 		];
 	},
 	async headers() {
-		const CSP_REPORT_URI = "/api/csp-report";
 		const self = "'self'";
 
 		const securityHeaders = [
@@ -47,7 +46,7 @@ const nextConfig = {
 				value: "camera=(), microphone=(), geolocation=()"
 			},
 			{
-				key: "Content-Security-Policy-Report-Only", // https://content-security-policy.com/
+				key: "Content-Security-Policy", // https://content-security-policy.com/
 				value: [
 					["default-src", self],
 					["style-src", self, "'unsafe-inline'"],
