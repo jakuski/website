@@ -29,7 +29,6 @@ const nextConfig = {
 		];
 	},
 	async headers() {
-		const CSP_REPORT_URI = "/api/csp-report";
 		const self = "'self'";
 
 		const securityHeaders = [
