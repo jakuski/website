@@ -60,7 +60,7 @@ const ProjectLink: React.FC<ProjectLinkProps> = props => {
 			className={c(
 				"shadow-md rounded-md mt-4 relative block overflow-hidden select-none transition-all",
 				{
-					["h-52 grayscale hover:grayscale-0 cursor-not-allowed"]: comingSoon,
+					["h-52 grayscale cursor-not-allowed"]: comingSoon,
 					["h-80 hover:scale-[1.025] hover:shadow-lg transform-gpu"]:
 						!comingSoon
 				}
