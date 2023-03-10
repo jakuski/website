@@ -59,7 +59,12 @@ const nextConfig = {
 					],
 					["img-src", self, "data:"],
 					["frame-src", "https://player.vimeo.com/"],
-					["connect-src", self, "https://vitals.vercel-insights.com/"]
+					[
+						"connect-src",
+						self,
+						"https://vitals.vercel-insights.com/",
+						"https://ping.withcabin.com"
+					]
 				]
 					.map(declarationRaw => {
 						const declaration = declarationRaw.filter(Boolean);
