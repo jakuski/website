@@ -54,6 +54,7 @@ const nextConfig = {
 						"script-src",
 						self,
 						"'unsafe-inline'",
+						"https://scripts.withcabin.com",
 						isDev && "'unsafe-eval' https://cdn.vercel-insights.com"
 					],
 					["img-src", self, "data:"],
