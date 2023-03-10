@@ -6,8 +6,9 @@ import { ContentDirectoryNames, getContentIDs } from "@/modules/fs";
 import projectIndexPageSort from "@/content/projects/_indexPageSort.json";
 import { getStaticMarkdoc } from "@/modules/markdown/server";
 import Metadata from "@/components/Meta";
-import { useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import c from "clsx";
+import { useRouter } from "next/router";
 
 interface ProjectCategoryPillProps {
 	name: string;
@@ -41,18 +42,29 @@ interface ProjectLinkProps {
 	description: string;
 	category: string[];
 	image: string;
-	href: string;
+	href?: string;
 	year?: number;
+	comingSoon?: boolean;
 	requestPriorityLoading?: boolean;
 }
 
 const ProjectLink: React.FC<ProjectLinkProps> = props => {
+	const { comingSoon } = props;
 	const { src, alt } = resolveImage(props.image);
 
+	const LinkComponent = comingSoon ? "div" : Link;
+
 	return (
-		<Link
-			href={props.href}
-			className="shadow-md rounded-md mt-4 relative block hover:scale-[1.025] transition-all hover:shadow-lg transform-gpu h-80 overflow-hidden select-none"
+		<LinkComponent
+			href={props.href || ""}
+			className={c(
+				"shadow-md rounded-md mt-4 relative block overflow-hidden select-none transition-all",
+				{
+					["h-52 grayscale cursor-not-allowed"]: comingSoon,
+					["h-80 hover:scale-[1.025] hover:shadow-lg transform-gpu"]:
+						!comingSoon
+				}
+			)}
 		>
 			<Image
 				src={src}
@@ -82,7 +94,9 @@ const ProjectLink: React.FC<ProjectLinkProps> = props => {
 							</div>
 						))}
 					</div>
-					<span className="ml-5">{props.year}</span>
+					<span className="ml-5">
+						{comingSoon ? "Coming soon" : props.year}
+					</span>
 				</div>
 				<div>
 					<h2 className="font-serif text-xl md:text-2xl mb-1 font-bold">
@@ -91,7 +105,7 @@ const ProjectLink: React.FC<ProjectLinkProps> = props => {
 					<p className="font-medium text-sm">{props.description}</p>
 				</div>
 			</div>
-		</Link>
+		</LinkComponent>
 	);
 };
 
@@ -135,13 +149,62 @@ const ProjectCountLabel: React.FC<{
 	);
 };
 
+const FILTER_CATEGORY_QUERY_NAME = "filter";
+
 const ProjectsIndexPage: React.FC<ProjectPageProps> = props => {
 	const categoryCounts = countProjectCategories(props.projects);
-	const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+	const [selectedCategory, _setSelectedCategory] = useState<string | null>(
+		null
+	);
+	const { isReady, query, push } = useRouter();
+
+	// This is to prevent the query params from being applied multiple times
+	const appliedQueryParams = useRef<boolean>(false);
+
+	useEffect(() => {
+		if (!isReady) return;
+		if (appliedQueryParams.current) return;
+
+		appliedQueryParams.current = true;
+
+		if (!query[FILTER_CATEGORY_QUERY_NAME]) return;
+
+		const rawCategoryQuery = query[FILTER_CATEGORY_QUERY_NAME];
+		const categoryQuery = Array.isArray(rawCategoryQuery)
+			? rawCategoryQuery[0]
+			: rawCategoryQuery;
+
+		// If the category doesn't exist, don't apply it
+		if (!categoryCounts[categoryQuery]) return;
+
+		_setSelectedCategory(categoryQuery);
+	}, [isReady, query, categoryCounts]);
+
+	const setSelectedCategory = useCallback(
+		(category: string | null) => {
+			let query;
+
+			if (typeof category === "string") {
+				query = {
+					[FILTER_CATEGORY_QUERY_NAME]: category
+				};
+			}
+
+			push({ query }, undefined, {
+				shallow: true
+			});
+
+			_setSelectedCategory(category);
+		},
+		[push]
+	);
+
+	const title =
+		selectedCategory === null ? "Works" : `${selectedCategory} Works`;
 
 	return (
 		<Post title="Works.">
-			<Metadata title="Works" description="Projects by Jakub Staniszewski" />
+			<Metadata title={title} description="Projects by Jakub Staniszewski" />
 			<p className="mb-4">
 				Here are some of my selected works. Press the buttons below if you would
 				like to filter by category/discipline.
@@ -240,6 +303,16 @@ export const getStaticProps = async (): Promise<{
 		};
 
 		computedProjects.push(projectData);
+	}
+
+	for (const project of projectIndexPageSort.comingSoon) {
+		computedProjects.unshift({
+			title: project.title,
+			description: project.description,
+			image: project.image,
+			category: project.category,
+			comingSoon: true
+		});
 	}
 
 	return {
