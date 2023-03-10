@@ -69,6 +69,7 @@ const App: React.FC<{
 
 			<ScriptLoader />
 			<Analytics />
+			<Script defer async src="https://scripts.withcabin.com/hello.js" />
 		</ScriptContextProvider>
 	);
 };
