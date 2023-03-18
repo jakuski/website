@@ -1,17 +1,11 @@
 {
 	"sort": [
+		"ones-and-zeroes",
 		"screwd",
 		"chivas-sovereigns-reserve",
 		"the-spectrum-clock",
 		"spotify-postcodes"
 	],
-	"comingSoon": [
-		{
-			"title": "ones & zeroes",
-			"description": "Upskilling the workforce of tomorrow for a digital world.",
-			"category": ["Interface Design"],
-			"image": "p/wip/ones_and_zeroes"
-		}
-	],
+	"comingSoon": [],
 	"_wip_projects": []
 }
