@@ -8,7 +8,6 @@
 
 ![GitHub top language](https://img.shields.io/github/languages/top/jakub-studio/website?style=flat-square)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
-![Lines of code](https://img.shields.io/tokei/lines/github/jakub-studio/website?style=flat-square)
 ![Website](https://img.shields.io/website?style=flat-square&url=https%3A%2F%2Fjakub.studio)
 ![GitHub deployments](https://img.shields.io/github/deployments/jakub-studio/website/production?label=vercel%20deployment%20state&style=flat-square)
 ![Security Headers](https://img.shields.io/security-headers?style=flat-square&url=https%3A%2F%2Fjakub.studio)
