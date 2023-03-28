@@ -5,6 +5,7 @@ import spectrumClockProjectImages from "./projects/spectrum-clock";
 import spotify21ProjectImages from "./projects/spotify21";
 import screwdProjectImages from "./projects/screwd";
 import chivasRegalProjectImages from "./projects/chivas-regal";
+import onesAndZeroesProjectImages from "./projects/ones-and-zeroes";
 import wipProjectsImages from "./projects/wip";
 
 interface Image {
@@ -21,6 +22,7 @@ const allImagesObject: ImageObject = Object.assign(
 	spectrumClockProjectImages,
 	screwdProjectImages,
 	chivasRegalProjectImages,
+	onesAndZeroesProjectImages,
 	wipProjectsImages
 );
 
