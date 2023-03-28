@@ -4,7 +4,7 @@ const v = varName => `var(--${varName})`;
 
 module.exports = {
 	darkMode: "class",
-	content: ["./src/**/*.{js,ts,jsx,tsx}"],
+	content: ["./src/**/*.{js,ts,jsx,tsx,md}"],
 	theme: {
 		fontFamily: {
 			serif: ["var(--font-serif)", ...defaultTheme.fontFamily.serif],

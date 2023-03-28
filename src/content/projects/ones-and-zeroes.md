@@ -47,6 +47,29 @@ This project was done as part of the {% link href=$links.flipside newWindow=true
 
 This brief was part of four briefs available for Flipside 2023. It was one of the more open briefs and had a lot of room for exploration. The brief was to create a digital product that would help the next generation of workers to succeed in a digital world. The final outcome could be an app, a website or product/service.
 
+## Research
+
+As I dug more and more into the topic, some really worrying numbers began popping up. Primarily the following:
+
+- 4/5 UK jobs require digital skills. {% .diagonal-fractions %}
+- 44% of Gen Z (the next wave of people due to enter the workforce) say education taught them limited digital skills.
+- 37% of Gen Z say that education outright did not teach them enough digital skills to be job-ready.
+
+The combination of the above is also causing the younger generations to feel '[tech shame](https://www.businessinsider.com/gen-z-tech-savvy-tech-shame-survey-2022-12?r=US&IR=T)' at the workplace.
+
+---
+
+#### &ldquo;The assumption is that because Gen Z and even millennials spend a considerable amount of time on technology that, they are technology savvy. This is a huge misconception. Sadly, neither watching TikTok videos nor playing Minecraft fulfills the technology brief.&rdquo; {% .font-serif .text-center %}
+
+#### &ndash; Debbie Irish, head of HP UK & Ireland HR to [Worklife](https://www.worklife.news/technology/myth-buster-young-workers-are-not-tech-savvy-in-the-workplace-and-its-a-growing-problem/). {% .font-serif %}
+
+---
+
+I made the following graph which summaries the above.
+{% gallery %}
+{% galleryImage src="p/screwd/main_menu" /%}
+{% /gallery %}
+
 ## Development {% #development %}
 
 ## Visual style {% #visual-style %}
@@ -59,15 +82,13 @@ Oh, and if this visual style had an anthem, only [this](https://open.spotify.com
 
 The visual style of ones and zeroes is inspired by the following:
 
-I've always been a huge fan of Figma's brand. Their brand studio have created such a brilliant aesthetic for what could be considered boring old design software.
+I've always been a huge fan of Figma's brand. Their brand studio have created such a brilliant aesthetic for what could be considered boring-old design software.
 
 ### Style Kit
 
 I built my own style kit (I don't call it a design system as I don't believe this is on that scale yet.) to ensure consistency within the app. It features a colour palette, custom hand-drawn pixel art icons, typographic styles, effect systems, a grid and a catalogue of interactive components to use.
 
-{% gallery %}
-{% galleryImage src="p/ones-and-zeros/stylekit" /%}
-{% /gallery %}
+{% image src="p/ones-and-zeros/stylekit" /%}
 
 {% link href=$links.project.styleKit newWindow=true %}View system32 style kit on Figma{% /link %}
 
@@ -76,3 +97,10 @@ I built my own style kit (I don't call it a design system as I don't believe thi
 **_VIMEO GOES HERE_**  
 {% link href=$links.project.styleKit newWindow=true %}View final screen designs on Figma{% /link %}  
 {% link href=$links.project.styleKit newWindow=true %}View final prototype on Figma{% /link %}
+
+---
+
+## Further Reading
+
+- links
+- links 2
