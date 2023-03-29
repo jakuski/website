@@ -2,7 +2,7 @@
 meta:
   title: ones & zeroes
   description: Upskilling tomorrow's workforce for a digital world.
-  published: 2023-03-28
+  published: 2023-03-29
   # edited: 2022-07-05
   image: p/ones-and-zeros/cover
 
@@ -17,12 +17,12 @@ variables:
       styleKit: https://example.com
 
 project:
-  date: 2023-03-15 # Double check this
+  date: 2023-03-29
   category: [design.ui, design.ux]
   softwareUsed: [figma.design, figma.figjam]
 ---
 
-ones & zeroes is digital platform to a response to a crisis currently growing in the UK. The next generation coming into the workforce, Generation Z and Alpha soon enough, are not being given the skills they need to succeed in employment within a digital world. They are struggling with skills that most currently in a digital role take for granted/think nothing of. This is a problem that is only going to get worse as the world becomes more and more digital. There are a number of reasons for this, but the main one is that the education system is not keeping up with the pace of change. The curriculum is not being updated to reflect the skills that are needed in the modern world, and the topics that are taught, are not relevant to what a person might do.
+ones & zeroes is a response to a crisis currently growing in the UK. The next generation coming into the workforce, Generation Z and Alpha soon enough, are not being given the skills they need to succeed in employment within a digital world. They are struggling with skills that most currently in a digital role take for granted/think nothing of. This is a problem that is only going to get worse as the world becomes more and more digital and there are a number of reasons for this, but the main one is that the education system is not keeping up with the pace of change. The curriculum is not being updated to reflect the skills that are needed in the modern world, and the topics that are taught, are not relevant to what a person might do.
 
 ## Outcomes {% #outcomes %}
 
@@ -61,16 +61,18 @@ The combination of the above is also causing the younger generations to feel '[t
 
 #### &ldquo;The assumption is that because Gen Z and even millennials spend a considerable amount of time on technology that, they are technology savvy. This is a huge misconception. Sadly, neither watching TikTok videos nor playing Minecraft fulfills the technology brief.&rdquo; {% .font-serif .text-center %}
 
-#### &ndash; Debbie Irish, head of HP UK & Ireland HR to [Worklife](https://www.worklife.news/technology/myth-buster-young-workers-are-not-tech-savvy-in-the-workplace-and-its-a-growing-problem/). {% .font-serif %}
+#### &ndash; Debbie Irish, Head of Human Resources, HP UK & Ireland to&nbsp;[Worklife](https://www.worklife.news/technology/myth-buster-young-workers-are-not-tech-savvy-in-the-workplace-and-its-a-growing-problem/). {% .font-serif %}
 
 ---
 
 I made the following graph which summaries the above.
 {% gallery %}
-{% galleryImage src="p/screwd/main_menu" /%}
+{% galleryImage src="p/ones-and-zeroes/graph" /%}
 {% /gallery %}
 
 ## Development {% #development %}
+
+The project went through the a thorough digital product design process, as taught by Flipside. Here are a few glimpses of the project at different stages such as wireframing, lo-fi and hi-fi prototypes.
 
 ## Visual style {% #visual-style %}
 
@@ -78,11 +80,15 @@ The visual style of ones and zeroes is a breath of fresh air from the modernist 
 
 Oh, and if this visual style had an anthem, only [this](https://open.spotify.com/track/05mAIVLkIWc2d1UBYZBCp8) song would do.
 
+{% comment %}
+
 ### Inspirations
 
 The visual style of ones and zeroes is inspired by the following:
 
 I've always been a huge fan of Figma's brand. Their brand studio have created such a brilliant aesthetic for what could be considered boring-old design software.
+
+{% /comment %}
 
 ### Style Kit
 
@@ -94,13 +100,5 @@ I built my own style kit (I don't call it a design system as I don't believe thi
 
 ## Prototype
 
-**_VIMEO GOES HERE_**  
 {% link href=$links.project.styleKit newWindow=true %}View final screen designs on Figma{% /link %}  
 {% link href=$links.project.styleKit newWindow=true %}View final prototype on Figma{% /link %}
-
----
-
-## Further Reading
-
-- links
-- links 2
