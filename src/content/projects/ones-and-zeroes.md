@@ -34,7 +34,7 @@ ones & zeroes is a response to a crisis currently growing in the UK. The next ge
 
 ## Flipside '23 {% #flipside-information %}
 
-This project was done as part of the {% link href=$links.flipside newWindow=true %}Flipside 2023 programme{% /link %}. The programme aims to get young Londoners into the digital product industry. It's a training programme which lasted 9 weeks for the '23 cohort. The programme was run by {% link href=$links.aNewDirection newWindow=true %}A New Direction{% /link %} and was taught by the following studios:
+This project was done as part of the {% link href=$links.flipside newWindow=true %}Flipside 2023 programme{% /link %}. The programme, which lasts for 12 weeks, aims to get young Londoners into the digital product industry. The programme is run by {% link href=$links.aNewDirection newWindow=true %}A New Direction{% /link %} and was taught by the following studios this year:
 
 - [Made by Many](https://madebymany.com/)
 - [Frog](https://www.frog.co/)
@@ -42,6 +42,8 @@ This project was done as part of the {% link href=$links.flipside newWindow=true
 - [Normally](https://normally.com/)
 - [Bynd](https://bynd.com/)
 - [Digitas](https://www.digitas.com/en-gb/)
+
+It was an incredible journey, and I couldn't have been more thankful to have been selected. I've learned so much even coming from a UI/graphic design background and met so many incredibly talented and lovely people from the cohort and the design industry. I would highly recommend this programme to anyone who is interested in a career in digital product design. Applications to Flipside generally open around early November each year on A New Direction's {% link href=$links.aNewDirection newWindow=true %}website{% /link %}.
 
 ## Brief {% #brief %}
 
@@ -74,21 +76,21 @@ I made the following graph which summaries the above.
 
 The project went through the a thorough digital product design process, as taught by Flipside. Here are a few glimpses of the project at different stages such as wireframing, lo-fi and hi-fi prototypes.
 
+{% gallery %}
+{% galleryImage src="p/ones-and-zeroes/graph" /%}
+{% /gallery %}
+
 ## Visual style {% #visual-style %}
 
-The visual style of ones and zeroes is a breath of fresh air from the modernist [and most times, rather soul-less] interfaces of today.
+The visual style of ones and zeroes is a breath of fresh air from the modernist [and most times, rather soul-less] interfaces of today. I would describe it as [neo-brutalist](https://webdesign.tutsplus.com/articles/what-is-the-neubrutalism-web-design-trend--cms-41576), with strong outlines, bold and bright colours
 
 Oh, and if this visual style had an anthem, only [this](https://open.spotify.com/track/05mAIVLkIWc2d1UBYZBCp8) song would do.
-
-{% comment %}
 
 ### Inspirations
 
 The visual style of ones and zeroes is inspired by the following:
 
 I've always been a huge fan of Figma's brand. Their brand studio have created such a brilliant aesthetic for what could be considered boring-old design software.
-
-{% /comment %}
 
 ### Style Kit
 
