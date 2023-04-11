@@ -108,7 +108,7 @@ export default function Home() {
 						</div>
 
 						<div className="text-xl tracking-tight">
-							Seeking digital product design roles.
+							Seeking digital product design/development roles.
 						</div>
 					</div>
 				</div>
