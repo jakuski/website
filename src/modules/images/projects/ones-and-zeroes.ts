@@ -10,6 +10,14 @@ import imageLofi from "@/content/_images/projects/flipside-ones-and-zeroes/lofi.
 import imageHifiDev from "@/content/_images/projects/flipside-ones-and-zeroes/hifi-dev.png";
 import imageHifiDevFinal from "@/content/_images/projects/flipside-ones-and-zeroes/hifi-dev-final.png";
 
+import imageOutcomes1 from "@/content/_images/projects/flipside-ones-and-zeroes/outcomes-1.jpg";
+import imageOutcomes2 from "@/content/_images/projects/flipside-ones-and-zeroes/outcomes-2.jpg";
+import imageOutcomes3 from "@/content/_images/projects/flipside-ones-and-zeroes/outcomes-3.jpg";
+import imageOutcomes4 from "@/content/_images/projects/flipside-ones-and-zeroes/outcomes-4.jpg";
+import imageOutcomes5 from "@/content/_images/projects/flipside-ones-and-zeroes/outcomes-5.jpg";
+import imageOutcomes6 from "@/content/_images/projects/flipside-ones-and-zeroes/outcomes-6.jpg";
+import imageOutcomes7 from "@/content/_images/projects/flipside-ones-and-zeroes/outcomes-7.jpg";
+
 const images: ImageObject = {
 	"p/ones-and-zeros/cover": {
 		src: imageCover,
@@ -42,6 +50,34 @@ const images: ImageObject = {
 	"p/ones-and-zeroes/hifi-dev-final": {
 		src: imageHifiDevFinal,
 		alt: "In-development high-fidelity designs of the app."
+	},
+	"p/ones-and-zeroes/outcomes-1": {
+		src: imageOutcomes1,
+		alt: "Screenshots of the app's startup."
+	},
+	"p/ones-and-zeroes/outcomes-2": {
+		src: imageOutcomes2,
+		alt: "Screenshots of the app's auth flow."
+	},
+	"p/ones-and-zeroes/outcomes-3": {
+		src: imageOutcomes3,
+		alt: "Screenshots of the app as a new/core level user."
+	},
+	"p/ones-and-zeroes/outcomes-4": {
+		src: imageOutcomes4,
+		alt: "Screenshots of the app's learning experience."
+	},
+	"p/ones-and-zeroes/outcomes-5": {
+		src: imageOutcomes5,
+		alt: "Screenshots of the app's learning experience (continued)."
+	},
+	"p/ones-and-zeroes/outcomes-6": {
+		src: imageOutcomes6,
+		alt: "Screenshots of the app as a advanced level user."
+	},
+	"p/ones-and-zeroes/outcomes-7": {
+		src: imageOutcomes7,
+		alt: "Screenshots of the app as a professional level user."
 	}
 };
 

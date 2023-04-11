@@ -14,9 +14,9 @@ variables:
     flipside: https://www.anewdirection.org.uk/programmes/flipside
     aNewDirection: https://www.anewdirection.org.uk/
     project:
-      styleKit: https://example.com
-      pitchDeck: https://example.com
-      prototype: https://example.com
+      styleKit: https://www.figma.com/file/zDIOmuw1YwZSQ4lTbxxI8S/Ones-%26-Zeroes---Public-Copy?node-id=0-1
+      pitchDeck: https://www.figma.com/file/zDIOmuw1YwZSQ4lTbxxI8S/Ones-%26-Zeroes---Public-Copy?node-id=10-992
+      prototype: https://www.figma.com/proto/zDIOmuw1YwZSQ4lTbxxI8S/Ones-and-Zeroes-Public-Copy?node-id=18-993&viewport=1569%2C1245%2C0.23&scaling=scale-down&starting-point-node-id=21%3A1767&show-proto-sidebar=1
       designs: https://example.com
 
 project:
@@ -30,7 +30,13 @@ ones & zeroes is a response to a crisis currently growing in the UK. The next ge
 ## Outcomes {% #outcomes %}
 
 {% gallery %}
-{% galleryImage src="p/screwd/main_menu" /%}
+{% galleryImage src="p/ones-and-zeroes/outcomes-1" /%}
+{% galleryImage src="p/ones-and-zeroes/outcomes-2" /%}
+{% galleryImage src="p/ones-and-zeroes/outcomes-3" /%}
+{% galleryImage src="p/ones-and-zeroes/outcomes-4" /%}
+{% galleryImage src="p/ones-and-zeroes/outcomes-5" /%}
+{% galleryImage src="p/ones-and-zeroes/outcomes-6" /%}
+{% galleryImage src="p/ones-and-zeroes/outcomes-7" /%}
 {% /gallery %}
 
 ---
@@ -109,7 +115,7 @@ I built my own style kit (I don't call it a design system as I don't believe thi
 
 ## Prototype {% #prototypes %}
 
-{% link href=$links.project.designs newWindow=true %}View final screen designs on Figma{% /link %}  
+You can view the prototype on Figma, it is not fully interactive as it's generally not a good idea to have a fully interactive with every single element clickable/interactive due to cost/value factor. However, it will give you a good sense of the app.
 {% link href=$links.project.prototype newWindow=true %}View final prototype on Figma{% /link %}
 
 ## Pitch Deck {% #pitch-deck %}
