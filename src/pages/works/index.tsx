@@ -18,6 +18,13 @@ interface ProjectCategoryPillProps {
 	onClick?: () => void;
 }
 
+interface ComingSoonProject {
+	title: string;
+	description: string;
+	image: string;
+	category: string[];
+}
+
 const ProjectCategoryPill: React.FC<ProjectCategoryPillProps> = props => {
 	const className = c(
 		"border dark:border-stone-700 rounded-full flex px-4 py-2 items-center justify-center transition-all shrink-0 select-none disable-tap-highlight",
@@ -305,7 +312,9 @@ export const getStaticProps = async (): Promise<{
 		computedProjects.push(projectData);
 	}
 
-	for (const project of projectIndexPageSort.comingSoon) {
+	const comingSoonProjects =
+		projectIndexPageSort.comingSoon as ComingSoonProject[];
+	for (const project of comingSoonProjects) {
 		computedProjects.unshift({
 			title: project.title,
 			description: project.description,

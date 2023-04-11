@@ -8,6 +8,7 @@
         "editor.autoClosingBrackets": "always"
 	},
 	"files.associations": {
-		"*.css": "tailwindcss" 
+		"*.css": "tailwindcss" ,
+		"*.md": "markdoc"
 	}
 }
