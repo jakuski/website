@@ -3,7 +3,7 @@ meta:
   title: ones & zeroes
   description: Upskilling tomorrow's workforce for a digital world.
   published: 2023-03-29
-  # edited: 2022-07-05
+  edited: 2023-04-11
   image: p/ones-and-zeros/cover
 
 pageProps:
