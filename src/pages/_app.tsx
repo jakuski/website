@@ -16,8 +16,12 @@ import { ThemeProvider } from "next-themes";
 import { Analytics } from "@vercel/analytics/react";
 /* import StorageConsentBanner from "@/components/StorageConsent/Banner"; */
 
-import { Inter, Libre_Baskerville } from "next/font/google";
-const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
+import localFont from "next/font/local";
+import { Libre_Baskerville } from "next/font/google";
+const fontSans = localFont({
+	src: "../styles/fonts/sans/Switzer-Variable.ttf",
+	variable: "--font-sans"
+});
 const libreBaskerville = Libre_Baskerville({
 	subsets: ["latin"],
 	weight: ["400", "700"],
@@ -29,7 +33,7 @@ const libreBaskerville = Libre_Baskerville({
 // The Gallery component is appended to the end of document.body, which is
 // outside of the scope of the <div id="fonts-root"> element.
 export const fontClassNames = [
-	inter.variable,
+	fontSans.variable,
 	libreBaskerville.variable,
 	"font-sans"
 ].join(" ");
