@@ -19,7 +19,16 @@ import { Analytics } from "@vercel/analytics/react";
 import localFont from "next/font/local";
 import { Libre_Baskerville } from "next/font/google";
 const fontSans = localFont({
-	src: "../styles/fonts/sans/Switzer-Variable.ttf",
+	src: [
+		{
+			path: "../styles/fonts/sans/Switzer-Variable.ttf",
+			style: "normal"
+		},
+		{
+			path: "../styles/fonts/sans/Switzer-VariableItalic.ttf",
+			style: "italic"
+		}
+	],
 	variable: "--font-sans"
 });
 const libreBaskerville = Libre_Baskerville({
