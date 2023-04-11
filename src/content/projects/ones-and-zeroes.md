@@ -115,7 +115,7 @@ I built my own style kit (I don't call it a design system as I don't believe thi
 
 ## Prototype {% #prototypes %}
 
-You can view the prototype on Figma, it is not fully interactive as it's generally not a good idea to have a fully interactive with every single element clickable/interactive due to cost/value factor. However, it will give you a good sense of the app.
+You can view the prototype on Figma, it is not fully interactive as it's generally not a good idea to have a fully interactive with every single element clickable/interactive due to cost/value factor. However, it will give you a good sense of the app.  
 {% link href=$links.project.prototype newWindow=true %}View final prototype on Figma{% /link %}
 
 ## Pitch Deck {% #pitch-deck %}
