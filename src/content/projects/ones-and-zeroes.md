@@ -49,7 +49,7 @@ This project was done as part of the {% link href=$links.flipside newWindow=true
 - [Frog](https://www.frog.co/)
 - [ustwo](https://ustwo.com/)
 - [Normally](https://normally.com/)
-- [Bynd](https://bynd.com/)
+- [Beyond](https://bynd.com/)
 - [Digitas](https://www.digitas.com/en-gb/)
 
 It was an incredible journey, and I couldn't have been more thankful to have been selected. I've learned so much even coming from a UI/graphic design background and met so many incredibly talented and lovely people from the cohort and the design industry. I would highly recommend this programme to anyone who is interested in a career in digital product design. Applications to Flipside generally open around early November each year on A New Direction's {% link href=$links.aNewDirection newWindow=true %}website{% /link %}. I highly recommend it over any boot-camp out there.
