@@ -1,7 +1,7 @@
 export const categoriesMappings = {
 	// Design
-	"design.ui": "Interface Design",
-	"design.ux": "Experience Design",
+	"design.ui": "UI Design",
+	"design.ux": "UX Design",
 	"design.motion": "Motion",
 	"design.editorial": "Editorial Design",
 	"design.branding": "Branding",
