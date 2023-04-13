@@ -20,7 +20,7 @@ const ThemePicker = () => {
 	}, []);
 
 	return (
-		<form className="flex">
+		<form className="flex print:hidden">
 			<div className="mr-3 flex items-center" title="Pick website theme">
 				<ThemeIcon />
 				<label htmlFor={selectName} className="sr-only">
