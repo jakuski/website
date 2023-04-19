@@ -9,6 +9,7 @@ import Metadata from "@/components/Meta";
 import { useCallback, useEffect, useRef, useState } from "react";
 import c from "clsx";
 import { useRouter } from "next/router";
+import { isDev } from "@/utils";
 
 interface ProjectCategoryPillProps {
 	name: string;
@@ -163,29 +164,37 @@ const ProjectsIndexPage: React.FC<ProjectPageProps> = props => {
 	const [selectedCategory, _setSelectedCategory] = useState<string | null>(
 		null
 	);
-	const { isReady, query, push } = useRouter();
+	const { isReady, query, push, asPath } = useRouter();
 
 	// This is to prevent the query params from being applied multiple times
-	const appliedQueryParams = useRef<boolean>(false);
+	const appliedQueryParamsForCache = useRef<string>();
 
 	useEffect(() => {
 		if (!isReady) return;
-		if (appliedQueryParams.current) return;
+		if (appliedQueryParamsForCache.current === asPath) return;
+		appliedQueryParamsForCache.current = asPath;
 
-		appliedQueryParams.current = true;
-
-		if (!query[FILTER_CATEGORY_QUERY_NAME]) return;
+		if (!query[FILTER_CATEGORY_QUERY_NAME]) {
+			return _setSelectedCategory(null);
+		}
 
 		const rawCategoryQuery = query[FILTER_CATEGORY_QUERY_NAME];
+
+		// This handles cases where there are multiple query params with the same name such as /test?filter=foo&filter=bar
+		// This will only use the first one, if there are multiple.
 		const categoryQuery = Array.isArray(rawCategoryQuery)
 			? rawCategoryQuery[0]
 			: rawCategoryQuery;
+
+		if (isDev) {
+			console.log(query, asPath);
+		}
 
 		// If the category doesn't exist, don't apply it
 		if (!categoryCounts[categoryQuery]) return;
 
 		_setSelectedCategory(categoryQuery);
-	}, [isReady, query, categoryCounts]);
+	}, [isReady, query, categoryCounts, asPath]);
 
 	const setSelectedCategory = useCallback(
 		(category: string | null) => {
