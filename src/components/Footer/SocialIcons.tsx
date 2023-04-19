@@ -45,7 +45,7 @@ interface SocialLink {
 }
 
 const socialLinks: SocialLink[] = [
-	{ icon: InstagramIcon, href: InstagramRedirectRoute, label: "Instagram" },
+	/* { icon: InstagramIcon, href: InstagramRedirectRoute, label: "Instagram" }, */
 	{ icon: LinkedInIcon, href: LinkedInRedirectRoute, label: "LinkedIn" },
 	{ icon: TwitterIcon, href: TwitterRedirectRoute, label: "Twitter" },
 	{ icon: GitHubIcon, href: GitHubRedirectRoute, label: "GitHub" },
