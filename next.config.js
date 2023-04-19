@@ -6,6 +6,9 @@ const nextConfig = {
 	reactStrictMode: true,
 	productionBrowserSourceMaps: true,
 	poweredByHeader: false,
+	experimental: {
+		appDir: true
+	},
 	rewrites() {
 		return [
 			{
