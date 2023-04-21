@@ -28,12 +28,12 @@ interface ComingSoonProject {
 
 const ProjectCategoryPill: React.FC<ProjectCategoryPillProps> = props => {
 	const className = c(
-		"border dark:border-stone-700 rounded-full flex px-4 py-2 items-center justify-center transition-all shrink-0 select-none disable-tap-highlight",
+		"border dark:border-ui-700 rounded-full flex px-4 py-2 items-center justify-center transition-all shrink-0 select-none disable-tap-highlight",
 		{
-			"opacity-50 hover:opacity-100 text-stone-800 dark:text-stone-300":
+			"opacity-50 hover:opacity-100 text-ui-800 dark:text-ui-300":
 				props.unselected,
-			"border-stone-400": !props.active,
-			"bg-stone-800 border-stone-800 text-stone-100 dark:bg-stone-700 text-stone-50 dark:text-stone-50":
+			"border-ui-400": !props.active,
+			"bg-ui-800 border-ui-800 text-ui-100 dark:bg-ui-700 text-ui-50 dark:text-ui-50":
 				props.active
 		}
 	);

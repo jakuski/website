@@ -26,7 +26,7 @@ const StorageConsentBanner = () => {
 	const [visible, setVisible] = useState(false);
 
 	const containerClassName = c(
-		"bg-stone-800/90 backdrop-blur-lg text-stone-200 text-center py-4 px-6 max-w-3xl mx-auto rounded-md shadow-lg pointer-events-auto",
+		"bg-ui-800/90 backdrop-blur-lg text-ui-200 text-center py-4 px-6 max-w-3xl mx-auto rounded-md shadow-lg pointer-events-auto",
 		"transition-transform translate ease duration-150 transform-gpu",
 		{
 			["translate-y-36"]: !visible

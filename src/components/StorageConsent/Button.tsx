@@ -12,8 +12,8 @@ const Button: React.FC<
 	const className = c(
 		"whitespace-nowrap transition-colors duration-50 rounded px-4 py-2 font-bold shadow-sm",
 		{
-			"bg-stone-600 text-stone-200 hover:bg-stone-500": props.primary === true,
-			"bg-transparent text-stone-200 border border-stone-500 hover:bg-stone-500/20":
+			"bg-ui-600 text-ui-200 hover:bg-ui-500": props.primary === true,
+			"bg-transparent text-ui-200 border border-ui-500 hover:bg-ui-500/20":
 				props.secondary === true
 		},
 		props.className

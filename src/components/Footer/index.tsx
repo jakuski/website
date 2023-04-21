@@ -71,7 +71,7 @@ const Footer: React.FC = () => {
 			</div>
 
 			{isDev && (
-				<div className=" px-4 py-2 bg-brand text-stone-800 max-w-2xl mx-auto">
+				<div className=" px-4 py-2 bg-brand text-ui-800 max-w-2xl mx-auto">
 					This is a development version of my website which is{" "}
 					<strong>not intended</strong> for public viewing. If you believe you
 					are here by mistake, click{" "}

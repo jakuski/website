@@ -1,18 +1,73 @@
+import NoScript from "@/components/misc/NoScript";
+import { defaultThemeColour } from "@/config";
+import { websiteName } from "@/config";
+import { isProd } from "@/utils";
+import SkipToMainButton from "@/components/misc/SkipToMainContent";
+import c from "clsx";
+import Script from "next/script";
+
+import { Inter, Libre_Baskerville } from "next/font/google";
+
+import "@/styles/tailwind.css";
+import "@/styles/globals.css";
+import Providers from "./providers";
+
+const fontText = Inter({ subsets: ["latin"], variable: "--font-sans" });
+const fontDisplay = Libre_Baskerville({
+	subsets: ["latin"],
+	weight: ["400", "700"],
+	style: ["normal", "italic"],
+	variable: "--font-serif"
+});
+
+const bodyClassName = c(
+	// Light
+	"bg-ui-100 text-ui-700",
+	// Dark
+	"dark:bg-ui-900 dark:text-ui-300",
+	// Selections
+	"selection:bg-brand dark:selection:text-ui-800",
+	// Misc
+	"antialiased",
+	fontText.variable,
+	fontDisplay.variable,
+	"font-sans"
+);
+
 export default function RootLayout({
-	// Layouts must accept a children prop.
-	// This will be populated with nested layouts or pages
 	children
 }: {
 	children: React.ReactNode;
 }) {
 	return (
-		<html lang="en">
-			<body>{children}</body>
+		<html lang="en" suppressHydrationWarning>
+			{" "}
+			{/* suppressHydrationWarning is required by next-themes. */}
+			<body className={bodyClassName}>
+				<NoScript />
+				<Providers>
+					<SkipToMainButton />
+					{children}
+				</Providers>
+				<Script defer async src="https://scripts.withcabin.com/hello.js" />
+			</body>
 		</html>
 	);
 }
 
+const titleSeparator = "\u2013"; // en dash (–), written as it's unicode character to avoid VSCode complaining about syntax issues
 export const metadata = {
-	title: "Home",
-	description: "Welcome to Next.js"
+	title: {
+		default: websiteName,
+		template: `%s ${titleSeparator} ${websiteName}`
+	},
+	description: "Welcome to Next.js",
+	themeColor: defaultThemeColour,
+	robots: {
+		index: isProd,
+		follow: isProd
+	},
+	formatDetection: {
+		telephone: false
+	}
 };

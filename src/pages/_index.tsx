@@ -59,7 +59,7 @@ const LoadingCover: React.FC<PropsWithChildren<{}>> = props => {
 
 	const containerClassName = c(
 		"fixed left-0 top-0 h-full w-full flex justify-center items-center",
-		"bg-brand text-stone-900 shadow-md",
+		"bg-brand text-ui-900 shadow-md",
 		" transition-transform duration-300",
 		{ ["translate-y-0"]: !reveal, ["-translate-y-full"]: reveal }
 	);

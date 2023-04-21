@@ -1,4 +1,5 @@
 const defaultTheme = require("tailwindcss/defaultTheme");
+const defaultColors = require("tailwindcss/colors");
 
 const v = varName => `var(--${varName})`;
 
@@ -11,10 +12,11 @@ module.exports = {
 			// this is not the way things should be done iirc
 			sans: ["var(--font-sans)", ...defaultTheme.fontFamily.sans]
 		},
+		colors: {
+			ui: defaultColors.stone,
+			brand: "#ffa50a"
+		},
 		extend: {
-			colors: {
-				brand: "#ffa50a"
-			},
 			minHeight: {
 				44: "44px"
 			},
