@@ -5,11 +5,11 @@ import c from "clsx";
 const getHeaderClassName = (level: number): string => {
 	switch (level) {
 		case 2:
-			return "text-xl mb-1";
+			return "text-2xl mb-2 mt-4 font-bold";
 		case 3:
-			return "text-lg mb-1";
+			return "text-xl mb-1 mt-2 font-medium";
 		case 4:
-			return "mb-1";
+			return "mb-1 font-bold";
 		default:
 			return "";
 	}
@@ -53,11 +53,7 @@ const Header: React.FC<
 		`h${props.level}`,
 		{
 			id: props.id,
-			className: c(
-				getHeaderClassName(props.level),
-				"font-bold",
-				props.className
-			)
+			className: c(getHeaderClassName(props.level), "", props.className)
 		},
 		children
 	);
