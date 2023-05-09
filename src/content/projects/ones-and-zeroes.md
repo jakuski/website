@@ -41,24 +41,9 @@ ones & zeroes is a response to a crisis currently growing in the UK. The next ge
 
 ---
 
-## Flipside '23 {% #flipside %}
-
-This project was done as part of the {% link href=$links.flipside newWindow=true %}Flipside 2023 programme{% /link %}. The programme, which lasts for 12 weeks, aims to get young Londoners into the digital product industry. The programme is run by {% link href=$links.aNewDirection newWindow=true %}A New Direction{% /link %} and was taught by the following studios this year:
-
-- [Made by Many](https://madebymany.com/)
-- [Frog](https://www.frog.co/)
-- [ustwo](https://ustwo.com/)
-- [Normally](https://normally.com/)
-- [Beyond](https://bynd.com/)
-- [Digitas](https://www.digitas.com/en-gb/)
-
-It was an incredible journey, and I couldn't have been more thankful to have been selected. I've learned so much even coming from a UI/graphic design background and met so many incredibly talented and lovely people from the cohort and the design industry. I would highly recommend this programme to anyone who is interested in a career in digital product design. Applications to Flipside generally open around early November each year on A New Direction's {% link href=$links.aNewDirection newWindow=true %}website{% /link %}. I highly recommend it over any boot-camp out there.
-
----
-
 ## Brief {% #brief %}
 
-This brief was part of four briefs available for Flipside 2023. It was one of the more open briefs and had a lot of room for exploration. The brief was to create a digital product that would help the next generation of workers to succeed in a digital world. The final outcome could be an app, a website or product/service. It was a very open brief which was great as it allowed to explore some really interesting ideas and concepts, however, with such open briefs there is a danger that you can get lost in the exploration and not actually create anything. With only 9 weeks to go from nothing to a prototype with a pitch deck, timing was of the essence.
+This brief was part of four briefs available for [Flipside 2023](#flipside). It was one of the more open briefs and had a lot of room for exploration. The brief was to create a digital product that would help the next generation of workers to succeed in a digital world. The final outcome could be an app, a website or product/service. It was a very open brief which was great as it allowed to explore some really interesting ideas and concepts, however, with such open briefs there is a danger that you can get lost in the exploration and not actually create anything. With only 9 weeks to go from nothing to a prototype with a pitch deck, timing was of the essence.
 
 ## Research {% #research %}
 
@@ -78,7 +63,7 @@ The combination of the above is also causing the younger generations to feel '[t
 
 ---
 
-I made the following graph which summaries the above.
+I made the following graph which summaries the above, comparing average digital skills in relation to age and time spent on electronic devices.
 {% gallery %}
 {% galleryImage src="p/ones-and-zeroes/graph" /%}
 {% /gallery %}
@@ -94,16 +79,23 @@ The project went through the a thorough digital product design process, as taugh
 {% galleryImage src="p/ones-and-zeroes/wireframes-1" /%}
 {% galleryImage src="p/ones-and-zeroes/wireframes-2" /%}
 {% /galleryRow %}
-{% galleryRow %}
 {% galleryImage src="p/ones-and-zeroes/lofi" /%}
-{% galleryImage src="p/ones-and-zeroes/hifi-dev" /%}
-{% /galleryRow %}
-{% galleryImage src="p/ones-and-zeroes/hifi-dev-final" /%}
 {% /gallery %}
 
-## Visual style {% #visual-style %}
+### User Testing/UX Interviews {% #user-testing %}
 
-The visual style of ones and zeroes is a breath of fresh air from the modernist [and most times, rather soul-less] interfaces of today. I would describe it as [neo-brutalist](https://webdesign.tutsplus.com/articles/what-is-the-neubrutalism-web-design-trend--cms-41576), with strong outlines, bold colours and playful typography . A visual archetype of [this](https://open.spotify.com/track/05mAIVLkIWc2d1UBYZBCp8). It was inspired by brands/products such as [Figma](https://www.figma.com/), [Equals](https://equals.app/) and [Thursday](https://www.getthursday.com/).
+This project is my first where I went through thorough user testing and UX interviewing. I was able to interview a range of people (with a predefined discussion guide) who fit within the target market for the app and was able to gather some really interesting insights into user behaviours and what they expected on certain button presses. It actually revealed the biggest flaw in my initial designs and the content structure. Initially, I had used a traditional tab bar for navigation however this lead to a lot of confusion on which "tab" certain content should be. As a result of this, I looked over my app's structure once again and decided on a single top level page with navigation links within it rather than a tab bar. After testing the design again, it was clear that this change lead to significantly less confusion and a much better user experience.
+
+### Visual style {% #visual-style %}
+
+The visual style of ones and zeroes is a breath of fresh air from the modernist [and most times, rather soul-less] interfaces of today. I would describe it as [neo-brutalist](https://webdesign.tutsplus.com/articles/what-is-the-neubrutalism-web-design-trend--cms-41576), with strong outlines, bold colours and playful typography. It aims to mimic the Y2K era and I'd describe the app as a visual archetype of [Charli XCX - 1999](https://open.spotify.com/track/05mAIVLkIWc2d1UBYZBCp8). It was inspired by brands/products such as [Figma](https://www.figma.com/), [Equals](https://equals.app/) and [Thursday](https://www.getthursday.com/).
+
+{% gallery %}
+{% galleryRow %}
+{% galleryImage src="p/ones-and-zeroes/hifi-dev" /%}
+{% galleryImage src="p/ones-and-zeroes/hifi-dev-final" /%}
+{% /galleryRow %}
+{% /gallery %}
 
 ### Style Kit {% #style-kit %}
 
@@ -120,5 +112,32 @@ You can view the prototype on Figma, it is not fully interactive as it's general
 
 ## Pitch Deck {% #pitch-deck %}
 
-As part of [Flipside](#flipside-information), we had to present our project back to the studios that taught us in the form of a pitch deck. We had only 3 minutes to present our pitch which was extremely challenging, there is a lot of work that went into the project that simply could not be shown due to the time restraint. Regardless, I'm happy with how the pitch turned out and happy to have had the opportunity to improve my public speaking skills. The entire final showcase event was simply fantastic.  
+As part of [Flipside](#flipside), we had to present our project back to the studios that taught us in the form of a pitch deck. We had only 3 minutes to present our pitch which was extremely challenging, there is a lot of work that went into the project that simply could not be shown due to the time restraint. Regardless, I'm happy with how the pitch turned out and happy to have had the opportunity to improve my public speaking skills. The entire final showcase event was simply fantastic.  
 {% link href=$links.project.pitchDeck newWindow=true %}View the pitch deck on Figma{% /link %}
+
+## Evaluation & Next Steps {% #evaluation %}
+
+Overall, the project went really well. I learnt a lot in terms of UX such as UX interviewing, journey mapping, empathy mapping and alike. This project also gave me a chance to push my UI skills with the currently trendy neo-brutalist style, it was really fun to design something that wasn't just another modernist/flat interface. It was also my first project where I drew the icons for this project entirely from scratch. However there are still some areas where I think the project can be improved/extended:
+
+#### Responsive Designs
+
+I had wireframes for tablet and desktop variants of the app, however due to the time restraints of the project, I didn't have time to develop hi-fi variants of those wireframes. It would most definitely be the next step and wouldn't take as much time as the initial mobile designs as the style kit and components already exist. It would be simply be a matter of extending the kit to account for larger screen sizes.
+
+#### Alternate learning styles
+
+There was a lot of research that I did into different learning styles and how they can be applied to digital learning. I would have loved to have explored this further and implemented some of the ideas into the app, such as auditory based learning, or learning via a live-stream/lecture style where a vetted professional in the field is teaching and can answer questions from students, real time.
+
+---
+
+## Flipside '23 {% #flipside %}
+
+This project was done as part of the {% link href=$links.flipside newWindow=true %}Flipside 2023 programme{% /link %}. The programme, which lasts for 12 weeks, aims to get young Londoners into the digital product industry. The programme is run by {% link href=$links.aNewDirection newWindow=true %}A New Direction{% /link %} and was taught by the following studios this year:
+
+- [Made by Many](https://madebymany.com/)
+- [Frog](https://www.frog.co/)
+- [ustwo](https://ustwo.com/)
+- [Normally](https://normally.com/)
+- [Beyond](https://bynd.com/)
+- [Digitas](https://www.digitas.com/en-gb/)
+
+It was an incredible journey, and I couldn't have been more thankful to have been selected. I've learned so much even coming from a UI/graphic design background and met so many incredibly talented and lovely people from the cohort and the design industry. I would highly recommend this programme to anyone who is interested in a career in digital product design. Applications to Flipside generally open around early November each year on A New Direction's {% link href=$links.aNewDirection newWindow=true %}website{% /link %}. I highly recommend it over any boot-camp out there.
