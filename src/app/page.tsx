@@ -5,19 +5,17 @@ import LogoIcon from "@/components/icons/Logo";
 import { websiteName } from "@/config";
 import { c } from "@/utils";
 
-const linkClassName = c(
+const InlineTextLinkClassName = c(
 	"inline text-brand font-bold relative",
 	"after:absolute after:h-[2px] after:w-full after:bg-brand after:opacity-50 after:bottom-0 after:left-0 after:scale-x-0 after:hover:scale-x-100 after:transition-transform after:origin-right",
 	"after:hover:origin-left"
 );
 
-const Link: React.FC<
-	PropsWithChildren<{
-		href: string;
-	}>
-> = props => {
+type InlineTextLinkProps = PropsWithChildren<{ href: string }>;
+
+const InlineTextLink: React.FC<InlineTextLinkProps> = props => {
 	return (
-		<NextLink href={props.href} className={linkClassName}>
+		<NextLink href={props.href} className={InlineTextLinkClassName}>
 			{props.children}
 		</NextLink>
 	);
@@ -38,9 +36,9 @@ export default async function Page() {
 					<div className="mb-6 text-xl tracking-tight">
 						Designing and engineering interfaces for humans.
 						<br />
-						See <Link href="/works">my work</Link>, find out more{" "}
-						<Link href="/about">about me</Link> or{" "}
-						<Link href="/contact">get in touch</Link>.
+						See <InlineTextLink href="/works">my work</InlineTextLink>, find out
+						more <InlineTextLink href="/about">about me</InlineTextLink> or{" "}
+						<InlineTextLink href="/contact">get in touch</InlineTextLink>.
 					</div>
 
 					<div className="text-xl tracking-tight">
