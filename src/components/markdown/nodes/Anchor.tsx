@@ -40,7 +40,7 @@ const Anchor: React.FC<
 	return (
 		<Link
 			href={props.href}
-			className="cursor-pointer text-brand hover:underline font-semibold"
+			className="cursor-pointer font-semibold text-brand hover:underline"
 			target={props.newWindow ? "_blank" : void 0}
 			rel={isExternal ? privateRel : void 0}
 		>

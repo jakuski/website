@@ -92,17 +92,17 @@ export default function Home() {
 				description="Jakub is a multi-disciplinary graphic designer and developer specialising in UI/UX design. "
 				image="g/logo"
 			/>
-			<main className="flex items-center justify-center h-full gap-14 flex-col sm:flex-row mx-8 font-sans">
+			<main className="mx-8 flex h-full flex-col items-center justify-center gap-14 font-sans sm:flex-row">
 				<div>
 					<LogoIcon size={128} />
 				</div>
-				<div className="flex gap-5 flex-col">
+				<div className="flex flex-col gap-5">
 					<div className="max-w-lg">
-						<div className="text-3xl lg:text-5xl leading-tight md:leading-snug lg:leading-[1.25] font-bold tracking-tight mb-6 font-serif">
+						<div className="mb-6 font-serif text-3xl font-bold leading-tight tracking-tight md:leading-snug lg:text-5xl lg:leading-[1.25]">
 							<h1 className="inline lg:block">{websiteName}</h1> is&nbsp;a
 							digital designer and developer based in&nbsp;London.
 						</div>
-						<div className="text-xl mb-6 tracking-tight">
+						<div className="mb-6 text-xl tracking-tight">
 							Designing and engineering interfaces for humans.
 							<br />
 							See <Link href="/works">my work</Link>, find out more{" "}

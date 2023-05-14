@@ -80,18 +80,18 @@ const ProjectLink: React.FC<ProjectLinkProps> = props => {
 				src={src}
 				alt={alt}
 				placeholder="blur"
-				className="rounded-md shadow-inner h-80 object-cover"
+				className="h-80 rounded-md object-cover shadow-inner"
 				fill
 				quality={90}
 				priority={props.requestPriorityLoading === true}
 			/>
 			{/* Bottom black gradient */}
-			<div className="absolute bottom-0 h-2/5 w-full rounded-md bg-gradient-to-t from-black opacity-50" />
+			<div className="from-black absolute bottom-0 h-2/5 w-full rounded-md bg-gradient-to-t opacity-50" />
 			{/* Top black gradient */}
-			<div className="absolute top-0 h-1/5 w-full rounded-md bg-gradient-to-b from-black opacity-50" />
+			<div className="from-black absolute top-0 h-1/5 w-full rounded-md bg-gradient-to-b opacity-50" />
 			{/* Text content */}
-			<div className="absolute bottom-0 left-0 text-white drop-shadow-md h-full w-full flex justify-between flex-col p-4">
-				<div className="uppercase tracking-widest text-xs mb-1 font-medium flex w-full justify-between items-start">
+			<div className="text-white absolute bottom-0 left-0 flex h-full w-full flex-col justify-between p-4 drop-shadow-md">
+				<div className="mb-1 flex w-full items-start justify-between text-xs font-medium uppercase tracking-widest">
 					<div className="leading-normal">
 						{props.category.map((category, index) => (
 							<div key={category} className="inline-block">
@@ -109,10 +109,10 @@ const ProjectLink: React.FC<ProjectLinkProps> = props => {
 					</span>
 				</div>
 				<div>
-					<h2 className="font-serif text-xl md:text-2xl mb-1 font-bold">
+					<h2 className="mb-1 font-serif text-xl font-bold md:text-2xl">
 						{props.title}
 					</h2>
-					<p className="font-medium text-sm">{props.description}</p>
+					<p className="text-sm font-medium">{props.description}</p>
 				</div>
 			</div>
 		</LinkComponent>
@@ -228,7 +228,7 @@ const ProjectsIndexPage: React.FC<ProjectPageProps> = props => {
 				like to filter by category/discipline.
 			</p>
 
-			<div className="flex gap-2 flex-wrap mb-2">
+			<div className="mb-2 flex flex-wrap gap-2">
 				{Object.keys(categoryCounts).map(category => (
 					<ProjectCategoryPill
 						key={category}

@@ -28,7 +28,7 @@ const SocialIcon: React.FC<SocialIconProps> = props => {
 			href={props.href}
 			title={`View my ${props.srLabel} profile`}
 			target="_blank"
-			className="flex items-center justify-center min-h-44 opacity-50 hover:opacity-100 ease transition-opacity duration-150"
+			className="ease flex min-h-44 items-center justify-center opacity-50 transition-opacity duration-150 hover:opacity-100"
 			prefetch={false}
 		>
 			<span className="sr-only">{props.srLabel} icon</span>
@@ -58,7 +58,7 @@ const socialLinks: SocialLink[] = [
 
 const SocialIcons = () => {
 	return (
-		<div className="flex flex-row gap-8 sm:gap-7 md:gap-6 justify-start items-start print:hidden">
+		<div className="flex flex-row items-start justify-start gap-8 print:hidden sm:gap-7 md:gap-6">
 			{socialLinks.map(link => {
 				const href = link.href.hrefWithSource("footer");
 

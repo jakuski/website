@@ -51,7 +51,7 @@ const ThemePicker = () => {
 						<option value="dark">Dark</option>
 						<option value="light">Light</option>
 					</select>
-					<div className="absolute right-2 top-0 bottom-0 flex items-center pointer-events-none">
+					<div className="pointer-events-none absolute inset-y-0 right-2 flex items-center">
 						<ChevronIcon />
 					</div>
 				</div>

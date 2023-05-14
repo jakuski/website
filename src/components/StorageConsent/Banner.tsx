@@ -17,7 +17,7 @@ const Link: React.FC<
 		<li>
 			<NextLink
 				href={props.href.href}
-				className="hover:underline font-bold cursor-pointer text-brand"
+				className="cursor-pointer font-bold text-brand hover:underline"
 			>
 				{props.children}
 			</NextLink>
@@ -37,13 +37,13 @@ const StorageConsentBanner = () => {
 	);
 
 	return (
-		<div className="fixed bottom-2 left-0 right-0 mx-2 z-50 pointer-events-none">
+		<div className="pointer-events-none fixed inset-x-0 bottom-2 z-50 mx-2">
 			<div className={containerClassName} aria-hidden={!visible}>
-				<div className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-between">
+				<div className="flex flex-col justify-between gap-4 sm:flex-row md:gap-6">
 					<div className="flex flex-row gap-6">
 						<CookieClickerEasterEgg />
-						<div className="flex flex-col gap-1 items-start justify-center">
-							<div className="text-xs text-left flex gap-1 flex-col">
+						<div className="flex flex-col items-start justify-center gap-1">
+							<div className="flex flex-col gap-1 text-left text-xs">
 								<p>
 									This website uses browser storage technologies to ensure you
 									get the best experience. By clicking &apos;Accept all&apos;
@@ -57,11 +57,11 @@ const StorageConsentBanner = () => {
 							</div>
 						</div>
 					</div>
-					<div className="flex flex-row sm:flex-col-reverse md:flex-row justify-end sm:justify-center items-center gap-2">
-						<Button secondary className="grow w-full md:grow-0">
+					<div className="flex flex-row items-center justify-end gap-2 sm:flex-col-reverse sm:justify-center md:flex-row">
+						<Button secondary className="w-full grow md:grow-0">
 							Reject non-essential
 						</Button>
-						<Button primary className="grow w-full md:grow-0 md:w-auto">
+						<Button primary className="w-full grow md:w-auto md:grow-0">
 							Accept all
 						</Button>
 					</div>

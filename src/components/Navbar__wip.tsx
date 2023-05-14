@@ -11,10 +11,10 @@ const NavbarLink: React.FC<
 	}>
 > = props => {
 	return (
-		<li className="mx-2 last:ml-2 last:mr-0 hover:text-brand transition-colors duration-150 ">
+		<li className="mx-2 transition-colors duration-150 last:ml-2 last:mr-0 hover:text-brand ">
 			<span
 				onClick={props.onClick}
-				className="flex items-center min-h-44 after:absolute after:h-[2px] after:w-full after:bg-brand after:bottom-3 after:left-0 after:scale-x-0 after:hover:scale-x-100 after:transition-transform after:origin-right after:hover:origin-left after:opacity-50 relative"
+				className="relative flex min-h-44 items-center after:absolute after:bottom-3 after:left-0 after:h-[2px] after:w-full after:origin-right after:scale-x-0 after:bg-brand after:opacity-50 after:transition-transform after:hover:origin-left after:hover:scale-x-100"
 			>
 				{props.children}
 			</span>
@@ -28,17 +28,17 @@ export default function Navbar() {
 
 	return (
 		<>
-			<header className="p-4 md:p-6 fixed w-full flex justify-between items-center select-none z-10 dark:mix-blend-exclusion print:hidden">
+			<header className="fixed z-10 flex w-full select-none items-center justify-between p-4 dark:mix-blend-exclusion print:hidden md:p-6">
 				<Link
 					href={Home.href}
-					className="hover:text-brand transition-colors duration-150"
+					className="transition-colors duration-150 hover:text-brand"
 				>
 					<LogoIcon />
 				</Link>
 
 				<nav>
 					<button
-						className="px-4 py-2 bg-stone-800 rounded-full font-semibold hover:bg-brand hover:text-black"
+						className="bg-stone-800 hover:text-black rounded-full px-4 py-2 font-semibold hover:bg-brand"
 						onClick={() => setIsMenuOpen(!isMenuOpen)}
 					>
 						menu
@@ -46,18 +46,18 @@ export default function Navbar() {
 				</nav>
 			</header>
 			{isMenuOpen && (
-				<div className="fixed top-0 left-0 w-full h-full bg-stone-800 bg-opacity-80 backdrop-blur-xl z-10">
-					<header className="p-4 md:p-6 fixed w-full flex justify-between items-center select-none z-10 dark:mix-blend-exclusion print:hidden">
+				<div className="bg-stone-800 fixed left-0 top-0 z-10 h-full w-full bg-opacity-80 backdrop-blur-xl">
+					<header className="fixed z-10 flex w-full select-none items-center justify-between p-4 dark:mix-blend-exclusion print:hidden md:p-6">
 						<Link
 							href={Home.href}
-							className="hover:text-brand transition-colors duration-150"
+							className="transition-colors duration-150 hover:text-brand"
 						>
 							<LogoIcon />
 						</Link>
 
 						<nav>
 							<button
-								className="px-4 py-2 bg-stone-800 rounded-full font-semibold"
+								className="bg-stone-800 rounded-full px-4 py-2 font-semibold"
 								onClick={() => setIsMenuOpen(!isMenuOpen)}
 							>
 								menu

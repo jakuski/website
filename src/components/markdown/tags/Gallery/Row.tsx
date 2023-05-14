@@ -2,7 +2,7 @@ import { PropsWithChildren } from "react";
 
 const GalleryRow: React.FC<PropsWithChildren> = ({ children }) => {
 	return (
-		<div className="flex gap-2 flex-col md:flex-row justify-between w-full mb-2">
+		<div className="mb-2 flex w-full flex-col justify-between gap-2 md:flex-row">
 			{children}
 		</div>
 	);

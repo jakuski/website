@@ -25,11 +25,11 @@ const FigmaEmbed: React.FC<FigmaEmbedProps> = props => {
 	const src = buildFigmaEmbedUrl(props);
 
 	return (
-		<div className="bg-pure-black rounded-md select-none">
+		<div className="bg-pure-black select-none rounded-md">
 			<div>
 				<iframe
 					src={src}
-					className="w-full aspect-video"
+					className="aspect-video w-full"
 					frameBorder="0"
 					allow="autoplay; fullscreen; picture-in-picture"
 					allowFullScreen

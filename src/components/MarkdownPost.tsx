@@ -67,7 +67,7 @@ const Footnotes: React.FC<FootnotesProps> = props => {
 		<>
 			{props.softwareUsed && props.softwareUsed.length !== 0 && (
 				<FootnoteSection label="Software Used">
-					<ul className="list-disc list-inside">
+					<ul className="list-inside list-disc">
 						{props.softwareUsed.map(id => {
 							const program = programs[id];
 							if (!program) return null;
@@ -119,7 +119,7 @@ interface FootnoteSectionProps extends React.PropsWithChildren {
 const FootnoteSection: React.FC<FootnoteSectionProps> = props => {
 	return (
 		<div className="mb-4">
-			<h4 className="font-bold mb-1">{props.label}</h4>
+			<h4 className="mb-1 font-bold">{props.label}</h4>
 			<div>{props.children}</div>
 		</div>
 	);
