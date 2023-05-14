@@ -5,15 +5,15 @@
 		"url": "https://github.com/jakub-studio/website"
 	},
 	"scripts": {
+		"prepare": "husky install",
 		"dev": "next dev",
 		"build": "next build",
+		"build-analyze": "ANALYZE=true next build",
+		"postbuild": "next-sitemap",
 		"start": "next start",
 		"lint": "next lint --fix",
-		"types": "tsc",
-		"analyze": "ANALYZE=true next build",
-		"postbuild": "next-sitemap",
-		"format": "prettier --write .",
-		"prepare": "husky install"
+		"type-check": "tsc",
+		"format": "prettier --write ."
 	},
 	"dependencies": {
 		"@markdoc/markdoc": "^0.2.2",
