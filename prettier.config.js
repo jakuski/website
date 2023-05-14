@@ -1,3 +1,9 @@
+/*
+links for import sorting:
+- https://github.com/IanVS/prettier-plugin-sort-imports
+- https://github.com/shadcn/ui/blob/main/prettier.config.cjs
+*/
+
 /** @type {import("@ianvs/prettier-plugin-sort-imports").PrettierConfig} */
 module.exports = {
 	useTabs: true,

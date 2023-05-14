@@ -3,8 +3,14 @@
 import { PropsWithChildren } from "react";
 import { ThemeProvider } from "next-themes";
 
-const Providers: React.FC<PropsWithChildren> = ({ children }) => {
-	return <ThemeProvider>{children}</ThemeProvider>;
+import { LOCALSTORAGE_THEME_KEY } from "@/constants";
+
+const AppProviders: React.FC<PropsWithChildren> = ({ children }) => {
+	return (
+		<ThemeProvider attribute="class" storageKey={LOCALSTORAGE_THEME_KEY}>
+			{children}
+		</ThemeProvider>
+	);
 };
 
-export default Providers;
+export default AppProviders;

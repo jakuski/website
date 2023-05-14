@@ -10,9 +10,9 @@ import { defaultThemeColour } from "@/config";
 import { websiteName } from "@/config";
 import { isProd } from "@/utils";
 
+import AppProviders from "./providers";
 import "@/styles/tailwind.css";
 import "@/styles/globals.css";
-import Providers from "./providers";
 
 /* const fontText = Inter({ subsets: ["latin"], variable: "--font-sans" }); */
 
@@ -48,9 +48,9 @@ const bodyClassName = c(
 	"selection:bg-brand dark:selection:text-ui-800",
 	// Misc
 	"antialiased",
-	fontText.variable, // The font#variable property is a CSS class that defines the CSS variables for the typefaces requested above.
+	fontText.variable, // The font#variable property is a CSS class that defines the CSS variables (e.g. --font-sans) for the typefaces requested above.
 	fontDisplay.variable,
-	"font-sans" // font-sans is applied here to act as the default typeface.
+	"font-sans" // font-sans is applied here to act as the default typeface. This effectively applies font-family: var(--font-sans)
 );
 
 export default function RootLayout({
@@ -63,10 +63,10 @@ export default function RootLayout({
 			{/* suppressHydrationWarning is required by next-themes. */}
 			<body className={bodyClassName}>
 				<NoScript />
-				<Providers>
+				<AppProviders>
 					<SkipToMainButton />
 					{children}
-				</Providers>
+				</AppProviders>
 				<Script defer async src="https://scripts.withcabin.com/hello.js" />
 			</body>
 		</html>
