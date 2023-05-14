@@ -1,5 +1,6 @@
 {
-	"extends": "next/core-web-vitals",
+	"$schema": "https://json.schemastore.org/eslintrc.json",
+	"extends": ["next/core-web-vitals", "plugin:tailwindcss/recommended"],
 	"rules": {
 		"indent": "off",
 		"linebreak-style": ["error", "unix"],
