@@ -2,8 +2,9 @@
 // ^ This line is here as the Image component imported below
 // handles alt tags for us.
 
-import { resolveImage } from "@/modules/images";
 import Image from "@/components/markdown/tags/Image";
+import { resolveImage } from "@/modules/images";
+
 import { galleryImageClassName } from "./shared";
 
 const GalleryImage: React.FC<{

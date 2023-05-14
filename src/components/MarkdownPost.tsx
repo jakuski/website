@@ -1,9 +1,10 @@
-import MarkdocRenderer from "@/modules/markdown/client";
-import { MarkdocData, Frontmatter } from "@/modules/markdown/types";
+import { websiteLocale, websiteName } from "@/config";
 import programs from "@/modules/mappings/software-links";
 import { AllApps } from "@/modules/mappings/software-links/types";
+import MarkdocRenderer from "@/modules/markdown/client";
+import { MarkdocData, Frontmatter } from "@/modules/markdown/types";
+
 import Metadata from "./Meta";
-import { websiteLocale, websiteName } from "@/config";
 import Post from "./Post";
 
 export interface MarkdownPostProps extends MarkdocData<Frontmatter> {

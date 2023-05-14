@@ -1,20 +1,19 @@
 import type { Config } from "@markdoc/markdoc";
 
+import Anchor from "./nodes/Anchor";
+import Article from "./nodes/Article";
+import Divider from "./nodes/Divider";
+import Header from "./nodes/Header";
 // Nodes
 import Paragraph from "./nodes/Paragraph";
-import Article from "./nodes/Article";
-import Anchor from "./nodes/Anchor";
-import Header from "./nodes/Header";
-import Divider from "./nodes/Divider";
-
 // Tags
 import Email from "./tags/Email";
-import VimeoEmbed from "./tags/VimeoEmbed";
 import FigmaEmbed, { FIGMA_EMBEDDABLE_URL_REGEX } from "./tags/FigmaEmbed";
-import Image from "./tags/Image";
 import Gallery from "./tags/Gallery";
 import GalleryImage from "./tags/Gallery/Image";
 import GalleryRow from "./tags/Gallery/Row";
+import Image from "./tags/Image";
+import VimeoEmbed from "./tags/VimeoEmbed";
 
 // Common attributes
 const className = { type: String };

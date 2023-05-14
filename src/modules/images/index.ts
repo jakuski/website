@@ -1,11 +1,11 @@
 import { StaticImageData } from "next/image";
 
 import genericImages from "./generic";
-import spectrumClockProjectImages from "./projects/spectrum-clock";
-import spotify21ProjectImages from "./projects/spotify21";
-import screwdProjectImages from "./projects/screwd";
 import chivasRegalProjectImages from "./projects/chivas-regal";
 import onesAndZeroesProjectImages from "./projects/ones-and-zeroes";
+import screwdProjectImages from "./projects/screwd";
+import spectrumClockProjectImages from "./projects/spectrum-clock";
+import spotify21ProjectImages from "./projects/spotify21";
 import wipProjectsImages from "./projects/wip";
 
 interface Image {

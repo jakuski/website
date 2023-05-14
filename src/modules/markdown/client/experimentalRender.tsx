@@ -24,9 +24,9 @@ THE SOFTWARE.
 
 */
 
-import type { Tag, RenderableTreeNodes, Scalar } from "@markdoc/markdoc";
-
 import type { createElement, ComponentType, Fragment, ReactNode } from "react";
+
+import type { Tag, RenderableTreeNodes, Scalar } from "@markdoc/markdoc";
 
 const isTag = (tag: any): tag is Tag => {
 	return !!(tag?.$$mdtype === "Tag");

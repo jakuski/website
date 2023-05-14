@@ -1,5 +1,6 @@
-import { useScript } from "@/modules/script-handler";
 import React from "react";
+
+import { useScript } from "@/modules/script-handler";
 
 // https://developer.vimeo.com/player/sdk/embed
 interface VimeoEmbedProps {

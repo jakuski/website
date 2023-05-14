@@ -1,5 +1,5 @@
-import { resolve, basename } from "path";
 import { readFile, readdir } from "fs";
+import { resolve, basename } from "path";
 
 export const fileShouldBeIgnored = (filename: string): boolean => {
 	return filename.startsWith("_");

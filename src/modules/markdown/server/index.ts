@@ -12,17 +12,19 @@ import {
 	Tokenizer,
 	transform
 } from "@markdoc/markdoc";
-import serialiseTopLevel, { serialise } from "./serialise";
-import parseYaml from "./yaml";
-import { MarkdocData, Frontmatter } from "../types";
+
 import { transformConfig } from "@/components/markdown";
+import { domain, emailDomain } from "@/config";
 import {
 	contentDirectory,
 	ContentDirectoryNames,
 	readContentFile
 } from "@/modules/fs";
-import { domain, emailDomain } from "@/config";
 import { categoriesMappings } from "@/modules/mappings/project-categories";
+
+import { MarkdocData, Frontmatter } from "../types";
+import serialiseTopLevel, { serialise } from "./serialise";
+import parseYaml from "./yaml";
 
 export interface MarkdocLoaderProps {
 	markdocContent: RenderableTreeNode;

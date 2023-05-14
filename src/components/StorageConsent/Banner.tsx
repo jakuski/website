@@ -1,9 +1,12 @@
-import { CookiePolicy, Legal, Privacy, Route } from "@/routes";
-import NextLink from "next/link";
 import { PropsWithChildren, useState } from "react";
+import NextLink from "next/link";
+
+import c from "clsx";
+
+import { CookiePolicy, Legal, Privacy, Route } from "@/routes";
+
 import Button from "./Button";
 import CookieClickerEasterEgg from "./CookieClickerEasterEgg";
-import c from "clsx";
 
 const Link: React.FC<
 	PropsWithChildren<{

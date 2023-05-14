@@ -1,4 +1,3 @@
-import Script from "next/script";
 import {
 	Context,
 	createContext,
@@ -7,6 +6,7 @@ import {
 	useEffect,
 	useState
 } from "react";
+import Script from "next/script";
 
 const scriptDefinitions = {
 	vimeo: "https://player.vimeo.com/api/player.js"

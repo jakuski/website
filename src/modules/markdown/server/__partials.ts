@@ -3,8 +3,9 @@
 // Top level await would be nice?
 //
 
-import { ContentDirectoryNames, getContentIDs } from "@/modules/fs";
 import type { Config } from "@markdoc/markdoc";
+
+import { ContentDirectoryNames, getContentIDs } from "@/modules/fs";
 
 getContentIDs(ContentDirectoryNames.PARTIALS);
 

@@ -1,6 +1,12 @@
 import React from "react";
 import Link from "next/link";
 
+import FigmaIcon from "@/components/icons/Figma";
+import GitHubIcon from "@/components/icons/GitHub";
+import InstagramIcon from "@/components/icons/Instagram";
+import LinkedInIcon from "@/components/icons/LinkedIn";
+import TwitterIcon from "@/components/icons/Twitter";
+import VimeoIcon from "@/components/icons/Vimeo";
 import {
 	Instagram as InstagramRedirectRoute,
 	LinkedIn as LinkedInRedirectRoute,
@@ -10,13 +16,6 @@ import {
 	Route,
 	FigmaCommunityAccount as FigmaCommunityAccountRedirectRoute
 } from "@/routes";
-
-import InstagramIcon from "@/components/icons/Instagram";
-import LinkedInIcon from "@/components/icons/LinkedIn";
-import TwitterIcon from "@/components/icons/Twitter";
-import GitHubIcon from "@/components/icons/GitHub";
-import FigmaIcon from "@/components/icons/Figma";
-import VimeoIcon from "@/components/icons/Vimeo";
 
 interface SocialIconProps extends React.PropsWithChildren {
 	href: string;

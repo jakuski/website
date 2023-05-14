@@ -1,25 +1,21 @@
-import { ImageObject } from "@/modules/images";
-
+import imageAppDevelopment from "@/content/_images/projects/uni-y3-spectrum-clock/app_development_1.png";
+import imageClockDevelopment from "@/content/_images/projects/uni-y3-spectrum-clock/clock_development.png";
 import imageRings from "@/content/_images/projects/uni-y3-spectrum-clock/cover.png";
+// Finals
+import imageFinal1 from "@/content/_images/projects/uni-y3-spectrum-clock/finals_1.png";
+import imageFinal2 from "@/content/_images/projects/uni-y3-spectrum-clock/finals_2.png";
+import imageFinal3 from "@/content/_images/projects/uni-y3-spectrum-clock/finals_3.jpg";
+// CSS
+import imageCSS1 from "@/content/_images/projects/uni-y3-spectrum-clock/gradient_css_compute_1.jpg";
+import imageCSS2 from "@/content/_images/projects/uni-y3-spectrum-clock/gradient_css_compute_2.jpg";
 // Initial ideas
 import imageInitIdea1 from "@/content/_images/projects/uni-y3-spectrum-clock/init_idea_1.png";
 import imageInitIdea2 from "@/content/_images/projects/uni-y3-spectrum-clock/init_idea_2.png";
 import imageInitIdea3 from "@/content/_images/projects/uni-y3-spectrum-clock/init_idea_3.png";
 import imageInitIdea4 from "@/content/_images/projects/uni-y3-spectrum-clock/init_idea_4.png";
-
 // Development
 import imagePalette from "@/content/_images/projects/uni-y3-spectrum-clock/palette.png";
-import imageClockDevelopment from "@/content/_images/projects/uni-y3-spectrum-clock/clock_development.png";
-import imageAppDevelopment from "@/content/_images/projects/uni-y3-spectrum-clock/app_development_1.png";
-
-// CSS
-import imageCSS1 from "@/content/_images/projects/uni-y3-spectrum-clock/gradient_css_compute_1.jpg";
-import imageCSS2 from "@/content/_images/projects/uni-y3-spectrum-clock/gradient_css_compute_2.jpg";
-
-// Finals
-import imageFinal1 from "@/content/_images/projects/uni-y3-spectrum-clock/finals_1.png";
-import imageFinal2 from "@/content/_images/projects/uni-y3-spectrum-clock/finals_2.png";
-import imageFinal3 from "@/content/_images/projects/uni-y3-spectrum-clock/finals_3.jpg";
+import { ImageObject } from "@/modules/images";
 
 const images: ImageObject = {
 	// Cover Image

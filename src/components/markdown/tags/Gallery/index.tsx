@@ -1,5 +1,3 @@
-import dynamic, { DynamicOptionsLoadingProps } from "next/dynamic";
-
 /* import LightGallery from "lightgallery/react";
 import lgZoom from "lightgallery/plugins/zoom";
 import lgThumb from "lightgallery/plugins/thumbnail";
@@ -8,11 +6,15 @@ import "lightgallery/css/lightgallery.css";
 import "lightgallery/css/lg-zoom.css";
 import "lightgallery/css/lg-thumbnail.css"; */
 
-import { Caption } from "@/components/markdown/tags/Image";
-import { galleryImageClassName } from "./shared";
 import { useEffect, useState } from "react";
+import dynamic, { DynamicOptionsLoadingProps } from "next/dynamic";
+
 import clsx from "clsx";
+
+import { Caption } from "@/components/markdown/tags/Image";
 import { fontClassNames } from "@/pages/_app";
+
+import { galleryImageClassName } from "./shared";
 
 interface GalleryProps extends React.PropsWithChildren {
 	caption?: string;

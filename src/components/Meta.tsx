@@ -1,7 +1,8 @@
 import Head from "next/head";
+
 import { websiteName, defaultThemeColour } from "@/config";
-import { About as AboutRoute } from "@/routes";
 import allImagesObject from "@/modules/images";
+import { About as AboutRoute } from "@/routes";
 
 interface MetaProps {
 	/* Basic Meta Stuff */

@@ -1,12 +1,14 @@
+import { Inter, Libre_Baskerville } from "next/font/google";
+import localFont from "next/font/local";
+import Script from "next/script";
+
+import c from "clsx";
+
 import NoScript from "@/components/misc/NoScript";
 import SkipToMainButton from "@/components/misc/SkipToMainContent";
 import { defaultThemeColour } from "@/config";
 import { websiteName } from "@/config";
 import { isProd } from "@/utils";
-import c from "clsx";
-import { Inter, Libre_Baskerville } from "next/font/google";
-import localFont from "next/font/local";
-import Script from "next/script";
 
 import "@/styles/tailwind.css";
 import "@/styles/globals.css";

@@ -1,5 +1,5 @@
-import Link from "next/link";
 import React, { PropsWithChildren } from "react";
+import Link from "next/link";
 
 import {
 	Route,
@@ -11,8 +11,8 @@ import {
 	Contact,
 	CookiePolicy
 } from "@/routes";
-
 import { isDev, isProd } from "@/utils";
+
 import SocialIcons from "./SocialIcons";
 import ThemePicker from "./ThemePicker";
 

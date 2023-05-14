@@ -1,7 +1,9 @@
+import Document, { Html, Head, Main, NextScript } from "next/document";
+
+import c from "clsx";
+
 import { githubRepo, socialHandles } from "@/config";
 import { isProd } from "@/utils";
-import Document, { Html, Head, Main, NextScript } from "next/document";
-import c from "clsx";
 
 // Disable search engine indexing of development and Vercel Preview variants of the website.
 const robotsMetaContent = isProd ? "index,follow" : "noindex,nofollow";

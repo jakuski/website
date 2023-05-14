@@ -1,9 +1,11 @@
-import { capitaliseFirstLetter } from "@/utils";
-import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
+import { useTheme } from "next-themes";
+
+import { capitaliseFirstLetter } from "@/utils";
+
+import If from "../If";
 import ChevronIcon from "../icons/Chevron";
 import ThemeIcon from "../icons/Theme";
-import If from "../If";
 
 const selectName = "site-wide-theme-picker";
 const selectClassName =

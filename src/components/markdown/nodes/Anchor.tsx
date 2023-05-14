@@ -1,7 +1,9 @@
-import { domain } from "@/config";
-import Link from "next/link";
 import React from "react";
+import Link from "next/link";
+
 import { parse, UrlWithStringQuery } from "url";
+
+import { domain } from "@/config";
 
 const domainSplit = domain.split(".");
 

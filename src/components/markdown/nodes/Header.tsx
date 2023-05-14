@@ -1,6 +1,8 @@
-import { isDev } from "@/utils";
 import React from "react";
+
 import c from "clsx";
+
+import { isDev } from "@/utils";
 
 const getHeaderClassName = (level: number): string => {
 	switch (level) {

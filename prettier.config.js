@@ -9,14 +9,17 @@ module.exports = {
 	trailingComma: "none",
 	bracketSpacing: true,
 	importOrder: [
-		"^@core/(.*)$",
+		"react",
+		"next",
+		"^next/(.*)$",
+		"next-themes",
 		"",
-		"^@server/(.*)$",
+		"<THIRD_PARTY_MODULES>",
 		"",
-		"^@ui/(.*)$",
+		"^@/(.*)$",
 		"",
 		"^[./]"
 	],
 	importOrderParserPlugins: ["typescript", "jsx", "decorators-legacy"],
-	importOrderTypeScriptVersion: "5.0.0"
+	importOrderTypeScriptVersion: "5.0.4"
 };

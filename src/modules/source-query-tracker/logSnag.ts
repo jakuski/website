@@ -1,4 +1,5 @@
 import { isProd } from "@/utils";
+
 import { SourceQueryEvent } from "./types";
 
 // cSpell:ignore logsnag

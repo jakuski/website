@@ -1,7 +1,6 @@
-import { ImageObject } from "@/modules/images";
-
-import imageLogo from "@/content/_images/generic/logo.png";
 import imageFigmaLondon from "@/content/_images/generic/figma_london.jpg";
+import imageLogo from "@/content/_images/generic/logo.png";
+import { ImageObject } from "@/modules/images";
 
 const images: ImageObject = {
 	"g/logo": {

@@ -1,7 +1,8 @@
+import { GetStaticPaths, GetStaticProps } from "next";
+
 import { MarkdownPost, MarkdownPostProps } from "@/components/MarkdownPost";
 import { ContentDirectoryNames, getContentIDs } from "@/modules/fs";
 import { getStaticMarkdoc } from "@/modules/markdown/server";
-import { GetStaticPaths, GetStaticProps } from "next";
 
 interface Params {
 	[param: string]: string;

@@ -1,10 +1,13 @@
-import Metadata from "@/components/Meta";
-import NextLink from "next/link";
 import { PropsWithChildren, useEffect, useState } from "react";
+import NextLink from "next/link";
+
+import c from "clsx";
+
+import Metadata from "@/components/Meta";
+import LogoIcon from "@/components/icons/Logo";
+
 import Footer from "../components/Footer";
 import { websiteName } from "../config";
-import LogoIcon from "@/components/icons/Logo";
-import c from "clsx";
 
 const linkClassName = c(
 	"inline text-brand font-bold relative",

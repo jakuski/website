@@ -1,14 +1,16 @@
-import Post from "@/components/Post";
+import { useCallback, useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { resolveImage } from "@/modules/images";
-import { ContentDirectoryNames, getContentIDs } from "@/modules/fs";
-import projectIndexPageSort from "@/content/projects/_indexPageSort.json";
-import { getStaticMarkdoc } from "@/modules/markdown/server";
-import Metadata from "@/components/Meta";
-import { useCallback, useEffect, useRef, useState } from "react";
-import c from "clsx";
 import { useRouter } from "next/router";
+
+import c from "clsx";
+
+import Metadata from "@/components/Meta";
+import Post from "@/components/Post";
+import projectIndexPageSort from "@/content/projects/_indexPageSort.json";
+import { ContentDirectoryNames, getContentIDs } from "@/modules/fs";
+import { resolveImage } from "@/modules/images";
+import { getStaticMarkdoc } from "@/modules/markdown/server";
 import { isDev } from "@/utils";
 
 interface ProjectCategoryPillProps {

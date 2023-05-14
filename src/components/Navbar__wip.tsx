@@ -1,7 +1,9 @@
-import Link from "next/link";
-import { navbar as navbarRoutes, Home } from "@/routes";
-import LogoIcon from "./icons/Logo";
 import { useState } from "react";
+import Link from "next/link";
+
+import { navbar as navbarRoutes, Home } from "@/routes";
+
+import LogoIcon from "./icons/Logo";
 
 const NavbarLink: React.FC<
 	React.PropsWithChildren<{

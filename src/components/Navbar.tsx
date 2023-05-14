@@ -1,5 +1,7 @@
 import Link from "next/link";
+
 import { navbar as navbarRoutes, Home } from "@/routes";
+
 import LogoIcon from "./icons/Logo";
 
 const NavbarLink: React.FC<

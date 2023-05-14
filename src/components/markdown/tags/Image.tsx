@@ -1,7 +1,9 @@
-import { resolveImage } from "@/modules/images";
-import NextImage from "next/image";
 import React from "react";
+import NextImage from "next/image";
+
 import c from "clsx";
+
+import { resolveImage } from "@/modules/images";
 
 export const Caption: React.FC<
 	React.PropsWithChildren<{
