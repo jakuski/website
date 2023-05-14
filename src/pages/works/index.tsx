@@ -86,11 +86,11 @@ const ProjectLink: React.FC<ProjectLinkProps> = props => {
 				priority={props.requestPriorityLoading === true}
 			/>
 			{/* Bottom black gradient */}
-			<div className="from-black absolute bottom-0 h-2/5 w-full rounded-md bg-gradient-to-t opacity-50" />
+			<div className="absolute bottom-0 h-2/5 w-full rounded-md bg-gradient-to-t from-black opacity-50" />
 			{/* Top black gradient */}
-			<div className="from-black absolute top-0 h-1/5 w-full rounded-md bg-gradient-to-b opacity-50" />
+			<div className="absolute top-0 h-1/5 w-full rounded-md bg-gradient-to-b from-black opacity-50" />
 			{/* Text content */}
-			<div className="text-white absolute bottom-0 left-0 flex h-full w-full flex-col justify-between p-4 drop-shadow-md">
+			<div className="absolute bottom-0 left-0 flex h-full w-full flex-col justify-between p-4 text-white drop-shadow-md">
 				<div className="mb-1 flex w-full items-start justify-between text-xs font-medium uppercase tracking-widest">
 					<div className="leading-normal">
 						{props.category.map((category, index) => (

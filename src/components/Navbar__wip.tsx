@@ -38,7 +38,7 @@ export default function Navbar() {
 
 				<nav>
 					<button
-						className="bg-stone-800 hover:text-black rounded-full px-4 py-2 font-semibold hover:bg-brand"
+						className="rounded-full bg-ui-800 px-4 py-2 font-semibold hover:bg-brand hover:text-black"
 						onClick={() => setIsMenuOpen(!isMenuOpen)}
 					>
 						menu
@@ -46,7 +46,7 @@ export default function Navbar() {
 				</nav>
 			</header>
 			{isMenuOpen && (
-				<div className="bg-stone-800 fixed left-0 top-0 z-10 h-full w-full bg-opacity-80 backdrop-blur-xl">
+				<div className="fixed left-0 top-0 z-10 h-full w-full bg-ui-800/80 backdrop-blur-xl">
 					<header className="fixed z-10 flex w-full select-none items-center justify-between p-4 dark:mix-blend-exclusion print:hidden md:p-6">
 						<Link
 							href={Home.href}
