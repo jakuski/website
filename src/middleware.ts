@@ -1,7 +1,8 @@
 import { NextResponse } from "next/server";
 import type { NextRequest, NextFetchEvent } from "next/server";
-import { recordSource } from "@/modules/source-query-tracker";
+
 import { recordSourceQueryMiddleware } from "@/config";
+import { recordSource } from "@/modules/source-query-tracker";
 
 export function middleware(req: NextRequest, event: NextFetchEvent) {
 	if (!recordSourceQueryMiddleware) {

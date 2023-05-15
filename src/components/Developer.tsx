@@ -1,5 +1,6 @@
-import { useDocumentDesignModeDuringDev } from "@/config";
 import { useEffect } from "react";
+
+import { useDocumentDesignModeDuringDev } from "@/config";
 
 export const DeveloperOnly: React.FC = () => {
 	useEffect(() => {

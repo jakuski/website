@@ -1,6 +1,7 @@
 import type { NextRequest } from "next/server";
 
 import Data from "./data.json";
+
 interface DataStructure {
 	links: { [key: string]: string };
 	tempDisable: { [key: string]: string };

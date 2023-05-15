@@ -2,22 +2,37 @@
 import "@/styles/tailwind.css";
 import "@/styles/globals.css";
 import "@/styles/lightgallery.css";
+import { Analytics } from "@vercel/analytics/react";
+import React from "react";
+import { ThemeProvider } from "next-themes";
+import { Libre_Baskerville } from "next/font/google";
+/* import StorageConsentBanner from "@/components/StorageConsent/Banner"; */
+
+import localFont from "next/font/local";
+import Script from "next/script";
+
+import { DeveloperOnly } from "@/components/Developer";
+import If from "@/components/If";
+import SkipToMainButton from "@/components/misc/SkipToMainContent";
+import { ScriptContextProvider, ScriptLoader } from "@/modules/script-handler";
+import { isDev } from "@/utils";
 
 /* App imports */
 import DefaultLayout from "../components/Layout";
-import Script from "next/script";
-import { DeveloperOnly } from "@/components/Developer";
-import If from "@/components/If";
-import { isDev } from "@/utils";
-import React from "react";
-import { ScriptContextProvider, ScriptLoader } from "@/modules/script-handler";
-import SkipToMainButton from "@/components/SkipToMainContent";
-import { ThemeProvider } from "next-themes";
-import { Analytics } from "@vercel/analytics/react";
-/* import StorageConsentBanner from "@/components/StorageConsent/Banner"; */
 
-import { Inter, Libre_Baskerville } from "next/font/google";
-const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
+const fontSans = localFont({
+	src: [
+		{
+			path: "../styles/fonts/sans/Switzer-Variable.ttf",
+			style: "normal"
+		},
+		{
+			path: "../styles/fonts/sans/Switzer-VariableItalic.ttf",
+			style: "italic"
+		}
+	],
+	variable: "--font-sans"
+});
 const libreBaskerville = Libre_Baskerville({
 	subsets: ["latin"],
 	weight: ["400", "700"],
@@ -29,7 +44,7 @@ const libreBaskerville = Libre_Baskerville({
 // The Gallery component is appended to the end of document.body, which is
 // outside of the scope of the <div id="fonts-root"> element.
 export const fontClassNames = [
-	inter.variable,
+	fontSans.variable,
 	libreBaskerville.variable,
 	"font-sans"
 ].join(" ");

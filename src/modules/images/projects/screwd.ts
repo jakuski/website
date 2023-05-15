@@ -1,12 +1,11 @@
-import { ImageObject } from "@/modules/images";
-
-import imageCover from "@/content/_images/projects/uni-y3-screwd/screwd_cover_image.jpg";
-import imageMainMenu from "@/content/_images/projects/uni-y3-screwd/screwd_main_menus.jpg";
-import imageScrewScans from "@/content/_images/projects/uni-y3-screwd/screwd_screw_scans.jpg";
-import imageScrewScanResult from "@/content/_images/projects/uni-y3-screwd/screwd_screw_scan_result.jpg";
-import imageIos from "@/content/_images/projects/uni-y3-screwd/screwd_ios.jpg";
-import imageErrorState from "@/content/_images/projects/uni-y3-screwd/screwd_error_state.jpg";
 import imageDriveSheet from "@/content/_images/projects/uni-y3-screwd/screw_drive_sheet.jpg";
+import imageCover from "@/content/_images/projects/uni-y3-screwd/screwd_cover_image.jpg";
+import imageErrorState from "@/content/_images/projects/uni-y3-screwd/screwd_error_state.jpg";
+import imageIos from "@/content/_images/projects/uni-y3-screwd/screwd_ios.jpg";
+import imageMainMenu from "@/content/_images/projects/uni-y3-screwd/screwd_main_menus.jpg";
+import imageScrewScanResult from "@/content/_images/projects/uni-y3-screwd/screwd_screw_scan_result.jpg";
+import imageScrewScans from "@/content/_images/projects/uni-y3-screwd/screwd_screw_scans.jpg";
+import { ImageObject } from "@/modules/images";
 
 const images: ImageObject = {
 	"p/screwd/cover": {

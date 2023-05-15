@@ -1,18 +1,20 @@
+import Document, { Html, Head, Main, NextScript } from "next/document";
+
+import c from "clsx";
+
 import { githubRepo, socialHandles } from "@/config";
 import { isProd } from "@/utils";
-import Document, { Html, Head, Main, NextScript } from "next/document";
-import c from "clsx";
 
 // Disable search engine indexing of development and Vercel Preview variants of the website.
 const robotsMetaContent = isProd ? "index,follow" : "noindex,nofollow";
 
 const bodyClassName = c(
 	// Light
-	"bg-stone-100 text-stone-700",
+	"bg-ui-100 text-ui-700",
 	// Dark
-	"dark:bg-stone-900 dark:text-stone-300",
+	"dark:bg-ui-900 dark:text-ui-300",
 	// Selections
-	"selection:bg-brand dark:selection:text-stone-800",
+	"selection:bg-brand dark:selection:text-ui-800",
 	// Misc
 	"antialiased"
 );

@@ -1,7 +1,10 @@
 import { useMemo, createElement, Fragment } from "react";
+
 import type { RenderableTreeNode } from "@markdoc/markdoc";
-import { MarkdocData } from "@/modules/markdown/types";
+
 import { renderConfig } from "@/components/markdown";
+import { MarkdocData } from "@/modules/markdown/types";
+
 import markdocReactRenderer from "./experimentalRender";
 
 /* export const render = (renderableNodes: RenderableTreeNode): React.ReactNode => {

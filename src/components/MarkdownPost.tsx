@@ -1,9 +1,10 @@
-import MarkdocRenderer from "@/modules/markdown/client";
-import { MarkdocData, Frontmatter } from "@/modules/markdown/types";
+import { websiteLocale, websiteName } from "@/config";
 import programs from "@/modules/mappings/software-links";
 import { AllApps } from "@/modules/mappings/software-links/types";
+import MarkdocRenderer from "@/modules/markdown/client";
+import { MarkdocData, Frontmatter } from "@/modules/markdown/types";
+
 import Metadata from "./Meta";
-import { websiteLocale, websiteName } from "@/config";
 import Post from "./Post";
 
 export interface MarkdownPostProps extends MarkdocData<Frontmatter> {
@@ -66,7 +67,7 @@ const Footnotes: React.FC<FootnotesProps> = props => {
 		<>
 			{props.softwareUsed && props.softwareUsed.length !== 0 && (
 				<FootnoteSection label="Software Used">
-					<ul className="list-disc list-inside">
+					<ul className="list-inside list-disc">
 						{props.softwareUsed.map(id => {
 							const program = programs[id];
 							if (!program) return null;
@@ -118,7 +119,7 @@ interface FootnoteSectionProps extends React.PropsWithChildren {
 const FootnoteSection: React.FC<FootnoteSectionProps> = props => {
 	return (
 		<div className="mb-4">
-			<h4 className="font-bold mb-1">{props.label}</h4>
+			<h4 className="mb-1 font-bold">{props.label}</h4>
 			<div>{props.children}</div>
 		</div>
 	);

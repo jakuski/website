@@ -1,7 +1,9 @@
-import { resolveImage } from "@/modules/images";
-import NextImage from "next/image";
 import React from "react";
+import NextImage from "next/image";
+
 import c from "clsx";
+
+import { resolveImage } from "@/modules/images";
 
 export const Caption: React.FC<
 	React.PropsWithChildren<{
@@ -37,11 +39,11 @@ const Image: React.FC<
 
 	return (
 		<figure
-			className="relative h-full w-full flex mb-4 flex-col"
+			className="relative mb-4 flex h-full w-full flex-col"
 			style={{ fontSize: 0 }}
 		>
 			<NextImage
-				className="rounded object-cover shadow grow"
+				className="grow rounded object-cover shadow"
 				src={src}
 				alt={alt}
 				placeholder="blur"

@@ -1,14 +1,16 @@
-import Post from "@/components/Post";
+import { useCallback, useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { resolveImage } from "@/modules/images";
-import { ContentDirectoryNames, getContentIDs } from "@/modules/fs";
-import projectIndexPageSort from "@/content/projects/_indexPageSort.json";
-import { getStaticMarkdoc } from "@/modules/markdown/server";
-import Metadata from "@/components/Meta";
-import { useCallback, useEffect, useRef, useState } from "react";
-import c from "clsx";
 import { useRouter } from "next/router";
+
+import c from "clsx";
+
+import Metadata from "@/components/Meta";
+import Post from "@/components/Post";
+import projectIndexPageSort from "@/content/projects/_indexPageSort.json";
+import { ContentDirectoryNames, getContentIDs } from "@/modules/fs";
+import { resolveImage } from "@/modules/images";
+import { getStaticMarkdoc } from "@/modules/markdown/server";
 import { isDev } from "@/utils";
 
 interface ProjectCategoryPillProps {
@@ -28,12 +30,12 @@ interface ComingSoonProject {
 
 const ProjectCategoryPill: React.FC<ProjectCategoryPillProps> = props => {
 	const className = c(
-		"border dark:border-stone-700 rounded-full flex px-4 py-2 items-center justify-center transition-all shrink-0 select-none disable-tap-highlight",
+		"border dark:border-ui-700 rounded-full flex px-4 py-2 items-center justify-center transition-all shrink-0 select-none disable-tap-highlight",
 		{
-			"opacity-50 hover:opacity-100 text-stone-800 dark:text-stone-300":
+			"opacity-50 hover:opacity-100 text-ui-800 dark:text-ui-300":
 				props.unselected,
-			"border-stone-400": !props.active,
-			"bg-stone-800 border-stone-800 text-stone-100 dark:bg-stone-700 text-stone-50 dark:text-stone-50":
+			"border-ui-400": !props.active,
+			"bg-ui-800 border-ui-800 text-ui-100 dark:bg-ui-700 text-ui-50 dark:text-ui-50":
 				props.active
 		}
 	);
@@ -78,7 +80,7 @@ const ProjectLink: React.FC<ProjectLinkProps> = props => {
 				src={src}
 				alt={alt}
 				placeholder="blur"
-				className="rounded-md shadow-inner h-80 object-cover"
+				className="h-80 rounded-md object-cover shadow-inner"
 				fill
 				quality={90}
 				priority={props.requestPriorityLoading === true}
@@ -88,8 +90,8 @@ const ProjectLink: React.FC<ProjectLinkProps> = props => {
 			{/* Top black gradient */}
 			<div className="absolute top-0 h-1/5 w-full rounded-md bg-gradient-to-b from-black opacity-50" />
 			{/* Text content */}
-			<div className="absolute bottom-0 left-0 text-white drop-shadow-md h-full w-full flex justify-between flex-col p-4">
-				<div className="uppercase tracking-widest text-xs mb-1 font-medium flex w-full justify-between items-start">
+			<div className="absolute bottom-0 left-0 flex h-full w-full flex-col justify-between p-4 text-white drop-shadow-md">
+				<div className="mb-1 flex w-full items-start justify-between text-xs font-medium uppercase tracking-widest">
 					<div className="leading-normal">
 						{props.category.map((category, index) => (
 							<div key={category} className="inline-block">
@@ -107,10 +109,10 @@ const ProjectLink: React.FC<ProjectLinkProps> = props => {
 					</span>
 				</div>
 				<div>
-					<h2 className="font-serif text-xl md:text-2xl mb-1 font-bold">
+					<h2 className="mb-1 font-serif text-xl font-bold md:text-2xl">
 						{props.title}
 					</h2>
-					<p className="font-medium text-sm">{props.description}</p>
+					<p className="text-sm font-medium">{props.description}</p>
 				</div>
 			</div>
 		</LinkComponent>
@@ -226,7 +228,7 @@ const ProjectsIndexPage: React.FC<ProjectPageProps> = props => {
 				like to filter by category/discipline.
 			</p>
 
-			<div className="flex gap-2 flex-wrap mb-2">
+			<div className="mb-2 flex flex-wrap gap-2">
 				{Object.keys(categoryCounts).map(category => (
 					<ProjectCategoryPill
 						key={category}

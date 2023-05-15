@@ -1,5 +1,6 @@
-import { recordWithLogSnag } from "./logSnag";
 import { NextRequest } from "next/server";
+
+import { recordWithLogSnag } from "./logSnag";
 import { SourceQueryEvent } from "./types";
 
 const sources: Record<string, string> = {

@@ -1,5 +1,7 @@
-import { ImageObject } from "@/modules/images";
-
+// Bottle Images
+import imageBottleLabel from "@/content/_images/projects/uni-y3-chivas-regal/chivas_bottle_label.jpg";
+import imageBottleLarge from "@/content/_images/projects/uni-y3-chivas-regal/chivas_bottle_large.jpg";
+import imageBottleTop from "@/content/_images/projects/uni-y3-chivas-regal/chivas_bottle_top.jpg";
 // Box Images
 import imageBoxEmblem from "@/content/_images/projects/uni-y3-chivas-regal/chivas_box_emblem.jpg";
 import imageBoxFront from "@/content/_images/projects/uni-y3-chivas-regal/chivas_box_front.jpg";
@@ -8,11 +10,7 @@ import imageBoxMotif from "@/content/_images/projects/uni-y3-chivas-regal/chivas
 import imageBoxRear from "@/content/_images/projects/uni-y3-chivas-regal/chivas_box_rear.jpg";
 import imageBoxTop from "@/content/_images/projects/uni-y3-chivas-regal/chivas_box_top.jpg";
 import imageBoxWindows from "@/content/_images/projects/uni-y3-chivas-regal/chivas_box_windows.jpg";
-
-// Bottle Images
-import imageBottleLabel from "@/content/_images/projects/uni-y3-chivas-regal/chivas_bottle_label.jpg";
-import imageBottleLarge from "@/content/_images/projects/uni-y3-chivas-regal/chivas_bottle_large.jpg";
-import imageBottleTop from "@/content/_images/projects/uni-y3-chivas-regal/chivas_bottle_top.jpg";
+import { ImageObject } from "@/modules/images";
 
 const images: ImageObject = {
 	"p/chivas-regal/box_emblem": {

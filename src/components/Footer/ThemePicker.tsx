@@ -1,13 +1,15 @@
-import { capitaliseFirstLetter } from "@/utils";
-import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
+import { useTheme } from "next-themes";
+
+import { capitaliseFirstLetter } from "@/utils";
+
+import If from "../If";
 import ChevronIcon from "../icons/Chevron";
 import ThemeIcon from "../icons/Theme";
-import If from "../If";
 
 const selectName = "site-wide-theme-picker";
 const selectClassName =
-	"py-1 pl-2 pr-8 rounded bg-stone-300 dark:bg-stone-700 text-stone-900 dark:text-stone-200 shadow reset-appearance";
+	"py-1 pl-2 pr-8 rounded bg-ui-300 dark:bg-ui-700 text-ui-900 dark:text-ui-200 shadow reset-appearance";
 
 const ThemePicker = () => {
 	const { theme, setTheme, systemTheme } = useTheme();
@@ -49,7 +51,7 @@ const ThemePicker = () => {
 						<option value="dark">Dark</option>
 						<option value="light">Light</option>
 					</select>
-					<div className="absolute right-2 top-0 bottom-0 flex items-center pointer-events-none">
+					<div className="pointer-events-none absolute inset-y-0 right-2 flex items-center">
 						<ChevronIcon />
 					</div>
 				</div>

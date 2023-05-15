@@ -1,14 +1,15 @@
 {
-	// Built in VSC stuff
-	"files.eol": "\n",
-	"typescript.tsdk": "./node_modules/typescript/lib",
-	
-	// Markdoc extension (See extensions.json -> mohitsingh.markdoc)
-	"[markdoc]": {
-        "editor.autoClosingBrackets": "always"
-	},
-	"files.associations": {
-		"*.css": "tailwindcss" ,
-		"*.md": "markdoc"
-	}
+  // Built in VSC stuff
+  "files.eol": "\n",
+  "typescript.tsdk": "node_modules\\typescript\\lib",
+  // Markdoc extension (See extensions.json -> mohitsingh.markdoc)
+  "[markdoc]": {
+    "editor.autoClosingBrackets": "always"
+  },
+  "files.associations": {
+    "*.css": "tailwindcss",
+    "*.md": "markdoc"
+  },
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "typescript.preferences.importModuleSpecifier": "non-relative",
 }

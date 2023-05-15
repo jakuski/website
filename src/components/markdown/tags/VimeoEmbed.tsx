@@ -1,5 +1,6 @@
-import { useScript } from "@/modules/script-handler";
 import React from "react";
+
+import { useScript } from "@/modules/script-handler";
 
 // https://developer.vimeo.com/player/sdk/embed
 interface VimeoEmbedProps {
@@ -67,10 +68,10 @@ const VimeoEmbed: React.FC<VimeoEmbedProps> = props => {
 
 	return (
 		<div className="">
-			<div className="bg-pure-black rounded-md overflow-hidden select-none mb-4">
+			<div className="bg-pure-black mb-4 select-none overflow-hidden rounded-md">
 				<iframe
 					src={src}
-					className="w-full aspect-video rounded-md"
+					className="aspect-video w-full rounded-md"
 					frameBorder="0"
 					allow="autoplay; fullscreen; picture-in-picture"
 					allowFullScreen

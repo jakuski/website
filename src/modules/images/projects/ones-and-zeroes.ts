@@ -1,15 +1,8 @@
-import { ImageObject } from "@/modules/images";
-
 import imageCover from "@/content/_images/projects/flipside-ones-and-zeroes/cover.jpg";
-import imageStyleKit from "@/content/_images/projects/flipside-ones-and-zeroes/stylekit.png";
 import imageGraph from "@/content/_images/projects/flipside-ones-and-zeroes/graph.jpg";
-
-import iamgeWireframes1 from "@/content/_images/projects/flipside-ones-and-zeroes/wireframes-1.jpg";
-import iamgeWireframes2 from "@/content/_images/projects/flipside-ones-and-zeroes/wireframes-2.jpg";
-import imageLofi from "@/content/_images/projects/flipside-ones-and-zeroes/lofi.png";
-import imageHifiDev from "@/content/_images/projects/flipside-ones-and-zeroes/hifi-dev.png";
 import imageHifiDevFinal from "@/content/_images/projects/flipside-ones-and-zeroes/hifi-dev-final.png";
-
+import imageHifiDev from "@/content/_images/projects/flipside-ones-and-zeroes/hifi-dev.png";
+import imageLofi from "@/content/_images/projects/flipside-ones-and-zeroes/lofi.png";
 import imageOutcomes1 from "@/content/_images/projects/flipside-ones-and-zeroes/outcomes-1.jpg";
 import imageOutcomes2 from "@/content/_images/projects/flipside-ones-and-zeroes/outcomes-2.jpg";
 import imageOutcomes3 from "@/content/_images/projects/flipside-ones-and-zeroes/outcomes-3.jpg";
@@ -17,6 +10,10 @@ import imageOutcomes4 from "@/content/_images/projects/flipside-ones-and-zeroes/
 import imageOutcomes5 from "@/content/_images/projects/flipside-ones-and-zeroes/outcomes-5.jpg";
 import imageOutcomes6 from "@/content/_images/projects/flipside-ones-and-zeroes/outcomes-6.jpg";
 import imageOutcomes7 from "@/content/_images/projects/flipside-ones-and-zeroes/outcomes-7.jpg";
+import imageStyleKit from "@/content/_images/projects/flipside-ones-and-zeroes/stylekit.png";
+import iamgeWireframes1 from "@/content/_images/projects/flipside-ones-and-zeroes/wireframes-1.jpg";
+import iamgeWireframes2 from "@/content/_images/projects/flipside-ones-and-zeroes/wireframes-2.jpg";
+import { ImageObject } from "@/modules/images";
 
 const images: ImageObject = {
 	"p/ones-and-zeros/cover": {

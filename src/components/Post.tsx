@@ -9,10 +9,10 @@ export interface PostProps extends React.PropsWithChildren {
 }
 
 const Post: React.FC<PostProps> = props => (
-	<div className="max-w-md md:max-w-xl m-auto print:max-w-full">
+	<div className="m-auto max-w-md print:max-w-full md:max-w-xl">
 		<div className="mx-4 pt-64 print:pt-12">
 			{props.category && (
-				<div id="category" className="font-medium mb-2">
+				<div id="category" className="mb-2 font-medium">
 					{props.category}
 				</div>
 			)}
@@ -20,7 +20,7 @@ const Post: React.FC<PostProps> = props => (
 			{props.title && (
 				<h1
 					id="title"
-					className="font-serif text-5xl leading-tight font-bold tracking-tight mb-4"
+					className="mb-4 font-serif text-5xl font-bold leading-tight tracking-tight"
 				>
 					{props.title}
 				</h1>
@@ -28,7 +28,7 @@ const Post: React.FC<PostProps> = props => (
 
 			{props.showMetadata && (
 				<>
-					<div id="description" className="font-medium mb-4">
+					<div id="description" className="mb-4 font-medium">
 						{props.description}
 					</div>
 					<hr className="my-4" />

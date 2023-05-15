@@ -1,10 +1,9 @@
-import { ImageObject } from "@/modules/images";
-
-import imageCover from "@/content/_images/projects/uni-y2-spotify/project_cover.jpg";
-import imagePostCodesOnboarding from "@/content/_images/projects/uni-y2-spotify/postcodes_onboarding.jpg";
 import imagePostCodesExploration from "@/content/_images/projects/uni-y2-spotify/postcodes_exploration.jpg";
+import imagePostCodesOnboarding from "@/content/_images/projects/uni-y2-spotify/postcodes_onboarding.jpg";
 import imagePostCodesPlaylists from "@/content/_images/projects/uni-y2-spotify/postcodes_playlists.jpg";
+import imageCover from "@/content/_images/projects/uni-y2-spotify/project_cover.jpg";
 import imageUIGuidelines from "@/content/_images/projects/uni-y2-spotify/spotify_ui_guidelines.png";
+import { ImageObject } from "@/modules/images";
 
 const images: ImageObject = {
 	"p/spotify21/cover": {

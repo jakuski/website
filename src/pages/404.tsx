@@ -1,4 +1,5 @@
 import { Frontmatter, MarkdocData } from "@/modules/markdown/types";
+
 import Post from "../components/Post";
 
 const NotFoundPage: React.FC = () => {

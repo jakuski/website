@@ -25,7 +25,7 @@ const CookieClickerEasterEgg = () => {
 
 	return (
 		<div
-			className="hidden sm:flex items-center justify-center cursor-pointer select-none transition-all duration-150 disable-tap-highlight"
+			className="disable-tap-highlight hidden cursor-pointer select-none items-center justify-center transition-all duration-150 sm:flex"
 			style={style}
 			onClick={onClick}
 			onContextMenu={onContextMenu}
