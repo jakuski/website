@@ -1,13 +1,14 @@
 import type { NextRequest } from "next/server";
 
 import Data from "./data.json";
+
+// Update this if the file name ([...name].ts) changes
+const QUERY_NAME = "name";
+
 interface DataStructure {
 	links: { [key: string]: string };
 	tempDisable: { [key: string]: string };
 }
-
-// Update this if the file name ([...name].ts) changes
-const QUERY_NAME = "name";
 
 const notFoundConfig = { status: 404 };
 
