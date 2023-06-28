@@ -16,7 +16,7 @@ export default function handler(req: NextRequest) {
 	console.log(req);
 	console.log(req.url);
 	const requestedDestination = new URL(req.url).searchParams
-		.getAll(QUERY_NAME)
+		.getAll("nextParam" + QUERY_NAME) // This is so stupid, wtf vercel
 		.join("/");
 	if (!requestedDestination) return new Response(null, notFoundConfig);
 
