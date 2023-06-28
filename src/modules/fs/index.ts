@@ -35,7 +35,7 @@ export const getContentIDs = (
 				// concern here. Speed in dev environments could be affected?
 				const result = data
 					.filter(dirent => dirent.isFile()) // Filter out directories and other non basic file types.
-					.map(dirent => basename(dirent.name, ".md")) // Change Dirent { name: "about.md" } to "about"
+					.map(dirent => basename(dirent.name, ".mdoc")) // Change Dirent { name: "about.md" } to "about"
 					.filter(fileIsSafe); // Filter out any files that start with _
 
 				return res(result);

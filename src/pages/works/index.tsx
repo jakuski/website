@@ -7,6 +7,7 @@ import c from "clsx";
 
 import Metadata from "@/components/Meta";
 import Post from "@/components/Post";
+import { MARKDOC_FILE_EXTENSION } from "@/constants";
 import projectIndexPageSort from "@/content/projects/_indexPageSort.json";
 import { ContentDirectoryNames, getContentIDs } from "@/modules/fs";
 import { resolveImage } from "@/modules/images";
@@ -294,7 +295,7 @@ export const getStaticProps = async (): Promise<{
 
 		const { props: markdoc } = await getStaticMarkdoc(
 			ContentDirectoryNames.PROJECTS,
-			`${id}.md`
+			id + MARKDOC_FILE_EXTENSION
 		)();
 
 		let category: string | string[] | void =
