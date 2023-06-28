@@ -13,6 +13,8 @@ interface DataStructure {
 const notFoundConfig = { status: 404 };
 
 export default function handler(req: NextRequest) {
+	console.log(req);
+	console.log(req.url);
 	const requestedDestination = new URL(req.url).searchParams
 		.getAll(QUERY_NAME)
 		.join("/");
