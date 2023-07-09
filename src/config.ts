@@ -16,4 +16,4 @@ export const socialHandles = {
 // runs document.designMode = "on" when isDev (defined below) is true.
 export const useDocumentDesignModeDuringDev = false;
 
-export const recordSourceQueryMiddleware: boolean = true;
+export const recordSourceQueryMiddleware = true;
