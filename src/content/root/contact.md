@@ -11,8 +11,6 @@ variables:
   contactEmail: ayup
 ---
 
-I'm open to new opportunities and would love to hear from you. I'm available for both freelance and full-time roles as a digital product designer/developer.
-
 If you would like to get in touch with me, please send me an email at {% email address=$contactEmail domain=$utils.emailDomain /%}.
 
 I aim to reply within two working days however if I don't get back to you within then,
