@@ -1,10 +1,10 @@
-import Metadata from "@/components/Meta";
-import NextLink from "next/link";
-import { PropsWithChildren, useEffect, useState } from "react";
 import Footer from "../components/Footer";
 import { websiteName } from "../config";
+import Metadata from "@/components/Meta";
 import LogoIcon from "@/components/icons/Logo";
 import c from "clsx";
+import NextLink from "next/link";
+import { PropsWithChildren, useEffect, useState } from "react";
 
 const linkClassName = c(
 	"inline text-brand font-bold relative",
@@ -105,10 +105,6 @@ export default function Home() {
 							See <Link href="/works">my work</Link>, find out more{" "}
 							<Link href="/about">about me</Link> or{" "}
 							<Link href="/contact">get in touch</Link>.
-						</div>
-
-						<div className="text-xl tracking-tight">
-							Seeking digital product design/development roles.
 						</div>
 					</div>
 				</div>
