@@ -9,6 +9,7 @@ module.exports = {
 	theme: {
 		fontFamily: {
 			serif: [v("font-serif"), ...defaultTheme.fontFamily.serif],
+			["serif-cond"]: [v("font-serif-cond"), ...defaultTheme.fontFamily.serif],
 			sans: [v("font-sans"), ...defaultTheme.fontFamily.sans]
 		},
 		colors: {

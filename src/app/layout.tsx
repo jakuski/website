@@ -39,6 +39,20 @@ const fontDisplay = Libre_Baskerville({
 	variable: "--font-serif"
 });
 
+const fontSerifCond = localFont({
+	src: [
+		{
+			path: "../styles/fonts/serif-cond/LibreCaslonCondensed[wght].woff2",
+			style: "normal"
+		},
+		{
+			path: "../styles/fonts/serif-cond/LibreCaslonCondensed-Italic[wght].woff2",
+			style: "italic"
+		}
+	],
+	variable: "--font-serif-cond"
+});
+
 const bodyClassName = c(
 	// Light
 	"bg-ui-100 text-ui-700",
@@ -50,6 +64,7 @@ const bodyClassName = c(
 	"antialiased",
 	fontText.variable, // The font#variable property is a CSS class that defines the CSS variables (e.g. --font-sans) for the typefaces requested above.
 	fontDisplay.variable,
+	fontSerifCond.variable,
 	"font-sans" // font-sans is applied here to act as the default typeface. This effectively applies font-family: var(--font-sans)
 );
 
