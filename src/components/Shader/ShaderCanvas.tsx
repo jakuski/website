@@ -28,7 +28,10 @@ const getScreenDimensions = (): Dimensions => {
 
 const ShaderCanvas = () => {
 	const ref = useRef<HTMLCanvasElement>(null);
-	const [dimensions, setDimensions] = useState<Dimensions>(getScreenDimensions);
+	const [dimensions, setDimensions] = useState<Dimensions>({
+		width: -1,
+		height: -1
+	});
 
 	const updateDimensions = useCallback(() => {
 		setDimensions(getScreenDimensions);
