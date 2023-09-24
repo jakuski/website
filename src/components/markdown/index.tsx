@@ -9,9 +9,6 @@ import Paragraph from "./nodes/Paragraph";
 // Tags
 import Email from "./tags/Email";
 import FigmaEmbed, { FIGMA_EMBEDDABLE_URL_REGEX } from "./tags/FigmaEmbed";
-import Gallery from "./tags/Gallery";
-import GalleryImage from "./tags/Gallery/Image";
-import GalleryRow from "./tags/Gallery/Row";
 import Image from "./tags/Image";
 import VimeoEmbed from "./tags/VimeoEmbed";
 
@@ -130,10 +127,6 @@ export const renderConfig = {
 		// Tags
 		[MarkdocComponentNames.TAG_EMAIL]: Email,
 		[MarkdocComponentNames.TAG_IMAGE]: Image,
-
-		[MarkdocComponentNames.TAG_GALLERY]: Gallery,
-		[MarkdocComponentNames.TAG_GALLERY_IMAGE]: GalleryImage,
-		[MarkdocComponentNames.TAG_GALLERY_ROW]: GalleryRow,
 
 		[MarkdocComponentNames.TAG_EMBED_VIMEO]: VimeoEmbed,
 		[MarkdocComponentNames.TAG_EMBED_FIGMA]: FigmaEmbed
