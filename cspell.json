@@ -16,6 +16,7 @@
 		"vars",
 		"color", // the american spelling is stupid... C O L O U R.
 		"rsquo", // apostrophe html entity
+		"glsl",
 
 		// Personal
 		"Jakub",
@@ -31,6 +32,8 @@
 		"clsx",
 		"lightgallery",
 		"analyzer",
+		"drei",
+		"fiber",
 
 		// Software vendors and names
 		"maxon",

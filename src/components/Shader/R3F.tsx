@@ -1,13 +1,12 @@
 "use client";
 
 import * as THREE from "three";
-import React, { useRef, useState } from "react";
+import React, { useRef } from "react";
 import { Canvas, useFrame, ThreeElements } from "@react-three/fiber";
 
 import waterVertexShader from "./shaders/water/vertex.glsl";
 import waterFragmentShader from "./shaders/water/fragment.glsl";
 import { OrbitControls } from "@react-three/drei";
-import { isDev } from "@/utils";
 import useDebug3D from "@/hooks/useDebug3D";
 
 // Colors
@@ -21,11 +20,7 @@ function MeshGradient(props: ThreeElements["mesh"]) {
 	const materialRef = useRef<THREE.ShaderMaterial>(null!);
 
 	useFrame((state, delta) => {
-		// console.log(state);
-		// meshRef.current.rotation.x = - Math.PI * 0.5;
 		materialRef.current.uniforms.uTime.value += delta;
-		/* meshRef.current.rotation.x += delta */
-		window._state = state;
 	});
 
 	return (
