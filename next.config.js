@@ -6,6 +6,7 @@ const nextConfig = {
 	reactStrictMode: true,
 	productionBrowserSourceMaps: true,
 	poweredByHeader: false,
+	transpilePackages: ['three'],
 	rewrites() {
 		return [
 			{
@@ -28,6 +29,13 @@ const nextConfig = {
 			}
 		];
 	},
+	webpack: (config) => {
+		config.module.rules.push({
+		  test: /\.(frag|vert|glsl)$/,
+		  type: 'asset/source'
+		})
+		return config
+	  },
 	async headers() {
 		const self = "'self'";
 
