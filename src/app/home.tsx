@@ -6,12 +6,18 @@ import useDebug3D from "@/hooks/useDebug3D";
 
 const Home = () => {
 	const debug3d = useDebug3D();
-return <main className="min-h-screen font-sans text-ui-800 selection:bg-ui-950/20">
+	return (
+		<main className="min-h-screen font-sans text-ui-800 text-opacity-90 selection:bg-ui-950/20">
 			<div className="min-h-screen bg-brand">
-				<div className="z-0 absolute left-0 top-0 h-screen w-full">
+				<div className="absolute left-0 top-0 z-0 h-screen w-full">
 					<CitrineCanvas />
 				</div>
-				<div className={clsx("z-10 relative mx-16 min-h-screen flex flex-col justify-between pt-8 font-serif-cond text-[2vw] leading-[2.5vw]", debug3d && "pointer-events-none")}>
+				<div
+					className={clsx(
+						"relative z-10 mx-16 flex min-h-screen flex-col justify-between pt-8 font-serif-cond text-[2vw] leading-[2.5vw]",
+						debug3d && "pointer-events-none"
+					)}
+				>
 					<div className="flex flex-col items-end">
 						<div className="flex items-center text-right">
 							<Star />
@@ -36,7 +42,7 @@ return <main className="min-h-screen font-sans text-ui-800 selection:bg-ui-950/2
 				</div>
 			</div>
 		</main>
-
+	);
 };
 
 export default Home;
