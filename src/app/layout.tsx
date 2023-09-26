@@ -11,6 +11,7 @@ import { websiteName } from "@/config";
 import { isProd } from "@/utils";
 
 import AppProviders from "./providers";
+import "@/styles/spacing.scss";
 import "@/styles/tailwind.css";
 import "@/styles/globals.css";
 

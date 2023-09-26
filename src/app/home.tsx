@@ -8,13 +8,13 @@ const Home = () => {
 	const debug3d = useDebug3D();
 	return (
 		<main className="min-h-screen font-sans text-ui-800 text-opacity-90 selection:bg-ui-950/20">
-			<div className="min-h-screen bg-brand">
+			<div className="min-h-screen bg-brand sticky top-0">
 				<div className="absolute left-0 top-0 z-0 h-screen w-full">
 					<CitrineCanvas />
 				</div>
 				<div
 					className={clsx(
-						"relative z-10 mx-16 flex min-h-screen flex-col justify-between pt-8 font-serif-cond text-[2vw] leading-[2.5vw]",
+						"relative z-10 mx-64 flex min-h-screen flex-col justify-between pt-8 font-serif-cond text-[2vw] leading-[2.5vw]",
 						debug3d && "pointer-events-none"
 					)}
 				>
@@ -40,6 +40,9 @@ const Home = () => {
 						</div>
 					</div>
 				</div>
+			</div>
+			<div className="relative bg-brand-dark">
+				<h1 className="text-6xl text-ui-100 my-8">About me</h1>
 			</div>
 		</main>
 	);

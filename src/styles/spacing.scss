@@ -1,0 +1,59 @@
+// Thanks to the gang at The One Off for this one
+
+$units: (
+	1: 1,
+	2: 2,
+	4: 4,
+	6: 6,
+	8: 8,
+	10: 10,
+	12: 12,
+	16: 16,
+	20: 20,
+	24: 24,
+	32: 32,
+	40: 40,
+	48: 48,
+	56: 56,
+	64: 64,
+	72: 72,
+	80: 80,
+	96: 96,
+	128: 128,
+	160: 160,
+	192: 192,
+	224: 224,
+	256: 256,
+	288: 288,
+	320: 320,
+	384: 384,
+	448: 448,
+	512: 512,
+);
+
+:root {
+	@each $name, $unit in $units {
+		--unit-#{$name}: #{$unit}px;
+	}
+
+	@screen sm {
+		@each $name, $unit in $units {
+			--unit-#{$name}: clamp(
+				1px,
+				calc(#{$unit} / 16 * (1vw * 1.25)),
+				calc(#{$unit} / 16 * (1vw * 1.25))
+			);
+		}
+	}
+
+	@screen md {
+		@each $name, $unit in $units {
+			--unit-#{$name}: clamp(
+				1px,
+				calc(#{$unit} / 16 * 1vw),
+				calc(#{$unit} / 16 * 1vw)
+			);
+		}
+	}
+}
+
